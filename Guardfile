@@ -2,8 +2,8 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-# directories %w(app lib config test spec features) \
-#  .select{|d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist")}
+directories %w(app lib config spec features) \
+ .select{|d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist")}
 
 ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move
@@ -18,17 +18,12 @@
 cucumber_options = {
   # Below are examples overriding defaults
 
-  # cmd: 'bin/cucumber',
-  # cmd_additional_args: '--profile guard',
+  cmd: "bin/cucumber",
+  cmd_additional_args: "--profile default",
 
-  # all_after_pass: false,
-  # all_on_start: false,
-  # keep_failed: false,
-  # feature_sets: ['features/frontend', 'features/experimental'],
-
-  # run_all: { cmd_additional_args: '--profile guard_all' },
-  # focus_on: { 'wip' }, # @wip
-  # notification: false
+  all_after_pass: false,
+  all_on_start: false,
+  notification: false
 }
 
 guard "cucumber", cucumber_options do
