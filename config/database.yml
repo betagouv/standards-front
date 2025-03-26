@@ -4,21 +4,41 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem "sqlite3"
 #
+
+espace_membre_db: &emdb
+  url: <%= ENV.fetch("ESPACE_MEMBRE_DB_URL") %>
+  schema_dump: "espace-membre.rb"
+  database_tasks: false
+  replica: true
+
+espace_membre_db_test: &emdb-test
+  <<: *emdb
+  replica: false
+  database: test
+  database_tasks: true
+
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
-  <<: *default
-  database: storage/development.sqlite3
+  primary:
+    <<: *default
+    database: storage/development.sqlite3
+  emdb:
+    <<: *emdb
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: storage/test.sqlite3
+  primary:
+    <<: *default
+    database: storage/test.sqlite3
+  emdb:
+    <<: *emdb-test
+
 
 
 # Store production database in the storage/ directory, which by default

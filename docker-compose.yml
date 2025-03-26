@@ -5,6 +5,18 @@ services:
     image: tech_audit
     ports:
       - "3000:3000"
+    environment:
+      RUBY_DEBUG_NO_RELINE: true
+      ESPACE_MEMBRE_DB_URL: postgresql://postgres:dummy@espace-membre-db:5433
     volumes:
       - "./:/app"
       - "/app/node_modules"
+    depends_on:
+      - espace-membre-db
+  espace-membre-db:
+    image: postgres
+    volumes:
+      - "./tmp/edb:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: 'dummy'
+      PGPORT: 5433
