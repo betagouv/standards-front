@@ -24,6 +24,10 @@ Alors("la page contient {string}") do |content|
   expect(page).to have_content(content).or(have_button(content))
 end
 
+Alors("la page contient un bouton {string}") do |label|
+  expect(page).to have_button(label)
+end
+
 Alors("la page contient un bouton {string} désactivé") do |content|
   expect(page).to have_button(content, disabled: true)
 end
