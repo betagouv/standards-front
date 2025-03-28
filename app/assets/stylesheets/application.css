@@ -8,3 +8,11 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body, html {
+  /* font-size: 120%; */
+}
+
+.fr-header__logo {
+  white-space: pre-line;
+}

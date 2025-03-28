@@ -8,7 +8,12 @@ class SessionsController < ApplicationController
   def create
     user_info = request.env["omniauth.auth"]
 
-    session
-    raise user_info # Your own session management should be placed here.
+    if user = EspaceMembre::User.find_by(primary_email: user_info["uid"])
+      session[:user] = user.uuid
+
+      redirect_to root_path, notice: "You're in!"
+    else
+      redirect_to root_path, alert: "Something went wrong"
+    end
   end
 end

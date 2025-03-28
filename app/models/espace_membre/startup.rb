@@ -5,6 +5,7 @@ module EspaceMembre
     validates :ghid, presence: true
 
     has_many :phases
+    has_and_belongs_to_many :missions, join_table: "missions_startups"
 
     has_one :latest_phase,
             -> { order(start: :desc) },

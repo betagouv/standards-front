@@ -1,12 +1,13 @@
 class HomeController < ApplicationController
   before_action :check_existing_survey, except: :welcome
 
+  before_action :authenticate_user!
+
   def index
-    @questions ||= YAML.safe_load_file("config/standards-beta.yml")
   end
 
   def welcome
-    @products = Startup.pluck(:name)
+    @products = current_user.startups.pluck("name")
   end
 
   private
