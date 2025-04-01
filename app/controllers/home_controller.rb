@@ -5,9 +5,6 @@ class HomeController < ApplicationController
   def index
   end
 
-  def welcome
-  end
-
   def choix_produit
     @products = current_user.startups.pluck("name")
   end

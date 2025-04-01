@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get "home/index"
-  get "home/welcome"
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get '/login', to: 'sessions#new'
