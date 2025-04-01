@@ -1,0 +1,13 @@
+- content_for(:page_title) { "Vos startups" }
+
+%h1 Vos startups
+
+- if @startups.none?
+  %p
+    Vous n'avez pas de startups actives. Assurez-vous que vos missions sont à jour dans
+    = dsfr_link_to "l'Espace Membre", "https://espace-membre.incubateur.net/"
+    \.
+- else
+  %ul
+    - @startups.each do |startup|
+      %li= startup.name

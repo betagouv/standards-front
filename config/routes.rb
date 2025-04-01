@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  root to: "home#index"
-
-  get "home/index"
-
-  # FIXME: these two routes
-  get "home/choix_produit"
-  post "choix_produit", to: "home#select_product"
+  get "startups/index"
+  get "startups/choix"
+  root to: "startups#index"
 
   get "auth/:provider/callback", to: "sessions#create"
   get "/login", to: "sessions#new"
