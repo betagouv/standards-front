@@ -30,4 +30,4 @@ debug:
 
 # runs a PSQL console to explore the Espace Membre database
 emdb:
-	$(DOCKER-RUN) -e PGPASSWORD=dummy espace-membre-db psql $(ESPACE_MEMBRE_DB)
+	$(DOCKER-RUN) -e PAGER= -e PGPASSWORD=dummy espace-membre-db psql $(ESPACE_MEMBRE_DB)
