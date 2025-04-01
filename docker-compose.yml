@@ -7,6 +7,8 @@ services:
       - "3000:3000"
     environment:
       RUBY_DEBUG_NO_RELINE: true
+      RUBY_DEBUG_HOST: 0.0.0.0
+      RUBY_DEBUG_PORT: 12345
       ESPACE_MEMBRE_DB_URL: postgresql://postgres:dummy@espace-membre-db:5433
     volumes:
       - "./:/app"
