@@ -1,13 +1,14 @@
 # language: fr
 
-# Note : les IDEs et leurs plugins Cucumber sont censés pouvoir gérer
-# l'internationalisation et donc les mots-clés en français aussi.
-
 Fonctionnalité: Page d'accueil
-  Scénario: La page d'accueil est établie
-    Quand je me rends sur la page d'accueil
-    Alors le titre de la page contient "Bienvenue - Bretelles"
+  Scénario: Quand je n'ai pas de produits on m'explique pourquoi
+    Sachant que je suis "Marie Curie" avec l'email "marie.curie@beta.gouv.fr"
+    Quand je me connecte
+    Alors la page contient "Vous n'avez pas de produits actifs."
 
-  Scénario: Un bouton de connexion est disponible
-    Quand je me rends sur la page d'accueil
-    Alors la page contient un bouton "Connexion"
+  Scénario: Quand je me connecte, je dois choisir un produit
+    Sachant que je suis "Marie Curie" avec l'email "marie.curie@beta.gouv.fr"
+    Et que je participe au produit "Louvre"
+    Et que je participe au produit "Rivoli"
+    Quand je me connecte
+    Alors la page contient "Sélectionnez un de vos produits"

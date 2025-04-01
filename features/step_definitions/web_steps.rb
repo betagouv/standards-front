@@ -20,10 +20,6 @@ Quand("je clique sur le premier lien ou bouton {string}") do |label|
   click_link_or_button(label, match: :first)
 end
 
-Alors("la page contient {string}") do |content|
-  expect(page).to have_content(content).or(have_button(content))
-end
-
 Alors("la page contient un bouton {string}") do |label|
   expect(page).to have_button(label)
 end
