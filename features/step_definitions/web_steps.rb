@@ -32,6 +32,10 @@ Alors("la page ne contient pas {string}") do |content|
   expect(page).to have_no_content(content)
 end
 
+Alors("la page contient un lien {string}") do |text|
+  expect(page).to have_link(text)
+end
+
 Alors("le titre de la page contient {string}") do |text|
   expect(page.title.gsub("  ", " ")).to include text
 end

@@ -21,5 +21,9 @@ module EspaceMembre
     def in_phase?(name)
       send("in_#{name}?")
     end
+
+    def to_s
+      name
+    end
   end
 end

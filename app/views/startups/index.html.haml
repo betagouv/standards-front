@@ -11,3 +11,4 @@
   %ul
     - @startups.each do |startup|
       %li= startup.name
+      = dsfr_link_to "Commencer l'audit", edit_startup_audit_path(startup), title: "Commencer l'audit pour la startup #{startup}"

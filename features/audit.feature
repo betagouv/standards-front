@@ -7,7 +7,5 @@ Fonctionnalité: Page d'accueil
     Et que je participe au produit "Rivoli"
     Quand je me connecte
 
-  Scénario: Quand je choisis un produit qui n'a pas encore d'audit
-    Sachant que je sélectionne "Rivoli" pour "Produit à auditer"
-    Et que je clique sur "Sélectionner"
-    Alors la page contient "Bienvenue dans l'audit de votre produit Rivoli"
+  Scénario: Quand mes produits n'ont pas encore d'audit
+    Alors la page contient un lien "Commencer l'audit pour la startup Rivoli"
