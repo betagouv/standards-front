@@ -5,5 +5,7 @@ module EspaceMembre
     self.primary_key = "uuid"
 
     has_and_belongs_to_many :startups, join_table: "missions_startups"
+
+    scope :active, -> { where(end: Time.zone.now..) }
   end
 end
