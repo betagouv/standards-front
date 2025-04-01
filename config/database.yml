@@ -10,17 +10,19 @@ espace_membre_db: &emdb
   schema_dump: "espace-membre.rb"
   database_tasks: false
   replica: true
+  migrations_paths: db/migrate_emdb
 
 espace_membre_db_test: &emdb-test
   <<: *emdb
   replica: false
-  database: test
   database_tasks: true
+  database: test
 
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  migrations_paths: db/primary
 
 development:
   primary:
