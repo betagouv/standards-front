@@ -12,7 +12,11 @@ class HomeController < ApplicationController
   def select_product
     name = params["product_name"]
 
-    session[:startup_id] = current_user.active_startups.find_by(name: name)
+    @startup = current_user.active_startups.find_by(name: name)
+
+    session[:startup_id] = @startup.uuid
+
+    redirect_to startup_audit_path(@startup)
   end
 
   private

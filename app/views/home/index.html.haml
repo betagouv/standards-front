@@ -2,27 +2,4 @@
 
 - content_for(:page_title) { "Standards" }
 
-.fr-grid-row
-  .fr-col-12
-    = dsfr_tabs do |tabs|
-      - @questions.each do |domaine, qs|
-        - tabs.with_tab title: domaine.humanize do
-          - qs.each do |q|
-            .fr-col-md-7
-              %h4= q["title"]
-              %p= q["description"]
-              - q["criteria"].each do |crit|
-                = form_with model: Question.new, builder: Dsfr::FormBuilder do |f|
-                  = f.dsfr_check_box :criteria, label: crit
-
-%hr
-
-%h1 Grille
-
-.fr-grid-row
-  .fr-col-12.fr-col-md-7
-    - @questions.each do |domaine, qs|
-      %h2= domaine.humanize
-      %ul
-        - qs.each do |q|
-          %li= q["title"]
+-# FIXME: this can probably disappear

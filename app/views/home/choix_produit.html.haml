@@ -1,0 +1,10 @@
+- if @products.empty?
+  %p Vous n'avez pas de produits actifs.
+- else
+  %p
+    Sélectionnez un de vos produits :
+
+    = form_with url: choix_produit_path, builder: Dsfr::FormBuilder, method: :post do |f|
+      = f.dsfr_select "product_name", @products, label: "Produit à auditer"
+
+      = f.submit("Sélectionner", { class: 'fr-btn' })
