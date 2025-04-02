@@ -13,6 +13,9 @@ up:
 down:
 	docker compose down
 
+die:
+	docker compose down --remove-orphans --volumes
+
 sh:
 	$(DOCKER-RUN) web bash
 
