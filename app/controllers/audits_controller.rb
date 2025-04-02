@@ -13,7 +13,7 @@ class AuditsController < ApplicationController
   private
 
   def set_startup
-    @startup = current_user.active_startups.find(params["startup_id"])
+    @startup = current_user.active_startups.find_by(ghid: params["startup_ghid"])
   end
 
   def set_breadcrumbs
