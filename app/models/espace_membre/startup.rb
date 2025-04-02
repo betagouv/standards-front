@@ -7,6 +7,8 @@ module EspaceMembre
     has_many :phases
     has_and_belongs_to_many :missions, join_table: "missions_startups"
 
+    has_one :audit, foreign_key: :startup_uuid
+
     has_one :latest_phase,
             -> { order(start: :desc) },
             class_name: "Phase",

@@ -4,6 +4,10 @@ class AuditsController < ApplicationController
   def show
   end
 
+  def edit
+    @audit = Audit.find_or_create_by(startup: @startup, data: Audit.latest)
+  end
+
   private
 
   def set_startup

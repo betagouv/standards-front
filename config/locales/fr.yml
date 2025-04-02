@@ -3,3 +3,13 @@ fr:
     sponsor: "Direction\nInterministérielle\ndu Numérique"
     service_name: "Bretelles"
     service_description: "Gardez votre produit bien dans ses baskets"
+  audits:
+    categories:
+      accessibilité: "Accessibilité"
+      design: "Design"
+      qualité-du-support: "Qualité du support"
+      qualité-logicielle: "Qualité logicielle"
+      sécurité: "Sécurité"
+      transparence: "Transparence"
+      vie-privée: "Vie privée"
+      éco-conception: "Éco-conception"

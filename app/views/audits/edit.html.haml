@@ -1,0 +1,14 @@
+%h1 Audit pour #{@startup.name}
+
+.fr-grid-row
+  .fr-col-12
+    = dsfr_tabs do |tabs|
+      - @audit.data.each do |domaine, qs|
+        - tabs.with_tab title: t("audits.categories.#{domaine}", default: domaine.humanize) do
+          - qs.each do |q|
+            .fr-col-md-7
+              %h4= q["title"]
+              %p= q["description"]
+              - q["criteria"].each_with_index do |crit, idx|
+                = form_with url: startup_audit_path(@startup, @audit), builder: Dsfr::FormBuilder do |f|
+                  = f.dsfr_check_box "#{crit}_#{idx}", label: crit
