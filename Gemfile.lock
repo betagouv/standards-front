@@ -84,6 +84,8 @@ GEM
       msgpack (~> 1.2)
     brakeman (7.0.0)
       racc
+    breadcrumbs_on_rails (4.1.0)
+      railties (>= 5.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -516,6 +518,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  breadcrumbs_on_rails
   capybara
   cucumber-rails
   database_cleaner

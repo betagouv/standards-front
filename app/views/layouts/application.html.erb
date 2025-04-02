@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "dsfr.min", "application-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "dsfr-overrides", "data-turbo-track": "reload" %>
 
     <%= javascript_include_tag "dsfr.module.min.js", type: 'module' %>
     <%= javascript_include_tag "dsfr.nomodule.min.js", nomodule: true %>
@@ -21,6 +22,7 @@
 
     <div class="fr-container">
       <main class="fr-py-2w" id="main">
+        <%= render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder) %>
         <%= render 'shared/flash' %>
         <%= yield %>
       </main>
