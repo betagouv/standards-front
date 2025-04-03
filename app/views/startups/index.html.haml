@@ -1,14 +1,20 @@
 - content_for(:page_title) { "Vos startups" }
 
-%h1 Vos startups
+.fr-grid-row
+  .fr-col-12.fr-col-md-7
+    %h1 Vos startups
 
-- if @startups.none?
-  %p
-    Vous n'avez pas de startups actives. Assurez-vous que vos missions sont à jour dans
-    = dsfr_link_to "l'Espace Membre", "https://espace-membre.incubateur.net/"
-    \.
-- else
-  %ul
-    - @startups.each do |startup|
-      %li= startup.name
-      = dsfr_link_to "Commencer l'audit", edit_startup_audit_path(startup), title: "Commencer l'audit pour la startup #{startup}"
+    - if @startups.none?
+      %p
+        Vous n'avez pas de startups actives. Assurez-vous que vos missions sont à jour dans
+        = dsfr_link_to "l'Espace Membre", "https://espace-membre.incubateur.net/"
+        \.
+    - else
+      %p.fr-text--lead
+        Ci-dessous la liste de vos startups actives. Vous pouvez démarrer l'auto-audit sur n'importe laquelle, et y revenir plus tard si nécessaire. Les réponses sont mises à jour en temps réel.
+
+      %ul.startups-list
+        - @startups.each do |startup|
+          %li
+            %h2= startup.name
+            = dsfr_link_to "Commencer l'audit", edit_startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
