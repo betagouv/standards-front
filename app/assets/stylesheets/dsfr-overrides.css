@@ -1,0 +1,65 @@
+.fr-breadcrumb {
+  margin-bottom: 1rem;
+}
+
+/* https://github.com/alphagov/govuk-frontend/blob/main/packages/govuk-frontend/src/govuk/components/input/_index.scss#L59 */
+.fr-input--extra-spacing {
+  letter-spacing: .07em;
+  font-variant-numeric: tabular-nums;
+}
+
+.fr-input--code {
+  letter-spacing: .07em;
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.fr-tabs__panel {
+  transition: none;
+}
+
+.fr-table .fr-link {
+  font-size: inherit;
+}
+
+.fr-table td, .fr-table th {
+  overflow: clip;
+  text-overflow: ellipsis;
+}
+
+.fr-table table {
+  display: table;
+}
+
+.fr-hint-text {
+  font-size: 0.95rem;
+}
+
+.fr-nav__link {
+  font-size: 1rem;
+}
+
+.fr-breadcrumb__link {
+  font-size: 0.9rem;
+}
+
+.fr-error-text {
+  font-size: 0.9rem;
+}
+
+:root {
+  --text-mention-grey: #585858; /* complies with AAA 7:1 contrast ratio */
+}
+
+code {
+  font-size: 1rem;
+  font-family: Marianne;
+  font-style: italic;
+  Background: var(--artwork-background-beige-gris-galet);
+}
+
+/* NOTE: this override is because of a bug in the DSFR:
+Issue: https://github.com/GouvernementFR/dsfr/issues/852 */
+
+.fr-checkbox-group input[type=checkbox]+label {
+  display: inline;
+}
