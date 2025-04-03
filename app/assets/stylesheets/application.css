@@ -16,3 +16,12 @@ body, html {
 .fr-header__logo {
   white-space: pre-line;
 }
+
+.startups-list {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.startups-list li {
+  margin-top: 2rem;
+}

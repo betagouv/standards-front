@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Startup, type: :model do
+RSpec.describe EspaceMembre::Startup, type: :model do
   subject(:startup) { FactoryBot.create(:startup, :in_investigation) }
 
   describe "factory" do

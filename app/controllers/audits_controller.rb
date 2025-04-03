@@ -1,5 +1,5 @@
 class AuditsController < ApplicationController
-  before_action :set_startup, :set_breadcrumbs
+  before_action :authenticate_user!, :set_startup, :set_breadcrumbs
 
   def show
   end

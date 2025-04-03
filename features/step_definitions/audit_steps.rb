@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 Sachantque("je suis {string} avec l'email {string}") do |name, email|
-  @user = FactoryBot.create(:user, fullname: name, primary_email: email)
-
-  @user.missions.create!(start: Time.zone.now, end: Time.now.next_week)
+  @user = FactoryBot.create(
+    :user,
+    :with_active_mission,
+    fullname: name,
+    primary_email: email
+  )
 end
 
 Given('je participe au produit {string}') do |name|
