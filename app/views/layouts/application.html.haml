@@ -1,0 +1,29 @@
+!!! 5
+%html{ 'data-fr-scheme' => 'system' }
+  %head
+    %title
+      = yield(:page_title) if content_for?(:page_title)
+      = " - " + t("global.service_name")
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag "application", "data-turbo-track" => "reload"
+    = stylesheet_link_tag "dsfr.min", "application-turbo-track" => "reload"
+    = stylesheet_link_tag "dsfr-overrides", "data-turbo-track" => "reload"
+
+    = javascript_include_tag "dsfr.module.min.js", type: 'module'
+    = javascript_include_tag "dsfr.nomodule.min.js", nomodule: true
+
+    = javascript_importmap_tags
+  %body
+    = render 'shared/skiplinks'
+    = render 'shared/header'
+
+    .fr-container
+      %main#main.fr-py-2w
+        = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
+        = render 'shared/flash'
+        = yield
+
+    = render 'shared/footer'
