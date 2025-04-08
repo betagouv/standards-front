@@ -5,8 +5,41 @@ class AuditsController < ApplicationController
   end
 
   def edit
-    @audit = Audit.find_or_create_by(startup: @startup) do |audit|
-      audit.data = Audit.latest
+    @audit = Audit.find_or_initialize_by(startup: @startup)
+
+    # Only initialize and save if it's a new record
+    if @audit.new_record?
+      @audit.initialize_data
+      @audit.save
+    end
+
+    @standards = Audit.latest
+  end
+
+  def new
+    @audit = Audit.new(startup: @startup)
+    @audit.initialize_data
+    @standards = Audit.latest
+  end
+
+  def update
+    @audit = Audit.find_or_initialize_by(startup: @startup)
+
+    # Initialize data if it's a new record
+    if @audit.new_record?
+      @audit.initialize_data
+      @audit.save
+    end
+
+    category = params[:category]
+    criterion_id = params[:criterion_id]
+    status = params["criterion_#{criterion_id}"]
+
+    @audit.update_criterion_status(category, criterion_id, status)
+
+    respond_to do |format|
+      format.json { render json: { success: true } }
+      format.html { redirect_to edit_startup_audit_path(@startup) }
     end
   end
 

@@ -1,0 +1,22 @@
+.fr-grid-row{"data-controller": "audit"}
+  .fr-col-12
+    = dsfr_tabs do |tabs|
+      - @standards.each do |domaine, items|
+        - tabs.with_tab(title: t("audits.categories.#{domaine}", default: domaine.humanize)) do
+          .fr-grid-row.fr-grid-row--gutters
+            - items.each_slice(2) do |items_pair|
+              - items_pair.each do |item|
+                .fr-col-md-6.fr-mb-4w.fr-px-2w
+                  .fr-p-4w.fr-background-alt--grey
+                    %h4.fr-mb-2w= item["title"]
+                    .fr-mb-3w
+                      :markdown
+                        #{item["description"]}
+
+                    - item["criteria"].each_with_index do |crit, idx|
+                      - criterion_id = "#{item['id']}_#{idx}"
+                      .criteria-form.fr-mb-2w
+                        = form_with url: startup_audit_path(@startup.ghid), method: :patch, data: { audit_target: "form" }, builder: Dsfr::FormBuilder do |f|
+                          = f.hidden_field :category, value: domaine
+                          = f.hidden_field :criterion_id, value: criterion_id
+                          = f.dsfr_check_box "criterion_#{criterion_id}", label: crit, checked: @audit.criterion_status(domaine, criterion_id), data: { action: "change->audit#submit" }

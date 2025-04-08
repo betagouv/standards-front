@@ -17,4 +17,7 @@
         - @startups.each do |startup|
           %li
             %h2= startup.name
-            = dsfr_link_to "Commencer l'audit", edit_startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
+            - if startup.audit.blank?
+              = dsfr_link_to "Commencer l'audit", new_startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
+            - else
+              = dsfr_link_to "Continuer l'audit", edit_startup_audit_path(startup.ghid), title: "Continuer l'audit pour la startup #{startup}"
