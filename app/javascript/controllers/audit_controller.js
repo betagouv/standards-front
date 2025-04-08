@@ -6,6 +6,8 @@ export default class extends Controller {
   connect() {
     // Check initial state of all question cards
     this.updateAllQuestionCardStates()
+    // Check initial state of all tabs
+    this.updateAllTabStates()
   }
 
   submit(event) {
@@ -33,6 +35,8 @@ export default class extends Controller {
       if (data.success) {
         // Update the question card state
         this.updateQuestionCardState(form)
+        // Update the tab state
+        this.updateTabState(form)
       }
     })
     .catch(error => {
@@ -62,6 +66,26 @@ export default class extends Controller {
     }
   }
 
+  updateTabState(form) {
+    // Find the tab panel containing this form
+    const tabPanel = form.closest('.fr-tabs__panel')
+    if (!tabPanel) return
+
+    // Find the tab button for this panel
+    const tabId = tabPanel.id
+    const tabButton = document.querySelector(`[aria-controls="${tabId}"]`)
+    if (!tabButton) return
+
+    // Check if all question cards in this tab panel are completed
+    const questionCards = tabPanel.querySelectorAll('.question-card')
+    const allCompleted = Array.from(questionCards).every(card => card.classList.contains('completed'))
+
+    // Update the tab button state
+    // Update the tab button state
+    tabButton.classList.toggle('fr-icon-checkbox-circle-fill', allCompleted)
+    tabButton.classList.toggle('fr-icon-checkbox-circle-line', !allCompleted)
+  }
+
   updateAllQuestionCardStates() {
     // Update all question cards on page load
     const questionCards = document.querySelectorAll('.question-card')
@@ -74,6 +98,25 @@ export default class extends Controller {
       } else {
         card.classList.remove('completed')
       }
+    })
+  }
+
+  updateAllTabStates() {
+    // Update all tabs on page load
+    const tabPanels = document.querySelectorAll('.fr-tabs__panel')
+    tabPanels.forEach(panel => {
+      // Find the tab button for this panel
+      const tabId = panel.id
+      const tabButton = document.querySelector(`[aria-controls="${tabId}"]`)
+      if (!tabButton) return
+
+      // Check if all question cards in this tab panel are completed
+      const questionCards = panel.querySelectorAll('.question-card')
+      const allCompleted = Array.from(questionCards).every(card => card.classList.contains('completed'))
+
+      // Update the tab button state
+      tabButton.classList.toggle('fr-icon-checkbox-circle-fill', allCompleted)
+      tabButton.classList.toggle('fr-icon-checkbox-circle-line', !allCompleted)
     })
   }
 }
