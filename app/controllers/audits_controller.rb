@@ -1,26 +1,15 @@
 class AuditsController < ApplicationController
   before_action :authenticate_user!, :set_startup, :set_breadcrumbs
+  before_action :load_latest_standards, only: %i[new edit]
 
-  def show
+  def new
+    @audit = Audit.new(startup: @startup).initialize_data
   end
 
   def edit
     @audit = Audit.find_or_initialize_by(startup: @startup)
-
-    # Only initialize and save if it's a new record
-    if @audit.new_record?
-      @audit.initialize_data
-      @audit.save
-    end
-
-    @standards = Audit.latest
   end
 
-  def new
-    @audit = Audit.new(startup: @startup)
-    @audit.initialize_data
-    @standards = Audit.latest
-  end
 
   def update
     @audit = Audit.find_or_initialize_by(startup: @startup)
@@ -52,5 +41,9 @@ class AuditsController < ApplicationController
   def set_breadcrumbs
     add_breadcrumb("Startups", startups_index_path)
     add_breadcrumb(@startup.name)
+  end
+
+  def load_latest_standards
+    @standards = Audit.latest
   end
 end
