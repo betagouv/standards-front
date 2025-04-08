@@ -25,3 +25,54 @@ body, html {
 .startups-list li {
   margin-top: 2rem;
 }
+
+.fr-background-alt--grey {
+  background-color: var(--background-alt-grey);
+  height: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-default-grey);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+/* Animation for when checkbox is checked */
+.fr-checkbox-group input[type="checkbox"]:checked + label,
+.fr-checkbox-group input[type="checkbox"]:checked ~ .fr-label,
+.fr-checkbox-group input[type="checkbox"]:checked ~ label .fr-label-text {
+  animation: pulse 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Question card states */
+.question-card {
+  transition: background-color 0.5s ease;
+}
+
+.question-card.completed {
+  background-color: #b8fec9 !important; /* Light green background */
+  animation: cardComplete 0.3s ease-in-out;
+}
+
+@keyframes cardComplete {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
