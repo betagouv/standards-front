@@ -12,7 +12,6 @@
                     .fr-mb-3w
                       :markdown
                         #{item["description"]}
-
                     - item["criteria"].each_with_index do |crit, idx|
                       - criterion_id = "#{item['id']}_#{idx}"
                       .criteria-form.fr-mb-2w
@@ -20,3 +19,11 @@
                           = f.hidden_field :category, value: domaine
                           = f.hidden_field :criterion_id, value: criterion_id
                           = f.dsfr_check_box "criterion_#{criterion_id}", label: crit, checked: @audit.criterion_status(domaine, criterion_id), data: { action: "change->audit#submit" }
+                    - unless item["resources"].empty?
+                      .resources.fr-mt-3w
+                        %h5 Ressources disponibles
+                        %ul
+                          - item["resources"].each do |link|
+                            %li
+                              :markdown
+                                #{link.squish}
