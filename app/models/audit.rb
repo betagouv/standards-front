@@ -5,7 +5,7 @@ class Audit < ApplicationRecord
              primary_key: :uuid
 
   def self.latest
-    @latest ||= YAML.safe_load_file(Rails.root.join("db/primary/standards-beta.yml"))
+    @latest ||= YAML.safe_load_file(Rails.root.join("config/standards-beta.yml"))
   end
 
   def initialize_data

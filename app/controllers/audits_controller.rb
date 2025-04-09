@@ -3,7 +3,7 @@ class AuditsController < ApplicationController
   before_action :load_latest_standards, only: %i[new edit]
 
   def new
-    @audit = Audit.new(startup: @startup).initialize_data
+    @audit = Audit.new(startup: @startup).tap(&:initialize_data)
   end
 
   def edit

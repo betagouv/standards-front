@@ -115,6 +115,7 @@ export default class extends Controller {
       const allCompleted = Array.from(questionCards).every(card => card.classList.contains('completed'))
 
       // Update the tab button state
+      tabButton.classList.toggle('fr-tabs__tab--icon-left', true)
       tabButton.classList.toggle('fr-icon-checkbox-circle-fill', allCompleted)
       tabButton.classList.toggle('fr-icon-checkbox-circle-line', !allCompleted)
     })
