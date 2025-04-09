@@ -1,6 +1,7 @@
 ---
-chaussures:
 - title: J'ai bien attaché mes chaussures
+  id: chaussures-lacets
+  category: chaussures
   description: |
     Pour une meilleure adhérance
   criteria:
@@ -8,24 +9,24 @@ chaussures:
     - label: Le lacet droit est attaché au lacet gauche
   resources:
     - https://gouvernment.fr
-  id: chaussures-lacets
 - title: J'ai bien mis mes chaussets
+  id: chaussettes-pareilles
+  category: chaussures
   description: |
     Pour un plus grand confort
   criteria:
-    - J'ai une chaussette sur mon pied gauche
-    - J'ai une chaussette sur mon pied droit
-    - Les deux chaussettes sont de la même famille
+  - label: J'ai une chaussette sur mon pied gauche
+  - label: J'ai une chaussette sur mon pied droit
+  - label: Les deux chaussettes sont de la même famille
   resources:
-    - https://gouvernment.fr
-  id: chaussettes-pareilles
-pantalons:
+  - https://gouvernment.fr
 - title: J'ai mis une ceinture
+  id: ceinture-attachée
+  category: pantalons
   description: |
-    Pour être bien accroché à la vie
+      Pour être bien accroché à la vie
   criteria:
-    - J'ai une ceinture
-    - Je peux respirer
+    - label: J'ai une ceinture
+    - label: Je peux respirer
   resources:
     - https://gouvernment.fr
-  id: ceinture-attachée

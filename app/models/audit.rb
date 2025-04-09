@@ -4,42 +4,17 @@ class Audit < ApplicationRecord
              foreign_key: :startup_uuid,
              primary_key: :uuid
 
-  def self.latest
+  attribute :questions, :questions
+
+  def self.latest_standards
     @latest ||= YAML.safe_load_file(ENV.fetch("BETA_STANDARDS_YML_PATH"))
   end
 
-  def initialize_data
-    # Only initialize if data is blank
-    return unless self.data.blank?
-
-    self.data = {}
-
-    standards = self.class.latest
-    standards.each do |category, items|
-      self.data[category] = {}
-      items.each do |item|
-        item["criteria"].each_with_index do |criterion, idx|
-          criterion_id = "#{item['id']}_#{idx}"
-          self.data[category][criterion_id] = { "status" => false }
-        end
-      end
-    end
-
-    # Don't save here, let the controller handle saving
+  def initialize_with_latest_standards
+    initialize_with(self.class.latest_standards)
   end
 
-  def update_criterion_status(category, criterion_id, status)
-    logger.debug "updating #{category}, with #{criterion_id} and status: #{status}"
-    self.data ||= {}
-    self.data[category] ||= {}
-    self.data[category][criterion_id] ||= {}
-    self.data[category][criterion_id]["status"] = status
-
-    save
-  end
-
-  def criterion_status(category, criterion_id)
-    return false unless data && data[category] && data[category][criterion_id]
-    data[category][criterion_id]["status"] == "1"
+  def initialize_with(standards)
+    self.tap { |s| s.questions = standards }
   end
 end
