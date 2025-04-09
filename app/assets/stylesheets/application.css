@@ -60,7 +60,7 @@ body, html {
 }
 
 .question-card.completed {
-  background-color: #b8fec9 !important; /* Light green background */
+  background-color: var(--background-contrast-green-emeraude) !important; /* Light green background */
   animation: cardComplete 0.3s ease-in-out;
 }
 
