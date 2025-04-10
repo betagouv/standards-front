@@ -2,13 +2,20 @@
 
 class AuditQuestionsType < ActiveRecord::Type::Json
   def cast(values = [])
-    values.map { |question| Audit::Question.new(**question.symbolize_keys) }
+    Array(values).map do |value|
+      case value
+      when Hash
+        Audit::Question.new(**value.symbolize_keys)
+      when Audit::Question
+        value
+      when NilClass
+        nil
+      end
+    end
   end
 
   def serialize(value)
-    return nil if value.blank?
-
-    value.map(&:serializable_hash).to_json
+    ActiveSupport::JSON.encode(value) unless value.nil?
   end
 
   def deserialize(value)
@@ -16,21 +23,4 @@ class AuditQuestionsType < ActiveRecord::Type::Json
 
     cast(data)
   end
-
-  def ==(other)
-    other.is_a?(AddressType)
-  end
-
-  # def deserialize(value: [])
-  #   # puts "_________> DESERIALIZE"
-  #   # value.each { |category| Audit::Category.new(category) }
-
-  # end
-
-  # def cast(value)
-  #   return nil unless value.is_a?(String)
-  #   return nil unless values.include?(value)
-
-  #   value
-  # end
 end

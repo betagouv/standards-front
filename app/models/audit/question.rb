@@ -1,8 +1,8 @@
 
 class Audit::Question
-  include ActiveModel::Serialization
   include ActiveModel::Model
   include ActiveModel::Attributes
+  include ActiveModel::Serialization
 
   attribute :id, :string
   attribute :category, :string
@@ -21,5 +21,23 @@ class Audit::Question
 
   def complete?
     criteria.all?(&:answered?)
+  end
+
+  # Override serializable_hash to properly handle criteria
+  def serializable_hash(options = nil)
+    options ||= {}
+
+    hash = super(options)
+
+    # Replace criteria with properly serialized criteria
+    if hash.key?('criteria')
+      hash['criteria'] = criteria.map(&:serializable_hash)
+    end
+
+    hash
+  end
+
+  def as_json(options = nil)
+    serializable_hash(options)
   end
 end

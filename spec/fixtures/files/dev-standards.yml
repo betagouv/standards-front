@@ -9,7 +9,7 @@
     - label: Le lacet droit est attaché au lacet gauche
   resources:
     - https://gouvernment.fr
-- title: J'ai bien mis mes chaussets
+- title: J'ai bien mis mes chaussettes
   id: chaussettes-pareilles
   category: chaussures
   description: |
