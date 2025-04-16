@@ -31,6 +31,9 @@ guard:
 debug:
 	$(DOCKER-RUN) web $(BUNDLE-EXEC) rdbg -nA web 12345
 
+rs:
+	$(DOCKER-RUN) web $(BUNDLE-EXEC) rails r 'Audit.delete_all'
+
 # runs a PSQL console to explore the Espace Membre database
 emdb:
 	$(DOCKER-RUN) -e PAGER= -e PGPASSWORD=dummy espace-membre-db psql $(ESPACE_MEMBRE_DB)
