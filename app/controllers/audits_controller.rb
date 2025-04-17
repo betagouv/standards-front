@@ -1,34 +1,27 @@
 class AuditsController < ApplicationController
   before_action :authenticate_user!, :set_startup, :set_breadcrumbs
-  before_action :load_latest_standards, only: %i[new edit]
 
   def new
-    @audit = Audit.new(startup: @startup).tap(&:initialize_data)
+    @audit = Audit.new(startup: @startup).tap(&:initialize_with_latest_standards).tap(&:save)
   end
 
   def edit
     @audit = Audit.find_or_initialize_by(startup: @startup)
   end
 
-
   def update
-    @audit = Audit.find_or_initialize_by(startup: @startup)
+    @audit = Audit.find_by!(startup: @startup)
 
-    # Initialize data if it's a new record
-    if @audit.new_record?
-      @audit.initialize_data
-      @audit.save
-    end
+    @audit.questions = merge_audit_params(@audit, audit_params)
 
-    category = params[:category]
-    criterion_id = params[:criterion_id]
-    status = params["criterion_#{criterion_id}"]
-
-    @audit.update_criterion_status(category, criterion_id, status)
-
-    respond_to do |format|
-      format.json { render json: { success: true } }
-      format.html { redirect_to edit_startup_audit_path(@startup) }
+    if @audit.save
+      respond_to do |format|
+        format.json { render json: { success: true } }
+        format.html { redirect_to edit_startup_audit_path(@startup.ghid) }
+      end
+    else
+      format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @audit.errors, status: :unprocessable_entity }
     end
   end
 
@@ -43,7 +36,23 @@ class AuditsController < ApplicationController
     add_breadcrumb(@startup.name)
   end
 
-  def load_latest_standards
-    @standards = Audit.latest
+  def audit_params
+    params
+      .require(:audit)
+      .permit(questions: {})
+  end
+
+  def merge_audit_params(audit, data)
+    question_params = data["questions"]
+
+    audit.questions.each do |question|
+      answer = question_params[question.id]
+
+      next if answer.blank?
+
+      answer["criteria"].each.with_index do |answer, index|
+        question.criteria[index].answer = answer
+      end
+    end
   end
 end

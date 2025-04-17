@@ -15,5 +15,14 @@ FactoryBot.define do
         user.missions.create!(start: Time.zone.now, end: Time.now.next_week)
       end
     end
+
+    trait :with_active_startup do
+      with_active_mission
+
+      after(:create) do |user|
+        user.missions.last.startups << create(:startup, :in_construction)
+        user.save
+      end
+    end
   end
 end
