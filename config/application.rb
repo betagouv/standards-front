@@ -33,6 +33,11 @@ module TechAudit
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    # Inform Zeitwerk about the types namespace
+    config.to_prepare do
+      Rails.autoloaders.main.ignore(Rails.root.join('lib/types'))
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
