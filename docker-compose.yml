@@ -11,11 +11,19 @@ services:
       RUBY_DEBUG_PORT: 12345
       ESPACE_MEMBRE_DB_URL: postgresql://postgres:dummy@espace-membre-db:5433
       BETA_STANDARDS_YML_PATH: "config/standards-beta.yml"
+      DATABASE_URL: postgresql://postgres:dummy@primary-db:5434
     volumes:
       - "./:/app"
       - "/app/node_modules"
     depends_on:
       - espace-membre-db
+  primary-db:
+    image: postgres:16
+    volumes:
+      - "./tmp/primary-db:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_PASSWORD: 'dummy'
+      PGPORT: 5434
   espace-membre-db:
     image: postgres
     volumes:

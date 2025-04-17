@@ -19,7 +19,7 @@ espace_membre_db_test: &emdb-test
   database: test
 
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   migrations_paths: db/primary
@@ -27,7 +27,7 @@ default: &default
 development:
   primary:
     <<: *default
-    database: storage/development.sqlite3
+    database: development
   emdb:
     <<: *emdb
 
@@ -37,27 +37,19 @@ development:
 test:
   primary:
     <<: *default
-    database: storage/test.sqlite3
+    database: test
   emdb:
     <<: *emdb-test
 
-
-
-# Store production database in the storage/ directory, which by default
-# is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   primary:
     <<: *default
-    database: storage/production.sqlite3
   cache:
     <<: *default
-    database: storage/production_cache.sqlite3
     migrations_paths: db/cache_migrate
   queue:
     <<: *default
-    database: storage/production_queue.sqlite3
     migrations_paths: db/queue_migrate
   cable:
     <<: *default
-    database: storage/production_cable.sqlite3
     migrations_paths: db/cable_migrate
