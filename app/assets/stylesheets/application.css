@@ -230,6 +230,16 @@ body, html {
   color: var(--text-title-blue-france);
 }
 
+/* Login page styles */
+.fr-icon--lg {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.fr-card--grey {
+  background-color: var(--background-alt-grey);
+}
+
 /* Standard section styling */
 .fr-list--no-bullet {
   list-style: none;
