@@ -226,12 +226,25 @@ body, html {
 }
 
 /* Standards page styling */
-.fr-accordion {
-  transition: background-color 0.2s ease;
+.fr-callout.fr-callout--blue-cumulus .fr-callout__title {
+  color: var(--text-title-blue-france);
 }
 
-.fr-accordion:hover {
-  background-color: rgba(0, 0, 145, 0.03);
+/* Standard section styling */
+.fr-list--no-bullet {
+  list-style: none;
+  padding-left: 0;
+}
+
+.fr-list--no-bullet li {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+}
+
+.fr-list--no-bullet .fr-icon-arrow-right-line {
+  margin-top: 0.2rem;
 }
 
 .startups-list {

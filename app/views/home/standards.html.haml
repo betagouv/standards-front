@@ -1,33 +1,30 @@
+- content_for(:page_title) { "Les standards" }
+
 .fr-container
-  .fr-grid-row.fr-mt-4w.fr-mb-4w
-    .fr-col
+  .fr-grid-row.fr-mt-5w.fr-mb-2w
+    .fr-col-12.fr-col-md-10.fr-col-lg-8
       %h1.fr-mb-3w Standards techniques
 
-  .fr-accordion-group
-    - @standards.each do |category, standards|
-      .fr-grid-row.fr-mb-3w
-        .fr-col
-          %h2.fr-text--lg.fr-mb-2w= category.capitalize
+      .fr-callout.fr-callout--blue-cumulus.fr-mb-5w
+        .fr-callout__title Un effort collectif
+        %p.fr-callout__text.fr-text--md
+          Ces standards techniques sont développés de manière collaborative et open source par la communauté beta.gouv.fr.
+          Ils évoluent continuellement pour intégrer les meilleures pratiques du développement numérique.
+        %p.fr-callout__text.fr-mt-3w
+          %a.fr-link.fr-icon-github-line.fr-link--icon-right{href: "https://github.com/betagouv/standards", target: "_blank"}
+            Contribuer sur GitHub
 
+  .fr-grid-row.fr-mb-5w
+    .fr-col-12
+      %p.fr-text.fr-mb-0 Les standards techniques suivants définissent les bonnes pratiques recommandées pour les services numériques développés par l'État.
+
+  - @standards.each do |category, standards|
+    .fr-grid-row.fr-mb-4w
+      .fr-col-12
+        %h2.fr-h3.fr-mb-3w= category.capitalize
+
+        %ul.fr-list--no-bullet
           - standards.each do |standard|
-            .fr-accordion
-              %h3.fr-accordion__title
-                = standard['title']
-              .fr-collapse
-                .fr-p-2w
-                  %p.fr-mb-2w= standard['description']
-                  
-                  %h4.fr-text--md.fr-mb-1w Critères
-                  %ul.fr-mb-2w
-                    - (standard['criteria'] || []).each do |criterion|
-                      - if criterion.is_a?(String)
-                        %li= criterion
-                      - else
-                        %li= criterion['label']
-                  
-                  - if standard['resources'].present?
-                    %h4.fr-text--md.fr-mb-1w Ressources
-                    %ul
-                      - standard['resources'].each do |resource|
-                        %li
-                          %a.fr-link{href: resource, target: "_blank"}= resource
+            %li.fr-mb-2w
+              %span.fr-icon-arrow-right-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
+              = standard.title

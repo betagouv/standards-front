@@ -5,7 +5,6 @@ class HomeController < ApplicationController
   end
 
   def standards
-    yaml_path = Rails.root.join('spec', 'fixtures', 'files', 'dev-standards.yml')
-    @standards = YAML.load_file(yaml_path)
+    @standards = Audit.new.tap(&:initialize_with_latest_standards).questions.group_by(&:category)
   end
 end
