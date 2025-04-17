@@ -1,13 +1,13 @@
-FROM ruby:3.4.3-slim
+FROM ruby:3.4.2-slim
 
 EXPOSE 3000
 
-RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y build-essential libpq-dev
+RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y build-essential libpq-dev libyaml-dev
 
 # do the bundle install in another directory with the strict essential
 # (Gemfile and Gemfile.lock) to allow further steps to be cached
 WORKDIR /bundle
-COPY Gemfile Gemfile.lock ./
+COPY .ruby-version Gemfile Gemfile.lock ./
 RUN bundle install
 
 # Move to the main folder
