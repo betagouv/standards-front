@@ -1,0 +1,33 @@
+.fr-container
+  .fr-grid-row.fr-mt-4w.fr-mb-4w
+    .fr-col
+      %h1.fr-mb-3w Standards techniques
+
+  .fr-accordion-group
+    - @standards.each do |category, standards|
+      .fr-grid-row.fr-mb-3w
+        .fr-col
+          %h2.fr-text--lg.fr-mb-2w= category.capitalize
+
+          - standards.each do |standard|
+            .fr-accordion
+              %h3.fr-accordion__title
+                = standard['title']
+              .fr-collapse
+                .fr-p-2w
+                  %p.fr-mb-2w= standard['description']
+                  
+                  %h4.fr-text--md.fr-mb-1w Critères
+                  %ul.fr-mb-2w
+                    - (standard['criteria'] || []).each do |criterion|
+                      - if criterion.is_a?(String)
+                        %li= criterion
+                      - else
+                        %li= criterion['label']
+                  
+                  - if standard['resources'].present?
+                    %h4.fr-text--md.fr-mb-1w Ressources
+                    %ul
+                      - standard['resources'].each do |resource|
+                        %li
+                          %a.fr-link{href: resource, target: "_blank"}= resource

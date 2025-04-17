@@ -19,10 +19,13 @@
     = render 'shared/skiplinks'
     = render 'shared/header'
 
-    .fr-container
-      %main#main.fr-py-2w
-        = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
-        = render 'shared/flash'
-        = yield
+    - if current_page?(root_path)
+      = yield
+    - else
+      .fr-container
+        %main#main.fr-py-2w
+          = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
+          = render 'shared/flash'
+          = yield
 
     = render 'shared/footer'

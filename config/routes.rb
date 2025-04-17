@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get "startups/index"
   get "startups/choix"
-  root to: "startups#index"
+  root to: "home#index"
+  get "standards", to: "home#standards"
 
   get "auth/:provider/callback", to: "sessions#create"
   get "/login", to: "sessions#new"
