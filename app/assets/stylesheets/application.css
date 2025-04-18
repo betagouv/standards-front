@@ -169,34 +169,6 @@ body, html {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Card styling */
-.fr-card__body {
-  padding: 1.5rem;
-}
-
-.fr-card__content {
-  padding: 0.5rem;
-}
-
-.fr-card--no-border {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.fr-card--no-border .fr-card__title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.fr-card--no-border .ri-xl {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-}
-
 .fr-text--md {
   font-size: 1.1rem;
   line-height: 1.5;

@@ -1,30 +1,29 @@
 - content_for(:page_title) { "Les standards" }
 
-.fr-container
-  .fr-grid-row.fr-mt-5w.fr-mb-2w
-    .fr-col-12.fr-col-md-10.fr-col-lg-8
-      %h1.fr-mb-3w Standards techniques
+.fr-grid-row.fr-pt-6w.fr-mb-2w
+  .fr-col-12.fr-col-md-10.fr-col-lg-8
+    %h1.fr-mb-3w Standards techniques
 
-      .fr-callout.fr-callout--blue-cumulus.fr-mb-5w
-        .fr-callout__title.fr-mb-2w Un effort collectif
-        %p.fr-callout__text.fr-text--md
-          Ces standards techniques sont développés de manière collaborative et open source par la communauté beta.gouv.fr.
-          Ils évoluent continuellement pour intégrer les meilleures pratiques du développement numérique.
-        %p.fr-callout__text.fr-mt-3w
-          %a.fr-link.fr-icon-github-line.fr-link--icon-right{href: "https://github.com/betagouv/standards", target: "_blank"}
-            Contribuer sur GitHub
+    .fr-callout.fr-callout--blue-cumulus.fr-mb-5w
+      .fr-callout__title.fr-mb-2w Un effort collectif
+      %p.fr-callout__text.fr-text--md
+        Ces standards techniques sont développés de manière collaborative et open source par la communauté beta.gouv.fr.
+        Ils évoluent continuellement pour intégrer les meilleures pratiques du développement numérique.
+      %p.fr-callout__text.fr-mt-3w
+        %a.fr-link.fr-icon-github-line.fr-link--icon-right{href: "https://github.com/betagouv/standards", target: "_blank"}
+          Contribuer sur GitHub
 
-  .fr-grid-row.fr-mb-5w
+.fr-grid-row.fr-mb-5w
+  .fr-col-12
+    %p.fr-text.fr-mb-0 Les standards techniques suivants définissent les bonnes pratiques recommandées pour les services numériques développés par l'État.
+
+- @standards.each do |category, standards|
+  .fr-grid-row.fr-mb-4w
     .fr-col-12
-      %p.fr-text.fr-mb-0 Les standards techniques suivants définissent les bonnes pratiques recommandées pour les services numériques développés par l'État.
+      %h2.fr-h3.fr-mb-3w= category.capitalize
 
-  - @standards.each do |category, standards|
-    .fr-grid-row.fr-mb-4w
-      .fr-col-12
-        %h2.fr-h3.fr-mb-3w= category.capitalize
-
-        %ul.fr-list--no-bullet
-          - standards.each do |standard|
-            %li.fr-mb-2w
-              %span.fr-icon-arrow-right-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-              = standard.title
+      %ul.fr-list--no-bullet
+        - standards.each do |standard|
+          %li.fr-mb-2w
+            %span.fr-icon-arrow-right-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
+            = standard.title
