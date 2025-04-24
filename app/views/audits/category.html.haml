@@ -8,13 +8,9 @@
     Vérifiez que vous répondez aux standards techniques ci-dessous pour la catégorie #{t("audits.categories.#{@category}", default: @category.humanize)}.
 
   .fr-mb-4w
-    .fr-progress
-      - category_percentage = 80
-      .fr-progress__bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => category_percentage, role: "progressbar"}
-        .fr-progress__bar-inner{style: "width: #{category_percentage}%"}
     %p.fr-text--sm.fr-mt-1w
-      %strong= 42
-      standards validés (#{category_percentage}%)
+      %strong= @audit.questions_for(@category).count(&:complete?)
+      standards validés (#{@audit.completion_stats[@category].to_i}%)
 
   %ol.fr-task-list__items
     - @audit.questions_for(@category).each_with_index do |question, index|

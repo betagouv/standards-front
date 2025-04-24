@@ -25,4 +25,14 @@ class Audit < ApplicationRecord
   def questions_for(category)
     grouped_questions[category]
   end
+
+  def total_completion
+    questions.count / questions.count(&:complete?)
+  end
+
+  def completion_stats
+    grouped_questions.map do |category, questions|
+      [ category, (questions.count(&:complete?).to_f / questions.count * 100).round(2) ]
+    end.to_h
+  end
 end

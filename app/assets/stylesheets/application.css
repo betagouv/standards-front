@@ -316,6 +316,10 @@ body, html {
   border-top: 1px solid var(--border-default-grey);
 }
 
+.question-resources li > p {
+  margin: 0.2rem 0;
+}
+
 .question-description {
 }
 

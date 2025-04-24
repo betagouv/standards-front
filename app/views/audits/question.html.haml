@@ -10,8 +10,8 @@
         #{@question.description}
 
     - if @question.resources.present?
-      .question-resources
-        %h2.question-section__title Ressources pour vous aider
+      .question-resources.fr-mb-4w
+        %h2.question-section__title Ressources pour approfondir
         %ul
           - @question.resources.each do |resource|
             %li
@@ -23,7 +23,8 @@
         = form.fields_for @question do |ff|
           = ff.hidden_field :id, value: @question.id
           %fieldset.fr-fieldset
-            %legend.question-section__title Critères à valider
+            %legend.fr-fieldset__legend--regular.fr-fieldset__legend
+              %h2.question-section__title Critères à valider
             - @question.criteria.each_with_index do |criterion, index|
               = ff.fields_for :criteria, index: index do |fff|
                 .fr-fieldset__element
