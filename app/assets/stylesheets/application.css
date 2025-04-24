@@ -316,18 +316,7 @@ body, html {
   border-top: 1px solid var(--border-default-grey);
 }
 
-.question-resources__title {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-title-grey);
-}
-
 .question-description {
-  padding-bottom: 0.5rem;
-  max-width: 42rem;
-  line-height: 1.6;
 }
 
 /* Task list styling (GOV.UK inspired) */

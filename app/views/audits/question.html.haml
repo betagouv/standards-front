@@ -11,23 +11,24 @@
 
     - if @question.resources.present?
       .question-resources
-        %h2.question-resources__title Ressources pour vous aider
+        %h2.question-section__title Ressources pour vous aider
         %ul
           - @question.resources.each do |resource|
             %li
-              - if resource.include?("[")
-                :markdown
-                  #{resource}
-              - else
-                %a.fr-link{href: resource, target: "_blank"}= resource
+              :markdown
+                #{resource}
 
     .question-section
-      %h2.question-section__title Critères à valider
-      %form
-        %fieldset
-          - @question.criteria.each_with_index do |criterion, index|
-            .fr-checkbox-group.fr-mb-3w
-              %input{type: "checkbox", id: "criterion-#{index}", name: "criterion"}
-              %label{for: "criterion-#{index}", class: "fr-text"}= criterion.label
+      = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
+        = form.fields_for @question do |ff|
+          = ff.hidden_field :id, value: @question.id
+          %fieldset.fr-fieldset
+            %legend.question-section__title Critères à valider
+            - @question.criteria.each_with_index do |criterion, index|
+              = ff.fields_for :criteria, index: index do |fff|
+                .fr-fieldset__element
+                  .fr-checkbox-group
+                    = fff.checkbox :answer, checked: criterion.answer == "1"
+                    = fff.label :answer, criterion.label, class: "fr-label"
 
-        %button.fr-btn.fr-btn--secondary.fr-mt-4w{type: "submit"} Enregistrer ma réponse
+        = form.submit "Enregistrer ma réponse", class: "fr-btn fr-btn--secondary "

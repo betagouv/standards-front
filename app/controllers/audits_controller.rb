@@ -1,30 +1,28 @@
 class AuditsController < ApplicationController
   before_action :authenticate_user!, :set_startup
 
-  before_action :set_audit, only: %i[edit category question]
+  before_action :set_audit, only: %i[edit update category question]
   before_action :set_category, only: %i[category question]
 
   before_action :set_startup_breadcrumb
   before_action :set_audit_breadcrumb, only: %i[edit category question]
   before_action :set_category_breadcrumb, only: %i[category question]
 
-  def new
-    @audit = Audit.new(startup: @startup).tap(&:initialize_with_latest_standards).tap(&:save)
-  end
-
   def edit
-    @audit = Audit.find_or_initialize_by(startup: @startup)
+    @audit = Audit.find_or_initialize_by(startup: @startup) do |audit|
+      audit.questions = Audit.latest_standards
+    end
   end
 
   def update
-    @audit = Audit.find_by!(startup: @startup)
+    merge_audit_params(@audit, audit_params)
 
-    @audit.questions = merge_audit_params(@audit, audit_params)
+    question = find_params_question(audit_params)
 
     if @audit.save
       respond_to do |format|
         format.json { render json: { success: true } }
-        format.html { redirect_to edit_startup_audit_path(@startup.ghid) }
+        format.html { redirect_to category_startup_audit_path(@startup.ghid, question.category) }
       end
     else
       format.html { render :edit, status: :unprocessable_entity }
@@ -71,20 +69,21 @@ class AuditsController < ApplicationController
   def audit_params
     params
       .require(:audit)
-      .permit(questions: {})
+      .permit(audit_question: [:id, criteria: {}])
   end
 
-  def merge_audit_params(audit, data)
-    question_params = data["questions"]
+  def merge_audit_params(audit, audit_params)
+    question = find_params_question(audit_params)
+    criteria = audit_params["audit_question"]["criteria"]
 
-    audit.questions.each do |question|
-      answer = question_params[question.id]
-
-      next if answer.blank?
-
-      answer["criteria"].each.with_index do |answer, index|
-        question.criteria[index].answer = answer
-      end
+    question.criteria.each_with_index do |criterion, index|
+      question.criteria[index].answer = criteria[index.to_s]["answer"]
     end
+  end
+
+  def find_params_question(audit_params)
+    @audit
+      .questions
+      .find { |question| question.id == audit_params["audit_question"]["id"] }
   end
 end
