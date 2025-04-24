@@ -288,3 +288,153 @@ body, html {
     transform: scale(1);
   }
 }
+
+/* Override DSFR default behavior to allow nested collapse components */
+.fr-collapse--expanded {
+  --collapse: 1;
+}
+
+/* Question detail page - simplified */
+.question-simple {
+  max-width: 48rem;
+}
+
+.question-simple fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-section {
+  margin: 2.5rem 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-default-grey);
+}
+
+.question-section__title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-title-grey);
+}
+
+.question-resources {
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-default-grey);
+}
+
+.question-resources__title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-title-grey);
+}
+
+.question-resources ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.question-description {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
+/* Task list styling (GOV.UK inspired) */
+.fr-task-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.fr-task-list__section {
+  margin-bottom: 2.5rem;
+  display: block;
+  position: relative;
+}
+
+.fr-task-list__item {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border-default-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.fr-task-list__category {
+  margin-top: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-default-grey);
+  color: var(--text-title-grey);
+  font-weight: 700;
+}
+
+.fr-task-list__category-count {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-mention-grey);
+  margin-left: 0.5rem;
+}
+
+.fr-task-list__item:first-child {
+  border-top: none;
+}
+
+.fr-task-list__section-number {
+  display: inline-block;
+  min-width: 2.5rem;
+  margin-right: 0.75rem;
+  color: var(--text-mention-grey);
+  font-weight: 700;
+}
+
+.fr-task-list__items {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 0 2rem 0;
+}
+
+.fr-task-list__items + .fr-task-list__items {
+  margin-top: 0;
+}
+
+.fr-task-list__items--full-width {
+  padding-left: 0;
+}
+
+.fr-task-list__item-name {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.fr-task-list__status {
+  min-width: 6rem;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Status badges for task list */
+.fr-task-list__status.fr-badge--success {
+  background-color: var(--background-action-high-green-emeraude);
+  color: var(--text-inverted-green-emeraude);
+}
+
+.fr-task-list__status.fr-badge--info {
+  background-color: var(--background-action-high-blue-france);
+  color: var(--text-inverted-blue-france);
+}
+
+.fr-task-list__status.fr-badge {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  width: 6rem;
+  display: inline-block;
+}

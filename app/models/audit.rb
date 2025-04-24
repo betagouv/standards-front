@@ -17,4 +17,12 @@ class Audit < ApplicationRecord
   def initialize_with(standards)
     self.tap { |s| s.questions = standards }
   end
+
+  def grouped_questions
+    questions.group_by(&:category)
+  end
+
+  def questions_for(category)
+    grouped_questions[category]
+  end
 end

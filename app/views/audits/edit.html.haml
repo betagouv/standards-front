@@ -1,5 +1,30 @@
 - content_for(:page_title) { "Audit pour #{@startup.name}" }
 
-%h1 Audit pour #{@startup.name}
+.fr-grid-row.fr-pt-6w.fr-mb-2w
+  .fr-col-12.fr-col-md-10.fr-col-lg-8
+    %h1 Audit pour #{@startup.name}
 
-= render 'form'
+%p.fr-text--lead.fr-mb-4w
+  Choisissez une catégorie pour valider les standards techniques de votre produit.
+
+.fr-progress
+  .fr-progress__bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => @progress_percentage, role: "progressbar"}
+    .fr-progress__bar-inner{style: "width: #{@progress_percentage}%"}
+
+%p.fr-text--sm.fr-mt-1w
+  %strong= "#{@total_completed}/#{@total_criteria}"
+  standards validés (#{@progress_percentage}%)
+
+.fr-col-md-8
+  %ol.fr-task-list__items
+  - @audit.grouped_questions.each_with_index do |(category, questions), index|
+    - progress = progress_for_category(@audit, category)
+    %li.fr-task-list__item
+      %span.fr-task-list__item-name
+        %span.fr-task-list__section-number= "#{index + 1}."
+        = link_to category_startup_audit_path(@startup.ghid, category), class: "fr-link fr-link--md" do
+          = t("audits.categories.#{category}", default: category.humanize)
+          %span.fr-text--sm.fr-text--regular.fr-ml-1w
+            = "(#{progress[:completed]}/#{progress[:total]})"
+      %span.fr-task-list__status
+        %span.fr-badge{class: "fr-badge--success"}= "Nice"

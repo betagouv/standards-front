@@ -1,5 +1,12 @@
 class AuditsController < ApplicationController
-  before_action :authenticate_user!, :set_startup, :set_breadcrumbs
+  before_action :authenticate_user!, :set_startup
+
+  before_action :set_audit, only: %i[edit category question]
+  before_action :set_category, only: %i[category question]
+
+  before_action :set_startup_breadcrumb
+  before_action :set_audit_breadcrumb, only: %i[edit category question]
+  before_action :set_category_breadcrumb, only: %i[category question]
 
   def new
     @audit = Audit.new(startup: @startup).tap(&:initialize_with_latest_standards).tap(&:save)
@@ -25,15 +32,40 @@ class AuditsController < ApplicationController
     end
   end
 
+  def category
+  end
+
+  def question
+    @category = params[:category]
+    @question = @audit.questions.find { |q| q.id == params[:question] }
+
+    add_breadcrumb(@question.title.truncate(42))
+  end
+
   private
 
   def set_startup
     @startup = current_user.active_startups.find_by(ghid: params["startup_ghid"])
   end
 
-  def set_breadcrumbs
+  def set_audit
+    @audit = @startup.audit
+  end
+
+  def set_category
+    @category = params[:category]
+  end
+
+  def set_audit_breadcrumb
+    add_breadcrumb("Audit du produit #{@startup.name}", edit_startup_audit_path(@startup.ghid))
+  end
+
+  def set_startup_breadcrumb
     add_breadcrumb("Startups", startups_index_path)
-    add_breadcrumb(@startup.name)
+  end
+
+  def set_category_breadcrumb
+    add_breadcrumb(@category.humanize, category_startup_audit_path(@startup.ghid, @category))
   end
 
   def audit_params

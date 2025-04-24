@@ -1,0 +1,40 @@
+- content_for(:page_title) { @question.title }
+
+.fr-container.fr-pt-6w
+  .fr-grid-row
+    .fr-col-12
+      = dsfr_link_to "Retour à la catégorie #{t("audits.categories.#{@category}", default: @category.humanize)}", category_startup_audit_path(@startup.ghid, @category), icon_left: "arrow-left-line"
+
+      .fr-mt-4w
+        %span.fr-badge.fr-badge--sm= t("audits.categories.#{@category}", default: @category.humanize)
+        %h1.fr-mt-2w.fr-mb-4w= @question.title
+
+  .fr-grid-row
+    .fr-col-12.fr-col-md-8
+      .question-simple
+        .question-description.fr-text--lg
+          :markdown
+            #{@question.description}
+
+        - if @question.resources.present?
+          .question-resources
+            %h2.question-resources__title Ressources pour vous aider
+            %ul.fr-text
+              - @question.resources.each do |resource|
+                %li.fr-mb-3w{style: "list-style: none"}
+                  - if resource.include?("[")
+                    :markdown
+                      #{resource}
+                  - else
+                    %a.fr-link{href: resource, target: "_blank"}= resource
+
+        .question-section
+          %h2.question-section__title Critères à valider
+          %form
+            %fieldset
+              - @question.criteria.each_with_index do |criterion, index|
+                .fr-checkbox-group.fr-mb-3w
+                  %input{type: "checkbox", id: "criterion-#{index}", name: "criterion"}
+                  %label{for: "criterion-#{index}", class: "fr-text"}= criterion.label
+
+            %button.fr-btn.fr-btn--secondary.fr-mt-4w{type: "submit"} Enregistrer ma réponse
