@@ -294,11 +294,6 @@ body, html {
   --collapse: 1;
 }
 
-/* Question detail page - simplified */
-.question-simple {
-  max-width: 48rem;
-}
-
 .question-simple fieldset {
   border: none;
   padding: 0;
@@ -306,21 +301,17 @@ body, html {
 }
 
 .question-section {
-  margin: 2.5rem 0;
   padding-top: 0.5rem;
   border-top: 1px solid var(--border-default-grey);
 }
 
 .question-section__title {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-title-grey);
 }
 
 .question-resources {
-  margin-top: 3rem;
   padding-top: 0.5rem;
   border-top: 1px solid var(--border-default-grey);
 }
@@ -333,13 +324,7 @@ body, html {
   color: var(--text-title-grey);
 }
 
-.question-resources ul {
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
 .question-description {
-  margin-bottom: 2.5rem;
   padding-bottom: 0.5rem;
   max-width: 42rem;
   line-height: 1.6;

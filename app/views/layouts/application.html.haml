@@ -15,6 +15,7 @@
 
     = javascript_importmap_tags
     = javascript_include_tag "dsfr.module.min.js"
+    %meta{name: "turbo-refresh-scroll", content: "preserve"}
   %body
     = render 'shared/skiplinks'
     = render 'shared/header'
@@ -26,6 +27,6 @@
         %main#main.fr-py-2w
           = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
           = render 'shared/flash'
-          = yield
+          .fr-mt-3w= yield
 
     = render 'shared/footer'
