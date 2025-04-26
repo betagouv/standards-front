@@ -9,9 +9,9 @@ services:
       RUBY_DEBUG_NO_RELINE: true
       RUBY_DEBUG_HOST: 0.0.0.0
       RUBY_DEBUG_PORT: 12345
+      DATABASE_URL: postgresql://postgres:dummy@primary-db:5434
       ESPACE_MEMBRE_DB_URL: postgresql://postgres:dummy@espace-membre-db:5433
       BETA_STANDARDS_YML_PATH: "spec/fixtures/files/dev-standards.yml"
-      DATABASE_URL: postgresql://postgres:dummy@primary-db:5434
     volumes:
       - "./:/app"
       - "/app/node_modules"
