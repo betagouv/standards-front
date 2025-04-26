@@ -301,19 +301,12 @@ body, html {
 }
 
 .question-section {
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--border-default-grey);
 }
 
 .question-section__title {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-title-grey);
-}
-
-.question-resources {
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--border-default-grey);
 }
 
 .question-resources li > p {

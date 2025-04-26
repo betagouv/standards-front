@@ -10,7 +10,8 @@
         #{@question.description}
 
     - if @question.resources.present?
-      .question-resources.fr-mb-4w
+      %hr
+      .question-resources
         %h2.question-section__title Ressources pour approfondir
         %ul
           - @question.resources.each do |resource|
@@ -18,6 +19,7 @@
               :markdown
                 #{resource}
 
+    %hr
     .question-section
       = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
         = form.fields_for @question do |ff|
@@ -32,4 +34,4 @@
                     = fff.checkbox :answer, checked: criterion.answer == "1"
                     = fff.label :answer, criterion.label, class: "fr-label"
 
-        = form.submit "Enregistrer ma réponse", class: "fr-btn fr-btn--secondary "
+        = form.submit "Enregistrer ma réponse", class: "fr-btn fr-btn--secondary fr-my-2w"
