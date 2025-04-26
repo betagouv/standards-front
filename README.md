@@ -4,7 +4,7 @@ Cette application permet aux équipes de la communauté Beta de
 s'auditer sur leur respect des [standards de
 Beta](https://github.com/betagouv/standards).
 
-![Capture d’écran 2025-04-26 à 11 38 53](https://github.com/user-attachments/assets/aa9a665e-a394-436f-8dd8-3944440db3d5)
+![Capture d’écran 2025-04-26 à 11 41 00](https://github.com/user-attachments/assets/f0c33e98-1272-43c2-82ca-8ddbd163ba2e)
 
 ## Fonctionnement
 
