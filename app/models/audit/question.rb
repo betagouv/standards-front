@@ -30,8 +30,8 @@ class Audit::Question
     hash = super(options)
 
     # Replace criteria with properly serialized criteria
-    if hash.key?('criteria')
-      hash['criteria'] = criteria.map(&:serializable_hash)
+    if hash.key?("criteria")
+      hash["criteria"] = criteria.map(&:serializable_hash)
     end
 
     hash

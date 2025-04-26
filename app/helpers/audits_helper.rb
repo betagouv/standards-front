@@ -37,7 +37,7 @@ module AuditsHelper
     pc        = completed / total
 
     safe_join([
-      content_tag(:strong) { "#{completed}/#{total}" % [completed, total] },
+      content_tag(:strong) { "#{completed}/#{total}" % [ completed, total ] },
       " standards validés (#{pc}%)"
     ])
   end

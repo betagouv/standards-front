@@ -11,11 +11,11 @@ class AuditsController < ApplicationController
   def edit
     @audit = Audit.find_or_initialize_by(startup: @startup) do |audit|
       audit.questions = Audit.latest_standards
-    end
+    end.tap(&:save)
   end
 
   def update
-    merge_audit_params(@audit, audit_params)
+    update_audit_with_params(@audit, audit_params)
 
     question = find_params_question(audit_params)
 
@@ -69,10 +69,10 @@ class AuditsController < ApplicationController
   def audit_params
     params
       .require(:audit)
-      .permit(audit_question: [:id, criteria: {}])
+      .permit(audit_question: [ :id, criteria: {} ])
   end
 
-  def merge_audit_params(audit, audit_params)
+  def update_audit_with_params(audit, audit_params)
     question = find_params_question(audit_params)
     criteria = audit_params["audit_question"]["criteria"]
 
