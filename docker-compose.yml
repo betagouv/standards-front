@@ -17,6 +17,7 @@ services:
       - "/app/node_modules"
     depends_on:
       - espace-membre-db
+      - primary-db
   primary-db:
     image: postgres:16
     volumes:

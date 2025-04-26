@@ -16,7 +16,7 @@ espace_membre_db_test: &emdb-test
   <<: *emdb
   replica: false
   database_tasks: true
-  database: test
+  database: test_emdb
 
 default: &default
   adapter: postgresql

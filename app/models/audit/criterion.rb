@@ -9,4 +9,8 @@ class Audit::Criterion
   def answered?
     answer.present?
   end
+
+  def inspect
+   "<Audit::Criterion label: #{label}, answer: #{answer}>"
+  end
 end
