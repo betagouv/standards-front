@@ -1,32 +1,82 @@
 ---
-- title: J'ai bien attaché mes chaussures
-  id: chaussures-lacets
-  category: chaussures
+- title: Au moins trois oeufs frais
+  id: oeufs
+  category: ingrédients
   description: |
-    Pour une meilleure adhérance
+    La recette des oeufs brouillés repose essentiellement sur la
+    présence des oeufs
   criteria:
-    - label: Le lacet gauche est attaché au lacet droit
-    - label: Le lacet droit est attaché au lacet gauche
+    - label: au moins trois oeufs sont disponibles
+    - label: les oeufs sont frais
   resources:
     - https://gouvernment.fr
-- title: J'ai bien mis mes chaussettes
-  id: chaussettes-pareilles
-  category: chaussures
+- title: Du beurre
+  id: beurre
+  category: ingrédients
   description: |
-    Pour un plus grand confort
+    Essentiel pour un revêtement optimal
   criteria:
-  - label: J'ai une chaussette sur mon pied gauche
-  - label: J'ai une chaussette sur mon pied droit
-  - label: Les deux chaussettes sont de la même famille
+    - label: 10gr de beurre
   resources:
   - https://gouvernment.fr
-- title: J'ai mis une ceinture
-  id: ceinture-attachée
-  category: pantalons
+- title: Faire chauffer la casserolle tranquille
+  id: casserolle
+  category: préparation
   description: |
-      Pour être bien accroché à la vie
+    Démarrer la casserolle mais tranquille, feu modéré
   criteria:
-    - label: J'ai une ceinture
-    - label: Je peux respirer
+    - label: La casserolle est chaude
+    - label: La casserolle n'est pas trop chaude
   resources:
     - https://gouvernment.fr
+- title: Mettre les oeufs pêle-mêle dedans
+  id: insertion-oeufs
+  category: préparation
+  description: |
+    Mettre les oeufs dans la casserolle chaude (mais pas
+    trop). Commencer à les tournoyer tranquille dans la casserolle en
+    brisant les jaunes avec une spatule ou une cuillère en
+    bois. Méditer sur ce mouvement concentrique.
+  criteria:
+    - label: Les oeufs sont dans la casserolle
+    - label: Les oeufs tournoient
+- title: Faire du suspense à la casserolle
+  id: suspense-casserolle
+  category: préparation
+  description: |
+    Lors de la cuisson, enlevez et remettez constamment la casserolle
+    sur le feu : le but est d'éviter de montrer trop en température et
+    de ralentir la cuisson. Enlevez la casserolle, continuez à tournez
+    vos oeufs pendant plusieurs secondes, remettez, etc. Si il vous
+    reste une main de libre, l'occasion est idéale pour déclencher un
+    grillage de pain.
+  criteria:
+    - label: La casserolle est sur le feu
+    - label: La casserolle est hors du feu
+  id: enlevement-oeufs
+  category: préparation
+  description: |
+    Enlevez les oeufs au moment où il semble qu'il leur faudrait une
+    minute de plus : le reste de la cuisson se finira tout seul.
+  criteria:
+    - label: Les oeufs n'ont pas l'air complètement cuits
+    - label: Les oeufs sont hors du feu
+- title: Assaissonnez correctement
+  id: assaissonnement
+  category: dégustation
+  description: |
+    Salez, poivrez, et rajoutez de l'huile de truffe pour bien montrer
+    votre raffinement à tout épreuve.
+  criteria:
+    - label: Les oeufs sont salés
+    - label: Les oeufs sont poivrés
+    - label: Les oeufs sont bénis d'un filet d'huile (de truffe de préférence)
+- title: Servez les oeufs
+  id: service
+  category: dégustation
+  description: |
+    Servez dans une petite assiette sur une tartine ou deux, goûtez au
+    plaisirs simples de la vie.
+  criteria:
+    - label: Les oeufs sont bons
+    - label: La vie est belle
