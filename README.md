@@ -24,6 +24,9 @@ startups actives.
 Si une startup n'apparaît pas, le membre doit corriger sa fiche sur
 l'Espace-Membre.
 
+Dans l'environnement de test, se réferrer à [la documentation de
+ProConnect sur les identifiants de test](https://partenaires.proconnect.gouv.fr/docs/fournisseur-service/identifiants-fi-test).
+
 ### 3. Remplissage de l'audit
 
 L'audit est composé de questions groupées en catégories, avec des

@@ -8,7 +8,7 @@
 .fr-grid-row.fr-grid-row--gutters
   .fr-col-12.fr-col-md-8.fr-col-lg-7
     %h2.fr-h2.fr-mb-3w Comment fonctionne l'audit technique ?
-    
+
     %p.fr-text--lg.fr-mb-4w
       L'outil d'audit permet aux équipes de mesurer leur conformité aux standards techniques
       et d'améliorer progressivement la qualité de leurs services numériques.
@@ -33,14 +33,17 @@
       Répondez aux questions pour chaque standard technique. L'audit est sauvegardé automatiquement
       et vous pourrez y revenir à tout moment pour le compléter ou le mettre à jour.
 
-    = button_to "Se connecter via ProConnect", "/auth/developer", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg"
+    - unless Rails.env.production?
+      = button_to "Se connecter en mode développeur", "/auth/developer", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg fr-mb-3w"
+
+    = button_to "Se connecter via ProConnect", "/auth/proconnect", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg"
 
   .fr-col-12.fr-col-md-4.fr-col-lg-4
     .fr-alert.fr-alert--warning
       %h3.fr-alert__title Outil en développement
       %p
-        Cet outil est actuellement en phase de développement actif. Les fonctionnalités 
-        et les standards techniques peuvent évoluer au fil du temps pour mieux répondre 
+        Cet outil est actuellement en phase de développement actif. Les fonctionnalités
+        et les standards techniques peuvent évoluer au fil du temps pour mieux répondre
         aux besoins des équipes.
       %p.fr-mb-0
         Votre retour d'expérience nous est précieux pour améliorer cet outil.
