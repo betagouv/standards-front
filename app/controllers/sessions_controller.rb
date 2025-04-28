@@ -18,4 +18,10 @@ class SessionsController < ApplicationController
       redirect_to root_path, alert: "Something went wrong"
     end
   end
+
+  def destroy
+    session.delete :user
+
+    redirect_to root_path, notice: "Déconnexion terminée."
+  end
 end
