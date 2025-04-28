@@ -6,9 +6,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user_info = request.env["omniauth.auth"]
+    email = request.env["omniauth.auth"]
+             .info
+             .email
 
-    if user = EspaceMembre::User.find_by(primary_email: user_info["uid"])
+    if user = EspaceMembre::User.find_by(primary_email: email)
       session[:user] = user.uuid
 
       redirect_to startups_index_path, notice: "Connexion réussie pour #{user.fullname}."
