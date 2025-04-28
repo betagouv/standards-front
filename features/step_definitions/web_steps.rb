@@ -64,6 +64,10 @@ Quand("je remplis le champ {string} avec {string} dans les champs de {string}") 
   end
 end
 
+Quand("je coche {string}") do |label|
+  check label
+end
+
 Quand("je décoche {string}") do |label|
   uncheck label
 end
@@ -131,7 +135,7 @@ end
 Alors("le fil d'Ariane affiche {string}") do |path|
   components = path.split(" > ")
 
-  breadcrumbs = page.all("nav.fr-breadcrumb li").map(&:text)
+  breadcrumbs = page.all("nav.fr-breadcrumb li").map(&:text)w
 
   expect(breadcrumbs).to eq components
 end
