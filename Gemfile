@@ -22,6 +22,7 @@ gem "jbuilder"
 gem "omniauth"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth_openid_connect"
+gem "openid_connect", github: "freesteph/openid_connect"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
