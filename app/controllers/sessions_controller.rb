@@ -10,18 +10,30 @@ class SessionsController < ApplicationController
              .info
              .email
 
-    if user = EspaceMembre::User.find_by(primary_email: email)
-      session[:user] = user.uuid
+    session[:user] = EspaceMembre::User.find_by!(primary_email: email).uuid
 
-      redirect_to startups_index_path, notice: "Connexion réussie pour #{user.fullname}."
+    redirect_to startups_index_path, notice: "Connexion réussie pour #{email}"
+  rescue ActiveRecord::RecordNotFound
+    if proconnect_setup?
+      redirect_to "/auth/proconnect/logout"
     else
-      redirect_to root_path, alert: "Something went wrong"
+      redirect_to index_path, alert: "Impossible de trouver un compte correspondant à cet email"
     end
   end
 
   def destroy
     session.delete :user
 
-    redirect_to root_path, notice: "Déconnexion terminée."
+    if proconnect_setup?
+      redirect_to "/auth/proconnect/logout"
+    else
+      redirect_to root_path, notice: "Déconnexion terminée."
+    end
+  end
+
+  private
+
+  def proconnect_setup?
+    session.keys.any? { |k| k.include?("omniauth.pc") }
   end
 end
