@@ -1,21 +1,3 @@
-GIT
-  remote: https://github.com/freesteph/openid_connect.git
-  revision: 5931525a4937584ce932b59e13e6e62bacecf115
-  specs:
-    openid_connect (2.3.1)
-      activemodel
-      attr_required (>= 1.0.0)
-      email_validator
-      faraday (~> 2.0)
-      faraday-follow_redirects
-      json-jwt (>= 1.16)
-      mail
-      rack-oauth2 (~> 2.2)
-      swd (~> 2.0)
-      tzinfo
-      validate_url
-      webfinger (~> 2.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -94,7 +76,6 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     aes_key_wrap (1.1.0)
     ast (2.4.3)
-    attr_required (1.0.2)
     base64 (0.2.0)
     bcrypt_pbkdf (1.1.1)
     benchmark (0.4.0)
@@ -173,8 +154,6 @@ GEM
       html-attributes-utils (~> 1)
       view_component (~> 3)
     ed25519 (1.3.0)
-    email_validator (2.2.4)
-      activemodel
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
@@ -333,12 +312,13 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
+    omniauth-proconnect (0.2.0)
+      faraday (~> 2)
+      json-jwt (~> 1)
+      omniauth
     omniauth-rails_csrf_protection (1.0.2)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
-    omniauth_openid_connect (0.8.0)
-      omniauth (>= 1.9, < 3)
-      openid_connect (~> 2.2)
     ostruct (0.6.1)
     parallel (1.27.0)
     parser (3.3.8.0)
@@ -366,13 +346,6 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.13)
-    rack-oauth2 (2.2.1)
-      activesupport
-      attr_required
-      faraday (~> 2.0)
-      faraday-follow_redirects
-      json-jwt (>= 1.11.0)
-      rack (>= 2.1.0)
     rack-protection (4.1.1)
       base64 (>= 0.1.0)
       logger (>= 1.6.0)
@@ -522,11 +495,6 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
-    swd (2.0.3)
-      activesupport (>= 3)
-      attr_required (>= 0.0.5)
-      faraday (~> 2.0)
-      faraday-follow_redirects
     sys-uname (1.3.1)
       ffi (~> 1.1)
     temple (0.10.3)
@@ -547,9 +515,6 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.3)
     useragent (0.16.11)
-    validate_url (1.0.15)
-      activemodel (>= 3.0.0)
-      public_suffix
     view_component (3.22.0)
       activesupport (>= 5.2.0, < 8.1)
       concurrent-ruby (= 1.3.4)
@@ -559,10 +524,6 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webfinger (2.1.3)
-      activesupport
-      faraday (~> 2.0)
-      faraday-follow_redirects
     websocket-driver (0.7.7)
       base64
       websocket-extensions (>= 0.1.0)
@@ -603,9 +564,8 @@ DEPENDENCIES
   kamal
   kramdown
   omniauth
+  omniauth-proconnect
   omniauth-rails_csrf_protection
-  omniauth_openid_connect
-  openid_connect!
   pg
   propshaft
   puma (>= 5.0)

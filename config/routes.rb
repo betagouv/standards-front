@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "standards", to: "home#standards"
 
   get "auth/:provider/callback", to: "sessions#create"
+  get "auth/:provider/logout", to: "sessions#destroy"
 
   get "/login", to: "sessions#new"
   delete "/logout", to: "sessions#destroy"

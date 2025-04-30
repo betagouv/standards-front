@@ -33,10 +33,10 @@
       Répondez aux questions pour chaque standard technique. L'audit est sauvegardé automatiquement
       et vous pourrez y revenir à tout moment pour le compléter ou le mettre à jour.
 
-    - unless Rails.env.production?
+    - if true
+      = render 'proconnect_button'
+    - else
       = button_to "Se connecter en mode développeur", "/auth/developer", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg fr-mb-3w"
-
-    = button_to "Se connecter via ProConnect", "/auth/proconnect", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg"
 
   .fr-col-12.fr-col-md-4.fr-col-lg-4
     .fr-alert.fr-alert--warning
