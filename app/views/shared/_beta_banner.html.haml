@@ -1,0 +1,8 @@
+.beta-banner
+  .fr-container
+    .fr-grid-row
+      .fr-col-12.fr-py-2w
+        = dsfr_badge(status: :warning, html_attributes: { classes: ['fr-badge--no-icon'] }) { "Beta" }
+        ce service est nouveau –
+        = link_to "faites-nous part de vos retours", "https://github.com/betagouv/auto-audit/issues/"
+        pour nous aider à l'améliorer.
