@@ -15,7 +15,14 @@ class Audit < ApplicationRecord
   end
 
   def initialize_with(standards)
-    self.tap { |s| s.questions = standards }
+    self.tap do |a|
+      a.questions =
+        if selected_categories.any?
+          standards.filter { |q| q["category"].in?(selected_categories) }
+        else
+          standards
+        end
+    end
   end
 
   def grouped_questions
@@ -34,5 +41,11 @@ class Audit < ApplicationRecord
     grouped_questions.map do |category, questions|
       [ category, (questions.count(&:complete?).to_f / questions.count * 100).round(2) ]
     end.to_h
+  end
+
+  private
+
+  def selected_categories
+    ENV.fetch("BETA_STANDARDS_SELECTED_CATEGORIES").split(",")
   end
 end

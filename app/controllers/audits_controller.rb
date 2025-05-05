@@ -10,7 +10,7 @@ class AuditsController < ApplicationController
 
   def edit
     @audit = Audit.find_or_initialize_by(startup: @startup) do |audit|
-      audit.questions = Audit.latest_standards
+      audit.initialize_with_latest_standards
     end.tap(&:save)
   end
 
