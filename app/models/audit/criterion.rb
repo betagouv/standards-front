@@ -10,6 +10,10 @@ class Audit::Criterion
     answer.present?
   end
 
+  def done?
+    answer == "1"
+  end
+
   def inspect
    "<Audit::Criterion label: #{label}, answer: #{answer}>"
   end

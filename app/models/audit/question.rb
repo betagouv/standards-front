@@ -20,7 +20,7 @@ class Audit::Question
   end
 
   def complete?
-    criteria.all?(&:answered?)
+    criteria.all?(&:done?)
   end
 
   # Override serializable_hash to properly handle criteria
