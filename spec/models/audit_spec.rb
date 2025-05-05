@@ -29,15 +29,40 @@ RSpec.describe Audit, type: :model do
       YAML.safe_load <<~YAML
           - id: question-1
             category: test
-            description: foobar
+            description: first test question
             criteria:
             - label: one
             - label: two
+          - id: question-2
+            category: other
+            description: second test question
+            criteria:
+            - label: three
       YAML
     end
 
     it "is deserialized with Audit::Question" do
       expect(audit.questions.first).to be_a Audit::Question
+    end
+
+    context "when the BETA_STANDARDS_SELECTED_CATEGORIES env variable is set" do
+      before do
+        allow(ENV).to receive(:fetch).with("BETA_STANDARDS_SELECTED_CATEGORIES").and_return "other,foobar, category"
+      end
+
+      it "only selects the category indicated" do
+        expect(audit.questions.map(&:id)).to contain_exactly "question-2"
+      end
+    end
+
+    context "when the BETA_STANDARDS_SELECTED_CATEGORIES env variable is not set" do
+      before do
+        allow(ENV).to receive(:fetch).with("BETA_STANDARDS_SELECTED_CATEGORIES").and_return ""
+      end
+
+      it "doesn't filter the categories" do
+        expect(audit.questions.map(&:id)).to contain_exactly "question-1", "question-2"
+      end
     end
   end
 end
