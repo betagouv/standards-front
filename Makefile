@@ -2,8 +2,10 @@ DOCKER-RUN = docker compose run -e TERM --rm --entrypoint=""
 BUNDLE-EXEC = bundle exec
 
 ESPACE_MEMBRE_DB = postgresql://postgres:dummy@espace-membre-db:5433
+DATABASE_URL     = postgresql://postgres:dummy@primary-db:5434
 
-.PHONY: %
+.PHONY: db
+
 build:
 	docker compose build
 
@@ -34,6 +36,10 @@ debug:
 rs:
 	$(DOCKER-RUN) web $(BUNDLE-EXEC) rails r 'Audit.delete_all'
 
+# runs a PSQL console to explore the DB
+db:
+	$(DOCKER-RUN) -e PAGER= primary-db psql $(DATABASE_URL)
+
 # runs a PSQL console to explore the Espace Membre database
 emdb:
-	$(DOCKER-RUN) -e PAGER= -e PGPASSWORD=dummy espace-membre-db psql $(ESPACE_MEMBRE_DB)
+	$(DOCKER-RUN) -e PAGER= espace-membre-db psql $(ESPACE_MEMBRE_DB)
