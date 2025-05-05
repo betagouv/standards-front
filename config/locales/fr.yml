@@ -1,8 +1,8 @@
 fr:
   global:
     sponsor: "Direction\nInterministérielle\ndu Numérique"
-    service_name: "Bretelles"
-    service_description: "Gardez votre produit bien dans ses baskets"
+    service_name: "Auto-audit"
+    service_description: "Aidez votre produit à adhérer aux standards de Beta"
   audits:
     categories:
       accessibilité: "Accessibilité"
