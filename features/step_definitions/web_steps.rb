@@ -135,7 +135,7 @@ end
 Alors("le fil d'Ariane affiche {string}") do |path|
   components = path.split(" > ")
 
-  breadcrumbs = page.all("nav.fr-breadcrumb li").map(&:text)w
+  breadcrumbs = page.all("nav.fr-breadcrumb li").map(&:text)
 
   expect(breadcrumbs).to eq components
 end

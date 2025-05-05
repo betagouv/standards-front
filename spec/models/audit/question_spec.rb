@@ -26,14 +26,18 @@ describe Audit::Question do
   end
 
   describe "complete?" do
-    context "when all the critera answers are non blank" do
-      before { question.criteria.each { |c| c.answer = "foo" } }
+    context "when all the critera answers are done" do
+      before do
+        question.criteria.each do |criteria|
+          allow(criteria).to receive(:done?).and_return true
+        end
+      end
 
       it { is_expected.to be_complete }
     end
 
     context "when some criteria is unanswered" do
-      before { question.criteria.sample.answer = "foo" }
+      before { allow(question.criteria.sample).to receive(:done?).and_return true }
 
       it { is_expected.to_not be_complete }
     end

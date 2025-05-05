@@ -22,7 +22,9 @@ end
 Quand('je me connecte') do
   hash = {
     provider: 'developer',
-    uid: @user.primary_email
+    info: {
+      email: @user.primary_email
+    }
   }
 
   OmniAuth.config.mock_auth[:developer] = OmniAuth::AuthHash.new(hash)
@@ -30,7 +32,7 @@ Quand('je me connecte') do
   steps %(
     Quand je me rends sur la page d'accueil
     Et que je clique sur "Évaluez vos services"
-    Et que je clique sur "Se connecter via ProConnect"
+    Et que je clique sur "Se connecter"
   )
 end
 

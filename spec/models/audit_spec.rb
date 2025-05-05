@@ -22,7 +22,7 @@ RSpec.describe Audit, type: :model do
     end
   end
 
-  fdescribe "initialize_data" do
+  describe "initialize_data" do
     subject(:audit) { Audit.new.initialize_with(standards) }
 
     let(:standards) do
@@ -35,23 +35,6 @@ RSpec.describe Audit, type: :model do
             - label: two
       YAML
     end
-
-    # it "copies the JSON over and adds answer to each criteria" do
-    #   expected = YAML.safe_load(
-    #     <<~YAML
-    #     category:
-    #       - id: question-1
-    #         description: foobar
-    #         criteria:
-    #         - label: one
-    #           answer:
-    #         - label: two
-    #           answer:
-    #   YAML
-    #   )
-
-    #   expect(audit.data).to eq expected
-    # end
 
     it "is deserialized with Audit::Question" do
       expect(audit.questions.first).to be_a Audit::Question

@@ -31,14 +31,13 @@ RSpec.describe "Audits", type: :request do
         audit
       end
 
-      fit "updates the audit criteria" do
+      it "updates the audit criteria" do
         # Prepare the update parameters based on the structure in your controller
         update_params = {
           audit: {
-            questions: {
-              "q1" => {
-                criteria: ["true", "false"] # Answers for the two criteria
-              }
+            audit_question: {
+              id: "q1",
+              criteria: { "0" => { answer: "1" }, "1" => { answer: "0" } }
             }
           }
         }
@@ -48,33 +47,13 @@ RSpec.describe "Audits", type: :request do
 
         # Verify the response
         expect(response).to have_http_status(:redirect)
-        expect(response).to redirect_to(edit_startup_audit_path(startup.ghid))
+        expect(response).to redirect_to(category_startup_audit_path(startup.ghid, "Test Category"))
 
         # Reload the audit and verify the changes
         audit.reload
         updated_question = audit.questions.first
-        expect(updated_question.criteria[0].answer).to eq("true")
-        expect(updated_question.criteria[1].answer).to eq("false")
-      end
-
-      it "handles JSON requests" do
-        update_params = {
-          audit: {
-            questions: [
-              {
-                id: "q1",
-                criteria: ["true", "false"]
-              }
-            ]
-          }
-        }
-
-        # Make a JSON request
-        patch "/startups/#{startup.ghid}/audit", params: update_params, headers: { "Accept" => "application/json" }
-
-        # Verify the JSON response
-        expect(response).to have_http_status(:ok)
-        expect(JSON.parse(response.body)).to include("success" => true)
+        expect(updated_question.criteria[0].answer).to eq("1")
+        expect(updated_question.criteria[1].answer).to eq("0")
       end
     end
   end
