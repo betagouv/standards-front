@@ -23,6 +23,10 @@ class Audit::Question
     criteria.all?(&:done?)
   end
 
+  def partially_complete?
+    criteria.any?(&:done?)
+  end
+
   # Override serializable_hash to properly handle criteria
   def serializable_hash(options = nil)
     options ||= {}
