@@ -21,7 +21,7 @@ Bundler.require(*Rails.groups)
 module TechAudit
   class Application < Rails::Application
     config.i18n.default_locale = :fr
-    config.i18n.fallbacks = [:en]
+    config.i18n.fallbacks = [ :en ]
 
     require "dsfr/components"
     require "dsfr/assets"
@@ -35,7 +35,7 @@ module TechAudit
 
     # Inform Zeitwerk about the types namespace
     config.to_prepare do
-      Rails.autoloaders.main.ignore(Rails.root.join('lib/types'))
+      Rails.autoloaders.main.ignore(Rails.root.join("lib/types"))
     end
 
     # Configuration for the application, engines, and railties goes here.

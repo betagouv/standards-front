@@ -23,10 +23,10 @@ RSpec.describe "Audits", type: :request do
         # Add criteria to the question
         criterion1 = Audit::Criterion.new(label: "Criterion 1")
         criterion2 = Audit::Criterion.new(label: "Criterion 2")
-        question.instance_variable_set(:@criteria, [criterion1, criterion2])
+        question.instance_variable_set(:@criteria, [ criterion1, criterion2 ])
 
         # Set the questions on the audit
-        audit.questions = [question]
+        audit.questions = [ question ]
         audit.save!
         audit
       end
