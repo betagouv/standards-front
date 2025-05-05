@@ -36,11 +36,11 @@ module AuditsHelper
   def total_completion_label(audit)
     completed = audit.questions.count(&:complete?)
     total     = audit.questions.count
-    pc        = completed / total
+    pc        = (completed.to_f / total) * 100
 
     safe_join([
       content_tag(:strong) { "#{completed}/#{total}" % [ completed, total ] },
-      " standards validés (#{pc}%)"
+      " standards validés (#{pc.to_i}%)"
     ])
   end
 end
