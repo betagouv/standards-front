@@ -22,7 +22,7 @@ body, html {
   position: relative;
   background: linear-gradient(135deg, #d8d8ff 0%, #f0f0ff 25%, #ffffff 50%, #fff0f0 75%, #ffd8d8 100%);
   background-size: 400% 400%;
-  padding: 5rem 0;
+  padding: 4rem 0;
   overflow: hidden;
   animation: gradientAnimation 12s ease infinite;
   margin-bottom: 0;

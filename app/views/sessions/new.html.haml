@@ -1,52 +1,14 @@
 
 - content_for(:page_title) { "Audit technique" }
 
-.fr-grid-row.fr-pt-3w.fr-mb-2w
+.fr-grid-row.fr-pt-3w
   .fr-col-12.fr-col-md-10.fr-col-lg-8
     %h1.fr-mb-2w Audit technique des startups d'État
 
     %p.fr-text--lg.fr-mb-5w
       Évaluez la conformité technique de vos services numériques aux standards recommandés par beta.gouv.fr.
 
-.fr-grid-row.fr-grid-row--gutters
-  .fr-col-12.fr-col-md-8.fr-col-lg-7
-    %h2.fr-h2.fr-mb-3w Comment fonctionne l'audit technique ?
-
-    %p.fr-text--lg.fr-mb-4w
-      L'outil d'audit permet aux équipes de mesurer leur conformité aux standards techniques
-      et d'améliorer progressivement la qualité de leurs services numériques.
-    %h3.fr-h5.fr-mb-1w
-      %span.fr-icon-account-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-      Connexion via ProConnect
-    %p.fr-mb-3w
-      La connexion s'effectue via ProConnect, le système d'authentification sécurisé de l'État.
-      Vos identifiants vous donnent accès aux startups dont vous êtes membre.
-
-    %h3.fr-h5.fr-mb-1w
-      %span.fr-icon-home-4-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-      Sélection de votre startup
-    %p.fr-mb-3w
-      Une fois connecté, vous verrez la liste des startups pour lesquelles vous êtes référencé
-      dans l'Espace Membre. Sélectionnez celle que vous souhaitez auditer.
-
-    %h3.fr-h5.fr-mb-1w
-      %span.fr-icon-checkbox-circle-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-      Réalisation de l'audit technique
-    %p.fr-mb-4w
-      Répondez aux questions pour chaque standard technique. L'audit est sauvegardé automatiquement
-      et vous pourrez y revenir à tout moment pour le compléter ou le mettre à jour.
-
-    - if true
+    - if Rails.env.production?
       = render 'proconnect_button'
     - else
       = button_to "Se connecter en mode développeur", "/auth/developer", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg fr-mb-3w"
-
-  .fr-col-12.fr-col-md-4.fr-col-lg-4
-    .fr-alert.fr-alert--warning
-      %h3.fr-alert__title Outil en développement
-      %p
-        Cet outil est actuellement en phase de développement actif. Les fonctionnalités
-        et les standards techniques peuvent évoluer au fil du temps pour mieux répondre
-        aux besoins des équipes.
-      %p.fr-mb-0
-        Votre retour d'expérience nous est précieux pour améliorer cet outil.
