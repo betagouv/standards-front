@@ -23,7 +23,7 @@
   id: casserolle
   category: préparation
   description: |
-    Démarrer la casserolle mais tranquille, feu modéré
+    Démarrer la casserolle mais tranquille, feu modéré. Pas **trop** chaude !
   criteria:
     - label: La casserolle est chaude
     - label: La casserolle n'est pas trop chaude
