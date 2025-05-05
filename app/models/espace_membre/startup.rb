@@ -5,7 +5,10 @@ module EspaceMembre
     validates :ghid, presence: true
 
     has_many :phases
+
     has_and_belongs_to_many :missions, join_table: "missions_startups"
+
+    has_many :users, through: :missions
 
     has_one :audit, foreign_key: :startup_uuid
 
