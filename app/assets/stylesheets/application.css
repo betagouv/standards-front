@@ -28,6 +28,12 @@ body, html {
   box-shadow: 0 3px 12px rgba(0, 0, 145, 0.15), 0 3px 12px rgba(145, 0, 0, 0.15);
 }
 
+@media (prefers-reduced-motion) {
+  .fr-banner.fr-banner--blue-cumulus {
+    animation: none;
+  }
+}
+
 /* Wave effect */
 .fr-banner.fr-banner--blue-cumulus::before {
   content: "";
