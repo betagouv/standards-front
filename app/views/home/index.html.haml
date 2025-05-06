@@ -1,24 +1,24 @@
 - content_for(:page_title) { "Accueil" }
 
-.fr-banner.fr-banner--blue-cumulus
+.fr-banner.fr-banner--blue-cumulus.fr-py-5w
   .fr-container
-    .fr-banner__content
-      %h1.fr-banner__title.fr-text--blue-france Standards techniques pour les startups d'État
-      %p.fr-banner__desc.fr-text--lg.fr-text--blue-france
-        Des standards techniques pour garantir la qualité, la maintenabilité
-        %br
-        et la sécurité des produits numériques de l'État.
+    .fr-grid-row.fr-grid-row--gutters
+      .fr-col-12.fr-col-md-8.fr-col-lg-7
+        .fr-banner__content
+          %h1.fr-banner__title.fr-text--blue-france Auto-audit des services numériques
+          %p.fr-banner__desc.fr-text--lg.fr-text--blue-france
+            Évaluez votre service numérique selon les standards techniques de Beta pour améliorer sa qualité, sa maintenabilité et sa sécurité.
 
-      %p= dsfr_link_to "Évaluer votre service", startups_path, icon_left: "checkbox-circle-line"
+          %p= dsfr_link_to "Commencer à auditer vos services", startups_path, icon_left: "arrow-right-line"
 
 .fr-container.fr-py-5w
   .fr-grid-row.fr-grid-row--gutters.fr-mb-5w
     .fr-col-12.fr-col-md-8.fr-col-lg-7
-      %h2.fr-h2.fr-mb-3w Pourquoi des standards techniques ?
+      %h2.fr-h2.fr-mb-3w Pourquoi réaliser un auto-audit ?
 
       .fr-text
         %p.fr-text--md.fr-mb-4w
-          Les standards techniques ont été conçus pour accompagner les équipes dans le développement de services numériques performants et durables.
+          L'auto-audit permet d'évaluer votre service selon des standards techniques conçus par la communauté Beta pour accompagner les équipes dans le développement de services numériques performants et durables.
 
       .fr-grid-row.fr-grid-row--gutters
         .fr-col-12.fr-col-md-6.fr-mb-3w
