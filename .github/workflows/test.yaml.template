@@ -1,7 +1,11 @@
-# until https://github.com/actions/runner/issues/1182 is fixed, use a
-# fully-featured template file to use anchors and the fun stuff on
-# this very repetitive CI syntax. Generate the actual file with
-# `./regenerate.sh`.
+# NOTE: do not edit test.yaml directly, use test.yaml.template:
+#
+# GitHub Actions do not support YAML anchors[1] but the action
+# workflows are quite repetitive so instead we edit the template file,
+# and run an actual, fully-featured YAML parser on it with the
+# ./regenerate.sh script to generate the final file.
+#
+# [1]: https://github.com/actions/runner/issues/1182
 
 name: ci
 

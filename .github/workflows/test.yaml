@@ -1,7 +1,11 @@
-# until https://github.com/actions/runner/issues/1182 is fixed, use a
-# fully-featured template file to use anchors and the fun stuff on
-# this very repetitive CI syntax. Generate the actual file with
-# `./regenerate.sh`.
+# NOTE: do not edit test.yaml directly, use test.yaml.template:
+#
+# GitHub Actions do not support YAML anchors[1] but the action
+# workflows are quite repetitive so instead we edit the template file,
+# and run an actual, fully-featured YAML parser on it with the
+# ./regenerate.sh script to generate the final file.
+#
+# [1]: https://github.com/actions/runner/issues/1182
 
 name: ci
 on:
@@ -16,7 +20,7 @@ jobs:
         with:
           submodules: true
       - uses: docker/setup-buildx-action@v3
-      - uses: docker/build-push-action@v6
+      - uses: docker/build-push-action@v5
         with:
           context: .
           file: Dockerfile.dev
@@ -113,7 +117,7 @@ jobs:
         ports: ["5433:5432"]
         env:
           POSTGRES_PASSWORD: dummy
-          POSTGRES_DB: test_emdb
+          POSTGRES_DB: emdb_test
         options: >-
           --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
