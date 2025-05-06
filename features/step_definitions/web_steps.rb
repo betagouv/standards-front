@@ -24,6 +24,10 @@ Alors("la page contient un bouton {string}") do |label|
   expect(page).to have_button(label)
 end
 
+Alors("la page ne contient pas de bouton {string}") do |title|
+  expect(page).not_to have_button(title)
+end
+
 Alors("la page contient un bouton {string} désactivé") do |content|
   expect(page).to have_button(content, disabled: true)
 end

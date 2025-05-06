@@ -27,6 +27,14 @@ class Audit::Question
     criteria.any?(&:done?)
   end
 
+  def answered?
+    criteria.any?(&:answered?)
+  end
+
+  def unanswered?
+    !answered?
+  end
+
   # Override serializable_hash to properly handle criteria
   def serializable_hash(options = nil)
     options ||= {}

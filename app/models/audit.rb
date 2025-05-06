@@ -43,6 +43,12 @@ class Audit < ApplicationRecord
     end.to_h
   end
 
+  def next_question_after(question)
+    others = questions_for(question.category) - [ question ]
+
+    others.find(&:unanswered?)
+  end
+
   private
 
   def selected_categories

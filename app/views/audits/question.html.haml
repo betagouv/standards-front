@@ -41,4 +41,9 @@
                       = fff.checkbox :answer, checked: criterion.answer == "1"
                       = fff.label :answer, criterion.label, class: "fr-label"
 
-          = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
+          - if @next_question.blank?
+            = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
+          - else
+            %ul.fr-btns-group.fr-btns-group--inline
+              = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
+              = form.submit "Enregistrer ma réponse et passer à la question suivante", class: "fr-btn fr-btn--secondary fr-my-2w"

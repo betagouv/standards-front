@@ -40,7 +40,7 @@ Quand('je complète le standard {string}') do |nom|
   steps %(
     Quand je clique sur "#{nom}"
     Et que je coche toutes les cases
-    Et que je clique sur "Enregistrer"
+    Et que je clique sur "Enregistrer ma réponse"
   )
 end
 

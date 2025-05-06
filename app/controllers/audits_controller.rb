@@ -2,7 +2,7 @@ class AuditsController < ApplicationController
   before_action :authenticate_user!, :set_startup
 
   before_action :set_audit, only: %i[edit update category question]
-  before_action :set_category, only: %i[category question]
+  before_action :set_category, only: %i[category update question]
 
   before_action :set_startup_breadcrumb
   before_action :set_audit_breadcrumb, only: %i[edit category question]
@@ -17,30 +17,43 @@ class AuditsController < ApplicationController
   def update
     update_audit_with_params(@audit, audit_params)
 
-    question = find_params_question(audit_params)
-
     if @audit.save
-      respond_to do |format|
-        format.json { render json: { success: true } }
-        format.html { redirect_to category_startup_audit_path(@startup.ghid, question.category) }
-      end
+      redirect_to after_update_path
     else
-      format.html { render :edit, status: :unprocessable_entity }
-      format.json { render json: @audit.errors, status: :unprocessable_entity }
+      render :edit, status: :unprocessable_entity
     end
   end
 
-  def category
-  end
+  def category; end
 
   def question
-    @category = params[:category]
     @question = @audit.questions.find { |q| q.id == params[:question] }
+    @next_question = find_next_question(@question)
 
     add_breadcrumb(@question.title.truncate(42))
   end
 
   private
+
+  def after_update_path
+    question = find_params_question(audit_params)
+
+    if goto_next_question?
+      next_question = find_next_question(question)
+
+      category_question_startup_audit_path(@startup.ghid, next_question.category, next_question.id)
+    else
+      category_startup_audit_path(@startup.ghid, question.category)
+    end
+  end
+
+  def goto_next_question?
+    params[:commit] =~ /suivante/
+  end
+
+  def find_next_question(question)
+    @audit.next_question_after(question)
+  end
 
   def set_startup
     @startup = current_user.active_startups.find_by(ghid: params["startup_ghid"])
