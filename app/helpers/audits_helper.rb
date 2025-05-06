@@ -1,8 +1,5 @@
 module AuditsHelper
-  COMPLETE_KEY = {
-    true: :completed,
-    false: :incomplete
-  }
+  STANDARDS_REPO = "https://github.com/betagouv/standards".freeze
 
   def task_list_status(question)
     content_tag(:span, class: "fr-task-list__status") do
@@ -42,5 +39,22 @@ module AuditsHelper
       content_tag(:strong) { "#{completed}/#{total}" % [ completed, total ] },
       " standards validés (#{pc.to_i}%)"
     ])
+  end
+
+  def standard_feedback_link(question)
+    path = "#{question.category}/#{question.id}"
+
+    URI("#{STANDARDS_REPO}/issues/new").tap do |endpoint|
+      endpoint.query = URI.encode_www_form(
+        labels: "feedback",
+        title: t("feedback.title", title: question.title.truncate(42)),
+        body: t(
+          "feedback.body",
+          title: question.title,
+          path: path,
+          link: "#{STANDARDS_REPO}/blob/main/#{path}.md"
+        )
+      )
+    end.to_s
   end
 end

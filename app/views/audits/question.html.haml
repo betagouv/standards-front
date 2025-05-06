@@ -1,36 +1,44 @@
 - content_for(:page_title) { @question.title }
 
-.fr-col-12.fr-col-md-7
-  %h1.fr-mt-2w.fr-mb-4w= @question.title
+.fr-grid-row
+  .fr-col-12.fr-col-md-7.question-page
+    %h1.fr-mt-2w.fr-mb-4w= @question.title
 
-  .question-simple
-    .question-description
-      :markdown
-        #{h(@question.description)}
-
-    - if @question.resources.present?
-      %hr
-      .question-resources
-        %h2.question-section__title Ressources pour approfondir
-        %ul
-          - @question.resources.each do |resource|
-            %li
-              :markdown
-                #{resource}
+    = dsfr_highlight(size: :sm, html_attributes: { class: "fr-highlight--brown-caramel"}) do
+      Vous pouvez nous aider à améliorer la compréhension de ce standard et de ses critères en nous
+      = dsfr_link_to "partageant vos retours dessus", standard_feedback_link(@question), target: "_blank"
+      \.
 
     %hr
-    .question-section
-      = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
-        = form.fields_for @question do |ff|
-          = ff.hidden_field :id, value: @question.id
-          %fieldset.fr-fieldset
-            %legend.fr-fieldset__legend--regular.fr-fieldset__legend
-              %h2.question-section__title Critères à valider
-            - @question.criteria.each_with_index do |criterion, index|
-              = ff.fields_for :criteria, index: index do |fff|
-                .fr-fieldset__element
-                  .fr-checkbox-group
-                    = fff.checkbox :answer, checked: criterion.answer == "1"
-                    = fff.label :answer, criterion.label, class: "fr-label"
 
-        = form.submit "Enregistrer ma réponse", class: "fr-btn fr-btn--secondary fr-my-2w"
+    .question-simple
+      .question-description
+        :markdown
+          #{h(@question.description)}
+
+      - if @question.resources.present?
+        %hr
+        .question-resources
+          %h2.question-section__title Ressources pour approfondir
+          %ul
+            - @question.resources.each do |resource|
+              %li
+                :markdown
+                  #{resource}
+
+      %hr
+      .question-section
+        = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
+          = form.fields_for @question do |ff|
+            = ff.hidden_field :id, value: @question.id
+            %fieldset.fr-fieldset
+              %legend.fr-fieldset__legend--regular.fr-fieldset__legend
+                %h2.question-section__title Critères à valider
+              - @question.criteria.each_with_index do |criterion, index|
+                = ff.fields_for :criteria, index: index do |fff|
+                  .fr-fieldset__element
+                    .fr-checkbox-group
+                      = fff.checkbox :answer, checked: criterion.answer == "1"
+                      = fff.label :answer, criterion.label, class: "fr-label"
+
+          = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
