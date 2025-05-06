@@ -29,8 +29,8 @@ body, html {
 }
 
 @media (prefers-reduced-motion) {
-  .fr-banner.fr-banner--blue-cumulus {
-    animation: none;
+  .fr-banner.fr-banner--blue-cumulus, .fr-banner.fr-banner--blue-cumulus::before, .fr-banner--blue-cumulus::after {
+    animation: none !important;
   }
 }
 
