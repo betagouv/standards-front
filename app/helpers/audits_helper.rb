@@ -57,4 +57,18 @@ module AuditsHelper
       )
     end.to_s
   end
+
+  def questionize(label)
+    prefix = if label.chr.in?(%w[A E I O U])
+               "Est-ce qu'"
+             else
+               "Est-ce que "
+             end
+
+    [prefix,
+     label.chr.downcase,
+     label.slice(1..-2),
+     " ?"
+    ].join
+  end
 end

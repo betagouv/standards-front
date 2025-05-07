@@ -25,8 +25,22 @@ describe Audit::Criterion do
     it { is_expected.to be_answered }
   end
 
-  context "when the answer value is 1" do
-    before { criterion.answer = "1" }
+  context "when the answer value is 'no'" do
+    before { criterion.answer = "no" }
+
+    it { is_expected.not_to be_done }
+    it { is_expected.to be_answered }
+  end
+
+  context "when the answer value is 'yes'" do
+    before { criterion.answer = "yes" }
+
+    it { is_expected.to be_done }
+    it { is_expected.to be_answered }
+  end
+
+  context "when the answer value is 'na'" do
+    before { criterion.answer = "na" }
 
     it { is_expected.to be_done }
     it { is_expected.to be_answered }

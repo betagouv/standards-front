@@ -3,6 +3,12 @@ class Audit::Criterion
   include ActiveModel::Attributes
   include ActiveModel::Serialization
 
+  ANSWERS = {
+    "yes" => "Oui",
+    "no" => "Non",
+    "na" => "Non applicable"
+  }
+
   attribute :label, :string
   attribute :answer, :string, default: nil
 
@@ -11,7 +17,7 @@ class Audit::Criterion
   end
 
   def done?
-    answer == "1"
+    ["yes", "na"].include?(answer)
   end
 
   def inspect

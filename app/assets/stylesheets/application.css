@@ -415,3 +415,29 @@ body, html {
   vertical-align: bottom;
   margin-right: 0.5rem;
 }
+
+.question-section {
+  margin-bottom: 1rem;
+}
+
+.question-section li {
+  margin-top: 1rem;
+}
+
+.fr-fieldset {
+  border: 1px dotted var(--background-action-high-blue-cumulus);
+  padding-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.fr-fieldset__legend {
+  width: auto;
+  background-color: var(--background-action-low-blue-cumulus);
+  margin-bottom: 0.3rem;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.fr-fieldset__element {
+  margin-left: 0.5rem;
+}
