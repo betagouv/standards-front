@@ -10,15 +10,15 @@
           #{h(@question.description)}
 
       - if @question.resources.present?
-        .question-resources
-          %p.fr-h6 Ressources pour approfondir
+        .question-resources.fr-mb-3w
+          %p.fr-h6.fr-mb-2w Ressources pour approfondir
           %ul
             - @question.resources.each do |resource|
-              %li
+              %li.fr-mb-1w
                 :markdown
                   #{resource}
 
-    .question-section
+    .question-section.fr-pt-2w
       %h2 Critères à vérifier
 
       = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|

@@ -306,12 +306,8 @@ body, html {
 }
 
 .question-resources li > p {
-  margin: 0.2rem 0;
+  margin-bottom: initial;
 }
-
-.question-description {
-}
-
 /* Task list styling (GOV.UK inspired) */
 .fr-task-list {
   list-style-type: none;
