@@ -86,6 +86,8 @@ class AuditsController < ApplicationController
   end
 
   def update_audit_with_params(audit, audit_params)
+    return if audit_params["audit_question"]["criteria"].nil?
+
     question = find_params_question(audit_params)
     criteria = audit_params["audit_question"]["criteria"]
 

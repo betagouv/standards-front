@@ -24,6 +24,12 @@ Fonctionnalité: Remplissage de l'audit
     Quand je clique sur "Enregistrer ma réponse et passer à la question suivante"
     Alors le titre de la page contient "Du beurre"
 
+  Scénario: Je ne suis pas obligé de répondre aux critères
+    Sachant que je clique sur "Ingrédients"
+    Et que je clique sur "Au moins trois oeufs frais"
+    Quand je clique sur "Enregistrer ma réponse et passer à la question suivante"
+    Alors le titre de la page contient "Du beurre"
+
   Scénario: Lorsque j'ai déjà vu toutes les questions
     Sachant que je clique sur "Ingrédients"
     Et que je complète le standard "Du beurre"
