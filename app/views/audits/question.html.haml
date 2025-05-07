@@ -18,7 +18,6 @@
                 :markdown
                   #{resource}
 
-    %hr
     .question-section
       %h2 Critères à vérifier
 
@@ -44,3 +43,10 @@
             %ul.fr-btns-group.fr-btns-group--inline
               = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
               = form.submit "Enregistrer ma réponse et passer à la question suivante", class: "fr-btn fr-btn--secondary fr-my-2w"
+
+    %hr
+
+    = dsfr_highlight(html_attributes: { class: "fr-highlight--brown-caramel"}) do
+      Vous pouvez nous aider à améliorer la compréhension de ce standard et de ses critères en nous
+      = dsfr_link_to "partageant vos retours dessus", standard_feedback_link(@question), target: "_blank"
+      \.
