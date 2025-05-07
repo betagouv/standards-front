@@ -2,6 +2,9 @@ class Audit::Criterion
   include ActiveModel::Model
   include ActiveModel::Attributes
   include ActiveModel::Serialization
+  include Questionize
+
+  questionize :label
 
   ANSWERS = {
     "yes" => "Oui",
@@ -17,7 +20,7 @@ class Audit::Criterion
   end
 
   def done?
-    ["yes", "na"].include?(answer)
+    [ "yes", "na" ].include?(answer)
   end
 
   def inspect
