@@ -1,87 +1,77 @@
 ---
-- title: L'équipe a identifié ses problématiques d'accessibilité spécifiques
+- id: l-equipe-produit-du-code-accessible
+  title: L'équipe produit du code accessible
   description: |-
-    La mise en accessibilité de certains produits peut être complexifiée, par la
-    nature même du produit, ou par les limites du cadre légal existant. Par
-    exemple :
+    Toute l'équipe a un rôle a jouer dans l'accessibilité d'un produit,
+    mais les développeuses/développeurs jouent un rôle essentiel dans
+    l'accessibilité d'un service (environ 60 % des critères du RGAA est
+    relatif au code).
 
-    - le français simplifié n'est pas une obligation légale ; c'est pourtant un
-      enjeu essentiel pour certains services grands publics.
-    - le développement des applications mobiles est soumis aux mêmes obligations
-      d'accessibilité, mais ne peut pas utiliser les mêmes ressources (le RGAA
-      s'appliquant uniquement au web).
-    - la cartographie peut être exemptée, à condition de proposer une alternative
-      accessible.
+    Produire du code sémantique est donc essentiel. Pour cela, l'équipe
+    doit s'assurer de mettre en oeuvre le maximum, par exemple :
 
-    En identifiant les enjeux d'accessibilités propre à son service numérique,
-    l'équipe pourra aller chercher les ressources nécessaires pour constuire un
-    service accessible.
+    - Utiliser un design système accessible (par exemple, le DSFR)
+    - Avoir des compétences front-end en interne
+    - Vérifier régulièrement la sémantique du HTML produit
   criteria:
-  - label: Un plan d'action spécifique est documenté.
-  resources: []
-  id: l-equipe-a-identifie-ses-problematiques-d-accessibilite-specifiques
-  category: accessibilité
-- title: L'équipe a un plan d'action pour la mise en conformité
-  description: |-
-    L'équipe a élaboré un plan d'action pour garantir que le produit respecte les
-    normes d'accessibilité en vigueur.
-  criteria:
-  - label: Un plan d'action détaillé est documenté.
-  - label: Des échéances claires sont définies pour chaque étape.
+  - label: Le code produit est accessible.
   resources:
-  - "[Accessibilité numérique](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)"
-  - "[Liste des formations accessibilité proposées à Beta](https://doc.incubateur.net/communaute/travailler-chez-beta.gouv.fr/se-former/se-former-en-ligne/formation-a-laccessibilite)"
-  id: l-equipe-a-un-plan-d-action-pour-la-mise-en-conformite
+  - "[HTML : une bonne base pour l'accessibilité](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Accessibility/HTML)"
+  - "[W3C : Making the Web Accessible](https://www.w3.org/WAI/)"
+  - "[Design System de l'État](https://www.systeme-de-design.gouv.fr/)"
   category: accessibilité
-- title: L'équipe a une personne avec la compétence front accessibilité
+- id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
+  title: L'équipe recette régulièrement l'accessibilité de son service
   description: |-
-    Une personne au sein de l'équipe possède des compétences spécialisées en
-    accessibilité front-end pour garantir que les interfaces utilisateur sont
-    accessibles à tous.
+    L'accessibilité (ou l'inaccessibilité) ne se voit pas. Pour s'assurer
+    de l'accessibilité d'un service, il faut le *manipuler* son service ;
+    par exemple en naviguant au clavier.
+
+    Recetter manuellement permet d'éviter la dette d'accessibilité et de
+    maintenir un niveau minimal de qualité. Cette régularité peut varier
+    selon l'organisation de l'équipe :
+
+    - à chaque nouvelle fonctionnalité
+    - de manière mensuelle/trimestrielle/semestrielle
+    - ...
+
+    Recetter régulièrement plutôt qu'au dernier moment permet de :
+
+    - résorber la dette d'accessibilité au fur et à mesure
+    - recetter de plus en plus efficacement avec l'expérience
+
+    Un certain nombre de gestes de vérification ne sont pas techniques et
+    peuvent donc être répartis au sein de l'équipe.
   criteria:
-  - label: Le code HTML produit est sémantique.
-  resources:
-  - "[Accessibilité web](https://www.w3.org/WAI/)"
-  id: l-equipe-a-une-personne-avec-la-competence-front-accessibilite
-  category: accessibilité
-- title: L'équipe recette régulièrement l'accessibilité de son service
-  description: |-
-    L'accessibilité ne se voit pas : il faut manipuler son service. Recetter
-    manuellement permet d'éviter la dette d'accessibilité et de maintenir un niveau
-    minimal de qualité.
-  criteria:
-  - label: L'équipe est formée aux gestes de recette manuelle
+  - label: L'équipe est formée aux gestes de recette manuelle (Easy Checks)
   - label: L'équipe recette régulièrement son service
   resources:
   - "[Protocole Easy Checks du W3C](https://www.w3.org/WAI/test-evaluate/easy-checks/)"
   - "[10 choses faciles à vérifier pour un site plus accessible](https://doc.incubateur.net/communaute/travailler-chez-beta.gouv.fr/se-former/se-former-en-ligne/formation-a-laccessibilite/10-choses-faciles-a-verifier-pour-un-site-plus-accessible)"
-  id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
   category: accessibilité
-- title: Le service a publié ses obligations déclaratives
+- id: le-produit-respecte-ses-obligations-declaratives
+  title: Le produit respecte ses obligations déclaratives
   description: |-
-    Votre service a décrit ses obligations déclaratives : la déclaration
-    d'accessibilité, le schéma pluriannuel, et le plan d'action.
+    Le produit doit respecter ses obligations déclaratives :
+
+    1. Publication de la déclaration d'accessibilité
+    2. Lien vers le schéma pluriannuel
+    3. Publication d'un plan d'action
   criteria:
-  - label: La déclaration d'accessibilité est disponible et à jour.
-  - label: Le schéma pluriannuel est documenté et accessible.
-  - label: Un plan d'action est en place et suivi.
+  - label: |-
+      Le service indique une mention de conformité
+        (non/partiellement/totalement conforme) sur la page d'accueil
+  - label: Une déclaration d'accessibilité valide est en ligne.
+  - label: Un schéma pluriannuel à jour est lié.
+  - label: Un plan d'action est documenté en ligne.
   resources:
-  - "[Obligations déclaratives d'accessibilité sur le site design.numerique.gouv.fr](https://design.numerique.gouv.fr/accessibilite-numerique/cadre-legal/)"
-  id: le-service-a-publie-ses-obligations-declaratives
+  - "[Obligations légales d'accessibilite chez beta.gouv.fr](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/obligations-legales#obligations-legales)"
+  - "[Obligations légales : Déclaration d'accessibilité](https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/)"
+  - "[Générateur de déclaration d'accessibilité](https://betagouv.github.io/a11y-generateur-declaration/)"
+  - "[Obligations légales : Schéma pluriannuel de mise en accessibilité](https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/)"
   category: accessibilité
-- title: Le service utilise le DSFR
-  description: |-
-    Le service utilise le Design System de l'État Français (DSFR) pour assurer une
-    cohérence visuelle et fonctionnelle avec les autres services publics.
-  criteria:
-  - label: Le DSFR est intégré dans le projet.
-  - label: Les composants DSFR sont utilisés dans les interfaces.
-  resources:
-  - "[DSFR](https://www.systeme-de-design.gouv.fr/)"
-  - "[Périmètre d'application du DSFR](https://www.systeme-de-design.gouv.fr/prise-en-main-et-perimetre/perimetre-d-application)"
-  id: le-service-utilise-le-dsfr
-  category: accessibilité
-- title: L'équipe a des rituels de recherche utilisateurs
+- id: l-equipe-a-des-rituels-de-recherche-utilisateurs
+  title: L'équipe a des rituels de recherche utilisateurs
   description: |-
     L'équipe organise régulièrement des sessions de recherche utilisateurs pour
     recueillir des retours et améliorer le produit.
@@ -90,9 +80,9 @@
   - label: Les retours utilisateurs sont documentés et analysés.
   resources:
   - "[Méthodes de recherche UX](https://www.nngroup.com/articles/which-ux-research-methods/)"
-  id: l-equipe-a-des-rituels-de-recherche-utilisateurs
   category: design
-- title: Les parcours sont conçus par une personne dont c'est le métier (UX Designer)
+- id: les-parcours-sont-concus-par-une-personne-dont-c-est-le-metier-ux-designer
+  title: Les parcours sont conçus par une personne dont c'est le métier (UX Designer)
   description: |-
     Un UX Designer professionnel est responsable de la conception des parcours
     utilisateurs pour garantir une expérience fluide et intuitive.
@@ -101,9 +91,9 @@
   - label: Les parcours utilisateurs sont régulièrement évalués et optimisés.
   resources:
   - "[Ressources UX Design](https://uxdesign.cc/)"
-  id: les-parcours-sont-concus-par-une-personne-dont-c-est-le-metier-ux-designer
   category: design
-- title: Le service n'utilise pas des adresses mail "ne-pas-répondre" ou "no-reply"
+- id: le-service-n-utilise-pas-des-adresses-mail-ne-pas-repondre-ou-no-reply
+  title: Le service n'utilise pas des adresses mail "ne-pas-répondre" ou "no-reply"
   description: |-
     Le service s'assure que toutes les communications par e-mail permettent aux
     utilisateurs de répondre et d'interagir facilement.
@@ -112,9 +102,9 @@
   - label: Les utilisateurs peuvent facilement contacter le support.
   resources:
   - "[Bonnes pratiques e-mail](https://www.emailonacid.com/blog/article/email-marketing/10-best-practices-for-email-marketing/)"
-  id: le-service-n-utilise-pas-des-adresses-mail-ne-pas-repondre-ou-no-reply
   category: qualité-du-support
-- title: Les utilisateurs peuvent faire des retours facilement
+- id: les-utilisateurs-peuvent-faire-des-retours-facilement
+  title: Les utilisateurs peuvent faire des retours facilement
   description: |-
     Le service met en place des mécanismes simples et accessibles pour que les
     utilisateurs puissent donner leur avis et signaler des problèmes.
@@ -129,9 +119,9 @@
   - "[Collecte de feedback utilisateur](https://www.usability.gov/how-to-and-tools/methods/collecting-user-feedback.html)"
   - "[GitHub Discussions](https://docs.github.com/fr/discussions/collaborating-with-your-community-using-discussions/about-discussions)"
   - "[Astuto](https://astuto.io/)"
-  id: les-utilisateurs-peuvent-faire-des-retours-facilement
   category: qualité-du-support
-- title: La contribution à des communs numériques est privilégiée
+- id: la-contribution-a-des-communs-numeriques-est-privilegiee
+  title: La contribution à des communs numériques est privilégiée
   description: |-
     Le produit s'appuie sur des composants techniques open-source pérennes et
     reconnus.
@@ -139,10 +129,10 @@
     Quand cela est possible, l'équipe contribue aux projets open-source utilisés.
   criteria:
   - label: Le produit est basé uniquement sur des composants open-source
-  resources: []
-  id: la-contribution-a-des-communs-numeriques-est-privilegiee
+  resources:
   category: qualité-logicielle
-- title: Le code est déployé fréquemment, idéalement en continu
+- id: le-code-est-deploye-frequemment-idealement-en-continu
+  title: Le code est déployé fréquemment, idéalement en continu
   description: |-
     Le projet adopte des pratiques de déploiement continu pour assurer des mises à
     jour régulières et une livraison rapide des nouvelles fonctionnalités.
@@ -151,11 +141,11 @@
   - label: Les déploiements sont automatisés et fréquents (au moins une fois par mois).
   resources:
   - "[Déploiement continu](https://www.atlassian.com/continuous-delivery/continuous-deployment)"
-  id: le-code-est-deploye-frequemment-idealement-en-continu
   category: qualité-logicielle
-- title: Le code est écrit avec l'aide d'un linter
+- id: le-code-est-ecrit-avec-l-aide-d-un-linter
+  title: Le code est écrit avec l'aide d'un linter
   description: |-
-    Des outils d'analyse/formattage de code, les linters, sont disponibles pour
+    Des outils d'analyse/formatage de code, les linters, sont disponibles pour
     évaluer et corriger votre base de code. Ils permettent d'assurer l'uniformité
     du code et d'aligner les développeurs sur le style à employer pour y
     contribuer. Ces linters peuvent aussi aller plus loin que la simple esthétique
@@ -168,54 +158,91 @@
   - 'Javascript : - [ESLint](https://eslint.org/) - [Biome](https://biomejs.dev/)'
   - 'Python : - [Black](https://pypi.org/project/black/) - [Flake](https://flake8.pycqa.org/en/latest/)'
   - 'Ruby : - [Rubocop](https://github.com/rubocop/rubocop)'
-  id: le-code-est-ecrit-avec-l-aide-d-un-linter
   category: qualité-logicielle
-- title: Le code est instrumenté par des tests automatisés
+- id: le-code-est-instrumente-par-des-tests-automatises
+  title: Le code est instrumenté par des tests automatisés
   description: |-
-    Le projet utilise des tests automatisés pour garantir la qualité du code et
+    Le projet intègre des tests automatisés, y compris des tests unitaires
+    et des tests de bout en bout (E2E), pour assurer la qualité du code et
     prévenir les régressions lors des mises à jour.
+
+    De plus, une approche de Continuous Integration / Continuous
+    Deployment (CI/CD) est mise en place pour faciliter le déploiement
+    régulier et sécurisé des modifications.
+
+    Le bon déroulement des tests intégrés au pipeline CI/CD doit
+    conditionner l'évolution des changements et le déploiement dans les
+    environnements de recette ou production.
   criteria:
   - label: Une suite de tests automatisés est en place.
-  - label: La suite de tests est intégrée dans la CI/CD du projet
-  - label: Les tests sont exécutés à chaque déploiement.
+  - label: La suite de tests est intégrée dans la CI du projet
+  - label: La suite de tests est intégrée dans la CD du projet
   resources:
   - "[Tests automatisés](https://martinfowler.com/bliki/TestPyramid.html)"
-  id: le-code-est-instrumente-par-des-tests-automatises
   category: qualité-logicielle
-- title: Le code source est ouvert, y compris à la contribution externe
+- id: le-code-source-est-ouvert-y-compris-a-la-contribution-externe
+  title: Le code source est ouvert, y compris à la contribution externe
   description: |-
-    Le projet est open-source et accepte les contributions externes pour encourager
-    la collaboration et l'amélioration continue.
+    Le projet est open-source et accepte les contributions externes pour
+    encourager la collaboration et l'amélioration continue. Le README ou
+    un fichier dédié (ex: `CONTRIBUTING.md`) permet aux potentiels
+    contributeurs de mieux comprendre comment partager leur travail.
   criteria:
   - label: Le code source est accessible publiquement.
   - label: Des guidelines de contribution sont disponibles.
   resources:
+  - "[Enjeux de l'open-source sur Sillon](https://sillon.incubateur.net/docs/community-and-open-source/internet-base/)"
   - "[Open Source Guides](https://opensource.guide/)"
-  id: le-code-source-est-ouvert-y-compris-a-la-contribution-externe
   category: qualité-logicielle
-- title: Le produit a implementé un outil d'alerte type Sentry
+- id: le-produit-a-implemente-un-outil-d-alerte-type-sentry
+  title: Le produit a implementé un outil d'alerte type Sentry
   description: |-
     Le produit utilise un outil de monitoring et d'alerte pour détecter et signaler
     les erreurs en temps réel.
   criteria:
   - label: Un outil d'alerte est configuré.
-  - label: Les alertes sont surveillées et traitées rapidement.
+  - label: Les alertes sont surveillées et traitées régulièrement.
   resources:
   - "[Sentry](https://sentry.io/)"
-  id: le-produit-a-implemente-un-outil-d-alerte-type-sentry
   category: qualité-logicielle
-- title: Le produit et la stack technique sont documentés
+- id: le-produit-et-la-stack-technique-sont-documentes
+  title: Le produit et la stack technique sont documentés
   description: |-
-    La documentation du produit et de la stack technique est complète et à jour,
-    facilitant la compréhension et la maintenance du projet.
+    La documentation du produit, de son environnement et de ses
+    dépendances doit être complète et à jour pour faciliter la
+    compréhension, la maintenance, et l'embarquement sur le produit.
+
+    Cette documentation peut prendre l'aspect d'un README exhaustif, d'une
+    documentation dédiée, d'une suite de tests exportable dans un format
+    lisible ou encore d'un `docker-compose.yml` mais qui permette de
+    prendre le produit en main rapidement.
   criteria:
   - label: Une documentation détaillée est disponible.
   - label: La documentation est régulièrement mise à jour.
   resources:
   - "[Documentation technique](https://www.writethedocs.org/)"
-  id: le-produit-et-la-stack-technique-sont-documentes
+  - "[Docker-Compose](https://docs.docker.com/get-started/workshop/08_using_compose/)"
   category: qualité-logicielle
-- title: Les APIs sont documentées avec un outil type Swagger
+- id: le-produit-s-appuie-sur-une-architecture-cloud
+  title: Le produit s'appuie sur une architecture Cloud
+  description: |-
+    L’hébergement doit se faire exclusivement sur une architecture Cloud :
+
+    - « Infrastructure as a Service » (IaaS)
+    - « Platform as a Service » (PaaS)
+    - « Software as a Service » (SaaS)
+
+    La conception technique du produit respecte les "12 facteurs".
+  criteria:
+  - label: Le déploiement est automatisé.
+  - label: L'application est redéployable rapidement sur un fournisseur cloud.
+  - label: Le produit respecte les 12 facteurs.
+  resources:
+  - "[les 12 facteurs](https://blog.cellenza.com/cloud-2/12-factor-app-les-patterns-a-adopter-dans-le-developpement-dapplications-modernes/)"
+  - "[doctrine d'utilisation de l'informatique en nuage par l'État](https://www.numerique.gouv.fr/services/cloud/doctrine/)"
+  category: qualité-logicielle
+- id: les-apis-sont-documentees-avec-un-outil-type-swagger
+  title: Les APIs sont documentées avec un outil type Swagger
   description: |-
     Les APIs du projet sont documentées de manière claire et accessible à l'aide
     d'outils comme Swagger pour faciliter leur utilisation par les développeurs.
@@ -224,9 +251,9 @@
   - label: La documentation est accessible publiquement.
   resources:
   - "[Swagger](https://swagger.io/)"
-  id: les-apis-sont-documentees-avec-un-outil-type-swagger
   category: qualité-logicielle
-- title: L'équipe a entamé une démarche sur MonServiceSécurisé
+- id: l-equipe-a-entame-une-demarche-sur-monservicesecurise
+  title: L'équipe a entamé une démarche sur MonServiceSécurisé
   description: |-
     L'équipe a initié une démarche pour renforcer la sécurité du service en
     utilisant MonServiceSécurisé, une plateforme dédiée à la sécurité des services
@@ -236,9 +263,9 @@
   - label: Des mesures correctives ont été mises en place.
   resources:
   - "[MonServiceSécurisé](https://www.monservicesecurise.fr/)"
-  id: l-equipe-a-entame-une-demarche-sur-monservicesecurise
   category: sécurité
-- title: L'équipe a mis en place un outil d'analyse statique du code type SonarCloud
+- id: l-equipe-a-mis-en-place-un-outil-d-analyse-statique-du-code-type-sonarcloud
+  title: L'équipe a mis en place un outil d'analyse statique du code type SonarCloud
   description: |-
     L'équipe utilise un outil d'analyse statique du code pour identifier les
     vulnérabilités et améliorer la qualité du code.
@@ -248,9 +275,9 @@
   resources:
   - "[Analyser la qualité et la sécurité de votre code avec SonarCloud](https://apprendre-la-programmation.net/analyser-qualite-securite-code-sonarcloud/)"
   - "[SonarCloud](https://sonarcloud.io/)"
-  id: l-equipe-a-mis-en-place-un-outil-d-analyse-statique-du-code-type-sonarcloud
   category: sécurité
-- title: L'équipe a publié une politique de déclaration des incidents de sécurité
+- id: l-equipe-a-publie-une-politique-de-declaration-des-incidents-de-securite
+  title: L'équipe a publié une politique de déclaration des incidents de sécurité
   description: |-
     Une politique claire de déclaration des incidents de sécurité est en
     place pour garantir une réponse rapide et efficace en cas de problème.
@@ -259,9 +286,9 @@
   - label: Les membres de l'équipe sont formés à la procédure.
   resources:
   - "[Gestion des incidents de sécurité](https://www.sans.org/incident-handlers-handbook/)"
-  id: l-equipe-a-publie-une-politique-de-declaration-des-incidents-de-securite
   category: sécurité
-- title: L'équipe a réalisé un atelier d'analyse de risques
+- id: l-equipe-a-realise-un-atelier-d-analyse-de-risques
+  title: L'équipe a réalisé un atelier d'analyse de risques
   description: |-
     L'équipe a conduit un atelier pour identifier et évaluer les risques potentiels
     liés au projet, afin de mettre en place des mesures de mitigation.
@@ -270,9 +297,9 @@
   - label: Des actions correctives ont été définies.
   resources:
   - "[Analyse de risques](https://www.iso.org/iso-31000-risk-management.html)"
-  id: l-equipe-a-realise-un-atelier-d-analyse-de-risques
   category: sécurité
-- title: L'équipe initie une analyse d'impact relative à la protection des donnée
+- id: l-equipe-initie-une-analyse-d-impact-relative-a-la-protection-des-donnee-si-necessaire
+  title: L'équipe initie une analyse d'impact relative à la protection des donnée
     si nécessaire
   description: |-
     L'équipe réalise une analyse d'impact pour évaluer les risques liés à la
@@ -283,9 +310,9 @@
   - label: Les recommandations sont mises en œuvre.
   resources:
   - "[Analyse d'impact sur la protection des données (AIPD)](https://www.cnil.fr/fr/PIA-privacy-impact-assessment)"
-  id: l-equipe-initie-une-analyse-d-impact-relative-a-la-protection-des-donnee-si-necessaire
   category: sécurité
-- title: Les sites sont sécurisés par SSL
+- id: les-sites-sont-securises-par-ssl
+  title: Les sites sont sécurisés par SSL
   description: |-
     SSL (Secure Sockets Layer) est un protocole de sécurité qui établit une
     connexion chiffrée entre un serveur Web et un navigateur. Cela garantit que
@@ -300,9 +327,9 @@
   resources:
   - "[Configurer le SSL sur Scalingo](https://doc.scalingo.com/platform/app/ssl)"
   - "[Header HTTP HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)"
-  id: les-sites-sont-securises-par-ssl
   category: sécurité
-- title: Un outil d'analyse et de mise à jour des dépendances est configuré
+- id: un-outil-d-analyse-et-de-mise-a-jour-des-dependances-est-configure
+  title: Un outil d'analyse et de mise à jour des dépendances est configuré
   description: |-
     Pour assurer la sécurité de votre projet, il est important que vos dépendances
     soient maintenues à jour. Des outils d'analyse et de mise à jour automatiques
@@ -312,9 +339,9 @@
   - label: Un outil d'analyse de sécurité type Dependabot est configuré.
   resources:
   - "[Documentation Dependabot](https://docs.github.com/fr/code-security/getting-started/dependabot-quickstart-guide)"
-  id: un-outil-d-analyse-et-de-mise-a-jour-des-dependances-est-configure
   category: sécurité
-- title: La roadmap de l'équipe est publique
+- id: la-roadmap-de-l-equipe-est-publique
+  title: La roadmap de l'équipe est publique
   description: |-
     La roadmap du projet est accessible publiquement, permettant à tous les acteurs
     intéressés de suivre l'évolution et les priorités du projet.
@@ -328,9 +355,9 @@
   resources:
   - "[GitHub Projects](https://docs.github.com/fr/issues/planning-and-tracking-with-projects/learning-about-projects)"
   - "[Roadmap du GIP de l'Inclusion](https://github.com/orgs/gip-inclusion/projects/10)"
-  id: la-roadmap-de-l-equipe-est-publique
   category: transparence
-- title: Le produit a une fiche à jour sur le site de Beta
+- id: le-produit-a-une-fiche-a-jour-sur-le-site-de-beta
+  title: Le produit a une fiche à jour sur le site de Beta
   description: |-
     Les fiches produits sont une véritable mine d'or à Beta : elles
     permettent de suivre les travaux de la communauté, de savoir qui
@@ -344,9 +371,9 @@
   - label: Les informations sont régulièrement vérifiées et mises à jour.
   resources:
   - "[Gérer sa fiche produit](https://doc.incubateur.net/communaute/les-outils-de-la-communaute/espace-membre/gerer-sa-fiche-produit)."
-  id: le-produit-a-une-fiche-a-jour-sur-le-site-de-beta
   category: transparence
-- title: Le produit communique sur son budget
+- id: le-produit-communique-sur-son-budget
+  title: Le produit communique sur son budget
   description: |-
     Le produit publie régulièrement des informations sur son budget pour assurer la
     transparence financière et l'engagement des parties prenantes.
@@ -355,9 +382,9 @@
   - label: Les dépenses et les prévisions sont clairement détaillées.
   resources:
   - "[Publier son budget sur la documentation Beta](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)"
-  id: le-produit-communique-sur-son-budget
   category: transparence
-- title: Le produit publie ses statistiques d'impact
+- id: le-produit-publie-ses-statistiques-d-impact
+  title: Le produit publie ses statistiques d'impact
   description: |-
     L’impact doit être **caractérisé de façon mesurable** et afficher la
     contribution du produit à la politique publique concernée.
@@ -368,9 +395,9 @@
   - label: Les indicateurs d'impact sont régulièrement analysés et mis à jour.
   resources:
   - "[Définir et mesurer l'impact sur la documentation de l'incubateur](https://doc.incubateur.net/communaute/gerer-son-produit/la-vie-du-produit/investigation/definir-et-mesurer-limpact)"
-  id: le-produit-publie-ses-statistiques-d-impact
   category: transparence
-- title: Le produit suit ses bonnes pratiques sur le Dashlord
+- id: le-produit-suit-ses-bonnes-pratiques-sur-le-dashlord
+  title: Le produit suit ses bonnes pratiques sur le Dashlord
   description: |-
     Le produit utilise Dashlord pour suivre et améliorer ses pratiques en matière
     de qualité, de sécurité et de performance.
@@ -379,9 +406,9 @@
   - label: Les indicateurs de performance sont régulièrement analysés.
   resources:
   - "[Dashlord](https://dashlord.example.com)"
-  id: le-produit-suit-ses-bonnes-pratiques-sur-le-dashlord
   category: transparence
-- title: Le produit a des CGU
+- id: le-produit-a-des-cgu
+  title: Le produit a des CGU
   description: |-
     Le produit dispose de Conditions Générales d'Utilisation (CGU) claires et
     accessibles, définissant les droits et obligations des utilisateurs.
@@ -390,9 +417,9 @@
   - label: Les utilisateurs sont informés des mises à jour des CGU.
   resources:
   - "[Modèle de CGU](https://www.example.com/modele-cgu)"
-  id: le-produit-a-des-cgu
   category: vie-privée
-- title: Le produit a des mentions légales
+- id: le-produit-a-des-mentions-legales
+  title: Le produit a des mentions légales
   description: |-
     Le produit affiche des mentions légales complètes, conformément aux exigences
     légales, pour informer les utilisateurs sur l'identité de l'éditeur et les
@@ -402,9 +429,9 @@
   - label: Les informations sont à jour et conformes aux réglementations.
   resources:
   - "[Guide des mentions légales](https://www.example.com/guide-mentions-legales)"
-  id: le-produit-a-des-mentions-legales
   category: vie-privée
-- title: Le produit a une politique de confidentialité
+- id: le-produit-a-une-politique-de-confidentialite
+  title: Le produit a une politique de confidentialité
   description: |-
     Le produit dispose d'une politique de confidentialité détaillée, expliquant
     comment les données des utilisateurs sont collectées, utilisées et protégées.
@@ -413,9 +440,9 @@
   - label: Les utilisateurs sont informés des modifications de la politique.
   resources:
   - "[Modèle de politique de confidentialité](https://www.example.com/modele-politique-confidentialite)"
-  id: le-produit-a-une-politique-de-confidentialite
   category: vie-privée
-- title: Les données de production ne sont utilisées qu'en production
+- id: les-donnees-de-production-ne-sont-utilisees-qu-en-production
+  title: Les données de production ne sont utilisées qu'en production
   description: |-
     Pour garantir la sécurité et la confidentialité, les environnements de
     développement et de recette n'utilisent pas directement les données de
@@ -423,10 +450,10 @@
   criteria:
   - label: Des données fictives ou anonymisées sont utilisées en dev/recette.
   - label: Les accès aux données de production sont restreints.
-  resources: []
-  id: les-donnees-de-production-ne-sont-utilisees-qu-en-production
+  resources:
   category: vie-privée
-- title: Le service est frugal en fonctionnalités
+- id: le-service-est-frugal-en-fonctionnalites
+  title: Le service est frugal en fonctionnalités
   description: |-
     Le service est conçu pour être simple et efficace, en évitant les
     fonctionnalités superflues qui pourraient compliquer l'expérience utilisateur.
@@ -438,9 +465,9 @@
   resources:
   - "[Eco-conception numérique](https://ecoconception-numerique.com/)"
   - "[Référentiel général d'écoconception de services numériques (RGESN) - 2024](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)"
-  id: le-service-est-frugal-en-fonctionnalites
   category: éco-conception
-- title: Le service privilégie la low-tech
+- id: le-service-privilegie-la-low-tech
+  title: Le service privilégie la low-tech
   description: |-
     Le service adopte une approche low-tech pour minimiser l'impact environnemental
     et maximiser l'efficacité.
@@ -449,5 +476,42 @@
   - label: L'impact environnemental est régulièrement évalué.
   resources:
   - "[Low-tech Lab](https://lowtechlab.org/)"
-  id: le-service-privilegie-la-low-tech
   category: éco-conception
+- id: des-comites-d-investissement-sont-organises-regulierement
+  title: Des comités d'investissement sont organisés régulièrement
+  description: |-
+    Un comité faisant le point sur l’impact et les coûts du produit a lieu
+    a minima tous les ans.
+
+    Il permet de faire le point sur l'impact obtenu par l'équipe du produit
+    et d'arbitrer sur les objectifs et les investissements consentis par les
+    administrations qui financent le service.
+
+    Si le service n'a pas réussi à prouver son utilité ou sa pertinence,
+    le comité d'investissement peut décider de son arrêt ; au contraire,
+    si les résultats du service sont particulièrement probants, le comité
+    d'investissement peut statuer sur le renforcement des moyens, son
+    accélération ou sa pérennisation.
+  criteria:
+  - label: Un comité a lieu au moins une fois par an
+  resources:
+  - "[Préparer un comité d'investissement](https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/budget/preparer-un-comite-dinvestissement)"
+  category: équipe
+- id: l-equipe-est-autonome
+  title: L'équipe est autonome
+  description: |-
+    L'équipe est autonome dans le pilotage de sa feuille de route et
+    la priorisation de ses tâches.
+  criteria:
+  - label: L'équipe gère elle-même sa feuille de route.
+  resources:
+  category: équipe
+- id: un-produit-pilote-par-un-agent-public
+  title: Un produit piloté par un agent public
+  description: |-
+    Un(e) responsable produit, agent public, est identifié et travaille,
+    au moins à mi-temps, dans une équipe intégrée et autonome.
+  criteria:
+  - label: Le produit est piloté par un(e) agent public.
+  resources:
+  category: équipe
