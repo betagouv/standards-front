@@ -39,13 +39,21 @@ end
 Quand('je complète le standard {string}') do |nom|
   steps %(
     Quand je clique sur "#{nom}"
-    Et que je coche toutes les cases
+    Et que je choisis "Oui" pour chaque critère
     Et que je clique sur "Enregistrer ma réponse"
   )
 end
 
 Quand('je retourne au sommaire de l\'audit en cours') do
   step("je clique sur 'Audit du produit'")
+end
+
+Quand("je choisis {string} pour chaque critère") do |choix|
+  page
+    .all('.question-section fieldset')
+    .each do |fieldset|
+    within(fieldset) { choose(choix) }
+  end
 end
 
 Quand('je coche toutes les cases') do
