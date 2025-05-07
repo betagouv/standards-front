@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :startups, param: :ghid, constraints: { ghid: /[^\/]+/ } do
-    resource :audit do
-      get :edit
+    resource :audit, only: %i[show update] do
       get ":category", to: "audits#category", as: :category
       get ":category/:question", to: "audits#question", as: :category_question
     end

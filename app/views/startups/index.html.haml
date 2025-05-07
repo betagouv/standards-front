@@ -18,6 +18,6 @@
           %li
             %h2= startup.name
             - if startup.audit.blank?
-              = dsfr_link_to "Commencer l'audit", edit_startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
+              = dsfr_link_to "Commencer l'audit", startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
             - else
-              = dsfr_link_to "Continuer l'audit", edit_startup_audit_path(startup.ghid), title: "Continuer l'audit pour la startup #{startup}"
+              = dsfr_link_to "Continuer l'audit", startup_audit_path(startup.ghid), title: "Continuer l'audit pour la startup #{startup}"

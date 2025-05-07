@@ -1,18 +1,14 @@
 class AuditsController < ApplicationController
   before_action :authenticate_user!, :set_startup
 
-  before_action :set_audit, only: %i[edit update category question]
+  before_action :set_audit, only: %i[show update category question]
   before_action :set_category, only: %i[category update question]
 
   before_action :set_startup_breadcrumb
-  before_action :set_audit_breadcrumb, only: %i[edit category question]
+  before_action :set_audit_breadcrumb, only: %i[show category question]
   before_action :set_category_breadcrumb, only: %i[category question]
 
-  def edit
-    @audit = Audit.find_or_initialize_by(startup: @startup) do |audit|
-      audit.initialize_with_latest_standards
-    end.tap(&:save)
-  end
+  def show; end
 
   def update
     update_audit_with_params(@audit, audit_params)
@@ -60,7 +56,9 @@ class AuditsController < ApplicationController
   end
 
   def set_audit
-    @audit = @startup.audit
+    @audit = @startup.audit || Audit.find_or_initialize_by(startup: @startup) do |audit|
+      audit.initialize_with_latest_standards
+    end.tap(&:save)
   end
 
   def set_category
@@ -68,7 +66,7 @@ class AuditsController < ApplicationController
   end
 
   def set_audit_breadcrumb
-    add_breadcrumb("Audit du produit #{@startup.name}", edit_startup_audit_path(@startup.ghid))
+    add_breadcrumb("Audit du produit #{@startup.name}", startup_audit_path(@startup.ghid))
   end
 
   def set_startup_breadcrumb
