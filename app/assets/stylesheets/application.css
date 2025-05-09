@@ -432,6 +432,7 @@ body, html {
   margin-bottom: 0.3rem;
   margin-left: 0.5rem;
   padding: 0.25rem 0.75rem;
+  border: 1px solid var(--background-action-low-blue-ecume-hover)
 }
 
 .fr-fieldset__element {

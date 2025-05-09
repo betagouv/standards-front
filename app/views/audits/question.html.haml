@@ -18,7 +18,7 @@
                 :markdown
                   #{resource}
 
-    .question-section.fr-pt-2w
+    .question-section.fr-py-2w
       %h2 Critères à vérifier
 
       = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
