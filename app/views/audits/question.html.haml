@@ -37,7 +37,7 @@
                           = fff.radio_button :answer, key, checked: criterion.answer == key
                           = fff.label "answer_#{key}", label, class: "fr-label"
 
-          - if @next_question.blank?
+          - if disable_next_question? || @next_question.blank?
             = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
           - else
             %ul.fr-btns-group.fr-btns-group--inline

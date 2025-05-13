@@ -57,4 +57,12 @@ module AuditsHelper
       )
     end.to_s
   end
+
+  def enable_next_question?
+    ENV.fetch("BETA_STANDARDS_USES_NEXT_QUESTION", false)
+  end
+
+  def disable_next_question?
+    !enable_next_question?
+  end
 end
