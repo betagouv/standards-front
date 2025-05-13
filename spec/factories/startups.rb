@@ -6,6 +6,7 @@ FactoryBot.define do
     uuid { Faker::Internet.uuid }
     name { Faker::Lorem.word }
     description { Faker::Lorem.paragraph }
+    incubator
 
     trait :in_investigation do
       after(:create) do |startup|

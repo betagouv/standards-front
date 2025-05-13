@@ -4,6 +4,8 @@ module EspaceMembre
 
     validates :ghid, presence: true
 
+    belongs_to :incubator
+
     has_many :phases
 
     has_and_belongs_to_many :missions, join_table: "missions_startups"
