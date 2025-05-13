@@ -32,5 +32,17 @@ module EspaceMembre
     def to_s
       name
     end
+
+    def latest_phase
+      phases.latest_completed.first
+    end
+
+    def audit_completion
+      if audit.nil?
+        0
+      else
+        audit.total_completion
+      end
+    end
   end
 end

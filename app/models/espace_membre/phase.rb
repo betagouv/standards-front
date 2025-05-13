@@ -28,5 +28,9 @@ module EspaceMembre
     def terminate!
       update!(end: Time.zone.now)
     end
+
+    def to_s
+      name
+    end
   end
 end
