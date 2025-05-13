@@ -11,13 +11,23 @@
         \.
     - else
       %p.fr-text--lead
-        Ci-dessous la liste de vos startups actives. Vous pouvez démarrer l'auto-audit sur n'importe laquelle, et y revenir plus tard si nécessaire. Les réponses sont mises à jour en temps réel.
+        Ci-dessous la liste de vos startups actives. Vous pouvez démarrer l'auto-audit sur n'importe laquelle, et y revenir plus tard si nécessaire.
 
       %ul.startups-list
         - @startups.each do |startup|
           %li
-            %h2= startup.name
+            %h2
+              = startup.name
+
+            %div.description
+              %p
+                .div
+                  Incubée chez
+                  %strong.incubator= startup.incubator
+                  \-
+                  = dsfr_badge(status: :info) { startup.latest_phase.to_s }
+
             - if startup.audit.blank?
               = dsfr_link_to "Commencer l'audit", startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
             - else
-              = dsfr_link_to "Continuer l'audit", startup_audit_path(startup.ghid), title: "Continuer l'audit pour la startup #{startup}"
+              = dsfr_link_to "Continuer l'audit (complétion : #{startup.audit_completion}%)", startup_audit_path(startup.ghid), title: "Continuer l'audit pour la startup #{startup}"
