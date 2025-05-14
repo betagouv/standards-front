@@ -15,7 +15,8 @@
 
     = javascript_importmap_tags
     = javascript_include_tag "dsfr.module.min.js"
-    %meta{name: "turbo-refresh-scroll", content: "preserve"}
+
+    = favicon_link_tag asset_path('favicon.png')
   %body
     = render 'shared/skiplinks'
     = render 'shared/beta_banner'
