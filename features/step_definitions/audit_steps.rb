@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'cucumber/rspec/doubles'
+
 Sachantque("je suis {string} avec l'email {string}") do |name, email|
   @user = FactoryBot.create(
     :user,
@@ -56,9 +58,22 @@ Quand("je choisis {string} pour chaque critère") do |choix|
   end
 end
 
-Quand('je coche toutes les cases') do
-  page
-    .all('input[type="checkbox"]')
-    .map { |node| node.sibling("label").text }
-    .each { |label| step(%(je coche "#{label}")) }
+Alors("la page contient {string} pour le standard {string}") do |state, name|
+  within("ol.fr-task-list__items") do |ol|
+    within("li", text: name) do |item|
+      expect(item).to have_text(state)
+    end
+  end
+end
+
+FEATURE_FLAGS_MAP = {
+  "question suivante" => :next_question
+}
+
+Quand("la fonctionnalité {string} est activée") do |feature|
+  name = FEATURE_FLAGS_MAP[feature]
+
+  allow_any_instance_of(FeatureHelper)
+    .to receive(:has_enabled_feature?)
+    .with(name).and_return true
 end

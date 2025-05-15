@@ -76,6 +76,14 @@ Quand("je décoche {string}") do |label|
   uncheck label
 end
 
+Quand('je coche toutes les cases') do
+  page
+    .all('input[type="checkbox"]')
+    .map { |node| node.sibling("label").text }
+    .each { |label| step(%(je coche "#{label}")) }
+end
+
+
 Quand("je clique sur {string} dans la rangée {string}") do |link, row|
   within("tr", text: row) do
     click_link_or_button(link)
