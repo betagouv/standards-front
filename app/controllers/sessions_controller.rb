@@ -25,12 +25,14 @@ class SessionsController < ApplicationController
     session.delete :user
 
     if proconnect_setup?
-      clear_proconnect_setup!
-
       redirect_to "/auth/proconnect/logout"
     else
       redirect_to root_path, notice: "Déconnexion terminée."
     end
+  end
+
+  def proconnect_logged_out
+    clear_proconnect_setup!
   end
 
   private

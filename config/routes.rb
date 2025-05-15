@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get "auth/:provider/logout", to: "sessions#destroy"
 
   get "/login", to: "sessions#new"
+
+  get "/auth/proconnect/logged_out", to: "sessions#proconnect_logged_out"
+
   delete "/logout", to: "sessions#destroy"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
