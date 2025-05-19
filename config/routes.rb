@@ -21,4 +21,6 @@ Rails.application.routes.draw do
       get ":category/:question", to: "audits#question", as: :category_question
     end
   end
+
+  mount Audits::API => "/api"
 end

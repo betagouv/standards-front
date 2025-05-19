@@ -54,8 +54,32 @@ peut imaginer `n/a` et autres dans un futur proche.
 
 ### 4. Exposition de la données
 
-Les résultats de l'audit seront mis à disposition très bientôt sur une
-route d'API.
+Les audits sont disponibles sur deux terminaisons d'API :
+
+#### `/api/audit/?startup_id=<ghid>`
+
+Retourne l'audit complet de la startup.
+
+`ghid` est l'identifiant GitHub de votre startup, c'est à dire [un
+identifiant parmi ces fichiers sans l'extension
+`.md`](https://github.com/betagouv/beta.gouv.fr/tree/master/content/_startups).
+
+#### `/api/audit/summary?startup_id=<ghid>`
+
+Retourne un sommaire de l'audit composé du pourcentage de complétion
+par catégorie. Ce pourcentage indique le nombre de critères dont la
+réponse est "oui" ou "non applicable."
+
+```json
+{
+  "accessibilité": 42.0,
+  "qualité-logicielle": 19.3
+}
+```
+
+#### `/api/swagger_doc`
+
+Une description Swagger est disonible sur cette terminaison.
 
 ## Développement
 
