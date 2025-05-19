@@ -67,8 +67,8 @@ identifiant parmi ces fichiers sans l'extension
 #### `/api/audit/summary?startup_id=<ghid>`
 
 Retourne un sommaire de l'audit composé du pourcentage de complétion
-par catégorie. Ce pourcentage indique le nombre de critères dont la
-réponse est "oui" ou "non applicable."
+par catégorie. Ce nombre indique le pourcentage de critères dont la
+réponse est "oui" ou "non applicable".
 
 ```json
 {
