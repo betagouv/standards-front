@@ -54,7 +54,7 @@ code {
   font-size: 1rem;
   font-family: Marianne;
   font-style: italic;
-  Background: var(--artwork-background-beige-gris-galet);
+  background: var(--artwork-background-beige-gris-galet);
 }
 
 /* NOTE: this override is because of a bug in the DSFR:
