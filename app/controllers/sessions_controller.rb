@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     session[:user] = EspaceMembre::User.find_by!(primary_email: email).uuid
 
-    redirect_to startups_index_path, notice: "Connexion réussie pour #{email}"
+    redirect_to startups_path, notice: "Connexion réussie pour #{email}"
   rescue ActiveRecord::RecordNotFound
     if proconnect_setup?
       redirect_to "/auth/proconnect/logout"

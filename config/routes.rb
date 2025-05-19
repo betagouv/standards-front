@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "startups/index"
-  get "startups/choix"
   root to: "home#index"
   get "standards", to: "home#standards"
 
@@ -17,7 +15,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :startups, param: :ghid, constraints: { ghid: /[^\/]+/ } do
+  resources :startups, param: :ghid, constraints: { ghid: /[^\/]+/ }, only: :index do
     resource :audit, only: %i[show update] do
       get ":category", to: "audits#category", as: :category
       get ":category/:question", to: "audits#question", as: :category_question
