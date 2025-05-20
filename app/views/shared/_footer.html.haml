@@ -1,0 +1,34 @@
+%footer#footer.fr-footer{:role => "contentinfo"}
+  .fr-container
+    .fr-footer__body
+      .fr-footer__brand.fr-enlarge-link
+        %a{:href => "/", :title => "Retour à l’accueil du site - tech_audit"}
+          %p.fr-logo
+            = t("global.sponsor")
+      .fr-footer__content
+        %p.fr-footer__content-desc= t("global.service_description")
+        %ul.fr-footer__content-list
+          %li.fr-footer__content-item
+            %a.fr-footer__content-link{:href => "https://legifrance.gouv.fr", :target => "_blank"} legifrance.gouv.fr
+          %li.fr-footer__content-item
+            %a.fr-footer__content-link{:href => "https://gouvernement.fr", :target => "_blank"} gouvernement.fr
+          %li.fr-footer__content-item
+            %a.fr-footer__content-link{:href => "https://service-public.fr", :target => "_blank"} service-public.fr
+          %li.fr-footer__content-item
+            %a.fr-footer__content-link{:href => "https://data.gouv.fr", :target => "_blank"} data.gouv.fr
+    .fr-footer__bottom
+      %ul.fr-footer__bottom-list
+        %li.fr-footer__bottom-item
+          %a.fr-footer__bottom-link{:href => "#"} Plan du site
+        %li.fr-footer__bottom-item
+          %a.fr-footer__bottom-link{:href => "#"} Accessibilité : non conforme
+        %li.fr-footer__bottom-item
+          %a.fr-footer__bottom-link{:href => "#"} Mentions légales
+        %li.fr-footer__bottom-item
+          %a.fr-footer__bottom-link{:href => "#"} Données personnelles
+        %li.fr-footer__bottom-item
+          %a.fr-footer__bottom-link{:href => "#"} Gestion des cookies
+      .fr-footer__bottom-copy
+        %p
+          Sauf mention contraire, tous les contenus de ce site sont sous
+          %a{:href => "https://github.com/etalab/licence-ouverte/blob/master/LO.md", :target => "_blank"} licence etalab-2.0
