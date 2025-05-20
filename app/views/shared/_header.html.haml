@@ -1,5 +1,5 @@
 = dsfr_header logo_text: t("global.sponsor"), title: t("global.service_name"), tagline: t("global.service_description") do |header|
   - header.with_operator_image title: "logo", src: image_url("favicon.png"), alt: ""
-  = header.with_direct_link_simple title: "Accueil", path: root_path
-  = header.with_direct_link_simple title: "Comment fonctionne l'audit ?", path: standards_path
-  = header.with_direct_link_simple title: current_user? ? "Vos services" : "Évaluez vos services", path: startups_path
+  = header.with_direct_link_simple title: "Accueil", path: root_path, **add_current_attribute(root_path)
+  = header.with_direct_link_simple title: "Comment fonctionne l'audit ?", path: standards_path,  **add_current_attribute(standards_path)
+  = header.with_direct_link_simple title: current_user? ? "Vos services" : "Évaluez vos services", path: startups_path,  **add_current_attribute(startups_path)
