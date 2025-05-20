@@ -4,6 +4,10 @@ BUNDLE-EXEC = bundle exec
 ESPACE_MEMBRE_DB = postgresql://postgres:dummy@espace-membre-db:5433
 DATABASE_URL     = postgresql://postgres:dummy@primary-db:5434
 
+SCALINGO_EMDB = scalingo --app espace-membre-front --region osc-secnum-fr1
+SCALINGO_PROD = scalingo --app standards-prod --region osc-secnum-fr1
+SCALINGO_STAG = scalingo --app standards
+
 .PHONY: db
 
 build:
@@ -43,3 +47,13 @@ db:
 # runs a PSQL console to explore the Espace Membre database
 emdb:
 	$(DOCKER-RUN) -e PAGER= espace-membre-db psql $(ESPACE_MEMBRE_DB)
+
+sc-prod:
+	$(SCALINGO_PROD) run bin/rails c
+
+sc:
+	$(SCALINGO_STAG) run bin/rails c
+
+import-emdb-backup:
+	$(SCALINGO_EMDB) --addon postgresql backups-download --output tmp/latest_backup.tar.gz
+	$(DOCKER-RUN) -e EMDB_BACKUP_FILE=tmp/latest_backup.tar.gz web bash script/import_emdb_backup.sh
