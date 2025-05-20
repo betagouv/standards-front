@@ -70,7 +70,7 @@ class AuditsController < ApplicationController
   end
 
   def set_startup_breadcrumb
-    add_breadcrumb("Startups", startups_path)
+    add_breadcrumb("Vos services", startups_path)
   end
 
   def set_category_breadcrumb

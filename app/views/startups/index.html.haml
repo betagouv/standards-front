@@ -1,17 +1,19 @@
-- content_for(:page_title) { "Vos startups" }
+- content_for(:page_title) { "Vos services" }
 
 .fr-grid-row
   .fr-col-12.fr-col-md-7
-    %h1 Vos startups
+    %h1 Vos services
 
     - if @startups.none?
       %p
-        Vous n'avez pas de startups actives. Assurez-vous que vos missions sont à jour dans
+        Vous n'avez pas de services actifs. Assurez-vous que vos missions sont à jour dans
         = dsfr_link_to "l'Espace Membre", "https://espace-membre.incubateur.net/"
         \.
     - else
       %p.fr-text--lead
-        Voici la liste de vos startups actives. Vous pouvez démarrer l'auto-audit sur n'importe laquelle, et y revenir plus tard si nécessaire.
+        Voici la liste de vos services. Vous pouvez démarrer
+        l'auto-audit sur n'importe lequel, et y revenir plus tard si
+        nécessaire.
 
       %ul.startups-list
         - @startups.each do |startup|
@@ -22,7 +24,7 @@
             %div.description
               %p
                 .div
-                  Incubée chez
+                  Incubé chez
                   %strong.incubator= startup.incubator
                   \-
                   = dsfr_badge(status: :info) { startup.latest_phase.to_s }
