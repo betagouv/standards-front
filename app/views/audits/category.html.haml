@@ -20,5 +20,5 @@
             = link_to category_question_startup_audit_path(@startup.ghid, @category, question.id), class: "fr-link fr-link--md" do
               = question.title
               %span.fr-text--sm.fr-text--regular.fr-ml-1w
-                = "(#{question.criteria.size} critères)"
+                = "(#{question.criteria.size} critères)"
           = task_list_status(question)
