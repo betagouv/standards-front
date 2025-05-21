@@ -8,6 +8,12 @@ Alors("la page contient {string}") do |content|
   expect(page).to have_content(content)
 end
 
+Alors("l'en-tête contient {string}") do |content|
+  within(".fr-header") do
+    step(%(la page contient "#{content}"))
+  end
+end
+
 Quand("print the page") do
   log page.body
 end

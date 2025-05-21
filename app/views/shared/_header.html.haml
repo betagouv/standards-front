@@ -3,3 +3,6 @@
   = header.with_direct_link_simple title: "Accueil", path: root_path, **add_current_attribute(root_path)
   = header.with_direct_link_simple title: "Comment fonctionne l'audit ?", path: standards_path,  **add_current_attribute(standards_path)
   = header.with_direct_link_simple title: current_user? ? "Vos services" : "Évaluez vos services", path: startups_path,  **add_current_attribute(startups_path)
+  - if current_user?
+    = header.with_tool_link title: "Vos services (#{current_user.fullname})", path: startups_path, html_attributes: { title: "Consultez vos services", class: "fr-icon-account-line" }
+    = header.with_tool_link title: "Déconnexion", path: logout_path, html_attributes: { data: { turbo_method: :delete }, class: "fr-icon-logout-box-r-line" }
