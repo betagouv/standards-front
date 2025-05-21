@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     if proconnect_setup?
       redirect_to "/auth/proconnect/logout"
     else
-      redirect_to index_path, alert: "Impossible de trouver un compte correspondant à cet email"
+      redirect_to login_path, alert: "Impossible de trouver un compte correspondant à cet email"
     end
   end
 
