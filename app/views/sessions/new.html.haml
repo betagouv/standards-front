@@ -1,16 +1,13 @@
 
 - content_for(:page_title) { "Connexion" }
 
-.fr-container
-  .fr-grid-row
-    .fr-col-12.fr-col-md-10.fr-col-lg-8
-      %h1 Connexion
+%h1 Connexion
 
-      %p.fr-text--lg
-        Connectez-vous pour pouvoir choisir la startup à évaluer.
+%p.fr-text--lg
+  Connectez-vous pour pouvoir choisir le service à évaluer.
 
 
-      - if Rails.env.production?
-        = render 'proconnect_button'
-      - else
-        = button_to "Se connecter en mode développeur", "/auth/developer", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg fr-mb-3w"
+- if Rails.env.production?
+  = render 'proconnect_button'
+- else
+  = button_to "Se connecter en mode développeur", "/auth/developer", method: :post, remote: false, data: { turbo: false }, class: "fr-btn fr-btn--lg fr-mb-3w"
