@@ -1,45 +1,16 @@
-- content_for(:page_title) { "Les standards" }
+- content_for(:page_title) { "La liste des standards" }
 
-.fr-grid-row.fr-grid-row--gutters
-  .fr-col-12.fr-col-md-8.fr-col-lg-7
-    %h1 Comment fonctionne l'audit technique ?
+%h1 La liste des standards
 
-    %p.fr-text--lg
-      L'outil d'audit permet aux équipes de mesurer leur conformité aux standards techniques
-      et d'améliorer progressivement la qualité de leurs services numériques.
+= dsfr_highlight do
+  %p
+    Ces standards techniques sont développés de manière collaborative et open source par la communauté beta.gouv.fr. Ils évoluent continuellement pour intégrer les meilleures pratiques du développement numérique.
+    = dsfr_link_to "Contribuez sur GitHub", "https://github.com/betagouv/standards", target: "_blank"
 
-    %h3
-      %span.fr-icon-account-line{"aria-hidden": "true"}
-      Connexion via ProConnect
-    %p
-      La connexion s'effectue via ProConnect, le système
-      d'authentification sécurisé de l'État. Vos identifiants vous
-      donnent accès aux services dont vous êtes membre.
+- @standards.each do |category, standards|
+  %h2.fr-h3= category.capitalize
 
-    %h3
-      %span.fr-icon-home-4-line{"aria-hidden": "true"}
-      Sélection de votre service
-    %p
-      Une fois connecté(e), vous pourrez consulter la liste des services
-      pour lesquels vous êtes référencé(e) dans l'Espace
-      Membre. Sélectionnez celui que vous souhaitez auditer.
-
-    %h3
-      %span.fr-icon-checkbox-circle-line{"aria-hidden": "true"}
-      Réalisation de l'audit technique
-    %p
-      Répondez aux questions pour chaque standard technique. L'audit
-      est sauvegardé automatiquement et vous pourrez y revenir à tout
-      moment pour le compléter ou le mettre à jour.
-
-    %p
-      Les standards sont régulièrement actualisés depuis le projet
-      = dsfr_link_to 'betagouv/standards', "https://github.com/betagouv/standards/"
-      où ils sont développés ouvertement.
-
-    %p
-      N'hésitez pas à nous faire des retours que ce soit
-      = dsfr_link_to "sur le contenu des standards", "https://github.com/betagouv/standards/issues"
-      ou
-      = dsfr_link_to "le fonctionnement de l'audit", "https://github.com/betagouv/auto-audit/issues"
-      \.
+  %ul
+    - standards.each do |standard|
+      %li.fr-mb-2w
+        = dsfr_link_to standard.title, standard_url(standard), title: "Consultez le standard \"#{standard.title}\" sur betagouv/standards", target: "_blank"

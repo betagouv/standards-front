@@ -1,9 +1,9 @@
 - content_for(:page_title) { "Accueil" }
-
-.fr-banner.fr-banner--blue-cumulus.fr-py-5w
-  .fr-container
+- content_for(:nospacer) { "none" }
+.fr-banner.fr-banner--blue-cumulus
+  %section.fr-container
     .fr-grid-row.fr-grid-row--gutters
-      .fr-col-12.fr-col-md-8.fr-col-lg-7
+      .fr-col-12.fr-col-md-8.fr-col-lg-8
         .fr-banner__content
           %h1.fr-banner__title.fr-text--blue-france Auto-audit des services numériques
           %p.fr-banner__desc.fr-text--lg.fr-text--blue-france
@@ -11,50 +11,78 @@
 
           %p= dsfr_link_to "Commencer à auditer vos services", startups_path, icon_left: "arrow-right-line"
 
-.fr-container.fr-py-5w
-  .fr-grid-row.fr-grid-row--gutters.fr-mb-5w
-    .fr-col-12.fr-col-md-8.fr-col-lg-7
-      %h2.fr-h2.fr-mb-3w Pourquoi réaliser un auto-audit ?
+%section.fr-container
+  .fr-grid-row
+    .fr-col-12.fr-col-md-8.fr-col-lg-8
+      %h2 Pourquoi réaliser un auto-audit ?
 
-      .fr-text
-        %p.fr-text--md.fr-mb-4w
-          L'auto-audit permet d'évaluer votre service selon des standards techniques conçus par la communauté Beta pour accompagner les équipes dans le développement de services numériques performants et durables.
+      %p
+        L'auto-audit permet d'évaluer votre service selon des
+        standards techniques conçus par la communauté Beta pour
+        accompagner les équipes dans le développement de services
+        numériques performants et durables.
 
       .fr-grid-row.fr-grid-row--gutters
-        .fr-col-12.fr-col-md-6.fr-mb-3w
-          .fr-text
-            %h3.fr-text.fr-text--bold.fr-mb-1w
-              %span.fr-icon-checkbox-circle-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-              Garantir la qualité
-            %p.fr-text--md
-              Ils permettent d'assurer la qualité des produits numériques développés par l'État. En suivant ces standards, vous créez des services qui répondent efficacement aux besoins des usagers.
+        = render layout: 'card', locals: { title: "Garantir la qualité", icon: "checkbox-circle-line" } do
+          %p
+            Ils permettent d'assurer la qualité des produits
+            numériques développés par l'État. En suivant ces
+            standards, vous créez des services qui répondent
+            efficacement aux besoins des usagers.
 
-        .fr-col-12.fr-col-md-6.fr-mb-3w
-          .fr-text
-            %h3.fr-text.fr-text--bold.fr-mb-1w
-              %span.fr-icon-refresh-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-              Faciliter la maintenance
-            %p.fr-text--md
-              Les standards techniques facilitent la maintenance et l'évolution de vos services dans le temps grâce à des pratiques documentées et partagées par les équipes.
+        = render layout: 'card', locals: { title: "Faciliter la maintenance", icon: "refresh-line" } do
+          %p
+            Les standards techniques facilitent la maintenance et
+            l'évolution de vos services dans le temps grâce à des
+            pratiques documentées et partagées par les équipes.
 
-        .fr-col-12.fr-col-md-6.fr-mb-3w
-          .fr-text
-            %h3.fr-text.fr-text--bold.fr-mb-1w
-              %span.fr-icon-lock-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-              Renforcer la sécurité
-            %p.fr-text--md
-              La protection des données est une priorité. Les standards vous aident à renforcer la sécurité et la conformité réglementaire, garantissant la confiance des citoyens.
+        = render layout: 'card', locals: { title: "Renforcer la sécurité", icon: "lock-line" } do
+          %p
+            La protection des données est une priorité. Les standards
+            vous aident à renforcer la sécurité et la conformité
+            réglementaire, garantissant la confiance des citoyens.
 
-        .fr-col-12.fr-col-md-6.fr-mb-3w
-          .fr-text
-            %h3.fr-text.fr-text--bold.fr-mb-1w
-              %span.fr-icon-timer-line.fr-mr-1w.fr-text--blue-france{"aria-hidden": "true"}
-              Assurer la pérennité
-            %p.fr-text--md
-              Les investissements dans les services publics numériques doivent être durables. En respectant ces standards, vous contribuez à la pérennité et à la continuité du service.
+        = render layout: 'card', locals: { title: "Assurer la pérennité", icon: "timer-line" } do
+          %p
+            Les investissements dans les services publics numériques
+            doivent être durables. En respectant ces standards, vous
+            contribuez à la pérennité et à la continuité du service.
 
-  .fr-grid-row.fr-grid-row--gutters.fr-mt-4w.fr-mb-5w
-    .fr-col-md-8.fr-col-12
+%section.fr-container
+  .fr-grid-row
+    .fr-col-12.fr-col-md-8.fr-col-lg-8
+      %h2 Comment fonctionne l'audit technique ?
+
+      .fr-grid-row.fr-grid-row--gutters
+        = render layout: "card", locals: { title: "Connexion via ProConnect", icon: "lock-line" } do
+          %p
+            La connexion s'effectue via ProConnect, le système
+            d'authentification sécurisé de l'État. Vos identifiants vous
+            donnent accès aux services dont vous êtes membre.
+
+        = render layout: "card", locals: { title: "Sélection de votre service", icon: "home-4-line" } do
+          %p
+            Une fois connecté(e), vous pourrez consulter la liste des services
+            pour lesquels vous êtes référencé(e) dans l'Espace
+            Membre. Sélectionnez celui que vous souhaitez auditer.
+
+        = render layout: "card", locals: { title: "Réalisation de l'audit technique", icon: "checkbox-circle-line" } do
+          %p
+            Répondez aux questions pour chaque standard technique. L'audit
+            est sauvegardé automatiquement et vous pourrez y revenir à tout
+            moment pour le compléter ou le mettre à jour.
+
+        = render layout: "card", locals: { title: "Maintenez votre service à jour", icon: "recycle-line" } do
+          %p
+            Votre auto-audit est avant tout une ressource pour vous
+            aider à garder votre produit au top de sa forme. Mettez-le
+            à jour quand c'est nécessaire, et n'hésitez pas à le
+            consulter lors de l'actualisation de votre feuille de
+            route.
+
+%section.fr-container
+  .fr-grid-row.fr-grid-row--gutters
+    .fr-col-12.fr-col-md-8.fr-col-lg-8
       .fr-callout.fr-callout--blue-cumulus.fr-py-3w
         %h3.fr-callout__title.fr-mb-2w Évaluez votre service numérique
         %p.fr-callout__text.fr-text--md

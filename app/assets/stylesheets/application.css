@@ -9,8 +9,14 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-body, html {
-  /* font-size: 120%; */
+.spacer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+section {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .fr-logo {
@@ -140,43 +146,11 @@ body, html {
   margin-bottom: 2rem;
 }
 
-.fr-banner__buttons {
-  margin-top: 1rem;
-}
-
-
-/* Hero section styling */
-.img-container {
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.hero-image:hover {
-  transform: scale(1.02);
-}
 
 /* Card hover effects */
 .fr-card.fr-enlarge-link {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 0;
-}
-
-.fr-card.fr-enlarge-link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.fr-text--md {
-  font-size: 1.1rem;
-  line-height: 1.5;
 }
 
 .fr-text h3 {

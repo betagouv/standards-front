@@ -1,52 +1,50 @@
 - content_for(:page_title) { @question.title }
 
-.fr-grid-row
-  .fr-col-12.fr-col-md-8.fr-col-lg-7.question-page
-    %h1= @question.title
+%h1= @question.title
 
-    .question-simple
-      .question-description
-        :markdown
-          #{h(@question.description)}
+.question-simple
+  .question-description
+    :markdown
+      #{h(@question.description)}
 
-      - if @question.resources.present?
-        .question-resources.fr-mb-3w
-          %p.fr-h6.fr-mb-2w Ressources pour approfondir
-          %ul
-            - @question.resources.each do |resource|
-              %li.fr-mb-1w
-                :markdown
-                  #{resource}
+  - if @question.resources.present?
+    .question-resources.fr-mb-3w
+      %p.fr-h6.fr-mb-2w Ressources pour approfondir
+      %ul
+        - @question.resources.each do |resource|
+          %li.fr-mb-1w
+            :markdown
+              #{resource}
 
-    .question-section.fr-py-2w
-      %h2 Critères à vérifier
+.question-section.fr-py-2w
+  %h2 Critères à vérifier
 
-      = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
-        = form.fields_for @question do |ff|
-          = ff.hidden_field :id, value: @question.id
-          %ol
-            - @question.criteria.each_with_index do |criterion, index|
-              %li
-                %fieldset.fr-fieldset
-                  %legend.fr-fieldset__legend.fr-fieldset__legend--regular
-                    = criterion.questionized_label
-                  = ff.fields_for :criteria, index: index do |fff|
-                    - Audit::Criterion::ANSWERS.each do |key, label|
-                      .fr-fieldset__element.fr-fieldset__element--inline
-                        .fr-radio-group
-                          = fff.radio_button :answer, key, checked: criterion.answer == key
-                          = fff.label "answer_#{key}", label, class: "fr-label"
+  = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
+    = form.fields_for @question do |ff|
+      = ff.hidden_field :id, value: @question.id
+      %ol
+        - @question.criteria.each_with_index do |criterion, index|
+          %li
+            %fieldset.fr-fieldset
+              %legend.fr-fieldset__legend.fr-fieldset__legend--regular
+                = criterion.questionized_label
+              = ff.fields_for :criteria, index: index do |fff|
+                - Audit::Criterion::ANSWERS.each do |key, label|
+                  .fr-fieldset__element.fr-fieldset__element--inline
+                    .fr-radio-group
+                      = fff.radio_button :answer, key, checked: criterion.answer == key
+                      = fff.label "answer_#{key}", label, class: "fr-label"
 
-          - if has_disabled_feature?(:next_question) || @next_question.blank?
-            = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
-          - else
-            %ul.fr-btns-group.fr-btns-group--inline
-              = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
-              = form.submit "Enregistrer ma réponse et passer à la question suivante", class: "fr-btn fr-btn--secondary fr-my-2w"
+      - if has_disabled_feature?(:next_question) || @next_question.blank?
+        = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
+      - else
+        %ul.fr-btns-group.fr-btns-group--inline
+          = form.submit "Enregistrer ma réponse", class: "fr-btn fr-my-2w"
+          = form.submit "Enregistrer ma réponse et passer à la question suivante", class: "fr-btn fr-btn--secondary fr-my-2w"
 
-    %hr
+%hr
 
-    = dsfr_highlight(html_attributes: { class: "fr-highlight--brown-caramel"}) do
-      Vous pouvez nous aider à améliorer la compréhension de ce standard et de ses critères en nous
-      = dsfr_link_to "partageant vos retours dessus", standard_feedback_link(@question), target: "_blank"
-      \.
+= dsfr_highlight(html_attributes: { class: "fr-highlight--brown-caramel"}) do
+  Vous pouvez nous aider à améliorer la compréhension de ce standard et de ses critères en nous
+  = dsfr_link_to "partageant vos retours dessus", standard_feedback_link(@question), target: "_blank"
+  \.

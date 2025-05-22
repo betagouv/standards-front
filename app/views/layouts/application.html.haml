@@ -22,13 +22,17 @@
     = render 'shared/beta_banner'
     = render 'shared/header'
 
-    - if current_page?(root_path)
-      = yield
-    - else
+    %main#main{ class: class_names(spacer: !content_for?(:nospacer)) }
       .fr-container
-        %main#main.fr-pt-2w.fr-pb-6w
-          = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
-          = render 'shared/flash'
-          .fr-mt-3w= yield
+        = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
+        = render 'shared/flash'
+
+      - unless content_for?(:nospacer)
+        .fr-container.fr-mt-3w
+          .fr-grid-row
+            %div{class: default_column_classes}
+              = yield
+      - else
+        = yield
 
     = render 'shared/footer'
