@@ -23,6 +23,13 @@ Fonctionnalité: Remplissage de l'audit
     Quand je clique sur "Enregistrer"
     Alors la page contient "À faire" pour le standard "Au moins trois oeufs frais"
 
+  Scénario: Je peux répondre partiellement
+    Sachant que je clique sur "Ingrédients"
+    Et que je clique sur "Au moins trois oeufs frais"
+    Et que je choisis "Oui" pour "Est-ce que les oeufs sont frais ?"
+    Quand je clique sur "Enregistrer"
+    Alors le titre de la page contient "Ingrédients"
+
   Scénario: Lorsque j'ai déjà vu toutes les questions
     Sachant que je clique sur "Ingrédients"
     Et que je complète le standard "Du beurre"

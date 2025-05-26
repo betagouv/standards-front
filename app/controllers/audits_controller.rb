@@ -90,6 +90,8 @@ class AuditsController < ApplicationController
     criteria = audit_params["audit_question"]["criteria"]
 
     question.criteria.each_with_index do |criterion, index|
+      next if criteria[index.to_s].nil? # a criteria within the set isn't always answered
+
       question.criteria[index].answer = criteria[index.to_s]["answer"]
     end
   end

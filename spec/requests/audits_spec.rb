@@ -55,6 +55,32 @@ RSpec.describe "Audits", type: :request do
         expect(updated_question.criteria[0].answer).to eq("1")
         expect(updated_question.criteria[1].answer).to eq("0")
       end
+
+      context "when a criteria is missing" do
+        it "updates anyway" do
+          update_params = {
+            audit: {
+              audit_question: {
+                id: "q1",
+                criteria: { "1" => { answer: "0" } }
+              }
+            }
+          }
+
+          # Make the request
+          patch "/startups/#{startup.ghid}/audit", params: update_params
+
+          # Verify the response
+          expect(response).to have_http_status(:redirect)
+          expect(response).to redirect_to(category_startup_audit_path(startup.ghid, "Test Category"))
+
+          # Reload the audit and verify the changes
+          audit.reload
+          updated_question = audit.questions.first
+          expect(updated_question.criteria[0].answer).to eq(nil)
+          expect(updated_question.criteria[1].answer).to eq("0")
+        end
+      end
     end
   end
 end

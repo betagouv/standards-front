@@ -128,6 +128,12 @@ Quand("je choisis {string}") do |option|
   choose option
 end
 
+Quand("je choisis {string} pour {string}") do |option, fieldset|
+  within('fieldset', text: fieldset) do
+    choose option
+  end
+end
+
 Alors("je peux voir dans le tableau {string}") do |caption, table|
   expect(page).to have_table(caption, with_rows: table.rows)
 end
