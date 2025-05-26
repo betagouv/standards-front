@@ -7,7 +7,7 @@ class Audit < ApplicationRecord
   attribute :questions, :questions
 
   def self.latest_standards
-    @latest ||= YAML.safe_load_file(ENV.fetch("BETA_STANDARDS_YML_PATH"))
+    @latest ||= BetaStandards.standards
   end
 
   def initialize_with_latest_standards
