@@ -5,4 +5,5 @@
   = header.with_direct_link_simple title: current_user? ? "Vos services" : "Évaluez vos services", path: startups_path,  **add_current_attribute(startups_path)
   - if current_user?
     = header.with_tool_link title: "Vos services (#{current_user.fullname})", path: startups_path, html_attributes: { title: "Consultez vos services", class: "fr-icon-account-line" }
-    = header.with_tool_link title: "Déconnexion", path: logout_path, html_attributes: { data: { turbo_method: :delete }, class: "fr-icon-logout-box-r-line" }
+    = header.with_custom_tool_link do
+      = button_to "Déconnexion", logout_path, { method: :delete, class: "fr-btn fr-icon-logout-box-r-line", data: { turbo: "false" } }
