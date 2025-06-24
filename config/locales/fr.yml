@@ -13,6 +13,7 @@ fr:
       transparence: "Transparence"
       vie-privée: "Vie privée"
       éco-conception: "Éco-conception"
+      équipe: "Équipe"
   feedback:
     title: Retour sur la question %{title}
     body: |
