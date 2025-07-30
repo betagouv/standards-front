@@ -26,7 +26,10 @@ class Audit < ApplicationRecord
   end
 
   def grouped_questions
-    questions.group_by(&:category)
+    questions
+      .group_by(&:category)
+      .sort_by { |k, v| I18n.transliterate(k).to_s }
+      .to_h
   end
 
   def questions_for(category)
