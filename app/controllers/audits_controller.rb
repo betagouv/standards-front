@@ -74,7 +74,10 @@ class AuditsController < ApplicationController
   end
 
   def set_category_breadcrumb
-    add_breadcrumb(@category.humanize, category_startup_audit_path(@startup.ghid, @category))
+    add_breadcrumb(
+      t("audits.categories.#{@category}"),
+      category_startup_audit_path(@startup.ghid, @category)
+    )
   end
 
   def audit_params
