@@ -5,7 +5,7 @@ module BetaStandards
 
   class << self
     def standards
-      YAML.safe_load_file(standards_yml_file, permitted_classes: [ Time ])
+      YAML.safe_load_file(standards_yml_file, permitted_classes: [ Date ])
     end
 
     private

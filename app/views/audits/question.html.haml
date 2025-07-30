@@ -47,7 +47,7 @@
 
 = dsfr_highlight(html_attributes: { class: "fr-highlight--brown-caramel"}) do
   Ce standard a été modifié pour la dernière fois le
-  = localize(@question.last_modified_at.to_date, format: :long)
+  = localize(@question.last_modified_on, format: :long)
   \. Vous pouvez nous aider à améliorer la compréhension de ce standard et de ses critères en nous
   = dsfr_link_to "partageant vos retours dessus", standard_feedback_link(@question), target: "_blank"
   \.

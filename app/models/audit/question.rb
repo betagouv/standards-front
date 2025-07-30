@@ -10,7 +10,7 @@ class Audit::Question
   attribute :title, :string
   attribute :description, :string
   attribute :criteria, default: -> { [] }
-  attribute :last_modified_at, :datetime
+  attribute :last_modified_on, :date
 
   def criteria
     @criteria ||= self.attributes["criteria"].map { |crit| Audit::Criterion.new(crit) }

@@ -10,6 +10,7 @@
     - label: les oeufs sont frais
   resources:
     - https://gouvernment.fr
+  last_modified_on: 2025-07-30
 - title: Du beurre
   id: beurre
   category: ingrédients
@@ -19,6 +20,7 @@
     - label: 10gr de beurre
   resources:
   - https://gouvernment.fr
+  last_modified_on: 2025-07-30
 - title: Faire chauffer la casserolle tranquille
   id: casserolle
   category: préparation
@@ -29,6 +31,7 @@
     - label: La casserolle n'est pas trop chaude
   resources:
     - https://gouvernment.fr
+  last_modified_on: 2025-07-30
 - title: Mettre les oeufs pêle-mêle dedans
   id: insertion-oeufs
   category: préparation
@@ -40,6 +43,7 @@
   criteria:
     - label: Les oeufs sont dans la casserolle
     - label: Les oeufs tournoient
+  last_modified_on: 2025-07-30
 - title: Faire du suspense à la casserolle
   id: suspense-casserolle
   category: préparation
@@ -61,6 +65,7 @@
   criteria:
     - label: Les oeufs n'ont pas l'air complètement cuits
     - label: Les oeufs sont hors du feu
+  last_modified_on: 2025-07-30
 - title: Assaissonnez correctement
   id: assaissonnement
   category: dégustation
@@ -71,6 +76,7 @@
     - label: Les oeufs sont salés
     - label: Les oeufs sont poivrés
     - label: Les oeufs sont bénis d'un filet d'huile (de truffe de préférence)
+  last_modified_on: 2025-07-30
 - title: Servez les oeufs
   id: service
   category: dégustation
@@ -80,3 +86,4 @@
   criteria:
     - label: Les oeufs sont bons
     - label: La vie est belle
+  last_modified_on: 2025-07-30
