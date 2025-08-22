@@ -19,7 +19,7 @@
   - "[HTML : une bonne base pour l'accessibilité - mozilla.org](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Accessibility/HTML)"
   - "[Making the Web Accessible (en) - W3C](https://www.w3.org/WAI/)"
   - "[Design System de l'État](https://www.systeme-de-design.gouv.fr/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-08-22
   category: accessibilité
 - id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
   title: L'équipe recette régulièrement l'accessibilité de son service
@@ -49,7 +49,7 @@
   resources:
   - "[10 choses faciles à vérifier pour un site plus accessible - doc.incubateur.net](https://doc.incubateur.net/communaute/travailler-chez-beta.gouv.fr/se-former/se-former-en-ligne/formation-a-laccessibilite/10-choses-faciles-a-verifier-pour-un-site-plus-accessible)"
   - "[Easy Checks – A First Review of Web Accessibility (en) - W3C](https://www.w3.org/WAI/test-evaluate/easy-checks/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-08-22
   category: accessibilité
 - id: le-produit-respecte-ses-obligations-declaratives
   title: Le produit respecte ses obligations déclaratives
@@ -121,9 +121,9 @@
   - "[Obligations légales : Déclaration d'accessibilité - numerique.gouv.fr](https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/)"
   - "[Générateur de déclaration d'accessibilité](https://betagouv.github.io/a11y-generateur-declaration/)"
   - "[Obligations légales : Schéma pluriannuel de mise en accessibilité - numerique.gouv.fr](https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-08-22
   category: accessibilité
-- id: l-equipe-connait-ses-utilisateurs-et-leurs-problematiques
+- id: l-equipe-pratique-la-recherche-utilisateur
   title: L'équipe pratique la recherche utilisateur
   description: |-
     La méthode beta.gouv.fr est centrée sur l'utilisateur : c'est grâce à
@@ -136,66 +136,64 @@
     disponibles pour mieux comprendre comment est utilisé votre
     service, par exemple :
 
-    - la cartographie du parcours global ([service blueprint](https://miro.com/fr/cartographie-parcours-client/comment-faire-des-service-blueprints/), [experience map](https://www.usabilis.com/experience-map-carte-dexperience/))
+    - la cartographie du parcours global ([service blueprint][1],
+      [experience map][2])
     - les entretiens utilisateurs
-    - [les personas](https://www.lunaweb.fr/actualites/blog/demystifier-le-persona-ux-comprendre-et-concevoir-vos-archetypes-usagers/).
+    - [les personas][3].
 
     La phase d'investigation de votre service commence souvent par de la
     recherche utilisateur : elle doit continuer tout au long de la vie de
     votre produit.
+
+    [1]: https://miro.com/fr/cartographie-parcours-client/comment-faire-des-service-blueprints/
+    [2]: https://www.usabilis.com/experience-map-carte-dexperience/
+    [3]: https://www.lunaweb.fr/actualites/blog/demystifier-le-persona-ux-comprendre-et-concevoir-vos-archetypes-usagers/
   criteria:
   - label: L'équipe intègre un processus de recherche utilisateur
   resources:
   - "[Cartographie de l'UX - blognotes.iergo.fr](https://blocnotes.iergo.fr/wp-content/uploads/2012/06/UX_Cartographie.svg)"
   - "[Introduction aux « User Journey Maps » + modèles à télécharger - Stéphanie Walter](https://stephaniewalter.design/fr/blog/introduction-aux-user-journey-maps-modeles-pdf-a-telecharger/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-08-22
   category: design
-- id: le-service-est-inclusif
-  title: Le service est inclusif
+- id: le-service-prevoit-les-cas-d-exclusion-numerique
+  title: Le service prévoit les cas d'exclusion numérique
   description: |-
-    Les services publics doivent fonctionner pour toutes celles et ceux
-    qui ont besoin de les utiliser. Le numérique n'est pas un acquis pour
-    tout le monde, et vous devez anticiper et inclure certains cas d'usage
-    qui sortent de votre périmètre habituel.
+    [15% de la population française est en situation d'illectronisme][1]
+    service public numérique qui exclut ces personnes manque à sa mission
+    fondamentale : servir tous les citoyens, sans exception.
 
-    ### Pratiquer le « Dites-le-nous une fois »
+    L'exclusion numérique ne concerne pas seulement les personnes âgées ou
+    peu diplômées, mais aussi les personnes en situation de précarité,
+    celles qui n'ont pas d'accès stable à internet, ou qui utilisent
+    uniquement un smartphone pour naviguer. Ignorer ces réalités, c'est
+    reproduire les inégalités que le service public doit
+    combattre. L'inclusion numérique n'est pas un frein à l'innovation :
+    elle la guide. Simplifier pour les plus fragiles améliore l'expérience
+    de tous.
 
-    Le principe du [« Dites-le-nous une fois
-    »](https://www.modernisation.gouv.fr/files/fileadmin-legacy/Book/Fiche3_5.pdf)
-    permet aux utilisateurs de ne pas saisir à nouveau des informations
-    déjà connues de l'administration.
+    Pour y parvenir, trois mesures essentielles s'imposent :
 
-    ### Proposer une alternative hors parcours numérique
+    - **Identifier dès la conception** qui risque d'être exclu - cette
+      démarche de recherche utilisateur permet d'anticiper les difficultés
+      plutôt que de les subir
+    - **Mettre en place au moins une alternative** fonctionnelle au parcours
+      numérique : téléphone, guichet physique ou partenariat avec des acteurs
+      locaux
+    - **Simplifier les démarches** en évitant de redemander des informations
+      déjà connues de l'administration, principe qui bénéficie à tous les
+      usagers
 
-    Offrir des alternatives aux services en ligne garantit que personne ne
-    soit exclu en raison de son niveau de compétence numérique ou de son
-    accès à internet. Cette pratique rend le service plus inclusif en
-    assurant que tous les citoyens, indépendamment de leur situation,
-    puissent accéder aux services essentiels.
-
-    ### Communiquer de manière claire et compréhensible
-
-    Utiliser des mots simples et des phrases courtes rend les informations
-    accessibles à un large public, y compris ceux qui ont des difficultés
-    de lecture ou parlent une autre langue. Cette pratique favorise
-    l'inclusion en permettant à tous de comprendre et de naviguer
-    facilement dans les services publics, réduisant ainsi les inégalités
-    d'accès.
+    [1]: https://emmaus-connect.org/2023/11/etude-insee-illectronisme-en-france-une-tendance-encourageante/
   criteria:
-  - label: 'Le service anticipe le non-recours : il est pro-actif envers les personnes
-      pouvant bénéficier d’une aide'
-  - label: Le service pratique le « Dites-le moi une fois »
-  - label: 'Le service favorise le droit au non numérique : il dispose d''une alternative
-      hors parcours numérique'
-  - label: Le service communique de manière claire et compréhensible, en utilisant
-      des mots simples et des phrases courtes.
+  - label: L'équipe a identifié qui risque d'être exclu du service numérique
+  - label: |-
+      Au moins une alternative non-numérique fonctionne (téléphone, guichet,
+        partenaires locaux)
+  - label: Le service évite de demander plusieurs fois les mêmes informations
   resources:
   - "[Qu'est-ce que l'inclusion - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/rendre-un-service-inclusif/quest-ce-que-linclusion)"
-  - "[Dites-le-nous une fois : circulation et exploitation de la donnée - numerique.gouv.fr](https://archive.numerique.gouv.fr/services/guichet-dites-le-nous-une-fois/)"
-  - "[Quelle politique pour les exclus du numérique ? - vie-publique.fr](https://www.vie-publique.fr/eclairage/18930-dematerialisation-quelle-politique-pour-les-exclus-du-numerique)"
-  - "[15% de la population française en situation d’illectronisme - emmaus-connect.org](https://emmaus-connect.org/2023/11/etude-insee-illectronisme-en-france-une-tendance-encourageante/)"
-  - "[Illectronisme et numérisation des services publics - iergo.fr](https://blocnotes.iergo.fr/articles/illectronisme-et-numerisation-des-services-publics/)"
-  last_modified_on: 2025-08-21
+  - "[Pôle numérique inclusif - doc.incubateur.net](https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/aide-transverse-pole-numerique-inclusif)"
+  last_modified_on: 2025-08-22
   category: design
 - id: le-service-simplifie-ses-contenus-d-aide
   title: Le service simplifie ses contenus d'aide
@@ -920,33 +918,6 @@
   - "[Exemple de CGU- mes-aides.1jeune1solution.beta.gouv.fr](https://mes-aides.1jeune1solution.beta.gouv.fr/cgu)"
   last_modified_on: 2025-08-21
   category: vie-privée
-- id: le-service-est-frugal-en-fonctionnalites
-  title: Le service est frugal en fonctionnalités
-  description: |-
-    Le service est conçu pour être simple et efficace, en évitant les
-    fonctionnalités superflues qui pourraient compliquer l'expérience utilisateur.
-  criteria:
-  - label: Les fonctionnalités sont régulièrement évaluées pour leur pertinence.
-  - label: |-
-      Les utilisateurs sont consultés pour valider l'utilité des
-      fonctionnalités.
-  resources:
-  - "[Référentiel général de l’écoconception des services numériques (RGESN) - ARCEP](https://www.arcep.fr/mes-demarches-et-services/entreprises/fiches-pratiques/referentiel-general-ecoconception-services-numeriques.html)"
-  - "[Guide d'écoconception de services numériques - Designers Éthiques](https://designersethiques.org/fr/thematiques/ecoconception/guide-d-ecoconception)"
-  last_modified_on: 2025-08-21
-  category: éco-conception
-- id: le-service-privilegie-la-low-tech
-  title: Le service privilégie la low-tech
-  description: |-
-    Le service adopte une approche low-tech pour minimiser l'impact environnemental
-    et maximiser l'efficacité.
-  criteria:
-  - label: Les solutions low-tech sont privilégiées dans le développement.
-  - label: L'impact environnemental est régulièrement évalué.
-  resources:
-  - "[Low-tech Lab](https://lowtechlab.org/)"
-  last_modified_on: 2025-08-21
-  category: éco-conception
 - id: des-comites-d-investissement-sont-organises-regulierement
   title: Des comités d'investissement sont organisés régulièrement
   description: |-
