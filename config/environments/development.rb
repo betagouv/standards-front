@@ -8,6 +8,7 @@ Rails.application.configure do
   config.annotations.register_extensions("feature") { |tag| /#\s*(#{tag}):?\s*(.*)$/ }
 
   # Settings specified here will take precedence over those in config/application.rb.
+  config.web_console.permissions = "192.168.0.0/16"
 
   # Make code changes take effect immediately without server restart.
   config.enable_reloading = true
