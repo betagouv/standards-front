@@ -56,6 +56,6 @@ class Audit < ApplicationRecord
   private
 
   def selected_categories
-    ENV.fetch("BETA_STANDARDS_SELECTED_CATEGORIES").split(",")
+    ENV.fetch("BETA_STANDARDS_SELECTED_CATEGORIES", "").split(",")
   end
 end

@@ -45,23 +45,28 @@ RSpec.describe Audit, type: :model do
       expect(audit.questions.first).to be_a Audit::Question
     end
 
-    context "when the BETA_STANDARDS_SELECTED_CATEGORIES env variable is set" do
+    describe "filtering categories" do
       before do
-        allow(ENV).to receive(:fetch).with("BETA_STANDARDS_SELECTED_CATEGORIES").and_return "other,foobar, category"
+        allow(ENV)
+          .to receive(:fetch)
+                .with("BETA_STANDARDS_SELECTED_CATEGORIES", "")
+                .and_return(selection)
       end
 
-      it "only selects the category indicated" do
-        expect(audit.questions.map(&:id)).to contain_exactly "question-2"
-      end
-    end
+      context "when the BETA_STANDARDS_SELECTED_CATEGORIES env variable is set" do
+        let(:selection) { "other,foobar, category" }
 
-    context "when the BETA_STANDARDS_SELECTED_CATEGORIES env variable is not set" do
-      before do
-        allow(ENV).to receive(:fetch).with("BETA_STANDARDS_SELECTED_CATEGORIES").and_return ""
+        it "only selects the category indicated" do
+          expect(audit.questions.map(&:id)).to contain_exactly "question-2"
+        end
       end
 
-      it "doesn't filter the categories" do
-        expect(audit.questions.map(&:id)).to contain_exactly "question-1", "question-2"
+      context "when the BETA_STANDARDS_SELECTED_CATEGORIES env variable is not set" do
+        let(:selection) { "" }
+
+        it "doesn't filter the categories" do
+          expect(audit.questions.map(&:id)).to contain_exactly "question-1", "question-2"
+        end
       end
     end
   end
