@@ -8,9 +8,10 @@
     = dsfr_link_to "Contribuez sur GitHub", "https://github.com/betagouv/standards", target: "_blank"
 
 - @standards.each do |category, standards|
-  %h2.fr-h3= category.capitalize
+  %h2= t("audits.categories.#{category}", default: category.humanize)
 
-  %ul
-    - standards.each do |standard|
-      %li.fr-mb-2w
-        = dsfr_link_to standard.title, standard_url(standard), title: "Consultez le standard \"#{standard.title}\" sur betagouv/standards", target: "_blank"
+  %p
+    %ol
+      - standards.each do |standard|
+        %li.fr-mb-1w
+          = dsfr_link_to standard.title, standard_url(standard), title: "Consultez le standard \"#{standard.title}\" sur betagouv/standards", target: "_blank"
