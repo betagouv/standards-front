@@ -8,7 +8,7 @@
     relatif au code).
 
     Produire du code sémantique est donc essentiel. Pour cela, l'équipe
-    doit s'assurer de mettre en oeuvre le maximum, par exemple :
+    doit s'assurer de mettre en oeuvre le maximum, par exemple :
 
     - Utiliser un design système accessible (par exemple, le DSFR)
     - Avoir des compétences front-end en interne
@@ -16,9 +16,10 @@
   criteria:
   - label: Le code produit est accessible.
   resources:
-  - "[HTML : une bonne base pour l'accessibilité](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Accessibility/HTML)"
-  - "[W3C : Making the Web Accessible](https://www.w3.org/WAI/)"
+  - "[HTML : une bonne base pour l'accessibilité - mozilla.org](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Accessibility/HTML)"
+  - "[Making the Web Accessible (en) - W3C](https://www.w3.org/WAI/)"
   - "[Design System de l'État](https://www.systeme-de-design.gouv.fr/)"
+  last_modified_on: 2025-08-21
   category: accessibilité
 - id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
   title: L'équipe recette régulièrement l'accessibilité de son service
@@ -29,13 +30,13 @@
 
     Recetter manuellement permet d'éviter la dette d'accessibilité et de
     maintenir un niveau minimal de qualité. Cette régularité peut varier
-    selon l'organisation de l'équipe :
+    selon l'organisation de l'équipe :
 
     - à chaque nouvelle fonctionnalité
     - de manière mensuelle/trimestrielle/semestrielle
     - ...
 
-    Recetter régulièrement plutôt qu'au dernier moment permet de :
+    Recetter régulièrement plutôt qu'au dernier moment permet de :
 
     - résorber la dette d'accessibilité au fur et à mesure
     - recetter de plus en plus efficacement avec l'expérience
@@ -46,17 +47,68 @@
   - label: L'équipe est formée aux gestes de recette manuelle (Easy Checks)
   - label: L'équipe recette régulièrement son service
   resources:
-  - "[Protocole Easy Checks du W3C](https://www.w3.org/WAI/test-evaluate/easy-checks/)"
-  - "[10 choses faciles à vérifier pour un site plus accessible](https://doc.incubateur.net/communaute/travailler-chez-beta.gouv.fr/se-former/se-former-en-ligne/formation-a-laccessibilite/10-choses-faciles-a-verifier-pour-un-site-plus-accessible)"
+  - "[10 choses faciles à vérifier pour un site plus accessible - doc.incubateur.net](https://doc.incubateur.net/communaute/travailler-chez-beta.gouv.fr/se-former/se-former-en-ligne/formation-a-laccessibilite/10-choses-faciles-a-verifier-pour-un-site-plus-accessible)"
+  - "[Easy Checks – A First Review of Web Accessibility (en) - W3C](https://www.w3.org/WAI/test-evaluate/easy-checks/)"
+  last_modified_on: 2025-08-21
   category: accessibilité
 - id: le-produit-respecte-ses-obligations-declaratives
   title: Le produit respecte ses obligations déclaratives
   description: |-
-    Le produit doit respecter ses obligations déclaratives :
+    Le produit doit respecter ses obligations déclaratives :
 
     1. Publication de la déclaration d'accessibilité
     2. Lien vers le schéma pluriannuel
     3. Publication d'un plan d'action
+
+    ### Publication de la déclaration d'accessibilité
+
+    Le produit doit :
+
+    - afficher l’état de conformité du site sur la page d’accueil
+    - publier une déclaration de conformité
+
+    Ces obligations sont valables dès la mise en ligne du site, même si le
+    produit n'a pas encore été audité (on indiquera alors la mention
+    "Accessibilité : non conforme")
+
+    La déclaration de conformité d'accessibilité est un document
+    présentant un état des lieux de conformité d'un produit (taux de
+    conformité, signalement des contenus non accessibles, dispositifs
+    d’assistance et de contact...). Il doit respecter le [format
+    légal](https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/).
+
+    Manquer aux obligations déclaratives est passible d'une amende de 20
+    000 €, pour chaque année de manquement (l'obligation étant en vigueur
+    depuis 2021).
+
+    ### Lien vers le schéma pluriannuel
+
+    Le produit doit référencer la politique d’accessibilité de son
+    organisation via un schéma pluri-annuel. Ce document contient entre
+    autres :
+
+    - des informations sur la personne référente accessibilité numérique
+    - les formations et sensibilisations à l'accessibilité prévues
+    - l'organisation interne prévue pour mettre en œuvre l'accessibilité
+    - etc
+
+    Le produit doit référencer un schéma, parmi :
+
+    - le schéma pluriannuel de son incubateur (s'il existe)
+    - le schéma pluriannuel de son administration sponsor - à retrouver
+      sur la page Accessibilité du sponsor - si elle existe)
+    - le schéma pluriannuel de beta.gouv.fr, sinon
+
+    ### Publication d'un plan d'action
+
+    L'équipe propose ensuite un plan d'action pour l'année en cours. Il
+    s'agit d'une liste ou d'un tableau indiquant les grandes étapes de
+    mise en accessibilité. Par exemple :
+
+    - Refonte vers le DSFR et amélioration de l'accessibilité du front - S1 2025
+    - Formation en interne (atelier Easy Checks menés par beta.gouv.fr- - S1 2025
+    - Préparation à l'audit - S2 2025
+    - Audit de conformité et correction - S2 2025
   criteria:
   - label: |-
       Le service indique une mention de conformité
@@ -65,239 +117,725 @@
   - label: Un schéma pluriannuel à jour est lié.
   - label: Un plan d'action est documenté en ligne.
   resources:
-  - "[Obligations légales d'accessibilite chez beta.gouv.fr](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/obligations-legales#obligations-legales)"
-  - "[Obligations légales : Déclaration d'accessibilité](https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/)"
+  - "[Obligations légales d'accessibilite - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/obligations-legales#obligations-legales)"
+  - "[Obligations légales : Déclaration d'accessibilité - numerique.gouv.fr](https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/)"
   - "[Générateur de déclaration d'accessibilité](https://betagouv.github.io/a11y-generateur-declaration/)"
-  - "[Obligations légales : Schéma pluriannuel de mise en accessibilité](https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/)"
+  - "[Obligations légales : Schéma pluriannuel de mise en accessibilité - numerique.gouv.fr](https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/)"
+  last_modified_on: 2025-08-21
   category: accessibilité
-- id: l-equipe-a-des-rituels-de-recherche-utilisateurs
-  title: L'équipe a des rituels de recherche utilisateurs
+- id: l-equipe-connait-ses-utilisateurs-et-leurs-problematiques
+  title: L'équipe pratique la recherche utilisateur
   description: |-
-    L'équipe organise régulièrement des sessions de recherche utilisateurs pour
-    recueillir des retours et améliorer le produit.
+    La méthode beta.gouv.fr est centrée sur l'utilisateur : c'est grâce à
+    ce fondement qu'elle se distingue du mode projet traditionnel, en [se
+    concentrant sur les besoins des usagers plutôt que ceux de
+    l'administration](https://beta.gouv.fr/manifeste).
+
+    Pour rester connecté à ses utilisateurs et utilisatrices, votre équipe
+    doit pratiquer la recherche utilisateur grâce aux nombreuses méthodes
+    disponibles pour mieux comprendre comment est utilisé votre
+    service, par exemple :
+
+    - la cartographie du parcours global ([service blueprint](https://miro.com/fr/cartographie-parcours-client/comment-faire-des-service-blueprints/), [experience map](https://www.usabilis.com/experience-map-carte-dexperience/))
+    - les entretiens utilisateurs
+    - [les personas](https://www.lunaweb.fr/actualites/blog/demystifier-le-persona-ux-comprendre-et-concevoir-vos-archetypes-usagers/).
+
+    La phase d'investigation de votre service commence souvent par de la
+    recherche utilisateur : elle doit continuer tout au long de la vie de
+    votre produit.
   criteria:
-  - label: Des sessions de recherche sont planifiées régulièrement.
-  - label: Les retours utilisateurs sont documentés et analysés.
+  - label: L'équipe intègre un processus de recherche utilisateur
   resources:
-  - "[Méthodes de recherche UX](https://www.nngroup.com/articles/which-ux-research-methods/)"
+  - "[Cartographie de l'UX - blognotes.iergo.fr](https://blocnotes.iergo.fr/wp-content/uploads/2012/06/UX_Cartographie.svg)"
+  - "[Introduction aux « User Journey Maps » + modèles à télécharger - Stéphanie Walter](https://stephaniewalter.design/fr/blog/introduction-aux-user-journey-maps-modeles-pdf-a-telecharger/)"
+  last_modified_on: 2025-08-21
   category: design
-- id: les-parcours-sont-concus-par-une-personne-dont-c-est-le-metier-ux-designer
-  title: Les parcours sont conçus par une personne dont c'est le métier (UX Designer)
+- id: le-service-est-inclusif
+  title: Le service est inclusif
   description: |-
-    Un UX Designer professionnel est responsable de la conception des parcours
-    utilisateurs pour garantir une expérience fluide et intuitive.
+    Les services publics doivent fonctionner pour toutes celles et ceux
+    qui ont besoin de les utiliser. Le numérique n'est pas un acquis pour
+    tout le monde, et vous devez anticiper et inclure certains cas d'usage
+    qui sortent de votre périmètre habituel.
+
+    ### Pratiquer le « Dites-le-nous une fois »
+
+    Le principe du [« Dites-le-nous une fois
+    »](https://www.modernisation.gouv.fr/files/fileadmin-legacy/Book/Fiche3_5.pdf)
+    permet aux utilisateurs de ne pas saisir à nouveau des informations
+    déjà connues de l'administration.
+
+    ### Proposer une alternative hors parcours numérique
+
+    Offrir des alternatives aux services en ligne garantit que personne ne
+    soit exclu en raison de son niveau de compétence numérique ou de son
+    accès à internet. Cette pratique rend le service plus inclusif en
+    assurant que tous les citoyens, indépendamment de leur situation,
+    puissent accéder aux services essentiels.
+
+    ### Communiquer de manière claire et compréhensible
+
+    Utiliser des mots simples et des phrases courtes rend les informations
+    accessibles à un large public, y compris ceux qui ont des difficultés
+    de lecture ou parlent une autre langue. Cette pratique favorise
+    l'inclusion en permettant à tous de comprendre et de naviguer
+    facilement dans les services publics, réduisant ainsi les inégalités
+    d'accès.
   criteria:
-  - label: Un UX Designer est impliqué dans le projet.
-  - label: Les parcours utilisateurs sont régulièrement évalués et optimisés.
+  - label: 'Le service anticipe le non-recours : il est pro-actif envers les personnes
+      pouvant bénéficier d’une aide'
+  - label: Le service pratique le « Dites-le moi une fois »
+  - label: 'Le service favorise le droit au non numérique : il dispose d''une alternative
+      hors parcours numérique'
+  - label: Le service communique de manière claire et compréhensible, en utilisant
+      des mots simples et des phrases courtes.
   resources:
-  - "[Ressources UX Design](https://uxdesign.cc/)"
+  - "[Qu'est-ce que l'inclusion - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/rendre-un-service-inclusif/quest-ce-que-linclusion)"
+  - "[Dites-le-nous une fois : circulation et exploitation de la donnée - numerique.gouv.fr](https://archive.numerique.gouv.fr/services/guichet-dites-le-nous-une-fois/)"
+  - "[Quelle politique pour les exclus du numérique ? - vie-publique.fr](https://www.vie-publique.fr/eclairage/18930-dematerialisation-quelle-politique-pour-les-exclus-du-numerique)"
+  - "[15% de la population française en situation d’illectronisme - emmaus-connect.org](https://emmaus-connect.org/2023/11/etude-insee-illectronisme-en-france-une-tendance-encourageante/)"
+  - "[Illectronisme et numérisation des services publics - iergo.fr](https://blocnotes.iergo.fr/articles/illectronisme-et-numerisation-des-services-publics/)"
+  last_modified_on: 2025-08-21
   category: design
-- id: le-service-n-utilise-pas-des-adresses-mail-ne-pas-repondre-ou-no-reply
-  title: Le service n'utilise pas des adresses mail "ne-pas-répondre" ou "no-reply"
+- id: le-service-simplifie-ses-contenus-d-aide
+  title: Le service simplifie ses contenus d'aide
   description: |-
-    Le service s'assure que toutes les communications par e-mail permettent aux
-    utilisateurs de répondre et d'interagir facilement.
+    Si les produits Beta sont voulus simples et faciles à utiliser, leur
+    audience très large inclue forcément des profils qui n'ont pas le
+    temps ou l'expérience nécessaire pour comprendre les subtilités de
+    votre produit immédiatement.
+
+    Proposez des contenus d'aides simples, accessibles et pertinents : ils
+    améliorent l'autonomie de vos utilisateurs et réduisent la charge de
+    votre équipe support.
+
+    Utilisez le français courant, structurez l'information avec des titres
+    clairs et des étapes numérotées, anticipez les questions en analysant
+    les demandes support, et testez la compréhension avec de vrais
+    utilisateurs.
   criteria:
-  - label: Aucune adresse "ne-pas-répondre" n'est utilisée.
-  - label: Les utilisateurs peuvent facilement contacter le support.
+  - label: Les contenus d'aide sont rédigés en français simple (niveau collège)
+  - label: |-
+      Les contenus d'aide sont fréquemment révisés en fonction des
+        demandes support
+  - label: |-
+      Une FAQ facilement accessible répond aux questions les plus
+        fréquentes
   resources:
-  - "[Bonnes pratiques e-mail](https://www.emailonacid.com/blog/article/email-marketing/10-best-practices-for-email-marketing/)"
+  - "[Simplifier ses contenus - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/design/produire-des-contenus/simplifier-ses-contenus)"
+  - "[FALC - Ministère de la Culture](https://www.culture.gouv.fr/fr/thematiques/developpement-culturel/culture-et-handicap/facile-a-lire-et-a-comprendre-falc-une-methode-utile)"
+  - "[Outil Hemingway pour tester la lisibilité](https://hemingwayapp.com/)"
+  last_modified_on: 2025-08-21
   category: qualité-du-support
 - id: les-utilisateurs-peuvent-faire-des-retours-facilement
   title: Les utilisateurs peuvent faire des retours facilement
   description: |-
-    Le service met en place des mécanismes simples et accessibles pour que les
-    utilisateurs puissent donner leur avis et signaler des problèmes.
+    La méthode beta.gouv.fr est centrée autour de l'utilisateur : elle
+    encourage la conception des produits avec eux, et encourage
+    naturellement les retours qu'ils peuvent en faire.
 
-    Des outils d'upvote peuvent aussi être mis en place pour récolter et
-    prioriser des retours utilisateurs, comme Astuto ou GitHub
-    Discussions.
+    Vous devez proposer des mécanismes de retour visibles, accessibles et
+    variés pour s'adapter aux différents profils d'utilisateurs. Vous
+    pouvez intégrer le bouton "Je donne mon avis", proposer un formulaire,
+    un livechat ou encore exposer une adresse e-mail.
+
+    Placez les points de contact stratégiquement après les actions
+    importantes, par exemple après la soumission d'un dossier, d'une
+    inscription, etc.
+
+    Quand vous envoyez un e-mail, n'utilisez pas d'adresses
+    "ne-pas-repondre" ou "no-reply". Configurez une boîte partagée
+    accessible à l'équipe support, et mettez en place un processus de
+    traitement des réponses avec des délais clairs.
   criteria:
-  - label: Un formulaire de retour est disponible sur le site.
-  - label: Les retours sont traités rapidement.
+  - label: Un moyen de contact est visible sur chaque page importante
+  - label: Le service propose au moins deux canaux de contact différents
+  - label: |-
+      L'équipe n'utilise pas d'adresse e-mail bloquante ("no-reply",
+        "ne-pas-repondre", etc)
+  - label: L'équipe suit et analyse les retours pour améliorer le service
   resources:
-  - "[Collecte de feedback utilisateur](https://www.usability.gov/how-to-and-tools/methods/collecting-user-feedback.html)"
-  - "[GitHub Discussions](https://docs.github.com/fr/discussions/collaborating-with-your-community-using-discussions/about-discussions)"
-  - "[Astuto](https://astuto.io/)"
+  - '[Intégrer le bouton "Je donne mon avis"](https://doc.incubateur.net/communaute/gerer-son-produit/pourquoi-le-deploiement-dun-service-public-en-ligne-est-il-important/integrer-le-bouton-je-donne-mon-avis)'
+  - "[Guide Sillon - Support utilisateur](https://sillon.incubateur.net/docs/monitoring/for-business-needs/#support-utilisateur)"
+  - "[L'outil GitHub Discussions](https://docs.github.com/fr/discussions/collaborating-with-your-community-using-discussions/about-discussions)"
+  - "[Crisp - outil de support utilisateur](https://crisp.chat/)"
+  - "[Astuto - outil de feuille de route publique](https://astuto.io/)"
+  last_modified_on: 2025-08-21
   category: qualité-du-support
-- id: la-contribution-a-des-communs-numeriques-est-privilegiee
-  title: La contribution à des communs numériques est privilégiée
+- id: l-equipe-a-implemente-l-observabilite-de-son-produit
+  title: L'équipe a implémenté l'observabilité de son produit
   description: |-
-    Le produit s'appuie sur des composants techniques open-source pérennes et
-    reconnus.
+    Pour bien opérer votre produit il est essentiel de garantir la bonne
+    observabilité de celui-ci : savoir en temps réel ce qu'il émet,
+    comment il se comporte et les potentiels erreurs qu'il produit.
 
-    Quand cela est possible, l'équipe contribue aux projets open-source utilisés.
+    La bonne supervision de votre produit permet de rassurer l'équipe une
+    fois que le code source est en production, dans les mains de vos
+    utilisatrices et utilisateurs.
+
+    L'observabilité se joue à plusieurs niveaux :
+
+    ### Capture et gestion des erreurs
+
+    Ces outils (type Sentry) permettent de capturer les erreurs non
+    traitées par votre code avec toutes leurs métadonnées (contexte, pile
+    d'exécution, fréquence). L'équipe peut alors surveiller et agir sur
+    les problèmes remontés par l'outil avec le maximum d'information.
+
+    ### Mise à disposition des journaux applicatifs
+
+    Vous devez vous assurez que les journaux applicatifs émis par votre
+    application sont consultables. Ces journaux sont idéalement en
+    rotation (i.e un nouveau fichier toutes les X unités de temps/espace)
+    pour éviter une croissance infinie et des fichiers trop volumineux
+    pour être facilement analysés.
+
+    ### Surveillance de la performance des applications (APM)
+
+    Pour garantir une bonne qualité de service il est essentiel de mesurer
+    la performance ressentie par vos utilisateurs au moyen de divers
+    métriques : temps moyen des requêtes,
+    [Apdex](https://fr.wikipedia.org/wiki/Apdex), pages lentes, etc.
   criteria:
-  - label: Le produit est basé uniquement sur des composants open-source
+  - label: Un outil de gestion d'erreurs est configuré
+  - label: Les journaux applicatifs sont consultables
+  - label: La performance de l'outil est surveillée
   resources:
+  - "[Guide Sillon - Monitoring](https://sillon.incubateur.net/docs/monitoring/)"
+  - "[Sentry sur la documentation Beta](https://doc.incubateur.net/communaute/les-outils-de-la-communaute/autres-services/sentry)"
+  last_modified_on: 2025-08-21
+  category: qualité-logicielle
+- id: l-equipe-enregistre-et-documente-les-changements-du-code
+  title: L'équipe enregistre et documente les changements du code
+  description: |-
+    Votre équipe utilise un système de contrôle de version distribué pour
+    documenter et tracer l'évolution du code (type : Git).
+
+    Au delà de la simple utilisation d'un système de version, il est
+    essentiel d'entretenir un historique des changements clair et rédigé :
+    vos commits ne doivent pas se limiter à des résumés (`git commit -m
+    "résumé"`) mais apportent aussi une description en sous-texte sauf
+    quand le changement est vraiment explicite.
+
+    Un historique détaillé et bien documenté apporte des bénéfices
+    concrets :
+
+    - **Compréhension du code** : chaque modification est expliquée et
+      contextualisée
+    - **Investigation technique** : `git blame` permet d'identifier
+      rapidement la raison d'une modification
+    - **Collaboration future** : les nouveaux développeurs comprennent les
+      décisions passées
+    - **Maintenance facilitée** : l'historique sert de documentation pour
+      retrouver l'origine des bugs ou fonctionnalités
+    - **Traçabilité des décisions** : les choix techniques sont conservés
+      et justifiés dans le temps
+
+    L'équipe privilégie un historique propre en regroupant les
+    modifications liées avec `git commit --amend` ou `git rebase` avant
+    publication. Cette pratique évite l'encombrement par des commits
+    intermédiaires ("fix typo", "correction mineure") qui polluent
+    l'historique sans apporter de valeur documentaire.
+  criteria:
+  - label: Le code source utilise un gestionnaire de version type Git
+  - label: |-
+      Les messages de commit décrivent clairement les modifications et
+        leurs raisons
+  - label: |-
+      Les commits intermédiaires sont regroupés avant publication pour
+        maintenir un historique lisible
+  resources:
+  - "[Nommmage des commits sur Sillon](https://sillon.incubateur.net/docs/document/commit-naming/)"
+  - "[Write better commits sur le blog de GitHub](https://github.blog/developer-skills/github/write-better-commits-build-better-projects/)"
+  - "[Maintaining version control in coding - GOV.UK](https://www.gov.uk/service-manual/technology/maintaining-version-control-in-coding)"
+  last_modified_on: 2025-08-21
+  category: qualité-logicielle
+- id: l-open-source-et-les-communs-numeriques-sont-privilegies
+  title: L'open-source et les communs numériques sont privilégiés
+  description: |-
+    Votre service et son code doivent privilégier l'open-source et les
+    communs numériques dès que possible afin de garantir l'autonomie
+    technique et d'éviter la dépendance aux solutions propriétaires.
+
+    Cette approche permet aussi de mutualiser les coûts de développement
+    entre administrations, de bénéficier de l'expertise collective de la
+    communauté et d'assurer la transparence et la réutilisabilité des
+    solutions publiques.
+
+    Votre équipe, sauf raison majeure, doit produire du code open-source
+    et privilégier les communs numériques aux solutions propriétaires ou
+    non-souveraines dès que possible, comme le veut la stratégie numérique
+    de l'État élaborée par la DINUM.
+  criteria:
+  - label: L'équipe produit du code open-source
+  - label: |-
+      L'équipe privilégie des solutions ouvertes et souveraines pour le
+        reste
+  resources:
+  - "[Stratégie numérique de l'État](https://www.numerique.gouv.fr/numerique-etat/)"
+  - "[Pôle open source et communs numériques](https://code.gouv.fr/fr/)"
+  - "[Guide Sillon - Communauté & open source](https://sillon.incubateur.net/docs/community-and-open-source/)"
+  last_modified_on: 2025-08-21
   category: qualité-logicielle
 - id: le-code-est-deploye-frequemment-idealement-en-continu
   title: Le code est déployé fréquemment, idéalement en continu
   description: |-
-    Le projet adopte des pratiques de déploiement continu pour assurer des mises à
-    jour régulières et une livraison rapide des nouvelles fonctionnalités.
+    Pour garantir la confiance dans votre processus de déploiement et une
+    meilleure vélocité pour les correctifs ou nouvelles fonctionnalités,
+    votre équipe déploit régulièrement et de manière continue si
+    possible.
+
+    Cette approche de déploiement continu (CD) s'oppose à celle où la
+    production n'est mise à jour que ponctuellement, ce qui accumule à
+    chaque déploiement un delta de changements considérable voir
+    vertigineux pour l'équipe de développement qui doit assurer ce
+    déploiement.
+
+    L'automatisation du déploiement réduit aussi les erreurs manuelles et
+    assure la reproductibilité des mises en production. Elle libère
+    l'équipe des tâches répétitives nécessaires à la bonne gestion des
+    déploiements.
   criteria:
-  - label: Un pipeline CI/CD est en place.
-  - label: Les déploiements sont automatisés et fréquents (au moins une fois par mois).
+  - label: Un pipeline CI/CD automatisé est configuré
+  - label: Les déploiements s'effectuent automatiquement après validation des tests
+  - label: L'équipe déploie au moins une fois par semaine
   resources:
-  - "[Déploiement continu](https://www.atlassian.com/continuous-delivery/continuous-deployment)"
+  - "[Guide Sillon - L'intégration et le déploiement continu](https://sillon.incubateur.net/docs/continuous-integration-and-continuous-deployment/)"
+  last_modified_on: 2025-07-30
   category: qualité-logicielle
-- id: le-code-est-ecrit-avec-l-aide-d-un-linter
-  title: Le code est écrit avec l'aide d'un linter
+- id: le-code-est-instrumente-par-des-tests-unitaires-et-des-tests-e2e
+  title: Le code est instrumenté par des tests unitaires et des tests E2E
   description: |-
-    Des outils d'analyse/formatage de code, les linters, sont disponibles pour
-    évaluer et corriger votre base de code. Ils permettent d'assurer l'uniformité
-    du code et d'aligner les développeurs sur le style à employer pour y
-    contribuer. Ces linters peuvent aussi aller plus loin que la simple esthétique
-    en soulignant les fonctions trop compliquées, ou le nommage de certains
-    fichiers.
+    Pour maintenir la confiance dans le fonctionnement et l'évolution de
+    votre service, il est essentiel que son code soit instrumenté par des
+    tests automatisés.
+
+    Il existe énormément de façon de tester votre code (la fameuse
+    Pyramide des Tests), mais pour l'essentiel des services développés à
+    beta.gouv.fr nous articulons deux types essentiels :
+
+    1. Les tests unitaires qui permettent de tester les unités métiers
+       critiques de votre code : « lorsque ma fonction reçoit ce paramètre,
+       je m'attend à ce résultat »
+
+    2. Les tests bout-en-bout, ou end-to-end (E2E) qui permettent de
+       tester votre parcours utilisateur du point de vue de
+       l'utilisateur : « lorsque je navigue sur mon profil et que je
+       clique sur le bouton "Déconnexion", alors la page contient
+       "Accueil" »
+
+    Si le choix du framework de test est laissé aux développeurs, nous
+    insistons sur la présence au moins de ces deux types de test, qui
+    doivent aussi conditionner l'intégration de nouveau code et de
+    déploiement (CI/CD).
+  criteria:
+  - label: Une suite de tests unitaires est en place
+  - label: Une suite de tests d'intégration est en place
+  - label: Les tests conditionnent l'intégration de nouveau code (CI)
+  - label: Les tests conditionnent le déploiement de nouveau code (CD)
+  resources:
+  - "[Pyramide de tests (en) - Martin Fowler](https://martinfowler.com/bliki/TestPyramid.html)"
+  - "[Exemple de tests unitaires - APLyPro](https://github.com/betagouv/aplypro/blob/51544b02c7e4b39c60de38a61dddccbcf9f982a9/spec/models/establishment_spec.rb)"
+  - "[Exemple de tests d'intégration - APLyPro](https://github.com/betagouv/aplypro/blob/51544b02c7e4b39c60de38a61dddccbcf9f982a9/features/saisie_de_coordonnees_bancaires.feature)"
+  last_modified_on: 2025-08-21
+  category: qualité-logicielle
+- id: le-code-source-est-uniforme
+  title: Le code source est uniforme
+  description: |-
+    Pour mieux comprendre et collaborer sur le code source de votre
+    produit, il est essentiel d'intégrer des outils de formattage du code
+    comme les linters qui permettent de formaliser et d'homogéniser le
+    style du code de façon précise et automatique.
+
+    Ce style homogène facilite la contribution, la révision et la
+    maintenance de votre code.
   criteria:
   - label: Un linter est en place sur le projet.
   - label: L'intégration (CI/CD) intègre le linter.
   resources:
-  - 'Javascript : - [ESLint](https://eslint.org/) - [Biome](https://biomejs.dev/)'
-  - 'Python : - [Black](https://pypi.org/project/black/) - [Flake](https://flake8.pycqa.org/en/latest/)'
-  - 'Ruby : - [Rubocop](https://github.com/rubocop/rubocop)'
-  category: qualité-logicielle
-- id: le-code-est-instrumente-par-des-tests-automatises
-  title: Le code est instrumenté par des tests automatisés
-  description: |-
-    Le projet intègre des tests automatisés, y compris des tests unitaires
-    et des tests de bout en bout (E2E), pour assurer la qualité du code et
-    prévenir les régressions lors des mises à jour.
-
-    De plus, une approche de Continuous Integration / Continuous
-    Deployment (CI/CD) est mise en place pour faciliter le déploiement
-    régulier et sécurisé des modifications.
-
-    Le bon déroulement des tests intégrés au pipeline CI/CD doit
-    conditionner l'évolution des changements et le déploiement dans les
-    environnements de recette ou production.
-  criteria:
-  - label: Une suite de tests automatisés est en place.
-  - label: La suite de tests est intégrée dans la CI du projet
-  - label: La suite de tests est intégrée dans la CD du projet
-  resources:
-  - "[Tests automatisés](https://martinfowler.com/bliki/TestPyramid.html)"
-  category: qualité-logicielle
-- id: le-code-source-est-ouvert-y-compris-a-la-contribution-externe
-  title: Le code source est ouvert, y compris à la contribution externe
-  description: |-
-    Le projet est open-source et accepte les contributions externes pour
-    encourager la collaboration et l'amélioration continue. Le README ou
-    un fichier dédié (ex: `CONTRIBUTING.md`) permet aux potentiels
-    contributeurs de mieux comprendre comment partager leur travail.
-  criteria:
-  - label: Le code source est accessible publiquement.
-  - label: Des guidelines de contribution sont disponibles.
-  resources:
-  - "[Enjeux de l'open-source sur Sillon](https://sillon.incubateur.net/docs/community-and-open-source/internet-base/)"
-  - "[Open Source Guides](https://opensource.guide/)"
-  category: qualité-logicielle
-- id: le-produit-a-implemente-un-outil-d-alerte-type-sentry
-  title: Le produit a implementé un outil d'alerte type Sentry
-  description: |-
-    Le produit utilise un outil de monitoring et d'alerte pour détecter et signaler
-    les erreurs en temps réel.
-  criteria:
-  - label: Un outil d'alerte est configuré.
-  - label: Les alertes sont surveillées et traitées régulièrement.
-  resources:
-  - "[Sentry](https://sentry.io/)"
-  category: qualité-logicielle
-- id: le-produit-et-la-stack-technique-sont-documentes
-  title: Le produit et la stack technique sont documentés
-  description: |-
-    La documentation du produit, de son environnement et de ses
-    dépendances doit être complète et à jour pour faciliter la
-    compréhension, la maintenance, et l'embarquement sur le produit.
-
-    Cette documentation peut prendre l'aspect d'un README exhaustif, d'une
-    documentation dédiée, d'une suite de tests exportable dans un format
-    lisible ou encore d'un `docker-compose.yml` mais qui permette de
-    prendre le produit en main rapidement.
-  criteria:
-  - label: Une documentation détaillée est disponible.
-  - label: La documentation est régulièrement mise à jour.
-  resources:
-  - "[Documentation technique](https://www.writethedocs.org/)"
-  - "[Docker-Compose](https://docs.docker.com/get-started/workshop/08_using_compose/)"
+  - "[linter Javascript : ESLint](https://eslint.org/)"
+  - "[linter Javascript : Biome](https://biomejs.dev/)"
+  - "[linter Python : Black](https://github.com/psf/black)"
+  - "[linter Python : Flake](https://flake8.pycqa.org/en/latest/)"
+  - "[linter Ruby : Rubocop](https://github.com/rubocop/rubocop)"
+  - "[Prettier](https://prettier.io/)"
+  last_modified_on: 2025-07-30
   category: qualité-logicielle
 - id: le-produit-s-appuie-sur-une-architecture-cloud
   title: Le produit s'appuie sur une architecture Cloud
   description: |-
-    L’hébergement doit se faire exclusivement sur une architecture Cloud :
+    Une architecture Cloud permet à l'équipe de livrer des services
+    numériques fiables, évolutifs et résilients, en s'appuyant sur des
+    infrastructures externalisées plutôt que sur des serveurs physiques
+    dédiés (on-premise). Contrairement aux approches traditionnelles qui
+    nécessitent de dimensionner et maintenir sa propre infrastructure, le
+    Cloud offre une flexibilité immédiate et une réduction des tâches de
+    gestion technique.
 
-    - « Infrastructure as a Service » (IaaS)
-    - « Platform as a Service » (PaaS)
-    - « Software as a Service » (SaaS)
+    ### Bénéfices pour l'usager et l'équipe
 
-    La conception technique du produit respecte les "12 facteurs".
+    Pour l'usager, l'architecture Cloud garantit :
+
+    - Un service accessible en permanence
+    - Des temps de réponse optimisés
+    - Une expérience fluide même en cas de forte affluence
+
+    Pour l'équipe, elle apporte :
+
+    - Une réduction des tâches de maintenance infrastructure
+    - Une capacité d'adaptation rapide aux besoins métier
+    - Une maîtrise des coûts et une adaptation des ressources selon l'usage
+    - Une conformité facilitée aux exigences de sécurité
+
+    ### Évolutivité et résilience
+
+    L'architecture Cloud permet de faire évoluer le service sans
+    interruption et de maintenir sa disponibilité même en cas de
+    défaillance d'un composant. Cette approche est particulièrement
+    adaptée aux services publics qui peuvent connaître des pics d'usage
+    imprévisibles.
   criteria:
-  - label: Le déploiement est automatisé.
-  - label: L'application est redéployable rapidement sur un fournisseur cloud.
-  - label: Le produit respecte les 12 facteurs.
+  - label: |-
+      l'équipe utilise des services d'hébergement cloud (IaaS, PaaS ou
+        SaaS) plutôt qu'une infrastructure physique dédiée
+  - label: |-
+      l'architecture permet une adaptation des ressources selon les
+        besoins du service
+  - label: |-
+      les données et applications sont répliquées ou sauvegardées pour
+        assurer la continuité de service
+  - label: |-
+      l'hébergement respecte les exigences de souveraineté et de sécurité
+        applicables au service public
   resources:
-  - "[les 12 facteurs](https://blog.cellenza.com/cloud-2/12-factor-app-les-patterns-a-adopter-dans-le-developpement-dapplications-modernes/)"
-  - "[doctrine d'utilisation de l'informatique en nuage par l'État](https://www.numerique.gouv.fr/services/cloud/doctrine/)"
+  - "[Stratégie nationale pour le Cloud (DINUM)](https://www.numerique.gouv.fr/actualites/le-gouvernement-annonce-sa-strategie-nationale-pour-le-cloud/)"
+  - "[SecNumCloud pour les fournisseurs de services Cloud (ANSSI)](https://cyber.gouv.fr/secnumcloud-pour-les-fournisseurs-de-services-cloud)"
+  - "[FAQ SecNumCloud - avant de se lancer dans la qualification (ANSSI)](https://cyber.gouv.fr/faq-avant-de-se-lancer-dans-la-qualification-secnumcloud)"
+  - "[Cloud commercial - Guide DINUM](https://www.numerique.gouv.fr/services/cloud/cloud-commercial/)"
+  last_modified_on: 2025-08-21
   category: qualité-logicielle
-- id: les-apis-sont-documentees-avec-un-outil-type-swagger
-  title: Les APIs sont documentées avec un outil type Swagger
+- id: les-aspects-techniques-du-produits-sont-documentes
+  title: Les aspects techniques du produits sont documentés
   description: |-
-    Les APIs du projet sont documentées de manière claire et accessible à l'aide
-    d'outils comme Swagger pour faciliter leur utilisation par les développeurs.
+    L'équipe doit maintenir une documentation qui permette de comprendre
+    le fonctionnement technique du produit, l'organisation de son code et
+    de son architecture.
+
+    Si votre équipe de développement devait s'absenter demain, le code
+    doit rester compréhensible et actionnable grâce à un système de
+    documentation qui peut revêtir plusieurs formes :
+
+    - une documentation littéraire (documents Markdown dédiés, README,
+      etc)
+    - documentation produite automatiquement par les tests unitaires et
+      bout-en-bout
+    - documentation de l'architecture avec un fichier Docker/Compose,
+      Terraform, etc.
+
+    Cette documentation réduit l'aspect critique des membres de l'équipe
+    de développement, et permet aussi de mieux embarquer les nouveaux
+    collaborateurs.
+
+    Si vous avez des APIs, nous recommandons une documentation
+    OpenAPI/Swagger pour permettre une meilleure prise en main par les
+    équipes qui vont les consommer.
   criteria:
-  - label: Les APIs sont documentées avec Swagger ou un outil similaire.
-  - label: La documentation est accessible publiquement.
+  - label: Un README présente succintement l'objectif du service
+  - label: La pile technique et l'architecture du produit sont renseignées
+  - label: Les APIs sont documentées avec la spécification OpenAPI/Swagger
+  - label: Des instructions pour lancer le service en local sont disponibles
   resources:
-  - "[Swagger](https://swagger.io/)"
+  - "[Guide Sillon - Documenter votre projet](https://sillon.incubateur.net/docs/document/)"
+  - "[Documentation technique - Write the Docs](https://www.writethedocs.org/)"
+  last_modified_on: 2025-08-21
   category: qualité-logicielle
-- id: l-equipe-a-entame-une-demarche-sur-monservicesecurise
-  title: L'équipe a entamé une démarche sur MonServiceSécurisé
+- id: l-equipe-a-entame-une-demarche-d-homologuation-de-securite
+  title: L'équipe a entamé une démarche d'homologuation de sécurité
   description: |-
-    L'équipe a initié une démarche pour renforcer la sécurité du service en
-    utilisant MonServiceSécurisé, une plateforme dédiée à la sécurité des services
-    numériques.
+    Votre produit faisant partie du numérique de l'État, vous êtes tenu de
+    respecter les exigences du [référentiel général de sécurité
+    (RGS)](https://cyber.gouv.fr/le-referentiel-general-de-securite-rgs)
+    produit par l'Agence nationale de la sécurité des systèmes
+    d’information (ANSSI).
+
+    Ce référentiel impose notamment notamment la conduite d'une
+    homologuation de sécurité pour permettre d'identifier et de valider
+    les risques cyber liés à votre service : elle atteste que les mesures
+    de sécurité et les efforts présents et futurs sont suffisants pour
+    faire face aux risques cyber les plus courants.
+
+    Pour ce faire vous pouvez enregistrer et faire évoluer votre service
+    dès sa conception sur
+    [MonServiceSécurisé](https://monservicesecurise.cyber.gouv.fr/), un
+    service incubé à beta.gouv.fr qui simplifie cette étude et permet à
+    votre équipe d'intégrer la sécurité dès la génèse de votre produit.
+
+    La procédure d'homologuation est simplifiée pour les services agiles
+    mais ne la rend pas moins nécessaire, particulièrement en vu du succès
+    que Beta souhaite à tous ses services. Elle prend la forme d'un
+    document validé par votre administration.
   criteria:
-  - label: Une évaluation de sécurité a été réalisée.
-  - label: Des mesures correctives ont été mises en place.
+  - label: L'équipe a entamé une démarche d'homologuation de sécurité
   resources:
-  - "[MonServiceSécurisé](https://www.monservicesecurise.fr/)"
+  - "[Tout savoir sur l'homologation de sécurité - monservicesecurise.cyber.gouv.fr](https://monservicesecurise.cyber.gouv.fr/articles/tout-savoir-sur-lhomologation-de-securite)"
+  - "[Guide d'homologation de sécurité - cyber.gouv.fr](https://cyber.gouv.fr/sites/default/files/document/guide-homologation-securite-web-04-2025.pdf)"
+  last_modified_on: 2025-07-30
   category: sécurité
-- id: l-equipe-a-mis-en-place-un-outil-d-analyse-statique-du-code-type-sonarcloud
-  title: L'équipe a mis en place un outil d'analyse statique du code type SonarCloud
+- id: l-equipe-a-mis-en-place-un-outil-d-analyse-statique-du-code
+  title: L'équipe a mis en place un outil d'analyse statique du code
   description: |-
-    L'équipe utilise un outil d'analyse statique du code pour identifier les
-    vulnérabilités et améliorer la qualité du code.
+    L'analyse statique du code fournit une relecture de votre code et
+    permet de déceler toute sorte de problèmes : complexité des fonctions,
+    failles de sécurité, injections SQL, requêtes inefficientes, etc.
+
+    Bien que les linters effectuent une première analyse statique de votre
+    code, ils se concentrent généralement sur l'esthétique et le formatage
+    de votre source : un outil spécialisé permet d'approfondir l'analyse
+    et de corriger des erreurs plus graves que celles signalées par le
+    linter.
+
+    Si votre code est hébergé sur GitHub vous pouvez profiter de
+    [CodeQL](https://codeql.github.com/), un outil très puissant d'analyse
+    de code configurable sur chacune de vos interactions Git.
   criteria:
-  - label: SonarCloud est configuré pour le projet.
-  - label: Les rapports d'analyse sont régulièrement examinés.
+  - label: Un outil d'analyse statique du code est en place
   resources:
-  - "[Analyser la qualité et la sécurité de votre code avec SonarCloud](https://apprendre-la-programmation.net/analyser-qualite-securite-code-sonarcloud/)"
-  - "[SonarCloud](https://sonarcloud.io/)"
+  - "[Configurer CodeQL - github.com](https://docs.github.com/fr/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning)"
+  - "[Référencement d'outil d'analyse statique de code - github.com](https://github.com/Saluki/awesome-static-analysis)"
+  last_modified_on: 2025-08-21
   category: sécurité
-- id: l-equipe-a-publie-une-politique-de-declaration-des-incidents-de-securite
-  title: L'équipe a publié une politique de déclaration des incidents de sécurité
+- id: l-equipe-organise-regulierement-des-ateliers-d-analyse-de-risque
+  title: L'équipe organise régulièrement des ateliers d'analyse de risque
   description: |-
-    Une politique claire de déclaration des incidents de sécurité est en
-    place pour garantir une réponse rapide et efficace en cas de problème.
+    Votre produit est amené à évoluer souvent, avec votre compréhension du
+    problème, de vos utilisateurs et de vos objectifs : véritable coeur de
+    la méthode, cette agilité s'applique aussi à la sécurité de votre
+    produit.
+
+    Pour anticiper les risques qui poursuivent votre produit, les ateliers
+    d'analyse de risque permettent à votre équipe de faire le point sur la
+    situation régulièrement et de rester consciente de ses enjeux de
+    sécurité tout au long de son existence.
+
+    Ces ateliers, recommandés par l'Agence nationale de la sécurité des
+    systèmes d’information (ANSSI), sont à faire en équipe complète, à
+    intervalles réguliers (à minima tous les 6 mois), pour vous assurez
+    collectivement que votre produit profite d'une croissance saine, sans
+    zones d'ombre.
   criteria:
-  - label: La politique est documentée et accessible.
-  - label: Les membres de l'équipe sont formés à la procédure.
+  - label: L'équipe a déjà fait un atelier d'analyse de risque
+  - label: L'équipe a prévu de refaire un atelier d'analyse de risque
   resources:
-  - "[Gestion des incidents de sécurité](https://www.sans.org/incident-handlers-handbook/)"
+  - "[Réaliser une analyse de risque - monservicesecurise.cyber.gouv.fr](https://monservicesecurise.cyber.gouv.fr/articles/realiser-une-analyse-de-risques-de-la-securite-du-service)"
+  - "[Guide de sécurité numérique agile de l'ANSSI - cyber.gouv.fr](https://cyber.gouv.fr/sites/default/files/2018/11/guide-securite-numerique-agile-anssi-pa-v1.pdf)"
+  last_modified_on: 2025-08-21
   category: sécurité
-- id: l-equipe-a-realise-un-atelier-d-analyse-de-risques
-  title: L'équipe a réalisé un atelier d'analyse de risques
+- id: les-echanges-entre-vos-utilisateurs-et-votre-produit-sont-securises
+  title: Les échanges entre vos utilisateurs et votre produit sont sécurisés
   description: |-
-    L'équipe a conduit un atelier pour identifier et évaluer les risques potentiels
-    liés au projet, afin de mettre en place des mesures de mitigation.
+    Pour assurez la sécurité de vos utilisateurs il est crucial de
+    chiffrer tous vos échanges avec eux à travers le protocole HTTPS,
+    version sécurisée de HTTP qui rajoute un niveau d'encryption avec la
+    technologie SSL/TLS ; elle permet de garantir la confidentialité des
+    données transmises et fournit une confiance accrue dans votre service.
+
+    La plupart des hébergeurs que nous recommandons (ex : Scalingo)
+    permettent d'activer l'HTTPS par un simple clic, et de rediriger les
+    requêtes HTTP en HTTPS.
   criteria:
-  - label: Un rapport d'analyse de risques est disponible.
-  - label: Des actions correctives ont été définies.
+  - label: |-
+      Votre produit utilise HTTPS par défaut pour échanger avec ses
+        utilisateurs
+  - label: Les requêtes HTTP sont automatiquement surclassées en HTTPS
   resources:
-  - "[Analyse de risques](https://www.iso.org/iso-31000-risk-management.html)"
+  - "[Chiffrement SSL par défault - sillon.incubateur.net](https://sillon.incubateur.net/docs/security/enable-ssl/)"
+  - "[Configurer le SSL sur Scalingo - scalingo.com](https://doc.scalingo.com/platform/app/ssl)"
+  last_modified_on: 2025-08-21
   category: sécurité
+- id: un-outil-d-analyse-et-de-mise-a-jour-des-dependances-est-configure
+  title: Un outil d'analyse et de mise à jour des dépendances est configuré
+  description: |-
+    Votre produit n'est pas autonome : il dépend et profite de plusieurs
+    dizaines voir centaines de librairies qui vous permettent de vous
+    concentrer sur le développement de votre produit plutôt que de
+    reconstruire les mêmes briques de la grande pyramide du web.
+
+    Cette rapidité de développement a un prix : il faut surveiller en
+    permanence ces dépendances, qui sont comme votre produit sujettes à
+    des vulnérabilités introduites par inadvertance ou par malice. Le flux
+    des alertes levées dans le monde logiciel est continu, que ce soit [la
+    liste des alertes levées recensées par
+    GitHub](https://github.com/advisories) ou [celles recensées par
+    l'ANSSI](https://cert.ssi.gouv.fr/alerte/).
+
+    Pour assurer la sécurité de votre projet, nous recommandons l'usage
+    d'outils comme [Dependabot](https://github.com/dependabot) qui
+    permettent de surveiller et de proposer automatiquement la mise à jour
+    de ces dépendances dès que nécessaire.
+
+    Enfin notez que le moteur de votre projet (ex : NodeJS, Python, Ruby)
+    compte aussi comme une dépendance. Vous devez vous maintenir à minima
+    sur des versions dont le support et l'évolution sont garanties par ses
+    éditeurs (versions LTS, long-term support) et sortir le plus
+    rapidement possible des versions qui ont atteint leur fin de vie (EOL,
+    end of life).
+  criteria:
+  - label: Un outil d'analyse et de mise à jour des dépendences est configuré
+  - label: Le moteur de langue de votre projet est à minima LTS
+  resources:
+  - "[Guide de démarrage Dependabot - github.com](https://docs.github.com/fr/code-security/getting-started/dependabot-quickstart-guide)"
+  - "[Annuaire des versions LTS/EOL - endoflife.date](https://endoflife.date/)"
+  last_modified_on: 2025-08-21
+  category: sécurité
+- id: le-produit-a-une-fiche-a-jour-sur-le-site-de-beta
+  title: Le produit a une fiche à jour sur le site de Beta
+  description: |-
+    Les fiches produits sont essentielles au bon fonctionnement de la
+    communauté : ce sont elles qui recensent l'étendue des [travaux menés
+    par la communauté beta.gouv.fr](https://beta.gouv.fr/startups/). Les
+    informations que vous mettez à disposition sont précieuses pour
+    exposer le succès du programme.
+
+    Une fiche produit maintenue à jour permet aussi de rendre compte de
+    l'avancée de votre service à tous ceux et celles qui y portent un
+    intérêt :
+
+    - les agents de votre administration porteuse
+    - les autres membres de la communauté
+    - le grand public.
+
+    Votre fiche produit est à entretenir sur l'[Espace
+    Membre](https://espace-membre.incubateur.net). Vous disposez de
+    plusieurs entrées pour décrire votre produit : des champs de liens qui
+    permettent de pointer sur votre page de statistiques, de budget, etc,
+    mais aussi une description en texte libre qui vous permet de détailler
+    le problème, son contexte, votre hypothèse de solution et les
+    prochaines avancées du programme.
+
+    Nous attendons de chaque équipe un entretien attentif de cette fiche
+    produit qui vous permettra aussi de faire régulièrement le point sur
+    l'avancée de votre service.
+
+    ### Informations essentielles
+
+    #### Liens à renseigner
+
+    Des champs de liens vous permettent de pointer vers des pages qui
+    détaillent plusieurs problématiques. Nous attendons :
+
+    - le lien vers le produit (ex : sa page d'accueil)
+    - le lien vers la page statistiques
+    - le lien vers la page budget
+    - le lien vers le code source.
+
+    #### La description
+
+    La description est un champ de texte libre : un template de départ
+    vous est fourni mais vous n'êtes pas obligés de vous y tenir. Nous
+    attendons :
+
+    - une description du problème, de son contexte et de sa solution
+    - une vision à moyen/long terme : quels sont les prochaines étapes
+      établies pour votre produit et les attentes que vous en avez ?
+  criteria:
+  - label: La fiche produit est publiée et présente sur [l'annuaire des réalisations
+      de beta.gouv.fr](https://beta.gouv.fr/startups/)
+  - label: Le lien du produit est renseigné
+  - label: Le lien vers la page statistiques est renseigné
+  - label: Le lien vers la page budget est renseigné
+  - label: Le lien vers le code source est renseigné
+  - label: La description explique le problème, son contexte et votre solution
+  - label: La description présente les prochaines étapes du produit
+  - label: Un email de contact est renseigné
+  resources:
+  - "[Gérer sa fiche produit - doc.incubateur.net](https://doc.incubateur.net/communaute/les-outils-de-la-communaute/espace-membre/gerer-sa-fiche-produit)"
+  - "[Publier son budget - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)"
+  last_modified_on: 2025-08-21
+  category: transparence
+- id: le-produit-communique-sur-son-budget
+  title: Le produit communique sur son budget
+  description: |-
+    Dans son [rapport sur le pilotage de la transformation numérique de
+    l’État par la Direction interministérielle du
+    numérique](https://www.ccomptes.fr/fr/publications/le-pilotage-de-la-transformation-numerique-de-letat-par-la-direction),
+    la Cour des comptes a réaffirmé la nécessité de publier le budget et
+    les objectifs d'impact de chaque équipe.
+
+    La bonne tenue et publication de votre budget assure la transparence
+    financière et l'engagement des parties prenantes autour de votre produit.
+
+    ### Les vertus de la transparence budgétaire
+
+    Cette transparence budgétaire a plusieurs vertus :
+
+    1. Elle permet aux équipes des services de prendre du recul
+    2. Elle apporte une contribution essentielle à la communauté en
+       permettant aux nouveaux services d'avoir une vision éclairée de la
+       façon dont se structure un budget et les ressources à mobiliser en
+       fonction des ambitions
+    3. Elle fournit un outil essentiel de comparaison de coûts et de
+       sécurisation budgétaire entre les services de beta.gouv.fr et les
+       projets système d'informations (SI) de l'État. En effet, le
+       référentiel du modèle budgétaire a été travaillé en commun avec les
+       différentes directions du numérique (DNUM). Il a donc vocation à
+       être utilisé par les services de l'écosystème mais également par
+       les projets numériques ayant recours au marché Beta ainsi que par
+       les projets numériques ne travaillant pas en mode produit agile à
+       impact.
+
+    ### Saisie du budget de votre produit
+
+    Pour vous aider à publier votre budget, nous mettons à votre
+    disposition la page ["Publier son
+    budget"](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)
+    sur la documentation de l'incubateur. Vous y trouverez le référentiel
+    que nous demandons aux équipes de respecter, et un document Grist
+    commun qui nous permettra de mieux comprendre et analyser nos
+    dépenses.
+
+    ### Fréquence de la publication du budget
+
+    La publication du budget se fait deux fois par an :
+
+    1. en janvier où le montant réellement dépensé de l'année N-1 est mis
+       à jour et où le montant prévisionnel de l'année N est projeté
+    2. en juin où le montant prévisionnel de l'année N est mis à jour.
+  criteria:
+  - label: La publication du budget est accessible via un lien public
+  - label: La publication du budget est référencée dans la fiche produit de l'Espace
+      Membre
+  - label: La publication du budget est faite deux fois par an
+  - label: |-
+      La saisie des données est faite sur le Grist de référence et
+        respecte le référentiel proposé
+  resources:
+  - "[Publier son budget - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)"
+  - "[Grist commun des budgets - grist.numerique.gouv.fr](https://grist.numerique.gouv.fr/o/docs/fTjFnK7Bhvuo/Depenses-numeriques/p/1)"
+  last_modified_on: 2025-08-21
+  category: transparence
+- id: le-produit-suit-ses-bonnes-pratiques-sur-dashlord
+  title: Le produit suit ses bonnes pratiques sur DashLord
+  description: |-
+    DashLord est un outil développé par la communauté beta.gouv.fr qui
+    permet d'effectuer des vérifications automatiques sur votre site web :
+    une fois le lien de votre produit renseigné, DashLord va parcourir le
+    site et trouver entre autres :
+
+    - la déclaration d'accessibilité
+    - le temps de chargement de la page
+    - les problèmes de contraste
+    - la sécurité des cookies
+    - etc.
+
+    Cette première couverture de tests vous permet d'identifier rapidement
+    la qualité de votre page d'accueil et de mettre en place des premières
+    mesures pour suivre les bonnes pratiques du numérique de l'État.
+  criteria:
+  - label: Le produit est configuré sur le DashLord de son incubateur
+  resources:
+  - "[Le DashLord de l'incubateur](https://dashlord.incubateur.net/)"
+  last_modified_on: 2025-08-21
+  category: transparence
 - id: l-equipe-initie-une-analyse-d-impact-relative-a-la-protection-des-donnee-si-necessaire
   title: L'équipe initie une analyse d'impact relative à la protection des donnée
     si nécessaire
@@ -310,147 +848,77 @@
   - label: Les recommandations sont mises en œuvre.
   resources:
   - "[Analyse d'impact sur la protection des données (AIPD)](https://www.cnil.fr/fr/PIA-privacy-impact-assessment)"
-  category: sécurité
-- id: les-sites-sont-securises-par-ssl
-  title: Les sites sont sécurisés par SSL
-  description: |-
-    SSL (Secure Sockets Layer) est un protocole de sécurité qui établit une
-    connexion chiffrée entre un serveur Web et un navigateur. Cela garantit que
-    toutes les données échangées restent privées et intégrales. Les sites utilisant
-    SSL affichent un cadenas dans la barre d'adresse, indiquant ainsi que la
-    connexion est sécurisée.
-  criteria:
-  - label: |-
-      Votre environnement de production opère des connexions sécurisés via HTTPS. Les
-      requêtes non sécurisées (HTTP) sont automatiquement redirigées vers la version
-      sécurisée.
-  resources:
-  - "[Configurer le SSL sur Scalingo](https://doc.scalingo.com/platform/app/ssl)"
-  - "[Header HTTP HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)"
-  category: sécurité
-- id: un-outil-d-analyse-et-de-mise-a-jour-des-dependances-est-configure
-  title: Un outil d'analyse et de mise à jour des dépendances est configuré
-  description: |-
-    Pour assurer la sécurité de votre projet, il est important que vos dépendances
-    soient maintenues à jour. Des outils d'analyse et de mise à jour automatiques
-    existent pour automatiser cette veille, comme
-    [Dependabot](https://github.com/dependabot).
-  criteria:
-  - label: Un outil d'analyse de sécurité type Dependabot est configuré.
-  resources:
-  - "[Documentation Dependabot](https://docs.github.com/fr/code-security/getting-started/dependabot-quickstart-guide)"
-  category: sécurité
-- id: la-roadmap-de-l-equipe-est-publique
-  title: La roadmap de l'équipe est publique
-  description: |-
-    La roadmap du projet est accessible publiquement, permettant à tous les acteurs
-    intéressés de suivre l'évolution et les priorités du projet.
-
-    Pour les nouveaux projets, nous recommandons l'utilisation de GitHub
-    Projects qui permet une traçabilité complète entre le suivi du
-    produit et son évolution technique.
-  criteria:
-  - label: La roadmap est publiée sur une plateforme accessible.
-  - label: Les mises à jour sont régulières et transparentes.
-  resources:
-  - "[GitHub Projects](https://docs.github.com/fr/issues/planning-and-tracking-with-projects/learning-about-projects)"
-  - "[Roadmap du GIP de l'Inclusion](https://github.com/orgs/gip-inclusion/projects/10)"
-  category: transparence
-- id: le-produit-a-une-fiche-a-jour-sur-le-site-de-beta
-  title: Le produit a une fiche à jour sur le site de Beta
-  description: |-
-    Les fiches produits sont une véritable mine d'or à Beta : elles
-    permettent de suivre les travaux de la communauté, de savoir qui
-    travaille sur quoi et de trouver des projets connexes.
-
-    Vous devez maintenir une fiche produit à jour via l'[Espace
-    Membre](https://espace-membre.incubateur.net), permettant de consulter
-    la liste des membres, l'URL du code source, etc.
-  criteria:
-  - label: La fiche est complète et publiée sur [l'annuaire des réalisations](https://beta.gouv.fr/realisations/)
-  - label: Les informations sont régulièrement vérifiées et mises à jour.
-  resources:
-  - "[Gérer sa fiche produit](https://doc.incubateur.net/communaute/les-outils-de-la-communaute/espace-membre/gerer-sa-fiche-produit)."
-  category: transparence
-- id: le-produit-communique-sur-son-budget
-  title: Le produit communique sur son budget
-  description: |-
-    Le produit publie régulièrement des informations sur son budget pour assurer la
-    transparence financière et l'engagement des parties prenantes.
-  criteria:
-  - label: Les rapports budgétaires sont publiés annuellement.
-  - label: Les dépenses et les prévisions sont clairement détaillées.
-  resources:
-  - "[Publier son budget sur la documentation Beta](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)"
-  category: transparence
-- id: le-produit-publie-ses-statistiques-d-impact
-  title: Le produit publie ses statistiques d'impact
-  description: |-
-    L’impact doit être **caractérisé de façon mesurable** et afficher la
-    contribution du produit à la politique publique concernée.
-
-    Le produit publie régulièrement ses statistiques d'impact.
-  criteria:
-  - label: L'URL de la page des stats d'impact est renseignée sur la fiche produit
-  - label: Les indicateurs d'impact sont régulièrement analysés et mis à jour.
-  resources:
-  - "[Définir et mesurer l'impact sur la documentation de l'incubateur](https://doc.incubateur.net/communaute/gerer-son-produit/la-vie-du-produit/investigation/definir-et-mesurer-limpact)"
-  category: transparence
-- id: le-produit-suit-ses-bonnes-pratiques-sur-le-dashlord
-  title: Le produit suit ses bonnes pratiques sur le Dashlord
-  description: |-
-    Le produit utilise Dashlord pour suivre et améliorer ses pratiques en matière
-    de qualité, de sécurité et de performance.
-  criteria:
-  - label: Dashlord est configuré pour le projet.
-  - label: Les indicateurs de performance sont régulièrement analysés.
-  resources:
-  - "[Dashlord](https://dashlord.example.com)"
-  category: transparence
-- id: le-produit-a-des-cgu
-  title: Le produit a des CGU
-  description: |-
-    Le produit dispose de Conditions Générales d'Utilisation (CGU) claires et
-    accessibles, définissant les droits et obligations des utilisateurs.
-  criteria:
-  - label: Les CGU sont publiées sur le site.
-  - label: Les utilisateurs sont informés des mises à jour des CGU.
-  resources:
-  - "[Modèle de CGU](https://www.example.com/modele-cgu)"
-  category: vie-privée
-- id: le-produit-a-des-mentions-legales
-  title: Le produit a des mentions légales
-  description: |-
-    Le produit affiche des mentions légales complètes, conformément aux exigences
-    légales, pour informer les utilisateurs sur l'identité de l'éditeur et les
-    conditions d'utilisation.
-  criteria:
-  - label: Les mentions légales sont accessibles depuis le site.
-  - label: Les informations sont à jour et conformes aux réglementations.
-  resources:
-  - "[Guide des mentions légales](https://www.example.com/guide-mentions-legales)"
-  category: vie-privée
-- id: le-produit-a-une-politique-de-confidentialite
-  title: Le produit a une politique de confidentialité
-  description: |-
-    Le produit dispose d'une politique de confidentialité détaillée, expliquant
-    comment les données des utilisateurs sont collectées, utilisées et protégées.
-  criteria:
-  - label: La politique de confidentialité est publiée sur le site.
-  - label: Les utilisateurs sont informés des modifications de la politique.
-  resources:
-  - "[Modèle de politique de confidentialité](https://www.example.com/modele-politique-confidentialite)"
+  last_modified_on: 2025-08-21
   category: vie-privée
 - id: les-donnees-de-production-ne-sont-utilisees-qu-en-production
   title: Les données de production ne sont utilisées qu'en production
   description: |-
-    Pour garantir la sécurité et la confidentialité, les environnements de
-    développement et de recette n'utilisent pas directement les données de
-    production.
+    Particulièrement dans le numérique de l'État qui confère parfois
+    l'accès à des données strictement confidentielles, vous devez vous
+    assurer que vos données de production ne sont utilisées qu'en
+    production, et que vos jeux de données test n'incluent pas des
+    informations qui ressemblent de près ou de loin à vos vraies données.
+
+    Dès la conception de votre produit, établissez des jeux de tests
+    anonymisées, voir entièrement fabriqués pour garantir que les données
+    de vos utilisateurs finaux ne sont jamais à risque.
+
+    Il en va de même pour les potentiels adresses de serveur d'API privées
+    que votre produit exploite.
   criteria:
-  - label: Des données fictives ou anonymisées sont utilisées en dev/recette.
-  - label: Les accès aux données de production sont restreints.
+  - label: Les jeux de données test sont fictifs ou anonymisés
+  - label: Les URLs de production ne sont pas exposées dans le code
   resources:
+  - "[Gérer une fuite de données - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/tech/readme-1)"
+  last_modified_on: 2025-08-21
+  category: vie-privée
+- id: tous-les-documents-legaux-sont-publies-et-accessibles
+  title: Tous les documents légaux sont publiés et accessibles
+  description: |-
+    Votre service doit publier trois documents légaux obligatoires : les
+    mentions légales, les conditions générales d'utilisation (CGU) et la
+    politique de confidentialité. Ces documents couvrent votre service
+    légalement et doivent permettre aux utilisateurs de comprendre comment
+    et dans quelles limites sont utilisées leurs informations.
+
+    ### Mentions légales
+
+    Identifient qui édite et héberge votre service :
+
+    - **Éditeur** : nom de l'administration, adresse, téléphone, email
+    - **Directeur de publication** : nom et fonction du responsable
+    - **Hébergeur** : nom, adresse et téléphone de l'hébergeur
+
+    ### Conditions générales d'utilisation (CGU)
+
+    Expliquent les règles du service :
+
+    - Objet du service et qui peut l'utiliser
+    - Droits et obligations des utilisateurs
+    - Responsabilité de l'administration
+    - Modalités de modification des CGU
+
+    ### Politique de confidentialité
+
+    Explique le traitement des données personnelles :
+
+    - Quelles données sont collectées et pourquoi
+    - Comment elles sont protégées et conservées
+    - Droits des utilisateurs et comment les exercer
+    - Contact du délégué à la protection des données
+  criteria:
+  - label: Les trois documents sont accessibles depuis le service (liens en pied de
+      page)
+  - label: Toutes les informations obligatoires sont présentes et exactes
+  - label: Un juriste a validé le contenu
+  - label: Les utilisateurs sont prévenus des modifications importantes
+  - label: Les coordonnées de contact fonctionnent
+  resources:
+  - "[Aide juridique - doc.incubateur.net](https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/mise-en-conformite-rgpd-et-conseil-juridique)"
+  - "[Guide RGPD de l'incubateur - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/protection-des-donnees-personnelles)"
+  - "[Obligations légales des services publics - legifrance.gouv.fr](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)"
+  - "[Exemple de CGU- mes-aides.1jeune1solution.beta.gouv.fr](https://mes-aides.1jeune1solution.beta.gouv.fr/cgu)"
+  last_modified_on: 2025-08-21
   category: vie-privée
 - id: le-service-est-frugal-en-fonctionnalites
   title: Le service est frugal en fonctionnalités
@@ -463,8 +931,9 @@
       Les utilisateurs sont consultés pour valider l'utilité des
       fonctionnalités.
   resources:
-  - "[Eco-conception numérique](https://ecoconception-numerique.com/)"
-  - "[Référentiel général d'écoconception de services numériques (RGESN) - 2024](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/)"
+  - "[Référentiel général de l’écoconception des services numériques (RGESN) - ARCEP](https://www.arcep.fr/mes-demarches-et-services/entreprises/fiches-pratiques/referentiel-general-ecoconception-services-numeriques.html)"
+  - "[Guide d'écoconception de services numériques - Designers Éthiques](https://designersethiques.org/fr/thematiques/ecoconception/guide-d-ecoconception)"
+  last_modified_on: 2025-08-21
   category: éco-conception
 - id: le-service-privilegie-la-low-tech
   title: Le service privilégie la low-tech
@@ -476,42 +945,51 @@
   - label: L'impact environnemental est régulièrement évalué.
   resources:
   - "[Low-tech Lab](https://lowtechlab.org/)"
+  last_modified_on: 2025-08-21
   category: éco-conception
 - id: des-comites-d-investissement-sont-organises-regulierement
   title: Des comités d'investissement sont organisés régulièrement
   description: |-
-    Un comité faisant le point sur l’impact et les coûts du produit a lieu
-    a minima tous les ans.
+    Le comité d'investissement est l'instance de pilotage principal d'un
+    produit numérique. Il a lieu régulièrement, au moins tous les 6 mois,
+    et permet de faire le point sur l'impact obtenu par l'équipe du
+    produit et d'arbitrer sur les objectifs et les investissements
+    consentis par les administrations qui financent le service.
 
-    Il permet de faire le point sur l'impact obtenu par l'équipe du produit
-    et d'arbitrer sur les objectifs et les investissements consentis par les
-    administrations qui financent le service.
+    Au-delà du pilotage régulier par l’impact, le comité revêt d’autres
+    fonctions :
 
-    Si le service n'a pas réussi à prouver son utilité ou sa pertinence,
-    le comité d'investissement peut décider de son arrêt ; au contraire,
-    si les résultats du service sont particulièrement probants, le comité
-    d'investissement peut statuer sur le renforcement des moyens, son
-    accélération ou sa pérennisation.
+    - rappeler et sensibiliser les directions générales à la démarche
+      beta.gouv.fr
+    - impliquer ces directions générales à travers la prise de décision
+    - engager les sponsors de proximité et leur permettre de confirmer les
+      orientations et les attentes en termes d'impact
   criteria:
-  - label: Un comité a lieu au moins une fois par an
+  - label: Un comité d'investissement a lieu au moins tous les 6 mois
   resources:
   - "[Préparer un comité d'investissement](https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/budget/preparer-un-comite-dinvestissement)"
+  last_modified_on: 2025-08-21
   category: équipe
-- id: l-equipe-est-autonome
-  title: L'équipe est autonome
+- id: le-produit-est-pilote-par-un-agent-public
+  title: Le produit est piloté par un agent public
   description: |-
-    L'équipe est autonome dans le pilotage de sa feuille de route et
-    la priorisation de ses tâches.
+    La force de la méthode beta.gouv.fr réside notamment dans le fait
+    qu'elle est pensée près des usagers, conçue autour de leurs besoins
+    avant tout et exige pour cela que le produit soit piloté par un agent
+    public, issu de l'environnement cible du produit.
+
+    La présence de l'agent public garantir :
+
+    - une meilleure proximité au terrain et à ses utilisateurs
+    - une meilleure compréhension de problématiques métier qui dépassent
+      largement le cadre des experts numériques de Beta
+    - une meilleure relation avec l'administration encadrante.
   criteria:
-  - label: L'équipe gère elle-même sa feuille de route.
+  - label: |-
+      Un(e) responsable produit, agent public, est identifié et travaille
+        au moins à mi-temps dans une équipe intégrée et autonome
   resources:
-  category: équipe
-- id: un-produit-pilote-par-un-agent-public
-  title: Un produit piloté par un agent public
-  description: |-
-    Un(e) responsable produit, agent public, est identifié et travaille,
-    au moins à mi-temps, dans une équipe intégrée et autonome.
-  criteria:
-  - label: Le produit est piloté par un(e) agent public.
-  resources:
+  - "[L'approche - beta.gouv.fr](https://beta.gouv.fr/approche)"
+  - "[Description des intrapreneurs - beta.gouv.fr](https://beta.gouv.fr/approche/intrapreneurs)"
+  last_modified_on: 2025-07-30
   category: équipe
