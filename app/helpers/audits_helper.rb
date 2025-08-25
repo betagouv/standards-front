@@ -6,7 +6,9 @@ module AuditsHelper
       if question.complete?
         content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--success" ]) { "Terminé" }
       elsif question.partially_complete?
-        content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--info" ]) { "En cours" }
+        content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--info" ]) { "Partiellement" }
+      elsif question.all_nos?
+        content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--error" ]) { "Pas encore" }
       else
         content_tag(:span, class: [ "fr-badge fr-badge--sm" ]) { "À faire" }
       end

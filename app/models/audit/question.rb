@@ -32,6 +32,10 @@ class Audit::Question
     criteria.any?(&:answered?)
   end
 
+  def all_nos?
+    criteria.all?(&:negative?)
+  end
+
   def unanswered?
     !answered?
   end

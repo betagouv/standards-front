@@ -23,6 +23,10 @@ class Audit::Criterion
     [ "yes", "na" ].include?(answer)
   end
 
+  def negative?
+    answered? && !done?
+  end
+
   def inspect
    "<Audit::Criterion label: #{label}, answer: #{answer}>"
   end
