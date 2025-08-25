@@ -38,13 +38,17 @@ class Audit < ApplicationRecord
 
   # FIXME: cleanup all of these
   def total_completion
-    ((questions.count(&:complete?).to_f / questions.count) * 100).round(0)
+    ((questions.count(&:answered?).to_f / questions.count) * 100).round(0)
   end
 
   def completion_stats
     grouped_questions.map do |category, questions|
       [ category, (questions.count(&:complete?).to_f / questions.count * 100).round(2) ]
     end.to_h
+  end
+
+  def complete?
+    questions.all?(&:complete?)
   end
 
   def next_question_after(question)

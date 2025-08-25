@@ -1,4 +1,5 @@
 - content_for(:page_title) { "Vos services" }
+- content_for(:column_overrides) { "lg: 12, md: 12" }
 
 %h1 Vos services
 
@@ -9,25 +10,23 @@
     \.
 - else
   %p.fr-text--lead
-    Voici la liste de vos services. Vous pouvez démarrer
-    l'auto-audit sur n'importe lequel, et y revenir plus tard si
+    Voici la liste de vos services. Vous pouvez commencer une évaluation et y revenir plus tard si
     nécessaire.
 
-  %ul.startups-list
-    - @startups.each do |startup|
-      %li
-        %h2
-          = startup.name
+.fr-grid-row.fr-grid-row--gutters
+  - @startups.each do |startup|
+    .fr-col-12.fr-col-md-6.fr-col-lg-3
+      .fr-tile.fr-enlarge-link{data: { turbo: { prefetch: "false" } } }
+        .fr-tile__body
+          .fr-tile__content
+            %h3.fr-tile__title
+              = dsfr_link_to startup.name, startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup.name}"
+            %p.fr-tile__desc= startup.pitch
+            %p.fr-tile__detail
+              Complétion :&nbsp
 
-        %div.description
-          %p
-            .div
-              Incubé chez
-              %strong.incubator= startup.incubator
-              \-
-              = dsfr_badge(status: :info) { startup.latest_phase.to_s }
-
-        - if startup.audit.blank?
-          = dsfr_link_to "Commencer l'audit", startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup}"
-        - else
-          = dsfr_link_to "Continuer l'audit (complétion : #{startup.audit_completion}%)", startup_audit_path(startup.ghid), title: "Continuer l'audit pour la startup #{startup}"
+              %strong
+                = startup.audit&.total_completion
+                \ %
+            .fr-tile__start
+              %p= startup_audit_badge(startup)
