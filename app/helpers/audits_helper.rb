@@ -39,7 +39,7 @@ module AuditsHelper
 
     safe_join([
       content_tag(:strong) { "#{completed}/#{total}" % [ completed, total ] },
-      " standards validés (#{pc.to_i}%)"
+      " critères validés (#{pc.to_i}%)"
     ])
   end
 

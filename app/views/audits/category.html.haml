@@ -9,7 +9,7 @@
 .fr-mb-4w
   %p.fr-text--sm.fr-mt-1w
     %strong= @audit.questions_for(@category).count(&:complete?)
-    standards validés (#{@audit.completion_stats[@category].to_i}%)
+    critères validés (#{@audit.completion_stats[@category].to_i}%)
 
 %ol.fr-task-list__items
   - @audit.questions_for(@category).each_with_index do |question, index|
