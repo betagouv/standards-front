@@ -1,35 +1,24 @@
 module AuditsHelper
   STANDARDS_REPO = "https://github.com/betagouv/standards".freeze
 
-  def task_list_status(question)
-    content_tag(:span, class: "fr-task-list__status") do
-      if question.complete?
-        content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--success" ]) { "Terminé" }
-      elsif question.partially_complete?
-        content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--info" ]) { "Partiellement" }
-      elsif question.all_nos?
-        content_tag(:span, class: [ "fr-badge fr-badge--sm fr-badge--error" ]) { "Pas encore" }
-      else
-        content_tag(:span, class: [ "fr-badge fr-badge--sm" ]) { "À faire" }
-      end
-    end
-  end
-
   def category_progress_label(audit, category)
     questions = audit.questions_for(category)
 
     "(%s/%s)" % [ questions.count(&:complete?), questions.count ]
   end
 
-  def category_progress_badge(audit, category)
-    case audit.completion_stats[category]
-    when 0
-      content_tag(:span, class: "fr-badge") { "À faire" }
-    when 100
-      content_tag(:span, class: "fr-badge fr-badge--success") { "Complet" }
-    else
-      content_tag(:span, class: "fr-badge fr-badge--info") { "En cours" }
+  def progress_badge(progressable, size = "md")
+    status, message = if progressable.unanswered?
+                        [ :new, "À faire" ]
+    elsif progressable.complete?
+                        [ :success, "Complet" ]
+    elsif progressable.all_nos?
+                        [ :error, "Pas encore" ]
+    elsif progressable.partially_complete?
+                        [ :info, progressable.is_a?(Category) ? "En cours" : "Partiellement" ]
     end
+
+    dsfr_badge(status: status, html_attributes: { class: "fr-badge--#{size}" }) { message }
   end
 
   def total_completion_label(audit)

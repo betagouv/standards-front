@@ -22,11 +22,11 @@
             %h3.fr-tile__title
               = dsfr_link_to startup.name, startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup.name}"
             %p.fr-tile__desc= startup.pitch
-            %p.fr-tile__detail
-              Complétion :&nbsp
-
-              %strong
-                = startup.audit&.total_completion
-                \ %
+            - if startup.audit.present?
+              %p.fr-tile__detail
+                Complétion :&nbsp
+                %strong
+                  = startup.audit&.total_completion
+                  \ %
             .fr-tile__start
               %p= startup_audit_badge(startup)

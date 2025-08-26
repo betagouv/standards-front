@@ -17,4 +17,4 @@
           %span.fr-text--sm.fr-text--regular.fr-ml-1w
             = category_progress_label(@audit, category)
       %span.fr-task-list__status
-        = category_progress_badge(@audit, category)
+        = progress_badge(Category.new(@audit, category))

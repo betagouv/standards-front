@@ -25,7 +25,7 @@ class Audit::Question
   end
 
   def partially_complete?
-    criteria.any?(&:done?)
+    criteria.any?(&:answered?)
   end
 
   def answered?
