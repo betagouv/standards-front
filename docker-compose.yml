@@ -1,8 +1,7 @@
 services:
   web:
-    build:
-      dockerfile: Dockerfile.dev
-    image: tech_audit
+    build: .
+    image: standards-front
     ports:
       - "3000:3000"
     env_file:

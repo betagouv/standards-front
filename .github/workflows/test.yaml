@@ -23,7 +23,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile.dev
+          file: Dockerfile
           tags: standards:latest
           outputs: type=docker,dest=/tmp/standards.tar
           cache-from: type=gha
