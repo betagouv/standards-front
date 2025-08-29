@@ -1,8 +1,8 @@
-# L'auto-audit de beta.gouv.fr
+# Standards de beta.gouv.rf : présentation et auto-évaluation
 
-Cette application permet aux équipes de la communauté Beta de
-s'auditer sur leur respect des [standards de
-Beta](https://github.com/betagouv/standards).
+Cette application permet aux équipes de la communauté Beta de prendre
+connaissance et d'évaluer leur produits selon les [standards de
+beta.gouv.fr](https://github.com/betagouv/standards).
 
 ![Capture d’écran 2025-04-26 à 11 41 00](https://github.com/user-attachments/assets/f0c33e98-1272-43c2-82ca-8ddbd163ba2e)
 
@@ -11,7 +11,7 @@ Beta](https://github.com/betagouv/standards).
 ### 1. Standards
 
 Les standards sont importés depuis le repo des [standards de
-Beta](https://github.com/betagouv/standards) grâce à l'[export
+beta.gouv.fr](https://github.com/betagouv/standards) grâce à l'[export
 YAML](https://github.com/betagouv/standards/releases) des questions.
 
 ### 2. Identification des équipes
@@ -27,11 +27,11 @@ l'Espace-Membre.
 Dans l'environnement de test, se réferrer à [la documentation de
 ProConnect sur les identifiants de test](https://partenaires.proconnect.gouv.fr/docs/fournisseur-service/identifiants-fi-test).
 
-### 3. Remplissage de l'audit
+### 3. Évaluation d'un produit
 
-L'audit est composé de questions groupées en catégories, avec des
-critères binaires (oui/non). Il est stocké en JSON, sans schéma, sous
-la même forme que les standards mais en rajoutant une propriété
+L'évaluation est composé de questions groupées en catégories, avec des
+critères binaires (oui/non). Elle est stockée en JSON, sans schéma,
+sous la même forme que les standards mais en rajoutant une propriété
 `answer` à chaque critère :
 
 ```yaml
@@ -54,21 +54,21 @@ peut imaginer `n/a` et autres dans un futur proche.
 
 ### 4. Exposition de la données
 
-Les audits sont disponibles sur deux terminaisons d'API :
+Les evaluations sont disponibles sur deux terminaisons d'API :
 
-#### `/api/audit/?startup_id=<ghid>`
+#### `/api/evaluation/?startup_id=<ghid>`
 
-Retourne l'audit complet de la startup.
+Retourne l'evaluation complet de la startup.
 
 `ghid` est l'identifiant GitHub de votre startup, c'est à dire [un
 identifiant parmi ces fichiers sans l'extension
 `.md`](https://github.com/betagouv/beta.gouv.fr/tree/master/content/_startups).
 
-#### `/api/audit/summary?startup_id=<ghid>`
+#### `/api/evaluation/summary?startup_id=<ghid>`
 
-Retourne un sommaire de l'audit composé du pourcentage de complétion
-par catégorie. Ce nombre indique le pourcentage de critères dont la
-réponse est "oui" ou "non applicable".
+Retourne un sommaire de l'évaluation composé du pourcentage de
+complétion par catégorie. Ce nombre indique le pourcentage de critères
+dont la réponse est "oui" ou "non applicable".
 
 ```json
 {

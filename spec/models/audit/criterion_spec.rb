@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe Audit::Criterion do
+describe Evaluation::Criterion do
   subject(:criterion) { described_class.new(attributes) }
 
   let(:attributes) { { label: "foo" } }

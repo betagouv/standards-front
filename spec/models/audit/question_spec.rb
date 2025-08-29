@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe Audit::Question do
+describe Evaluation::Question do
   let(:standards) do
     YAML.safe_load <<~YAML
           - id: question-1
@@ -22,7 +22,7 @@ describe Audit::Question do
   it { is_expected.to be_valid }
 
   it "deserializes critera into Criterion objects" do
-    expect(question.criteria.first).to be_a Audit::Criterion
+    expect(question.criteria.first).to be_a Evaluation::Criterion
   end
 
   describe "complete?" do

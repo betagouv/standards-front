@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :audit do
+  factory :evaluation do
     startup
   end
 end

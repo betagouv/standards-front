@@ -1,4 +1,4 @@
-class Audit::Criterion
+class Evaluation::Criterion
   include ActiveModel::Model
   include ActiveModel::Attributes
   include ActiveModel::Serialization
@@ -28,6 +28,6 @@ class Audit::Criterion
   end
 
   def inspect
-   "<Audit::Criterion label: #{label}, answer: #{answer}>"
+   "<Evaluation::Criterion label: #{label}, answer: #{answer}>"
   end
 end

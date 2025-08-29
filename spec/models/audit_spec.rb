@@ -1,29 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe Audit, type: :model do
-  subject(:audit) { FactoryBot.create(:audit) }
+RSpec.describe Evaluation, type: :model do
+  subject(:evaluation) { FactoryBot.create(:evaluation) }
 
   describe "factory" do
     it "has a valid factory" do
-      expect(audit).to be_valid
+      expect(evaluation).to be_valid
     end
   end
 
   describe "associations" do
     it "belongs to a startup" do
-      expect(audit.startup).not_to be_nil
+      expect(evaluation.startup).not_to be_nil
     end
   end
 
   describe "validations" do
     it "requires a startup_uuid" do
-      audit = FactoryBot.build(:audit, startup_uuid: nil)
-      expect(audit).not_to be_valid
+      evaluation = FactoryBot.build(:evaluation, startup_uuid: nil)
+      expect(evaluation).not_to be_valid
     end
   end
 
   describe "initialize_data" do
-    subject(:audit) { Audit.new.initialize_with(standards) }
+    subject(:evaluation) { Evaluation.new.initialize_with(standards) }
 
     let(:standards) do
       YAML.safe_load <<~YAML
@@ -41,8 +41,8 @@ RSpec.describe Audit, type: :model do
       YAML
     end
 
-    it "is deserialized with Audit::Question" do
-      expect(audit.questions.first).to be_a Audit::Question
+    it "is deserialized with Evaluation::Question" do
+      expect(evaluation.questions.first).to be_a Evaluation::Question
     end
 
     describe "filtering categories" do
@@ -57,7 +57,7 @@ RSpec.describe Audit, type: :model do
         let(:selection) { "other,foobar, category" }
 
         it "only selects the category indicated" do
-          expect(audit.questions.map(&:id)).to contain_exactly "question-2"
+          expect(evaluation.questions.map(&:id)).to contain_exactly "question-2"
         end
       end
 
@@ -65,7 +65,7 @@ RSpec.describe Audit, type: :model do
         let(:selection) { "" }
 
         it "doesn't filter the categories" do
-          expect(audit.questions.map(&:id)).to contain_exactly "question-1", "question-2"
+          expect(evaluation.questions.map(&:id)).to contain_exactly "question-1", "question-2"
         end
       end
     end

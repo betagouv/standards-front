@@ -3,7 +3,7 @@
 require "rails_helper"
 
 describe Questionize do
-  subject { Audit::Criterion.new.questionize(label) }
+  subject { Evaluation::Criterion.new.questionize(label) }
 
   let(:label) { "foobar" }
 

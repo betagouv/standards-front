@@ -18,7 +18,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module TechAudit
+module TechEvaluation
   class Application < Rails::Application
     config.i18n.default_locale = :fr
     config.i18n.fallbacks = [ :en ]

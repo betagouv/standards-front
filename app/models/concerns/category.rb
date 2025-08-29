@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Category
-  def initialize(audit, category)
-    @audit = audit
-    @questions = audit.questions_for(category)
+  def initialize(evaluation, category)
+    @evaluation = evaluation
+    @questions = evaluation.questions_for(category)
   end
 
   def unanswered?

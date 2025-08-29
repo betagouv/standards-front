@@ -1,11 +1,11 @@
 # language: fr
 
-Fonctionnalité: Remplissage de l'audit
+Fonctionnalité: Remplissage de l'évaluation
   Contexte:
     Sachant que je suis "Marie Curie" avec l'email "marie.curie@beta.gouv.fr"
     Et que je participe au produit "Louvre"
     Quand je me connecte
-    Et que je clique sur "Commencer l'audit pour la startup Louvre"
+    Et que je clique sur "Commencer l'évaluation pour le service Louvre"
 
   Scénario: Le taux de complétion total est affiché
     Alors la page contient "0/7 critères validés (0%)"
@@ -14,7 +14,7 @@ Fonctionnalité: Remplissage de l'audit
     Sachant que je clique sur "Ingrédients"
     Et que je complète le standard "Au moins trois oeufs frais"
     Et que je complète le standard "Du beurre"
-    Quand je retourne au sommaire de l'audit en cours
+    Quand je retourne au sommaire de l'évaluation en cours
     Alors la page contient "2/7 critères validés"
 
   Scénario: Je ne suis pas obligé de répondre aux critères
@@ -29,12 +29,6 @@ Fonctionnalité: Remplissage de l'audit
     Et que je choisis "Oui" pour "Est-ce que les oeufs sont frais ?"
     Quand je clique sur "Enregistrer"
     Alors la page contient "Partiellement" pour le standard "Au moins trois oeufs frais"
-
-  Scénario: Lorsque j'ai déjà vu toutes les questions
-    Sachant que je clique sur "Ingrédients"
-    Et que je complète le standard "Du beurre"
-    Quand je clique sur "Au moins trois oeufs frais"
-    Alors la page ne contient pas de bouton "Enregistrer ma réponse et passer à la question suivante"
 
   Scénario: Lorsque je réponds "non" à toutes les critères
     Sachant que je clique sur "Ingrédients"

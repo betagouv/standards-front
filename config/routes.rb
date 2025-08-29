@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :startups, param: :ghid, constraints: { ghid: /[^\/]+/ }, only: :index do
-    resource :audit, only: %i[show update] do
-      get ":category", to: "audits#category", as: :category
-      get ":category/:question", to: "audits#question", as: :category_question
+    resource :evaluation, only: %i[show update] do
+      get ":category", to: "evaluations#category", as: :category
+      get ":category/:question", to: "evaluations#question", as: :category_question
     end
   end
 
-  mount Audits::API => "/api"
+  mount Evaluations::API => "/api"
 end

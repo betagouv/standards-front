@@ -1,9 +1,9 @@
 fr:
   global:
     sponsor: "Direction\nInterministérielle\ndu Numérique"
-    service_name: "Auto-audit"
-    service_description: "Aidez votre produit à adhérer aux standards de Beta"
-  audits:
+    service_name: "Les standards de beta.gouv.fr"
+    service_description: "Aidez votre produit à briller en société"
+  evaluations:
     categories:
       accessibilité: "Accessibilité"
       design: "Design"

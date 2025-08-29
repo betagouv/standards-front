@@ -16,6 +16,9 @@ build:
 up:
 	docker compose up
 
+watch:
+	docker compose up --watch
+
 down:
 	docker compose down
 
@@ -38,7 +41,7 @@ debug:
 	$(DOCKER-RUN) web $(BUNDLE-EXEC) rdbg -nA web 12345
 
 rs:
-	$(DOCKER-RUN) web $(BUNDLE-EXEC) rails r 'Audit.delete_all'
+	$(DOCKER-RUN) web $(BUNDLE-EXEC) rails r 'Evaluation.delete_all'
 
 # runs a PSQL console to explore the DB
 db:

@@ -20,13 +20,13 @@
         .fr-tile__body
           .fr-tile__content
             %h3.fr-tile__title
-              = dsfr_link_to startup.name, startup_audit_path(startup.ghid), title: "Commencer l'audit pour la startup #{startup.name}"
+              = dsfr_link_to startup.name, startup_evaluation_path(startup.ghid), title: "Commencer l'évaluation pour le service #{startup.name}"
             %p.fr-tile__desc= startup.pitch
-            - if startup.audit.present?
+            - if startup.evaluation.present?
               %p.fr-tile__detail
                 Complétion :&nbsp
                 %strong
-                  = startup.audit&.total_completion
+                  = startup.evaluation&.total_completion
                   \ %
             .fr-tile__start
-              %p= startup_audit_badge(startup)
+              %p= startup_evaluation_badge(startup)

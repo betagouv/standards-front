@@ -1,8 +1,7 @@
 services:
   web:
-    build:
-      dockerfile: Dockerfile.dev
-    image: tech_audit
+    build: .
+    image: standards-front
     ports:
       - "3000:3000"
     env_file:
@@ -16,7 +15,7 @@ services:
   primary-db:
     image: postgres:16
     volumes:
-      - "./tmp/primary-db:/var/lib/postgresql/data"
+      - "./tmp/primarydb:/var/lib/postgresql/data"
     environment:
       POSTGRES_PASSWORD: 'dummy'
       PGPORT: 5434
