@@ -4,8 +4,6 @@ class Evaluation::Criterion
   include ActiveModel::Serialization
   include Questionize
 
-  questionize :label
-
   ANSWERS = {
     "yes" => "Oui",
     "no" => "Non",
