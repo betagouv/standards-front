@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
-module Audits
+module Evaluations
   class API < Grape::API
     format :json
 
     helpers do
-      def startup_audit
-        Audit.find_by!(startup: EspaceMembre::Startup.find_by!(ghid: params[:startup_id]))
+      def startup_evaluation
+        Evaluation.find_by!(startup: EspaceMembre::Startup.find_by!(ghid: params[:startup_id]))
       rescue ActiveRecord::RecordNotFound
         error! :not_found, 404
       end
     end
 
-    resource :audit do
+    resource :evaluation do
       params do
         requires :startup_id, type: String, desc: "GitHub identifier of the startup"
       end
 
-      desc "Return the startup's audit"
+      desc "Return the startup's evaluation"
       get do
-        startup_audit
+        startup_evaluation
       end
 
-      desc "Return the summary of the startup's audit"
+      desc "Return the summary of the startup's evaluation"
       get :summary do
-        startup_audit.completion_stats
+        startup_evaluation.completion_stats
       end
     end
 

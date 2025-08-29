@@ -12,7 +12,7 @@ module EspaceMembre
 
     has_many :users, through: :missions
 
-    has_one :audit, foreign_key: :startup_uuid
+    has_one :evaluation, foreign_key: :startup_uuid
 
     has_one :latest_phase,
             -> { order(start: :desc) },
@@ -37,11 +37,11 @@ module EspaceMembre
       phases.latest_completed.first
     end
 
-    def audit_completion
-      if audit.nil?
+    def evaluation_completion
+      if evaluation.nil?
         0
       else
-        audit.total_completion
+        evaluation.total_completion
       end
     end
   end

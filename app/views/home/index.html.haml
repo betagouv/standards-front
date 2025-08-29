@@ -5,22 +5,26 @@
     .fr-grid-row.fr-grid-row--gutters
       .fr-col-12.fr-col-md-8.fr-col-lg-8
         .fr-banner__content
-          %h1.fr-banner__title.fr-text--blue-france Auto-audit des services numériques
+          %h1.fr-banner__title.fr-text--blue-france Les standards de beta.gouv.fr
           %p.fr-banner__desc.fr-text--lg.fr-text--blue-france
-            Évaluez votre service numérique selon les standards techniques de Beta pour améliorer sa qualité, sa maintenabilité et sa sécurité.
+            Évaluez votre service numérique selon les standards de beta.gouv.fr pour améliorer sa qualité, sa maintenabilité et sa sécurité.
 
-          %p= dsfr_link_to "Commencer à auditer vos services", startups_path, icon_left: "arrow-right-line"
+          %p= dsfr_link_to "Commencez à évaluer vos services", startups_path, icon_left: "arrow-right-line"
 
 %section.fr-container
   .fr-grid-row
     .fr-col-12.fr-col-md-8.fr-col-lg-8
-      %h2 Pourquoi réaliser un auto-audit ?
+      %h2 Pourquoi évaluer vos services ?
 
       %p
-        L'auto-audit permet d'évaluer votre service selon des
-        standards techniques conçus par la communauté Beta pour
-        accompagner les équipes dans le développement de services
-        numériques performants et durables.
+        Les standards de beta.gouv.fr s'appuient sur l'expérience de
+        la communauté pour proposer un cadre solide et des standards
+        sur tous les grands enjeux qui ont fait le succès de la
+        méthode : transparence, vie privée, sécurité, etc. Mesurer
+        votre produit selon ces standards vous offre une grille de
+        lecture simple pour vous aider à garder votre produit en bonne
+        santé.
+
 
       .fr-grid-row.fr-grid-row--gutters
         = render layout: 'card', locals: { title: "Garantir la qualité", icon: "checkbox-circle-line" } do
@@ -51,7 +55,7 @@
 %section.fr-container
   .fr-grid-row
     .fr-col-12.fr-col-md-8.fr-col-lg-8
-      %h2 Comment fonctionne l'audit technique ?
+      %h2 Comment fonctionne l'évaluation ?
 
       .fr-grid-row.fr-grid-row--gutters
         = render layout: "card", locals: { title: "Connexion via ProConnect", icon: "lock-line" } do
@@ -64,17 +68,18 @@
           %p
             Une fois connecté(e), vous pourrez consulter la liste des services
             pour lesquels vous êtes référencé(e) dans l'Espace
-            Membre. Sélectionnez celui que vous souhaitez auditer.
+            Membre. Sélectionnez celui que vous souhaitez évaluer.
 
-        = render layout: "card", locals: { title: "Réalisation de l'audit technique", icon: "checkbox-circle-line" } do
+        = render layout: "card", locals: { title: "Réalisation de l'évaluation", icon: "checkbox-circle-line" } do
           %p
-            Répondez aux questions pour chaque standard technique. L'audit
-            est sauvegardé automatiquement et vous pourrez y revenir à tout
-            moment pour le compléter ou le mettre à jour.
+            Répondez aux questions pour chaque standard
+            technique. L'évaluation est sauvegardé automatiquement et
+            vous pourrez y revenir à tout moment pour le compléter ou
+            le mettre à jour.
 
         = render layout: "card", locals: { title: "Maintenez votre service à jour", icon: "recycle-line" } do
           %p
-            Votre auto-audit est avant tout une ressource pour vous
+            Votre évaluation est avant tout un support pour vous
             aider à garder votre produit au top de sa forme. Mettez-le
             à jour quand c'est nécessaire, et n'hésitez pas à le
             consulter lors de l'actualisation de votre feuille de

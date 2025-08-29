@@ -19,7 +19,7 @@
 .question-section.fr-py-2w
   %h2 Critères à vérifier
 
-  = form_with(model: @audit, url: startup_audit_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
+  = form_with(model: @evaluation, url: startup_evaluation_path(@startup.ghid), method: :patch, data: { turbo: "false" }) do |form|
     = form.fields_for @question do |ff|
       = ff.hidden_field :id, value: @question.id
       %ol
@@ -30,7 +30,7 @@
                 :markdown
                   #{criterion.questionized_label}
               = ff.fields_for :criteria, index: index do |fff|
-                - Audit::Criterion::ANSWERS.each do |key, label|
+                - Evaluation::Criterion::ANSWERS.each do |key, label|
                   .fr-fieldset__element.fr-fieldset__element--inline
                     .fr-radio-group
                       = fff.radio_button :answer, key, checked: criterion.answer == key

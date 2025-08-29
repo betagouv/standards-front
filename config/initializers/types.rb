@@ -1,3 +1,3 @@
-require "types/audit_questions_type"
+require "types/evaluation_questions_type"
 
-ActiveRecord::Type.register(:questions, AuditQuestionsType)
+ActiveRecord::Type.register(:questions, EvaluationQuestionsType)

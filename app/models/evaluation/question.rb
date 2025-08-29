@@ -1,5 +1,5 @@
 
-class Audit::Question
+class Evaluation::Question
   include ActiveModel::Model
   include ActiveModel::Attributes
   include ActiveModel::Serialization
@@ -13,11 +13,11 @@ class Audit::Question
   attribute :last_modified_on, :date
 
   def criteria
-    @criteria ||= self.attributes["criteria"].map { |crit| Audit::Criterion.new(crit) }
+    @criteria ||= self.attributes["criteria"].map { |crit| Evaluation::Criterion.new(crit) }
   end
 
   def inspect
-   "<Audit::Question title: #{title}>"
+   "<Evaluation::Question title: #{title}>"
   end
 
   def complete?

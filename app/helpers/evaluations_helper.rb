@@ -1,8 +1,8 @@
-module AuditsHelper
+module EvaluationsHelper
   STANDARDS_REPO = "https://github.com/betagouv/standards".freeze
 
-  def category_progress_label(audit, category)
-    questions = audit.questions_for(category)
+  def category_progress_label(evaluation, category)
+    questions = evaluation.questions_for(category)
 
     "(%s/%s)" % [ questions.count(&:complete?), questions.count ]
   end
@@ -21,9 +21,9 @@ module AuditsHelper
     dsfr_badge(status: status, html_attributes: { class: "fr-badge--#{size}" }) { message }
   end
 
-  def total_completion_label(audit)
-    completed = audit.questions.count(&:complete?)
-    total     = audit.questions.count
+  def total_completion_label(evaluation)
+    completed = evaluation.questions.count(&:complete?)
+    total     = evaluation.questions.count
     pc        = (completed.to_f / total) * 100
 
     safe_join([

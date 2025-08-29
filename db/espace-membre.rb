@@ -320,7 +320,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.boolean "has_mobile_app", default: false
     t.boolean "is_private_url", default: false
     t.string "dsfr_status", limit: 255
-    t.string "tech_audit_url", limit: 255
+    t.string "tech_evaluation_url", limit: 255
     t.string "ecodesign_url", limit: 255
     t.string "roadmap_url", limit: 255
     t.string "impact_url", limit: 255

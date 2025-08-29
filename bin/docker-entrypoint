@@ -16,4 +16,10 @@ if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
   ./bin/rails db:prepare
 fi
 
+if [ "$BETA_STANDARDS_NUKE_EVALUATIONS_ON_RESTART" = "true" ]; then
+    echo "--- Deleting all audits... (because of BETA_STANDARDS_NUKE_EVALUATIONS_ON_RESTART=true)"
+    rails r 'Evaluation.delete_all'
+    echo "--- ... done deleting audits."
+fi
+
 exec "${@}"

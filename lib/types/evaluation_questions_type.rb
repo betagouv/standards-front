@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-class AuditQuestionsType < ActiveRecord::Type::Json
+class EvaluationQuestionsType < ActiveRecord::Type::Json
   def cast(values = [])
     Array(values).map do |value|
       case value
       when Hash
-        Audit::Question.new(**value.symbolize_keys)
-      when Audit::Question
+        Evaluation::Question.new(**value.symbolize_keys)
+      when Evaluation::Question
         value
       when NilClass
         nil

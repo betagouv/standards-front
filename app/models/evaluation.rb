@@ -1,4 +1,4 @@
-class Audit < ApplicationRecord
+class Evaluation < ApplicationRecord
   belongs_to :startup,
              class_name: "EspaceMembre::Startup",
              foreign_key: :startup_uuid,

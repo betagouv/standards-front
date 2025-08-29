@@ -15,7 +15,7 @@ services:
   primary-db:
     image: postgres:16
     volumes:
-      - "./tmp/primary-db:/var/lib/postgresql/data"
+      - "./tmp/primarydb:/var/lib/postgresql/data"
     environment:
       POSTGRES_PASSWORD: 'dummy'
       PGPORT: 5434

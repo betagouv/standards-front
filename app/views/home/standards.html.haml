@@ -1,6 +1,6 @@
-- content_for(:page_title) { "La liste des standards" }
+- content_for(:page_title) { "Les standards" }
 
-%h1 La liste des standards
+%h1 Les standards
 
 = dsfr_highlight do
   %p
@@ -8,7 +8,7 @@
     = dsfr_link_to "Contribuez sur GitHub", "https://github.com/betagouv/standards", target: "_blank"
 
 - @standards.each do |category, standards|
-  %h2= t("audits.categories.#{category}", default: category.humanize)
+  %h2= t("evaluations.categories.#{category}", default: category.humanize)
 
   %p
     %ol

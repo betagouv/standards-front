@@ -46,8 +46,8 @@ Quand('je complète le standard {string}') do |nom|
   )
 end
 
-Quand('je retourne au sommaire de l\'audit en cours') do
-  step("je clique sur 'Audit du produit'")
+Quand('je retourne au sommaire de l\'évaluation en cours') do
+  step("je clique sur 'Evaluation du produit'")
 end
 
 Quand("je choisis {string} pour chaque critère") do |choix|
