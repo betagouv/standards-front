@@ -4,16 +4,17 @@ module LanguageHelper
   QUESTION_PREFIX = "Est-ce que"
 
   def questionize(phrase)
-    remove_final_dot(
-      elide(QUESTION_PREFIX, phrase)
-    ) + " ?"
+    remove_final_dot(phrase)
+      .then { |str| downcase_first_char(str) }
+      .then { |str| elide(QUESTION_PREFIX, str) }
+      .then { |str| str + " ?" }
   end
 
-  def elide(preposition, word)
-    if vocalic?(word)
-      "#{preposition.chop}'#{word}"
+  def elide(preposition, rest)
+    if vocalic?(rest)
+      "#{preposition.chop}'#{rest}"
     else
-      "#{preposition} #{word}"
+      "#{preposition} #{rest}"
     end
   end
 
@@ -29,5 +30,11 @@ module LanguageHelper
 
   def remove_final_dot(str)
     str.gsub(/\.$/, "")
+  end
+
+  def downcase_first_char(str)
+    first_char, *rest = str.chars
+
+    [ first_char.downcase, rest ].join
   end
 end
