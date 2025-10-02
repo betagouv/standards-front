@@ -1,55 +1,49 @@
 ---
 - id: l-equipe-produit-du-code-accessible
   title: L'équipe produit du code accessible
-  description: |-
-    Toute l'équipe a un rôle a jouer dans l'accessibilité d'un produit,
-    mais les développeuses/développeurs jouent un rôle essentiel dans
-    l'accessibilité d'un service (environ 60 % des critères du RGAA est
-    relatif au code).
-
-    Produire du code sémantique est donc essentiel. Pour cela, l'équipe
-    doit s'assurer de mettre en oeuvre le maximum, par exemple :
-
-    - Utiliser un design système accessible (par exemple, le DSFR)
-    - Avoir des compétences front-end en interne
-    - Vérifier régulièrement la sémantique du HTML produit
+  description: "Dans l'accessibilité d'un produit, toute l'équipe a un rôle a jouer\nmais
+    les développeuses/développeurs ont un rôle particulièrement \nessentiel : environ
+    60 % des critères du RGAA sont relatifs au code.\n\nProduire du code sémantique
+    est donc essentiel. Pour cela, l'équipe\ndoit s'assurer de mettre en oeuvre le
+    maximum, par exemple :\n\n- Utiliser un design système accessible (par exemple,
+    le DSFR)\n- Avoir des compétences front-end en interne\n- Vérifier régulièrement
+    la sémantique du HTML produit"
   criteria:
   - label: Le code produit est accessible.
   resources:
   - "[HTML : une bonne base pour l'accessibilité - mozilla.org](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Accessibility/HTML)"
   - "[Making the Web Accessible (en) - W3C](https://www.w3.org/WAI/)"
   - "[Design System de l'État](https://www.systeme-de-design.gouv.fr/)"
-  last_modified_on: 2025-08-22
+  last_modified_on: 2025-10-01
   category: accessibilité
 - id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
   title: L'équipe recette régulièrement l'accessibilité de son service
   description: |-
-    L'accessibilité (ou l'inaccessibilité) ne se voit pas. Pour s'assurer
-    de l'accessibilité d'un service, il faut le *manipuler* son service ;
-    par exemple en naviguant au clavier.
+    En accessibilité, les tests automatiques ne sont pas suffisament
+    exhaustifs. Il est donc indispensable de pratiquer des tests manuels
+    en complément. Ainsi, pour s'assurer de l'accessibilité d'un service,
+    il faut le *manipuler* (par exemple en naviguant au clavier).
 
     Recetter manuellement permet d'éviter la dette d'accessibilité et de
-    maintenir un niveau minimal de qualité. Cette régularité peut varier
-    selon l'organisation de l'équipe :
+    maintenir un niveau minimal de qualité.
 
-    - à chaque nouvelle fonctionnalité
-    - de manière mensuelle/trimestrielle/semestrielle
-    - ...
-
-    Recetter régulièrement plutôt qu'au dernier moment permet de :
+    La régularité des tests manuels peut varier selon l'organisation de
+    l'équipe (à chaque nouvelle fonctionnalité, de manière mensuelle...)
+    De plus, recetter régulièrement plutôt qu'au dernier moment permet
+    de :
 
     - résorber la dette d'accessibilité au fur et à mesure
-    - recetter de plus en plus efficacement avec l'expérience
+    - recetter de plus en plus efficacement avec l'expérience.
 
-    Un certain nombre de gestes de vérification ne sont pas techniques et
-    peuvent donc être répartis au sein de l'équipe.
+    Cette recette peut être répartie au sein de l'équipe puisqu'elle ne demande
+    pas de compétences techniques spécifique.
   criteria:
   - label: L'équipe est formée aux gestes de recette manuelle (Easy Checks)
   - label: L'équipe recette régulièrement son service
   resources:
   - "[10 choses faciles à vérifier pour un site plus accessible - doc.incubateur.net](https://doc.incubateur.net/communaute/travailler-chez-beta.gouv.fr/se-former/se-former-en-ligne/formation-a-laccessibilite/10-choses-faciles-a-verifier-pour-un-site-plus-accessible)"
-  - "[Easy Checks – A First Review of Web Accessibility (en) - W3C](https://www.w3.org/WAI/test-evaluate/easy-checks/)"
-  last_modified_on: 2025-08-22
+  - "[Easy Checks – A First Review of Web Accessibility (en) - w3c.org](https://www.w3.org/WAI/test-evaluate/easy-checks/)"
+  last_modified_on: 2025-10-01
   category: accessibilité
 - id: le-produit-respecte-ses-obligations-declaratives
   title: Le produit respecte ses obligations déclaratives
@@ -121,7 +115,7 @@
   - "[Obligations légales : Déclaration d'accessibilité - numerique.gouv.fr](https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/)"
   - "[Générateur de déclaration d'accessibilité](https://betagouv.github.io/a11y-generateur-declaration/)"
   - "[Obligations légales : Schéma pluriannuel de mise en accessibilité - numerique.gouv.fr](https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/)"
-  last_modified_on: 2025-08-22
+  last_modified_on: 2025-09-23
   category: accessibilité
 - id: l-equipe-pratique-la-recherche-utilisateur
   title: L'équipe pratique la recherche utilisateur
@@ -153,7 +147,7 @@
   resources:
   - "[Cartographie de l'UX - blognotes.iergo.fr](https://blocnotes.iergo.fr/wp-content/uploads/2012/06/UX_Cartographie.svg)"
   - "[Introduction aux « User Journey Maps » + modèles à télécharger - Stéphanie Walter](https://stephaniewalter.design/fr/blog/introduction-aux-user-journey-maps-modeles-pdf-a-telecharger/)"
-  last_modified_on: 2025-08-22
+  last_modified_on: 2025-09-30
   category: design
 - id: le-service-prevoit-les-cas-d-exclusion-numerique
   title: Le service prévoit les cas d'exclusion numérique
@@ -193,8 +187,35 @@
   resources:
   - "[Qu'est-ce que l'inclusion - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/rendre-un-service-inclusif/quest-ce-que-linclusion)"
   - "[Pôle numérique inclusif - doc.incubateur.net](https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/aide-transverse-pole-numerique-inclusif)"
-  last_modified_on: 2025-08-22
+  last_modified_on: 2025-09-30
   category: design
+- id: la-page-stats-est-construite-selon-la-matrice-impact
+  title: La page stats est construite selon la matrice impact
+  description: |-
+    L'analyse de l'impact est un exercice difficile, qui doit évoluer avec
+    votre produit et son environnement changeant.
+
+    Pour accompagner l'ensemble de ses services dans la mesure de
+    l'impact, la DINUM a développé [une matrice d'impact][1] articulée
+    autour 5 principes : utilisable, utilisé, utile, impactant, efficient.
+
+    Ces indicateurs permettent d'évaluer ponctuellement l'impact atteint
+    par le service afin de garantir son utilité, son exemplarité et une
+    bonne dépense de l’argent public : ils doivent être mis à jour avant
+    chaque comité d'investissement.
+
+    Vous pouvez contacter l'équipe FAST ou votre incubateur pour vous
+    accompagner dans la définition et l'utilisation de cette matrice
+    impact.
+
+    [1]: https://doc.incubateur.net/communaute/gerer-son-produit/guide-de-financement-des-startups-detat/4.-lenjeu-du-pilotage-par-limpact
+  criteria:
+  - label: les indicateurs présentés dans la page stats suivent la matrice impact
+  - label: les indicateurs sont mis à jour avant chaque comité
+  resources:
+  - "[L'enjeu du pilotage par l'impact - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/guide-de-financement-des-startups-detat/4.-lenjeu-du-pilotage-par-limpact)"
+  last_modified_on: 2025-10-01
+  category: impact
 - id: le-service-simplifie-ses-contenus-d-aide
   title: Le service simplifie ses contenus d'aide
   description: |-
@@ -223,7 +244,7 @@
   - "[Simplifier ses contenus - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/design/produire-des-contenus/simplifier-ses-contenus)"
   - "[FALC - Ministère de la Culture](https://www.culture.gouv.fr/fr/thematiques/developpement-culturel/culture-et-handicap/facile-a-lire-et-a-comprendre-falc-une-methode-utile)"
   - "[Outil Hemingway pour tester la lisibilité](https://hemingwayapp.com/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-du-support
 - id: les-utilisateurs-peuvent-faire-des-retours-facilement
   title: Les utilisateurs peuvent faire des retours facilement
@@ -256,9 +277,8 @@
   - '[Intégrer le bouton "Je donne mon avis"](https://doc.incubateur.net/communaute/gerer-son-produit/pourquoi-le-deploiement-dun-service-public-en-ligne-est-il-important/integrer-le-bouton-je-donne-mon-avis)'
   - "[Guide Sillon - Support utilisateur](https://sillon.incubateur.net/docs/monitoring/for-business-needs/#support-utilisateur)"
   - "[L'outil GitHub Discussions](https://docs.github.com/fr/discussions/collaborating-with-your-community-using-discussions/about-discussions)"
-  - "[Crisp - outil de support utilisateur](https://crisp.chat/)"
   - "[Astuto - outil de feuille de route publique](https://astuto.io/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-du-support
 - id: l-equipe-a-implemente-l-observabilite-de-son-produit
   title: L'équipe a implémenté l'observabilité de son produit
@@ -301,7 +321,7 @@
   resources:
   - "[Guide Sillon - Monitoring](https://sillon.incubateur.net/docs/monitoring/)"
   - "[Sentry sur la documentation Beta](https://doc.incubateur.net/communaute/les-outils-de-la-communaute/autres-services/sentry)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
 - id: l-equipe-enregistre-et-documente-les-changements-du-code
   title: L'équipe enregistre et documente les changements du code
@@ -346,7 +366,7 @@
   - "[Nommmage des commits sur Sillon](https://sillon.incubateur.net/docs/document/commit-naming/)"
   - "[Write better commits sur le blog de GitHub](https://github.blog/developer-skills/github/write-better-commits-build-better-projects/)"
   - "[Maintaining version control in coding - GOV.UK](https://www.gov.uk/service-manual/technology/maintaining-version-control-in-coding)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
 - id: l-open-source-et-les-communs-numeriques-sont-privilegies
   title: L'open-source et les communs numériques sont privilégiés
@@ -373,7 +393,7 @@
   - "[Stratégie numérique de l'État](https://www.numerique.gouv.fr/numerique-etat/)"
   - "[Pôle open source et communs numériques](https://code.gouv.fr/fr/)"
   - "[Guide Sillon - Communauté & open source](https://sillon.incubateur.net/docs/community-and-open-source/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-30
   category: qualité-logicielle
 - id: le-code-est-deploye-frequemment-idealement-en-continu
   title: Le code est déployé fréquemment, idéalement en continu
@@ -399,7 +419,7 @@
   - label: L'équipe déploie au moins une fois par semaine
   resources:
   - "[Guide Sillon - L'intégration et le déploiement continu](https://sillon.incubateur.net/docs/continuous-integration-and-continuous-deployment/)"
-  last_modified_on: 2025-07-30
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
 - id: le-code-est-instrumente-par-des-tests-unitaires-et-des-tests-e2e
   title: Le code est instrumenté par des tests unitaires et des tests E2E
@@ -435,7 +455,7 @@
   - "[Pyramide de tests (en) - Martin Fowler](https://martinfowler.com/bliki/TestPyramid.html)"
   - "[Exemple de tests unitaires - APLyPro](https://github.com/betagouv/aplypro/blob/51544b02c7e4b39c60de38a61dddccbcf9f982a9/spec/models/establishment_spec.rb)"
   - "[Exemple de tests d'intégration - APLyPro](https://github.com/betagouv/aplypro/blob/51544b02c7e4b39c60de38a61dddccbcf9f982a9/features/saisie_de_coordonnees_bancaires.feature)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
 - id: le-code-source-est-uniforme
   title: Le code source est uniforme
@@ -457,7 +477,7 @@
   - "[linter Python : Flake](https://flake8.pycqa.org/en/latest/)"
   - "[linter Ruby : Rubocop](https://github.com/rubocop/rubocop)"
   - "[Prettier](https://prettier.io/)"
-  last_modified_on: 2025-07-30
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
 - id: le-produit-s-appuie-sur-une-architecture-cloud
   title: Le produit s'appuie sur une architecture Cloud
@@ -494,23 +514,23 @@
     imprévisibles.
   criteria:
   - label: |-
-      l'équipe utilise des services d'hébergement cloud (IaaS, PaaS ou
+      L'équipe utilise des services d'hébergement cloud (IaaS, PaaS ou
         SaaS) plutôt qu'une infrastructure physique dédiée
   - label: |-
-      l'architecture permet une adaptation des ressources selon les
+      L'architecture permet une adaptation des ressources selon les
         besoins du service
   - label: |-
-      les données et applications sont répliquées ou sauvegardées pour
+      Les données et applications sont répliquées ou sauvegardées pour
         assurer la continuité de service
   - label: |-
-      l'hébergement respecte les exigences de souveraineté et de sécurité
+      L'hébergement respecte les exigences de souveraineté et de sécurité
         applicables au service public
   resources:
   - "[Stratégie nationale pour le Cloud (DINUM)](https://www.numerique.gouv.fr/actualites/le-gouvernement-annonce-sa-strategie-nationale-pour-le-cloud/)"
   - "[SecNumCloud pour les fournisseurs de services Cloud (ANSSI)](https://cyber.gouv.fr/secnumcloud-pour-les-fournisseurs-de-services-cloud)"
   - "[FAQ SecNumCloud - avant de se lancer dans la qualification (ANSSI)](https://cyber.gouv.fr/faq-avant-de-se-lancer-dans-la-qualification-secnumcloud)"
   - "[Cloud commercial - Guide DINUM](https://www.numerique.gouv.fr/services/cloud/cloud-commercial/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
 - id: les-aspects-techniques-du-produits-sont-documentes
   title: Les aspects techniques du produits sont documentés
@@ -545,10 +565,10 @@
   resources:
   - "[Guide Sillon - Documenter votre projet](https://sillon.incubateur.net/docs/document/)"
   - "[Documentation technique - Write the Docs](https://www.writethedocs.org/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: qualité-logicielle
-- id: l-equipe-a-entame-une-demarche-d-homologuation-de-securite
-  title: L'équipe a entamé une démarche d'homologuation de sécurité
+- id: l-equipe-a-entame-une-demarche-d-homologation-de-securite
+  title: L'équipe a entamé une démarche d'homologation de sécurité
   description: |-
     Votre produit faisant partie du numérique de l'État, vous êtes tenu de
     respecter les exigences du [référentiel général de sécurité
@@ -557,7 +577,7 @@
     d’information (ANSSI).
 
     Ce référentiel impose notamment notamment la conduite d'une
-    homologuation de sécurité pour permettre d'identifier et de valider
+    homologation de sécurité pour permettre d'identifier et de valider
     les risques cyber liés à votre service : elle atteste que les mesures
     de sécurité et les efforts présents et futurs sont suffisants pour
     faire face aux risques cyber les plus courants.
@@ -568,16 +588,16 @@
     service incubé à beta.gouv.fr qui simplifie cette étude et permet à
     votre équipe d'intégrer la sécurité dès la génèse de votre produit.
 
-    La procédure d'homologuation est simplifiée pour les services agiles
+    La procédure d'homologation est simplifiée pour les services agiles
     mais ne la rend pas moins nécessaire, particulièrement en vu du succès
     que Beta souhaite à tous ses services. Elle prend la forme d'un
     document validé par votre administration.
   criteria:
-  - label: L'équipe a entamé une démarche d'homologuation de sécurité
+  - label: L'équipe a entamé une démarche d'homologation de sécurité
   resources:
   - "[Tout savoir sur l'homologation de sécurité - monservicesecurise.cyber.gouv.fr](https://monservicesecurise.cyber.gouv.fr/articles/tout-savoir-sur-lhomologation-de-securite)"
   - "[Guide d'homologation de sécurité - cyber.gouv.fr](https://cyber.gouv.fr/sites/default/files/document/guide-homologation-securite-web-04-2025.pdf)"
-  last_modified_on: 2025-07-30
+  last_modified_on: 2025-09-23
   category: sécurité
 - id: l-equipe-a-mis-en-place-un-outil-d-analyse-statique-du-code
   title: L'équipe a mis en place un outil d'analyse statique du code
@@ -600,7 +620,7 @@
   resources:
   - "[Configurer CodeQL - github.com](https://docs.github.com/fr/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning)"
   - "[Référencement d'outil d'analyse statique de code - github.com](https://github.com/Saluki/awesome-static-analysis)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: sécurité
 - id: l-equipe-organise-regulierement-des-ateliers-d-analyse-de-risque
   title: L'équipe organise régulièrement des ateliers d'analyse de risque
@@ -626,7 +646,7 @@
   resources:
   - "[Réaliser une analyse de risque - monservicesecurise.cyber.gouv.fr](https://monservicesecurise.cyber.gouv.fr/articles/realiser-une-analyse-de-risques-de-la-securite-du-service)"
   - "[Guide de sécurité numérique agile de l'ANSSI - cyber.gouv.fr](https://cyber.gouv.fr/sites/default/files/2018/11/guide-securite-numerique-agile-anssi-pa-v1.pdf)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: sécurité
 - id: les-echanges-entre-vos-utilisateurs-et-votre-produit-sont-securises
   title: Les échanges entre vos utilisateurs et votre produit sont sécurisés
@@ -648,7 +668,7 @@
   resources:
   - "[Chiffrement SSL par défault - sillon.incubateur.net](https://sillon.incubateur.net/docs/security/enable-ssl/)"
   - "[Configurer le SSL sur Scalingo - scalingo.com](https://doc.scalingo.com/platform/app/ssl)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: sécurité
 - id: un-outil-d-analyse-et-de-mise-a-jour-des-dependances-est-configure
   title: Un outil d'analyse et de mise à jour des dépendances est configuré
@@ -683,7 +703,7 @@
   resources:
   - "[Guide de démarrage Dependabot - github.com](https://docs.github.com/fr/code-security/getting-started/dependabot-quickstart-guide)"
   - "[Annuaire des versions LTS/EOL - endoflife.date](https://endoflife.date/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: sécurité
 - id: le-produit-a-une-fiche-a-jour-sur-le-site-de-beta
   title: Le produit a une fiche à jour sur le site de Beta
@@ -728,13 +748,14 @@
 
     #### La description
 
-    La description est un champ de texte libre : un template de départ
-    vous est fourni mais vous n'êtes pas obligés de vous y tenir. Nous
-    attendons :
+    La description est un champ de texte libre, un certain formalisme est
+    néanmoins attendu :
 
-    - une description du problème, de son contexte et de sa solution
-    - une vision à moyen/long terme : quels sont les prochaines étapes
-      établies pour votre produit et les attentes que vous en avez ?
+    - une description du problème, de son contexte et des usagers
+    - une description de la solution et de l'impact attendu
+    - les objectifs fixés au dernier comité d'investissement
+    - la stratégie de déploiement : une vision à moyen/long terme des prochaines étapes
+      établies pour votre produit et les résultats attendus
   criteria:
   - label: La fiche produit est publiée et présente sur [l'annuaire des réalisations
       de beta.gouv.fr](https://beta.gouv.fr/startups/)
@@ -742,13 +763,17 @@
   - label: Le lien vers la page statistiques est renseigné
   - label: Le lien vers la page budget est renseigné
   - label: Le lien vers le code source est renseigné
-  - label: La description explique le problème, son contexte et votre solution
-  - label: La description présente les prochaines étapes du produit
+  - label: La description explique le problème, son contexte et ses usagers
+  - label: La description explique la solution et l'impact attendu
+  - label: Les objectifs fixés au dernier comité d'investissement sont renseignés
+  - label: |-
+      La description présente la stratégie de déploiement / les prochaines
+        étapes du produit
   - label: Un email de contact est renseigné
   resources:
   - "[Gérer sa fiche produit - doc.incubateur.net](https://doc.incubateur.net/communaute/les-outils-de-la-communaute/espace-membre/gerer-sa-fiche-produit)"
   - "[Publier son budget - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: transparence
 - id: le-produit-communique-sur-son-budget
   title: Le produit communique sur son budget
@@ -809,7 +834,7 @@
   resources:
   - "[Publier son budget - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget)"
   - "[Grist commun des budgets - grist.numerique.gouv.fr](https://grist.numerique.gouv.fr/o/docs/fTjFnK7Bhvuo/Depenses-numeriques/p/1)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: transparence
 - id: le-produit-suit-ses-bonnes-pratiques-sur-dashlord
   title: Le produit suit ses bonnes pratiques sur DashLord
@@ -832,7 +857,7 @@
   - label: Le produit est configuré sur le DashLord de son incubateur
   resources:
   - "[Le DashLord de l'incubateur](https://dashlord.incubateur.net/)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: transparence
 - id: l-equipe-initie-une-analyse-d-impact-relative-a-la-protection-des-donnee-si-necessaire
   title: L'équipe initie une analyse d'impact relative à la protection des donnée
@@ -846,7 +871,7 @@
   - label: Les recommandations sont mises en œuvre.
   resources:
   - "[Analyse d'impact sur la protection des données (AIPD)](https://www.cnil.fr/fr/PIA-privacy-impact-assessment)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: vie-privée
 - id: les-donnees-de-production-ne-sont-utilisees-qu-en-production
   title: Les données de production ne sont utilisées qu'en production
@@ -868,7 +893,7 @@
   - label: Les URLs de production ne sont pas exposées dans le code
   resources:
   - "[Gérer une fuite de données - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/tech/readme-1)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: vie-privée
 - id: tous-les-documents-legaux-sont-publies-et-accessibles
   title: Tous les documents légaux sont publiés et accessibles
@@ -916,7 +941,7 @@
   - "[Guide RGPD de l'incubateur - doc.incubateur.net](https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/protection-des-donnees-personnelles)"
   - "[Obligations légales des services publics - legifrance.gouv.fr](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)"
   - "[Exemple de CGU- mes-aides.1jeune1solution.beta.gouv.fr](https://mes-aides.1jeune1solution.beta.gouv.fr/cgu)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
   category: vie-privée
 - id: des-comites-d-investissement-sont-organises-regulierement
   title: Des comités d'investissement sont organisés régulièrement
@@ -939,7 +964,42 @@
   - label: Un comité d'investissement a lieu au moins tous les 6 mois
   resources:
   - "[Préparer un comité d'investissement](https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/budget/preparer-un-comite-dinvestissement)"
-  last_modified_on: 2025-08-21
+  last_modified_on: 2025-09-23
+  category: équipe
+- id: des-rituels-d-equipes-reguliers-sont-mis-en-place
+  title: Des rituels d'équipes réguliers sont mis en place
+  description: |-
+    Des rituels d'équipe réguliers et adaptés permettent à ses membres de
+    rester alignés sur les priorités souvent changeantes du produit. Leur
+    valeur est multiple :
+
+    - synchroniser et réevaluer les priorités du produit
+    - discuter et prendre les décisions ensemble
+    - ancrer l'amélioration continue en se réunissant fréquemment.
+
+    De nombreuses cérémonies d'équipe existent et le format doit être
+    adapté à la taille et aux profils qui la composent. Vous pouvez
+    choisir un format quotidien, mensuel, bi-mensuel, etc : l'important
+    est de trouver le juste milieu entre votre liberté de travail et la
+    bonne cohérence de l'équipe.
+
+    Pour optimiser ces moments d'équipe, assurez-vous que votre rituel
+    comporte :
+
+    - un but
+    - un propriétaire
+    - un ordre du jour
+    - une durée limitée.
+
+    Enfin, votre produit étant en évolution continue, assurez-vous de
+    revoir aussi la pertinence et le format de ces rituels fréquemment.
+  criteria:
+  - label: L'équipe organise régulièrement des rituels
+  - label: Les rituels sont formalisés et limités à un but précis
+  - label: Les décisions prises sont documentées
+  - label: La pertinence des rituels d'équipe est régulièrement revue
+  resources:
+  last_modified_on: 2025-09-23
   category: équipe
 - id: le-produit-est-pilote-par-un-agent-public
   title: Le produit est piloté par un agent public
@@ -962,5 +1022,5 @@
   resources:
   - "[L'approche - beta.gouv.fr](https://beta.gouv.fr/approche)"
   - "[Description des intrapreneurs - beta.gouv.fr](https://beta.gouv.fr/approche/intrapreneurs)"
-  last_modified_on: 2025-07-30
+  last_modified_on: 2025-09-23
   category: équipe

@@ -67,3 +67,11 @@ Issue: https://github.com/GouvernementFR/dsfr/issues/852 */
 .fr-highlight .fr-link {
   font-size: inherit;
 }
+
+ul + p {
+  margin-top: 0.9rem;
+}
+
+p:has(+ ul) {
+  margin-bottom: 0.9rem;
+}
