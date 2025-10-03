@@ -1,0 +1,8 @@
+- if flash.any?
+  .flash.fr-mb-3w
+    - if flash[:notice].present?
+      .fr-alert.fr-alert--info
+        %h3.fr-alert__title= flash[:notice]
+    - if flash[:alert].present?
+      .fr-alert.fr-alert--warning
+        %h3.fr-alert__title= flash[:alert]
