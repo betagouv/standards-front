@@ -5,18 +5,17 @@
 #   gem "sqlite3"
 #
 
-espace_membre_db: &emdb
+attributes_emdb: &attributes_emdb
   url: <%= ENV.fetch("ESPACE_MEMBRE_DB_URL") %>
   schema_dump: "espace-membre.rb"
   database_tasks: false
   replica: true
   migrations_paths: db/migrate_emdb
 
-espace_membre_db_test: &emdb-test
-  <<: *emdb
+attributes_emdb_write: &attributes_emdb_write
+  <<: *attributes_emdb
   replica: false
   database_tasks: true
-  database: test_emdb
 
 default: &default
   adapter: postgresql
@@ -28,8 +27,8 @@ development:
   primary:
     <<: *default
     database: development
-  emdb:
-    <<: *emdb
+  espace_membre_db:
+    <<: *attributes_emdb_write
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -38,12 +37,15 @@ test:
   primary:
     <<: *default
     database: test
-  emdb:
-    <<: *emdb-test
+  espace_membre_db:
+    <<: *attributes_emdb_write
+    database: test_emdb
 
 production:
   primary:
     <<: *default
+  espace_membre_db:
+    <<: *attributes_emdb
   cache:
     <<: *default
     migrations_paths: db/cache_migrate

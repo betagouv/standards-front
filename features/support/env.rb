@@ -28,7 +28,7 @@ ActionController::Base.allow_rescue = false
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
   DatabaseCleaner[:active_record, db: :primary].strategy = :transaction
-  DatabaseCleaner[:active_record, db: :emdb].strategy = :transaction
+  DatabaseCleaner[:active_record, db: :espace_membre_db].strategy = :transaction
 
   DatabaseCleaner.allow_remote_database_url = true
 rescue NameError

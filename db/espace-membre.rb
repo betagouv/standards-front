@@ -320,7 +320,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.boolean "has_mobile_app", default: false
     t.boolean "is_private_url", default: false
     t.string "dsfr_status", limit: 255
-    t.string "tech_evaluation_url", limit: 255
+    t.string "tech_audit_url", limit: 255
     t.string "ecodesign_url", limit: 255
     t.string "roadmap_url", limit: 255
     t.string "impact_url", limit: 255
@@ -368,6 +368,16 @@ ActiveRecord::Schema[8.0].define(version: 0) do
     t.timestamptz "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
 
     t.unique_constraint ["ghid"], name: "teams_ghid_unique"
+  end
+
+  create_table "user_events", primary_key: "uuid", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "field_id", limit: 255, null: false
+    t.timestamptz "date", null: false
+    t.uuid "user_id", null: false
+    t.timestamptz "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.timestamptz "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+
+    t.unique_constraint ["field_id", "user_id"], name: "user_events_field_id_user_id_unique"
   end
 
   create_table "users", primary_key: "username", id: :text, force: :cascade do |t|
@@ -467,6 +477,7 @@ ActiveRecord::Schema[8.0].define(version: 0) do
   add_foreign_key "startups_organizations", "organizations", primary_key: "uuid", name: "startups_organizations_organization_id_foreign", on_delete: :cascade
   add_foreign_key "startups_organizations", "startups", primary_key: "uuid", name: "startups_organizations_startup_id_foreign", on_delete: :cascade
   add_foreign_key "teams", "incubators", primary_key: "uuid", name: "teams_incubator_id_foreign", on_delete: :cascade
+  add_foreign_key "user_events", "users", primary_key: "uuid", name: "user_events_user_id_foreign", on_delete: :cascade
   add_foreign_key "users_formations", "formations", name: "users_formations_formation_id_foreign"
   add_foreign_key "users_formations", "users", column: "username", primary_key: "username", name: "users_formations_username_foreign"
   add_foreign_key "users_teams", "teams", primary_key: "uuid", name: "users_teams_team_id_foreign", on_delete: :cascade
