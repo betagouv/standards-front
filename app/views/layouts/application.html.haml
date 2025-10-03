@@ -25,12 +25,12 @@
     %main#main{ class: class_names(spacer: !content_for?(:nospacer)) }
       .fr-container
         = render_breadcrumbs(builder: DsfrHelper::BreadcrumbBuilder)
-        = render 'shared/flash'
-
       - unless content_for?(:nospacer)
         .fr-container.fr-mt-3w
           .fr-grid-row
             %div{class: default_column_classes}
+              = render 'shared/flash'
+
               = yield
       - else
         = yield
