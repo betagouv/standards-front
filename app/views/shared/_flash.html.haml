@@ -1,0 +1,9 @@
+- if flash.any?
+  .flash.fr-mb-3w
+    - %i(info warning).each do |type|
+      - if flash[type].present?
+        .fr-alert{class: "fr-alert--#{type}"}
+          %h3.fr-alert__title= flash[type]["title"]
+          - if flash[type]["text"].present?
+            :markdown
+              #{flash[type]["text"]}

@@ -14,10 +14,12 @@ class SessionsController < ApplicationController
 
     redirect_to startups_path, notice: "Connexion réussie pour #{email}"
   rescue ActiveRecord::RecordNotFound
+    flash[:warning] = t(".user_not_found", deep_interpolation: true, email: email)
+
     if proconnect_setup?
       redirect_to "/auth/proconnect/logout"
     else
-      redirect_to login_path, alert: "Impossible de trouver un compte correspondant à cet email"
+      redirect_to login_path
     end
   end
 

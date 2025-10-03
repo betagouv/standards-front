@@ -26,3 +26,15 @@ fr:
       ## Problème
 
       Décrivez ici toute incompréhension, erreur, coquille ou incertitude que vous avez rencontré avec le standard...
+
+  sessions:
+    create:
+      user_not_found:
+        title: Impossible de trouver un compte avec l'email %{email}
+        text: |
+          Dans la majorité des cas c'est une adresse en
+          `@beta.gouv.fr` qui permet de faire le lien avec
+          l'Espace-Membre. Essayez de [vous connecter à
+          l'Espace-Membre (s'ouvre dans un nouvel
+          onglet)](https://espace-membre.incubateur.net/){:target="_blank"}
+          pour vérifier l'email qui vous est associé.

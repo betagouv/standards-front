@@ -51,9 +51,7 @@
 }
 
 code {
-  font-size: 1rem;
-  font-family: Marianne;
-  font-style: italic;
+  font-size: 0.95rem;
   background: var(--artwork-background-beige-gris-galet);
 }
 

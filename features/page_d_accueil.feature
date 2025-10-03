@@ -19,3 +19,7 @@ Fonctionnalité: Page d'accueil
     Quand je me connecte
     Alors l'en-tête contient "Vos services (Marie Curie)"
     Et l'en-tête contient "Déconnexion"
+
+  Scénario: Quand je me connecte avec un email non reconnu
+    Quand je me connecte avec l'email "john.travolta@beta.gouv.fr"
+    Alors la page contient "Impossible de trouver un compte avec l'email john.travolta@beta.gouv.fr"
