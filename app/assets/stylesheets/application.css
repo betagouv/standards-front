@@ -146,19 +146,6 @@ section {
   margin-bottom: 2rem;
 }
 
-
-/* Card hover effects */
-.fr-card.fr-enlarge-link {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 0;
-}
-
-.fr-text h3 {
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-}
-
 @media (min-width: 768px) {
   .fr-grid-row .fr-col-md-6:nth-child(odd) {
     padding-right: 1rem;
@@ -181,98 +168,6 @@ section {
   color: var(--text-title-blue-france);
 }
 
-/* Login page styles */
-.fr-icon--lg {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.fr-card--grey {
-  background-color: var(--background-alt-grey);
-}
-
-/* Standard section styling */
-.fr-list--no-bullet {
-  list-style: none;
-  padding-left: 0;
-}
-
-.fr-list--no-bullet li {
-  font-size: 1.05rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-}
-
-.fr-list--no-bullet .fr-icon-arrow-right-line {
-  margin-top: 0.2rem;
-}
-
-.startups-list {
-  padding-inline-start: 0;
-  list-style: none;
-}
-
-.startups-list li {
-  margin-top: 2rem;
-}
-
-.fr-background-alt--grey {
-  background-color: var(--background-alt-grey);
-  height: 100%;
-  border-radius: 0.75rem;
-  border: 1px solid var(--border-default-grey);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease;
-}
-
-/* Animation for when checkbox is checked */
-.fr-checkbox-group input[type="checkbox"]:checked + label,
-.fr-checkbox-group input[type="checkbox"]:checked ~ .fr-label,
-.fr-checkbox-group input[type="checkbox"]:checked ~ label .fr-label-text {
-  animation: pulse 0.4s ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Question card states */
-.question-card {
-  transition: background-color 0.5s ease;
-}
-
-.question-card.completed {
-  background-color: var(--background-contrast-green-emeraude) !important; /* Light green background */
-  animation: cardComplete 0.3s ease-in-out;
-}
-
-@keyframes cardComplete {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Override DSFR default behavior to allow nested collapse components */
-.fr-collapse--expanded {
-  --collapse: 1;
-}
-
 .question-simple fieldset {
   border: none;
   padding: 0;
@@ -282,6 +177,7 @@ section {
 .question-resources li > p {
   margin-bottom: initial;
 }
+
 /* Task list styling (GOV.UK inspired) */
 .fr-task-list {
   list-style-type: none;
