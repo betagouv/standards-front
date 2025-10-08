@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   end
 
   def standards
-    @standards = Evaluation.new.tap(&:initialize_with_latest_standards).questions.group_by(&:category)
+    @standards = Evaluation.from_latest_standards.questions.group_by(&:category)
   end
 end

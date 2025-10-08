@@ -56,9 +56,9 @@ class EvaluationsController < ApplicationController
   end
 
   def set_evaluation
-    @evaluation = @startup.evaluation || Evaluation.find_or_initialize_by(startup: @startup) do |evaluation|
-      evaluation.initialize_with_latest_standards
-    end.tap(&:save)
+    @evaluation =
+      @startup.evaluation ||
+      Evaluation.from_latest_standards.tap { |e| e.update!(startup: @startup) }
   end
 
   def set_category
