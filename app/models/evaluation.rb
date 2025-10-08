@@ -6,17 +6,20 @@ class Evaluation < ApplicationRecord
 
   attribute :questions, :questions
 
-  def self.latest_standards
-    @latest ||= BetaStandards.standards
-  end
+  class << self
+    def latest_standards
+      @latest ||= BetaStandards.standards
+    end
 
-  def initialize_with_latest_standards
-    initialize_with(self.class.latest_standards)
+    def from_latest_standards
+      new.initialize_with(latest_standards)
+    end
   end
 
   def initialize_with(standards)
-    self.tap do |a|
-      a.questions = standards
+    self.tap do
+      self.questions = standards["standards"]
+      self.version   = standards["version"]
     end
   end
 

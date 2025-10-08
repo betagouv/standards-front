@@ -22,27 +22,15 @@ RSpec.describe Evaluation, type: :model do
     end
   end
 
-  describe "initialize_data" do
-    subject(:evaluation) { Evaluation.new.initialize_with(standards) }
-
-    let(:standards) do
-      YAML.safe_load <<~YAML
-          - id: question-1
-            category: test
-            description: first test question
-            criteria:
-            - label: one
-            - label: two
-          - id: question-2
-            category: other
-            description: second test question
-            criteria:
-            - label: three
-      YAML
-    end
+  describe ".from_latest_standards" do
+    subject(:evaluation) { Evaluation.from_latest_standards }
 
     it "is deserialized with Evaluation::Question" do
       expect(evaluation.questions.first).to be_a Evaluation::Question
+    end
+
+    it "stores the version" do
+      expect(evaluation.version).to eq "42"
     end
   end
 end

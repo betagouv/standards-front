@@ -1,4 +1,6 @@
 ---
+version: '42'
+standards:
 - title: Au moins trois oeufs frais
   id: oeufs
   category: ingrédients
