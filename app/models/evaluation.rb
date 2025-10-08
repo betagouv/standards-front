@@ -16,12 +16,7 @@ class Evaluation < ApplicationRecord
 
   def initialize_with(standards)
     self.tap do |a|
-      a.questions =
-        if selected_categories.any?
-          standards.filter { |q| q["category"].in?(selected_categories) }
-        else
-          standards
-        end
+      a.questions = standards
     end
   end
 
@@ -55,11 +50,5 @@ class Evaluation < ApplicationRecord
     others = questions_for(question.category) - [ question ]
 
     others.find(&:unanswered?)
-  end
-
-  private
-
-  def selected_categories
-    ENV.fetch("BETA_STANDARDS_SELECTED_CATEGORIES", "").split(",")
   end
 end
