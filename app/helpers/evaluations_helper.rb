@@ -48,4 +48,8 @@ module EvaluationsHelper
       )
     end.to_s
   end
+
+  def version_release_link(version)
+    File.join(STANDARDS_REPO, "releases/tag/", version).to_s
+  end
 end

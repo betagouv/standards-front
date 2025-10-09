@@ -1,0 +1,4 @@
+- if @evaluation.versioned?
+  %p.fr-text--sm
+    Vous évaluez votre produit sur
+    = dsfr_link_to "la version #{@evaluation.version} des standards.", version_release_link(@evaluation.version), size: "sm"

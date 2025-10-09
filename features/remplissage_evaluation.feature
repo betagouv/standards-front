@@ -10,6 +10,9 @@ Fonctionnalité: Remplissage de l'évaluation
   Scénario: Le taux de complétion total est affiché
     Alors la page contient "0/7 critères validés (0%)"
 
+  Scénario: Je peux voir quelle version des standards je remplis
+    Alors la page contient "Vous évaluez votre produit sur la version 42 des standards"
+
   Scénario: Le taux de complétion évolue correctement
     Sachant que je clique sur "Ingrédients"
     Et que je complète le standard "Au moins trois oeufs frais"
