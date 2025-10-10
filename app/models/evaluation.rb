@@ -54,4 +54,10 @@ class Evaluation < ApplicationRecord
 
     others.find(&:unanswered?)
   end
+
+  # "N/A" is the defaulted value for all non-versioned standards (pre
+  # october 2025) – this version attribute is required not-null.
+  def versioned?
+    version != "N/A"
+  end
 end
