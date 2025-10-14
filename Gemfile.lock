@@ -232,6 +232,9 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    guard-shell (0.7.2)
+      guard (>= 2.0.0)
+      guard-compat (~> 1.0)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -602,6 +605,7 @@ DEPENDENCIES
   guard
   guard-cucumber
   guard-rspec
+  guard-shell
   haml-rails
   importmap-rails
   jbuilder

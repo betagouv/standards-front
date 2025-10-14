@@ -9,6 +9,7 @@ services:
     volumes:
       - "./:/app"
       - "/app/node_modules"
+      - "./standards/standards-beta-v1.2.yml:/app/config/standards-beta.yml"
     depends_on:
       - espace-membre-db
       - primary-db

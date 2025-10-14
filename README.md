@@ -83,7 +83,15 @@ Une description Swagger est disonible sur cette terminaison.
 
 ## Développement
 
-L'application suit les conventions Rails. Pour démarrer :
+L'application contient le repo des standards à travers un submodule
+git. Vous devez donc cloner aussi le sous-repo :
+
+```sh
+git submodule update --init --recursive
+```
+
+Une fois les standards importés, vous pouvez démarrer l'application
+avec Docker :
 
 ```sh
 make up
@@ -91,4 +99,29 @@ make up
 
 Consultez le [docker-compose.yml](./docker-compose.yml) et le
 [Makefile](./Makefile) pour mieux connaître l'architecture du projet
-et les commandes utiles.
+et les commandes utiles. L'application suit les conventions
+Rails.
+
+### Développement d'un standard au sein de l'application
+
+Pour faciliter le développement d'un standard au sein même de
+l'application vous pouvez démarrer Guard, une librairie qui effectue
+des actions en fonction des changements effectués :
+
+```sh
+# une fois l'application lancée
+make up
+
+# dans un autre terminal, lancez Guard
+make guard
+```
+
+Guard est configuré pour vous permettre de faire de l'édition
+instantanée d'un standard :
+
+1. si un fichier Markdown change dans `./standards/**/*.md`
+2. les standards sont recompilés dans `./standards-beta-vXXX.yml`
+1. la dernière évaluation en date est supprimée sur l'outil
+   d'évaluation (celle que vous consultez)
+1. en rechargeant la page, les nouveaux standards sont utilisés, avec
+   vos modifications.

@@ -13,7 +13,7 @@ SCALINGO_STAG = scalingo --app standards
 build:
 	docker compose build
 
-up:
+up: generate-standards-export
 	docker compose up
 
 watch:
@@ -24,6 +24,9 @@ down:
 
 die:
 	docker compose down --remove-orphans --volumes
+
+generate-standards-export:
+	cd standards && make export
 
 sh:
 	$(DOCKER-RUN) web bash
