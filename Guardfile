@@ -2,7 +2,7 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-directories %w[app lib config spec features] \
+directories %w[app lib config spec features standards] \
  .select { |d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist") }
 
 ## Note: if you are using the `directories` clause above and you are not
@@ -25,6 +25,24 @@ cucumber_options = {
   all_on_start: false,
   notification: false
 }
+
+group :standards do
+  guard :shell do |m|
+    watch(%r{^standards/*/.+\.md$}) do |m|
+      puts "Recompiling standards..."
+      `cd standards && make export`
+      puts "Done."
+    end
+  end
+
+  guard :shell do |m|
+    watch(%r{^standards/standards-beta-.*.yml$}) do |m|
+      puts "Destroying the last Evaluation..."
+      `bin/rails r 'Evaluation.last.destroy'`
+      puts "Done."
+    end
+  end
+end
 
 guard "cucumber", cucumber_options do
   watch(%r{^features/.+\.feature$})

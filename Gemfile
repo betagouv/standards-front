@@ -84,6 +84,7 @@ group :test do
   gem "guard"
   gem "guard-cucumber"
   gem "guard-rspec"
+  gem "guard-shell"
   gem "rubocop-capybara"
   gem "rubocop-factory_bot"
   gem "rubocop-rails"

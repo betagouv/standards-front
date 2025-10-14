@@ -49,3 +49,8 @@
 # Ignore Docker-related files
 /.dockerignore
 /Dockerfile*
+
+# Ignore our copy of the standards: we just want to mount them via
+# Docker, not have them in the actual image which creates some severe
+# file-watching confusion.
+/standards/*
