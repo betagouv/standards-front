@@ -17,12 +17,14 @@ module BetaStandards
     # away from hardcoding the paths until a compelling reason not to
     # comes up.
     def standards_yml_file
-      path =
-        if Rails.env.test?
-          "spec/fixtures/files/dev-standards.yml"
-        else
-          "config/standards-beta.yml"
-        end
+      path = case Rails.env
+             when "test"
+               "spec/fixtures/files/dev-standards.yml"
+             when "dev"
+               "standards/standards-beta-v1.2.yml"
+             when "production"
+               "config/standards-beta.yml"
+             end
 
       Rails.root.join(path)
     end
