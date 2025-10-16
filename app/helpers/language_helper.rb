@@ -25,7 +25,7 @@ module LanguageHelper
   end
 
   def vowel?(char)
-    I18n.transliterate(char.downcase).in?(%w[a e i o u])
+    I18n.transliterate(char.downcase).in?(%w[a e i o u y])
   end
 
   def remove_final_dot(str)
