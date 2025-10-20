@@ -25,105 +25,8 @@ section {
 
 /* Custom hero banner styling */
 .fr-banner.fr-banner--blue-cumulus {
-  position: relative;
   background: linear-gradient(135deg, #d8d8ff 0%, #f0f0ff 25%, #ffffff 50%, #fff0f0 75%, #ffd8d8 100%);
-  background-size: 400% 400%;
-  overflow: hidden;
-  animation: gradientAnimation 12s ease infinite;
-  margin-bottom: 0;
-  box-shadow: 0 3px 12px rgba(0, 0, 145, 0.15), 0 3px 12px rgba(145, 0, 0, 0.15);
-}
-
-@media (prefers-reduced-motion) {
-  .fr-banner.fr-banner--blue-cumulus, .fr-banner.fr-banner--blue-cumulus::before, .fr-banner--blue-cumulus::after {
-    animation: none !important;
-  }
-}
-
-/* Wave effect */
-.fr-banner.fr-banner--blue-cumulus::before {
-  content: "";
-  position: absolute;
-  top: -5%;  /* Slightly above to prevent bottom edge jitter */
-  left: -150%;
-  width: 120%;
-  height: 110%;  /* Slightly taller to ensure bottom coverage */
-  background: linear-gradient(
-    to right,
-    rgba(100, 100, 230, 0) 0%,
-    rgba(130, 130, 255, 0.25) 15%,
-    rgba(200, 200, 255, 0.35) 35%,
-    rgba(255, 200, 200, 0.35) 65%,
-    rgba(255, 130, 130, 0.25) 85%,
-    rgba(230, 100, 100, 0) 100%
-  );
-  transform-origin: center;
-  transform: skewX(-20deg) scaleY(1.5);
-  animation: waveEffect 10s ease-in-out infinite;
-  will-change: transform;  /* Optimize for animation performance */
-}
-
-/* Second overlapping wave with different timing */
-.fr-banner.fr-banner--blue-cumulus::after {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -150%;
-  width: 120%;
-  height: 140%;
-  background: linear-gradient(
-    to right,
-    rgba(80, 80, 210, 0) 0%,
-    rgba(100, 100, 240, 0.15) 20%,
-    rgba(180, 180, 255, 0.2) 40%,
-    rgba(255, 180, 180, 0.2) 60%,
-    rgba(240, 100, 100, 0.15) 80%,
-    rgba(210, 80, 80, 0) 100%
-  );
-  transform: skewX(-15deg) scaleY(1.2);
-  animation: waveEffect 15s ease-in-out 5s infinite;
-  will-change: transform;  /* Optimize for animation performance */
-}
-
-@keyframes waveEffect {
-  0% {
-    left: -150%;
-    transform: skewX(-20deg) scaleY(1.5);
-  }
-  40% {
-    transform: skewX(-18deg) scaleY(1.5);
-  }
-  60% {
-    transform: skewX(-22deg) scaleY(1.5);
-  }
-  100% {
-    left: 150%;
-    transform: skewX(-20deg) scaleY(1.5);
-  }
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-.fr-banner__content {
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 3px 6px #CCC;
 }
 
 .fr-banner__title {
@@ -140,10 +43,6 @@ section {
   width: 60px;
   height: 4px;
   background-color: #000091;
-}
-
-.fr-banner__desc {
-  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
