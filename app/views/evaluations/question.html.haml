@@ -5,7 +5,7 @@
 .question-simple
   .question-description
     :markdown
-      #{h(@question.description)}
+      #{@question.description}
 
   - if @question.resources.present?
     .question-resources.fr-mb-3w
