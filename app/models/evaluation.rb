@@ -8,7 +8,7 @@ class Evaluation < ApplicationRecord
 
   class << self
     def latest_standards
-      @latest ||= BetaStandards.standards
+      BetaStandards.standards
     end
 
     def from_latest_standards
