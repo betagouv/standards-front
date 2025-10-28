@@ -1,3 +1,12 @@
+/* sue me, and I'll win */
+html {
+  font-size: 110%;
+}
+
+p {
+  line-height: 1.4rem;
+}
+
 .fr-breadcrumb {
   margin-bottom: 1rem;
 }
