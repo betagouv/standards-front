@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: 'dummy'
       PGPORT: 5434
   espace-membre-db:
-    image: postgres
+    image: postgres:16
     volumes:
       - "./tmp/edb:/var/lib/postgresql/data"
     environment:
