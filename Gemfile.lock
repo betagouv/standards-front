@@ -350,7 +350,7 @@ GEM
       logger
       rack (>= 2.2.3)
       rack-protection
-    omniauth-proconnect (0.4)
+    omniauth-proconnect (0.5)
       faraday (~> 2)
       json-jwt (~> 1)
       omniauth
