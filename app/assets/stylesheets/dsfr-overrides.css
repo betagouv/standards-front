@@ -87,3 +87,7 @@ li {
 p:has(+ ul) {
   margin-bottom: 0.9rem;
 }
+
+hr + h2 {
+  margin-top: 0.75rem !important;
+}

@@ -1,0 +1,9 @@
+- content_for(:page_title) { "Questions fréquentes" }
+
+%h1 Questions fréquentes
+
+- @questions.each do |question|
+  %hr
+  %h2.fr-h4= question[:title]
+  :markdown
+    #{question[:answer]}

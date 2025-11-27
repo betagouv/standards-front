@@ -7,3 +7,4 @@
     = header.with_tool_link title: "Vos services (#{current_user.fullname})", path: startups_path, html_attributes: { title: "Consultez vos services", class: "fr-icon-account-line" }
     = header.with_custom_tool_link do
       = button_to "Déconnexion", logout_path, { method: :delete, class: "fr-btn fr-icon-logout-box-r-line", data: { turbo: "false" } }
+  = header.with_direct_link_simple title: "Questions fréquentes", path: faq_path,  **add_current_attribute(faq_path)
