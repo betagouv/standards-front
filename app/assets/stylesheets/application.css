@@ -211,3 +211,7 @@ section {
 .fr-fieldset__element {
   margin-left: 0.5rem;
 }
+
+main h1:first-of-type {
+  margin-top: 0;
+}
