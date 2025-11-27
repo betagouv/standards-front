@@ -2,7 +2,6 @@ class Evaluation::Criterion
   include ActiveModel::Model
   include ActiveModel::Attributes
   include ActiveModel::Serialization
-  include Questionize
 
   ANSWERS = {
     "yes" => "Oui",
