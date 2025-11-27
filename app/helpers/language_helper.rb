@@ -7,7 +7,7 @@ module LanguageHelper
     remove_final_dot(phrase)
       .then { |str| downcase_first_char(str) }
       .then { |str| elide(QUESTION_PREFIX, str) }
-      .then { |str| str + " ?" }
+      .then { |str| str + " ?" }
   end
 
   def elide(preposition, rest)

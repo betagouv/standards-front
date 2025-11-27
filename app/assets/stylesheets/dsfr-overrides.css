@@ -1,3 +1,8 @@
+:root {
+  /* make headers belong to their subsequent content */
+  --title-spacing: 1.5rem 0rem 1rem;
+}
+
 .fr-breadcrumb {
   margin-bottom: 1rem;
 }
@@ -73,6 +78,10 @@ Issue: https://github.com/GouvernementFR/dsfr/issues/852 */
 
 ul + p {
   margin-top: 0.9rem;
+}
+
+li {
+  font-size: 1rem;
 }
 
 p:has(+ ul) {

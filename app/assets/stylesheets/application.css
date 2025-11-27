@@ -204,6 +204,10 @@ section {
   border: 1px solid var(--background-action-low-blue-ecume-hover)
 }
 
+.fr-fieldset__legend > p {
+  margin-bottom: 1rem;
+}
+
 .fr-fieldset__element {
   margin-left: 0.5rem;
 }
