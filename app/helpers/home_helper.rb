@@ -1,8 +1,8 @@
 module HomeHelper
   COLUMN_DEFAULTS = {
     "sm" => 12,
-    "md" => 8,
-    "lg" => 7
+    "md" => 7,
+    "lg" => 6
   }
 
   def standard_url(standard)
