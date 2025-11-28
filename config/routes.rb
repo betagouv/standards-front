@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "home#index"
+
   get "standards", to: "home#standards"
+  get "faq", to: "home#faq"
 
   get "auth/:provider/callback", to: "sessions#create"
   get "auth/:provider/logout", to: "sessions#destroy"

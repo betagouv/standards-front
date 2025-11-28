@@ -38,3 +38,64 @@ fr:
           l'Espace-Membre (s'ouvre dans un nouvel
           onglet)](https://espace-membre.incubateur.net/){:target="_blank"}
           pour vérifier l'email qui vous est associé.
+  home:
+    faq:
+      questions:
+        - title: Est-ce que les standards sont obligatoires ?
+          answer: |
+            Non, les standards ne sont pas obligatoires. En revanche
+            il est possible qu'une évaluation soit demandée avant vos
+            prochains comités d'investissement.
+
+        - title: Qui peut remplir l'évaluation d'un produit ?
+          answer: |
+            Toute personne associée au produit sur l'Espace-Membre
+            peut remplir son évaluation. Les membres de l'équipe
+            peuvent la modifier à leur guise, et y revenir quand ils
+            veulent.
+
+        - title: Combien de temps doit être consacré à l'évaluation ?
+          answer: |
+            Nous estimons la durée de remplissage entre 1h et 2h. Vous
+            pouvez tout à fait découper ce temps en plusieurs sessions
+            consacrées à certaines catégories.
+
+            Nous vous conseillons de faire l'exercice en équipe.
+
+        - title: Qui rédige les standards ?
+          answer: |
+            Les standards sont élaborés par l'équipe de l'Incubateur
+            des Services Numériques (ISN) de la DINUM. Ils sont
+            hébergés sur GitHub où vous pouvez suivre :
+
+            * [les tickets en cours](https://github.com/betagouv/standards/issues)
+            * [les demandes de changements](https://github.com/betagouv/standards/pulls)
+            * [les dernières versions.](https://github.com/betagouv/standards/releases)
+
+            Vos retours sont les bienvenus.
+
+        - title: Est-ce que les standards remplacent DashLord ?
+          answer: |
+            Non, les standards ne remplacent pas DashLord. DashLord
+            opère des vérifications automatiques :
+
+            * temps de chargement de votre page d'accueil
+            * rapport d'accessibilité
+            * détection de votre page de statistiques, de budget, etc.
+
+            Les standards abordent des thématiques beaucoup plus
+            larges et sont donc purement déclaratifs pour le
+            moment. Il est possible que [certains standards soient
+            automatisés dans le
+            futur](https://github.com/betagouv/standards/issues/170)
+            mais ce n'est pas encore le cas.
+
+        - title: Encore une question ?
+          answer: |
+
+            N'hésitez-pas à nous faire part de vos questions
+            additionnelles :
+
+            * en rapportant une nouvelle issue sur [la forge GitHub du
+              projet](https://github.com/betagouv/standards-front/issues/new)
+            * en rejoignant [le canal Mattermost #incubateur-standards](https://mattermost.incubateur.net/betagouv/channels/incubateur-standards).

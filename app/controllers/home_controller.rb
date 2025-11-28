@@ -5,4 +5,8 @@ class HomeController < ApplicationController
   def standards
     @standards = Evaluation.from_latest_standards.questions.group_by(&:category)
   end
+
+  def faq
+    @questions = t(".questions")
+  end
 end
