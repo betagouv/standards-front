@@ -49,12 +49,6 @@ class Evaluation < ApplicationRecord
     questions.all?(&:complete?)
   end
 
-  def next_question_after(question)
-    others = questions_for(question.category) - [ question ]
-
-    others.find(&:unanswered?)
-  end
-
   # "N/A" is the defaulted value for all non-versioned standards (pre
   # october 2025) – this version attribute is required not-null.
   def versioned?
