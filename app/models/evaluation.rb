@@ -36,7 +36,7 @@ class Evaluation < ApplicationRecord
 
   # FIXME: cleanup all of these
   def total_completion
-    ((questions.count(&:answered?).to_f / questions.count) * 100).round(0)
+    ((questions.count(&:complete?).to_f / questions.count) * 100).round(0)
   end
 
   def completion_stats

@@ -9,14 +9,12 @@ module EvaluationsHelper
 
   def progress_badge(progressable, size = "md")
     status, message =
-      if progressable.blank?
-        [ :new, "À compléter" ]
-      elsif progressable.conform?
+      if progressable.conform?
         [ :success, "Validé" ]
       elsif progressable.complete?
         [ :info, "Complété" ]
       else
-        [ :info, "En cours" ]
+        [ :new, "À compléter" ]
       end
 
     dsfr_badge(status: status, html_attributes: { class: "fr-badge--#{size}" }) { message }
@@ -29,7 +27,7 @@ module EvaluationsHelper
 
     safe_join([
       content_tag(:strong) { "#{completed}/#{total}" % [ completed, total ] },
-      " critères validés (#{pc.to_i}%)"
+      " critères renseignés (#{pc.to_i}%)"
     ])
   end
 

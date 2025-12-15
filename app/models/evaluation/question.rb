@@ -22,6 +22,10 @@ class Evaluation::Question
     @criteria ||= self.attributes["criteria"].map { |crit| Evaluation::Criterion.new(crit) }
   end
 
+  def presented
+    QuestionPresenter.new(self)
+  end
+
   def inspect
    "<Evaluation::Question title: #{title}>"
   end
