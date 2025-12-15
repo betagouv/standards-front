@@ -7,6 +7,19 @@ describe Evaluation::Criterion do
 
   let(:attributes) { { label: "foo" } }
 
+  shared_examples_for "a criterion considered complete" do
+    it { is_expected.not_to be_blank }
+    it { is_expected.to be_complete }
+  end
+
+  shared_examples_for "a criterion considered valid" do
+    it { is_expected.to be_done }
+  end
+
+  shared_examples_for "a criterion not considered valid" do
+    it { is_expected.not_to be_done }
+  end
+
   describe "when saved" do
     it "writes an answer" do
       expect(criterion.serializable_hash).to include({ "answer" => nil, "label" =>  "foo" })
@@ -14,35 +27,24 @@ describe Evaluation::Criterion do
   end
 
   context "when then value is not present" do
-    it { is_expected.not_to be_done }
-    it { is_expected.not_to be_answered }
-  end
+    it { is_expected.to be_blank }
 
-  context "when the value is something else" do
-    before { criterion.answer = "foo" }
-
-    it { is_expected.not_to be_done }
-    it { is_expected.to be_answered }
+    it_behaves_like "a criterion not considered valid"
   end
 
   context "when the answer value is 'no'" do
     before { criterion.answer = "no" }
 
-    it { is_expected.not_to be_done }
-    it { is_expected.to be_answered }
+    it_behaves_like "a criterion considered complete"
+    it_behaves_like "a criterion not considered valid"
   end
 
-  context "when the answer value is 'yes'" do
-    before { criterion.answer = "yes" }
+  described_class::CONSIDERED_PASS.each do |answer|
+    context "when the answer value is '#{answer}'" do
+      before { criterion.answer = answer }
 
-    it { is_expected.to be_done }
-    it { is_expected.to be_answered }
-  end
-
-  context "when the answer value is 'na'" do
-    before { criterion.answer = "na" }
-
-    it { is_expected.to be_done }
-    it { is_expected.to be_answered }
+      it_behaves_like "a criterion considered complete"
+      it_behaves_like "a criterion considered valid"
+    end
   end
 end

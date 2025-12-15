@@ -9,19 +9,21 @@ class Evaluation::Criterion
     "na" => "Non applicable"
   }
 
+  CONSIDERED_PASS = %w[yes na]
+
   attribute :label, :string
   attribute :answer, :string, default: nil
 
-  def answered?
-    answer.present?
+  def blank?
+    answer.blank?
+  end
+
+  def complete?
+    !blank?
   end
 
   def done?
     [ "yes", "na" ].include?(answer)
-  end
-
-  def negative?
-    answered? && !done?
   end
 
   def inspect

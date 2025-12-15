@@ -25,11 +25,15 @@ describe Evaluation::Question do
     expect(question.criteria.first).to be_a Evaluation::Criterion
   end
 
+  context "when no criteria has been answered" do
+    it { is_expected.to be_blank }
+  end
+
   describe "complete?" do
     context "when all the critera answers are done" do
       before do
         question.criteria.each do |criteria|
-          allow(criteria).to receive(:done?).and_return true
+          allow(criteria).to receive(:complete?).and_return true
         end
       end
 
