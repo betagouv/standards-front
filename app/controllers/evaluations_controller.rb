@@ -41,9 +41,13 @@ class EvaluationsController < ApplicationController
   end
 
   def set_evaluation
-    @evaluation =
-      @startup.evaluation ||
+    @evaluation = @startup.evaluation || make_evaluation!
+  end
+
+  def make_evaluation!
+    Rails.logger.silence do
       Evaluation.from_latest_standards.tap { |e| e.update!(startup: @startup) }
+    end
   end
 
   def set_category

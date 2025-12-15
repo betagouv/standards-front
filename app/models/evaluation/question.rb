@@ -1,5 +1,7 @@
 
 class Evaluation::Question
+  extend AskCollection
+
   include ActiveModel::Model
   include ActiveModel::Attributes
   include ActiveModel::Serialization
@@ -12,32 +14,16 @@ class Evaluation::Question
   attribute :criteria, default: -> { [] }
   attribute :last_modified_on, :date
 
+  asks :blank?, to: :criteria
+  asks :complete?, to: :criteria
+  asks :conform?, to: :criteria, via: :done?
+
   def criteria
     @criteria ||= self.attributes["criteria"].map { |crit| Evaluation::Criterion.new(crit) }
   end
 
   def inspect
    "<Evaluation::Question title: #{title}>"
-  end
-
-  def complete?
-    criteria.all?(&:done?)
-  end
-
-  def partially_complete?
-    criteria.any?(&:answered?)
-  end
-
-  def answered?
-    criteria.any?(&:answered?)
-  end
-
-  def all_nos?
-    criteria.all?(&:negative?)
-  end
-
-  def unanswered?
-    !answered?
   end
 
   # Override serializable_hash to properly handle criteria

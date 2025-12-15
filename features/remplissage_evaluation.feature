@@ -24,14 +24,14 @@ Fonctionnalité: Remplissage de l'évaluation
     Sachant que je clique sur "Ingrédients"
     Et que je clique sur "Au moins trois oeufs frais"
     Quand je clique sur "Enregistrer"
-    Alors la page contient "À faire" pour le standard "Au moins trois oeufs frais"
+    Alors la page contient "À compléter" pour le standard "Au moins trois oeufs frais"
 
   Scénario: Je peux répondre partiellement
     Sachant que je clique sur "Ingrédients"
     Et que je clique sur "Au moins trois oeufs frais"
     Et que je choisis "Oui" pour "Est-ce que les oeufs sont frais ?"
     Quand je clique sur "Enregistrer"
-    Alors la page contient "Partiellement" pour le standard "Au moins trois oeufs frais"
+    Alors la page contient "En cours" pour le standard "Au moins trois oeufs frais"
 
   Scénario: Lorsque je réponds "non" à toutes les critères
     Sachant que je clique sur "Ingrédients"
@@ -39,4 +39,4 @@ Fonctionnalité: Remplissage de l'évaluation
     Et que je choisis "Non" pour "Est-ce que les oeufs sont frais ?"
     Et que je choisis "Non" pour "Est-ce qu'au moins trois oeufs sont disponibles ?"
     Quand je clique sur "Enregistrer"
-    Alors la page contient "Pas encore" pour le standard "Au moins trois oeufs frais"
+    Alors la page contient "Complété" pour le standard "Au moins trois oeufs frais"

@@ -8,15 +8,16 @@ module EvaluationsHelper
   end
 
   def progress_badge(progressable, size = "md")
-    status, message = if progressable.unanswered?
-                        [ :new, "À faire" ]
-    elsif progressable.complete?
-                        [ :success, "Complet" ]
-    elsif progressable.all_nos?
-                        [ :error, "Pas encore" ]
-    elsif progressable.partially_complete?
-                        [ :info, progressable.is_a?(Category) ? "En cours" : "Partiellement" ]
-    end
+    status, message =
+      if progressable.blank?
+        [ :new, "À compléter" ]
+      elsif progressable.conform?
+        [ :success, "Validé" ]
+      elsif progressable.complete?
+        [ :info, "Complété" ]
+      else
+        [ :info, "En cours" ]
+      end
 
     dsfr_badge(status: status, html_attributes: { class: "fr-badge--#{size}" }) { message }
   end

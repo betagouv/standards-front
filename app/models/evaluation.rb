@@ -31,7 +31,7 @@ class Evaluation < ApplicationRecord
   end
 
   def questions_for(category)
-    grouped_questions[category]
+    questions.select { |question| question.category == category }
   end
 
   # FIXME: cleanup all of these

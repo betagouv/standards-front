@@ -3,19 +3,19 @@
     {
       "warning_type": "Cross-Site Scripting",
       "warning_code": 2,
-      "fingerprint": "84f8ae78d8b6a58db44e2b0867d17c8f71c33cc94ad61d873e4edc0d79a23041",
+      "fingerprint": "e6a987151471fbf14849dc4c6d78ab6649623016a4a4d0b9420091224deb26a8",
       "check_name": "CrossSiteScripting",
       "message": "Unescaped model attribute",
       "file": "app/views/evaluations/question.html.haml",
       "line": 8,
       "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
-      "code": "(current_user.active_startups.find_by(:ghid => params[\"startup_ghid\"]).evaluation or Evaluation.from_latest_standards.tap do\n e.update!(:startup => current_user.active_startups.find_by(:ghid => params[\"startup_ghid\"]))\n end).questions.find do\n (q.id == params[:question])\n end.description",
+      "code": "(current_user.active_startups.find_by(:ghid => params[\"startup_ghid\"]).evaluation or make_evaluation!).questions.find do\n (q.id == params[:question])\n end.description",
       "render_path": [
         {
           "type": "controller",
           "class": "EvaluationsController",
           "method": "question",
-          "line": 30,
+          "line": 29,
           "file": "app/controllers/evaluations_controller.rb",
           "rendered": {
             "name": "evaluations/question",
@@ -32,8 +32,8 @@
       "cwe_id": [
         79
       ],
-      "note": "We peer-review all standards"
+      "note": "We control the question's description"
     }
   ],
-  "brakeman_version": "7.1.0"
+  "brakeman_version": "7.1.1"
 }
