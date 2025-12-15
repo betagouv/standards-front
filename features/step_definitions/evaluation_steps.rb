@@ -82,15 +82,3 @@ Alors("la page contient {string} pour le standard {string}") do |state, name|
     end
   end
 end
-
-FEATURE_FLAGS_MAP = {
-  "question suivante" => :next_question
-}
-
-Quand("la fonctionnalité {string} est activée") do |feature|
-  name = FEATURE_FLAGS_MAP[feature]
-
-  allow_any_instance_of(FeatureHelper)
-    .to receive(:has_enabled_feature?)
-    .with(name).and_return true
-end

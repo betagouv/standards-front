@@ -24,7 +24,6 @@ class EvaluationsController < ApplicationController
 
   def question
     @question = @evaluation.questions.find { |q| q.id == params[:question] }
-    @next_question = find_next_question(@question)
 
     add_breadcrumb(@question.title.truncate(42))
   end
@@ -34,21 +33,7 @@ class EvaluationsController < ApplicationController
   def after_update_path
     question = find_params_question(evaluation_params)
 
-    if goto_next_question?
-      next_question = find_next_question(question)
-
-      category_question_startup_evaluation_path(@startup.ghid, next_question.category, next_question.id)
-    else
-      category_startup_evaluation_path(@startup.ghid, question.category)
-    end
-  end
-
-  def goto_next_question?
-    params[:commit] =~ /suivante/
-  end
-
-  def find_next_question(question)
-    @evaluation.next_question_after(question)
+    category_startup_evaluation_path(@startup.ghid, question.category)
   end
 
   def set_startup
