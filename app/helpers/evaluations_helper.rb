@@ -2,7 +2,7 @@ module EvaluationsHelper
   STANDARDS_REPO = "https://github.com/betagouv/standards".freeze
 
   def category_progress_label(evaluation, category)
-    questions = evaluation.questions_for(category)
+    questions = evaluation.standards_for(category)
 
     "(%s/%s)" % [ questions.count(&:complete?), questions.count ]
   end

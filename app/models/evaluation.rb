@@ -30,7 +30,7 @@ class Evaluation < ApplicationRecord
       .to_h
   end
 
-  def questions_for(category)
+  def standards_for(category)
     questions.select { |question| question.category == category }
   end
 

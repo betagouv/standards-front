@@ -8,7 +8,7 @@ class EvaluationPresenter
   end
 
   def completion_level(category:)
-    questions = evaluation.questions_for(category)
+    questions = evaluation.standards_for(category)
 
     questions
       .map(&:presented)
@@ -18,7 +18,7 @@ class EvaluationPresenter
   end
 
   def conformity_level(category:)
-    questions = evaluation.questions_for(category)
+    questions = evaluation.standards_for(category)
 
     questions
       .map(&:presented)
