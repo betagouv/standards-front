@@ -1,5 +1,7 @@
 module EspaceMembre
   class Startup < Record
+    extend AskCollection
+
     self.primary_key = "uuid"
 
     validates :ghid, presence: true
@@ -35,14 +37,6 @@ module EspaceMembre
 
     def latest_phase
       phases.latest_completed.first
-    end
-
-    def evaluation_completion
-      if evaluation.nil?
-        0
-      else
-        evaluation.total_completion
-      end
     end
   end
 end

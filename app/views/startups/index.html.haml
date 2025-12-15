@@ -26,7 +26,10 @@
               %p.fr-tile__detail
                 Complétion :&nbsp
                 %strong
-                  = startup.evaluation&.total_completion
-                  \ %
+                  = startup.evaluation&.presented.completion_level.to_i
+                  \%
             .fr-tile__start
-              %p= startup_evaluation_badge(startup)
+              - if startup.evaluation.present?
+                = progress_badge(startup.evaluation)
+              - else
+                = dsfr_badge(status: :new) { 'À remplir' }

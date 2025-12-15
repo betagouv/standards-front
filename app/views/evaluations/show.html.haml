@@ -9,14 +9,14 @@
 %p.fr-text--sm.fr-mt-1w= total_completion_label(@evaluation)
 
 %ol.fr-task-list__items
-  - @evaluation.grouped_questions.each_with_index do |(category, questions), index|
+  - @evaluation.questions.map(&:category).uniq.each_with_index do |category, index|
     %li.fr-task-list__item
       %span.fr-task-list__item-name
         %span.fr-task-list__section-number= "#{index + 1}."
         = link_to category_startup_evaluation_path(@startup.ghid, category), class: "fr-link fr-link--md" do
           = t("evaluations.categories.#{category}", default: category.humanize)
           %span.fr-text--sm.fr-text--regular.fr-ml-1w
-            = category_progress_label(@evaluation, category)
+            = "(#{t('evaluations.standards', count: @evaluation.standards_for(category).count)})"
       %span.fr-task-list__status
         = progress_badge(Category.new(@evaluation, category))
 

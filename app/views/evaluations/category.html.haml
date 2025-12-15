@@ -7,10 +7,6 @@
   Vérifiez que vous répondez aux standards techniques pour la catégorie #{t("evaluations.categories.#{@category}", default: @category.humanize)}.
 
 .fr-mb-4w
-  %p.fr-text--sm.fr-mt-1w
-    %strong= @evaluation.standards_for(@category).count(&:complete?)
-    critères validés (#{@evaluation.completion_stats[@category].to_i}%)
-
 %ol.fr-task-list__items
   - @evaluation.standards_for(@category).each_with_index do |question, index|
     %li.fr-task-list__item
@@ -19,5 +15,5 @@
         = link_to category_question_startup_evaluation_path(@startup.ghid, @category, question.id), class: "fr-link fr-link--md" do
           = question.title
           %span.fr-text--sm.fr-text--regular.fr-ml-1w
-            = "(#{question.criteria.size} critères)"
+            = "(#{t('evaluations.criteria', count: question.criteria.size)})"
       = progress_badge(question, "sm")

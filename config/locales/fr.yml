@@ -15,6 +15,14 @@ fr:
       vie-privée: "Vie privée"
       éco-conception: "Éco-conception"
       équipe: "Équipe"
+    criteria:
+      zero: "Aucun critère"
+      one: "1 critère"
+      other: "%{count} critères"
+    standards:
+      zero: "Aucun standard"
+      one: "1 standard"
+      other: "%{count} standards"
   feedback:
     title: Retour sur la question %{title}
     body: |

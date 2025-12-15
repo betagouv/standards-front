@@ -10,7 +10,7 @@ describe EvaluationPresenter do
   let(:questions) { evaluation.standards_for(category) }
 
   describe "completion_level" do
-    subject { presenter.completion_level(category: category) }
+    subject { presenter.completion_level }
 
     context "when no criteria have been answered" do
       it { is_expected.to be_zero }
@@ -28,7 +28,7 @@ describe EvaluationPresenter do
 
     context "when all criteria have been answered" do
       before do
-        evaluation.standards_for("ingrédients").each do |question|
+        evaluation.questions.each do |question|
           question.criteria.each do |criterion|
             criterion.answer = "no"
           end

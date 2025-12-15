@@ -7,14 +7,15 @@ class EvaluationPresenter
     @evaluation = evaluation
   end
 
-  def completion_level(category:)
-    questions = evaluation.standards_for(category)
+  def completion_level
+    all_questions = evaluation.questions
 
-    questions
+    all_questions
       .map(&:presented)
       .map(&:completion_level)
       .sum
-      .fdiv(questions.size)
+      .fdiv(all_questions.size)
+      .round(2)
   end
 
   def conformity_level(category:)

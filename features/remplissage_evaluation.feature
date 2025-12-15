@@ -8,7 +8,7 @@ Fonctionnalité: Remplissage de l'évaluation
     Et que je clique sur "Commencer l'évaluation pour le service Louvre"
 
   Scénario: Le taux de complétion total est affiché
-    Alors la page contient "0/7 critères renseignés (0%)"
+    Alors la page contient "0/7 standards renseignés (0%)"
 
   Scénario: Je peux voir quelle version des standards je remplis
     Alors la page contient "Vous évaluez votre produit sur la version 42 des standards"
@@ -18,7 +18,7 @@ Fonctionnalité: Remplissage de l'évaluation
     Et que je complète le standard "Au moins trois oeufs frais"
     Et que je complète le standard "Du beurre"
     Quand je retourne au sommaire de l'évaluation en cours
-    Alors la page contient "2/7 critères renseignés"
+    Alors la page contient "2/7 standards renseignés"
 
   Scénario: Je ne suis pas obligé de répondre aux critères
     Sachant que je clique sur "Ingrédients"
