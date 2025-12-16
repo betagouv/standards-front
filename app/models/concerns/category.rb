@@ -7,7 +7,7 @@ class Category
 
   def initialize(evaluation, category)
     @evaluation = evaluation
-    @questions = evaluation.questions_for(category)
+    @questions = evaluation.standards_for(category)
   end
 
   asks :complete?, to: :questions
