@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
              .info
              .email
 
-    session[:user] = EspaceMembre::User.find_by!(primary_email: email).uuid
+    session[:user] = EspaceMembre::User.identify_email!(email).uuid
 
     redirect_to startups_path, notice: "Connexion réussie pour #{email}"
   rescue ActiveRecord::RecordNotFound

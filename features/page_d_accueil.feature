@@ -14,6 +14,14 @@ Fonctionnalité: Page d'accueil
     Alors la page contient "Vos services"
     Et le titre de la page contient "Vos services"
 
+  Scénario: Je peux me connecter avec mon email secondaire
+    Sachant que je suis "Marie Curie" avec l'email secondaire "marie.curie@lycos.fr"
+    Et que je participe au produit "Louvre"
+    Et que je participe au produit "Rivoli"
+    Quand je me connecte avec mon email secondaire
+    Alors la page contient "Vos services"
+    Et le titre de la page contient "Vos services"
+
   Scénario: Un menu rapide est disponible pour les utilisateurs connectés
     Sachant que je suis "Marie Curie" avec l'email "marie.curie@beta.gouv.fr"
     Quand je me connecte

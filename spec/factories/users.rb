@@ -9,6 +9,8 @@ FactoryBot.define do
     fullname { Faker::Name.name }
     domaine { EspaceMembre::User::DOMAINES.sample }
     role { Faker::Job.title }
+    primary_email { Faker::Internet.email }
+    secondary_email { Faker::Internet.email }
 
     trait :with_active_mission do
       after(:create) do |user|

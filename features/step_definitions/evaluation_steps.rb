@@ -11,6 +11,15 @@ Sachantque("je suis {string} avec l'email {string}") do |name, email|
   )
 end
 
+Sachantque("je suis {string} avec l'email secondaire {string}") do |name, email|
+  @user = FactoryBot.create(
+    :user,
+    :with_active_mission,
+    fullname: name,
+    secondary_email: email
+  )
+end
+
 Given('je participe au produit {string}') do |name|
   startup = FactoryBot.create(:startup, name: name)
 
@@ -22,20 +31,11 @@ Given('je participe au produit {string}') do |name|
 end
 
 Quand('je me connecte') do
-  hash = {
-    provider: 'developer',
-    info: {
-      email: @user.primary_email
-    }
-  }
+  step(%(je me connecte avec l'email "#{@user.primary_email}"))
+end
 
-  OmniAuth.config.mock_auth[:developer] = OmniAuth::AuthHash.new(hash)
-
-  steps %(
-    Quand je me rends sur la page d'accueil
-    Et que je clique sur "Évaluez vos services"
-    Et que je clique sur "Se connecter"
-  )
+Quand('je me connecte avec mon email secondaire') do
+  step(%(je me connecte avec l'email "#{@user.secondary_email}"))
 end
 
 Quand("je me connecte avec l'email {string}") do |email|
