@@ -23,5 +23,11 @@ module EspaceMembre
 
     validates :username, :fullname, :role, :domaine, presence: true
     validates :domaine, inclusion: { in: DOMAINES }
+
+    def self.identify_email!(email)
+      User.find_by!(primary_email: email)
+    rescue ActiveRecord::RecordNotFound
+      User.find_by!(secondary_email: email)
+    end
   end
 end
