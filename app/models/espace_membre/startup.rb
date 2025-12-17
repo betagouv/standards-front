@@ -21,6 +21,8 @@ module EspaceMembre
             class_name: "Phase",
             inverse_of: :startup
 
+    scope :in_phase, ->(phase) { joins(:latest_phase).where("phases.name" => phase) }
+
     Phase::PHASES.each do |name|
       define_method "in_#{name}?" do
         latest_phase.send("#{name}?")

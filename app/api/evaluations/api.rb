@@ -12,6 +12,18 @@ module Evaluations
       end
     end
 
+    resource :evaluations do
+      desc "Return all evaluations"
+      get do
+        Evaluation
+          .includes(:startup)
+          .all
+          .map(&:presented)
+          .map(&:to_index_api)
+          .reduce({}, :merge)
+      end
+    end
+
     resource :evaluation do
       params do
         requires :startup_id, type: String, desc: "GitHub identifier of the startup"
