@@ -27,4 +27,28 @@ class EvaluationPresenter
       .sum
       .fdiv(questions.size)
   end
+
+  def completion_stats
+    stats_for(:completion)
+  end
+
+  def conformity_stats
+    stats_for(:conformity)
+  end
+
+  private
+
+  def stats_for(type)
+    evaluation.categories.map do |category|
+      standards = evaluation.standards_for(category)
+
+      [
+        category,
+        standards
+          .map { |standard| standard.presented.send("#{type}_level") }
+          .sum
+          .fdiv(standards.count)
+      ]
+    end.to_h
+  end
 end

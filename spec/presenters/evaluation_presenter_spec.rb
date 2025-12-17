@@ -38,4 +38,34 @@ describe EvaluationPresenter do
       it { is_expected.to eq 100.0 }
     end
   end
+
+  describe "completion_stats" do
+    subject(:stats) { presenter.completion_stats }
+
+    it "returns an object keyed by category" do
+      expect(stats.keys).to include category
+    end
+
+    it "returns the computed average of each category" do
+      questions.each do |question|
+        question.criteria.each { |c| c.answer = "yes" }
+      end
+
+      expect(stats["ingrédients"]).to eq 100
+    end
+  end
+
+  describe "conformity_stats" do
+    subject(:stats) { presenter.conformity_stats }
+
+    it "returns an object keyed by category" do
+      expect(stats.keys).to include category
+    end
+
+    it "returns the computed average of each category" do
+      questions.first.criteria.each { |c| c.answer = "yes" }
+
+      expect(stats["ingrédients"]).to eq 50
+    end
+  end
 end

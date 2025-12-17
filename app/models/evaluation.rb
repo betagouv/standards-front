@@ -32,6 +32,10 @@ class Evaluation < ApplicationRecord
     questions.select { |question| question.category == category }
   end
 
+  def categories
+    questions.map(&:category).uniq
+  end
+
   def presented
     EvaluationPresenter.new(self)
   end
