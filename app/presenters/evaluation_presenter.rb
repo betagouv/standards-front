@@ -36,19 +36,32 @@ class EvaluationPresenter
     stats_for(:conformity)
   end
 
+  def to_index_api
+    {
+      evaluation.startup.ghid => {
+        "completion" => stats_for(:completion),
+        "conformity" => stats_for(:conformity)
+      }
+    }
+  end
+
   private
 
   def stats_for(type)
     evaluation.categories.map do |category|
       standards = evaluation.standards_for(category)
 
-      [
-        category,
-        standards
-          .map { |standard| standard.presented.send("#{type}_level") }
-          .sum
-          .fdiv(standards.count)
-      ]
+      result =
+        if standards.all?(&:blank?)
+          nil
+        else
+          standards
+            .map { |standard| standard.presented.send("#{type}_level") }
+            .sum
+            .fdiv(standards.count)
+        end
+
+      [ category, result ]
     end.to_h
   end
 end
