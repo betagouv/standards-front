@@ -1,8 +1,8 @@
 fr:
   global:
-    sponsor: "Direction\nInterministérielle\ndu Numérique"
+    sponsor: "République\nFrançaise"
     service_name: "Les standards de beta.gouv.fr"
-    service_description: "Aidez votre produit à briller en société"
+    service_description: "Pour aider les équipes à créer de meilleurs services publics"
   evaluations:
     categories:
       accessibilité: "Accessibilité"
