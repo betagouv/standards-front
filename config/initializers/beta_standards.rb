@@ -20,11 +20,11 @@ module BetaStandards
       path =
         case Rails.env
         when "test"
-        "spec/fixtures/files/dev-standards.yml"
+          "spec/fixtures/files/dev-standards.yml"
         when "development"
-        "standards/standards-beta-v1.3.yml"
+          "standards/standards-beta-v2.0.yml"
         when "production"
-        "config/standards-beta.yml"
+          "config/standards-beta.yml"
         end
 
       Rails.root.join(path)

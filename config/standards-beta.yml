@@ -1,18 +1,18 @@
 ---
-version: '1.3'
+version: '2.0'
 standards:
 - id: l-equipe-produit-du-code-accessible
   title: L'équipe produit du code accessible
   category: accessibilité
   description: |+
-    Dans l'accessibilité d'un produit, toute l'équipe a un rôle a jouer mais
-    les développeuses/développeurs ont un rôle particulièrement essentiel :
-    environ 60 % des critères du RGAA sont relatifs au code.
+    Dans l'accessibilité d'un produit, toute l'équipe a un rôle à jouer mais
+    les développeuses/développeurs ont un rôle prépondérant : environ 60 %
+    des critères du RGAA sont relatifs au code.
 
     Produire du code sémantique est donc essentiel. Pour cela, l'équipe doit
-    s'assurer de mettre en oeuvre le maximum, par exemple :
+    s'assurer de faire le maximum, par exemple :
 
-    * Utiliser un design système accessible (par exemple, le DSFR)
+    * Utiliser un design system accessible (par exemple, le DSFR)
     * Avoir des compétences front-end en interne
     * Vérifier régulièrement la sémantique du HTML produit
 
@@ -34,28 +34,29 @@ standards:
 
 
     [1]: https://www.systeme-de-design.gouv.fr/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-01-07
 - id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
   title: L'équipe recette régulièrement l'accessibilité de son service
   category: accessibilité
   description: |+
-    En accessibilité, les tests automatiques ne sont pas suffisament
-    exhaustifs. Il est donc indispensable de pratiquer des tests manuels en
-    complément. Ainsi, pour s'assurer de l'accessibilité d'un service, il
-    faut le *manipuler* (par exemple en naviguant au clavier).
+    En accessibilité, les tests automatiques ne sont pas suffisants. Il est
+    indispensable de pratiquer des tests manuels en complément. Ainsi, pour
+    s'assurer de l'accessibilité d'un service, il faut le *manipuler* (par
+    exemple en naviguant au clavier).
 
     Recetter manuellement permet d'éviter la dette d'accessibilité et de
     maintenir un niveau minimal de qualité.
 
     La régularité des tests manuels peut varier selon l'organisation de
-    l'équipe (à chaque nouvelle fonctionnalité, de manière mensuelle...) De
-    plus, recetter régulièrement plutôt qu'au dernier moment permet de :
+    l'équipe (à chaque nouvelle fonctionnalité, de manière mensuelle...)
 
-    * résorber la dette d'accessibilité au fur et à mesure
+    Recetter régulièrement plutôt qu'au dernier moment permet de :
+
+    * résorber la dette d'accessibilité au fur et à mesure ;
     * recetter de plus en plus efficacement avec l'expérience.
 
     Cette recette peut être répartie au sein de l'équipe puisqu'elle ne
-    demande pas de compétences techniques spécifique.
+    demande pas de compétences techniques spécifiques.
 
   criteria:
   - label: L'équipe est formée aux gestes de recette manuelle (Easy Checks)
@@ -72,7 +73,7 @@ standards:
 
 
     [1]: https://www.w3.org/WAI/test-evaluate/easy-checks/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2025-12-04
 - id: le-produit-respecte-ses-obligations-declaratives
   title: Le produit respecte ses obligations déclaratives
   category: accessibilité
@@ -117,9 +118,9 @@ standards:
     Le produit doit référencer un schéma, parmi :
 
     * le schéma pluriannuel de son incubateur (s'il existe)
-    * le schéma pluriannuel de son administration sponsor - à retrouver sur
-      la page Accessibilité du sponsor - si elle existe)
-    * le schéma pluriannuel de beta.gouv.fr, sinon
+    * le schéma pluriannuel de son administration sponsor à retrouver sur la
+      page Accessibilité du sponsor (si elle existe)
+    * le schéma pluriannuel de beta.gouv.fr sinon
 
     ### Publication d'un plan d'action
 
@@ -129,7 +130,7 @@ standards:
 
     * Refonte vers le DSFR et amélioration de l'accessibilité du front - S1
       2025
-    * Formation en interne (atelier Easy Checks menés par beta.gouv.fr- - S1
+    * Formation en interne (atelier Easy Checks menés par beta.gouv.fr - S1
       2025
     * Préparation à l'audit - S2 2025
     * Audit de conformité et correction - S2 2025
@@ -140,7 +141,7 @@ standards:
   criteria:
   - label: |-
       Le service indique une mention de conformité
-      (non/partiellement/totalement conforme) sur la page d'accueil
+      (non/partiellement/totalement conforme) sur la page d'accueil.
   - label: Une déclaration d'accessibilité valide est en ligne.
   - label: Un schéma pluriannuel à jour est lié.
   - label: Un plan d'action est documenté en ligne.
@@ -167,17 +168,16 @@ standards:
 
 
     [1]: https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2025-12-04
 - id: l-equipe-pratique-la-recherche-utilisateur
   title: L'équipe pratique la recherche utilisateur
   category: design
   description: |
-    La méthode beta.gouv.fr est centrée sur l'utilisateur : c'est grâce à ce
-    fondement qu'elle se distingue du mode projet traditionnel, en [se
-    concentrant sur les besoins des usagers plutôt que ceux de
-    l'administration][1].
+    La méthode beta.gouv.fr est centrée sur l'utilisateur : ce fondement la
+    distingue du mode projet traditionnel, en [se concentrant sur les
+    besoins des usagers plutôt que ceux de l'administration][1].
 
-    Pour rester connecté à ses utilisateurs et utilisatrices, votre équipe
+    Pour rester connectée à ses utilisateurs et utilisatrices, votre équipe
     doit pratiquer la recherche utilisateur grâce aux nombreuses méthodes
     disponibles pour mieux comprendre comment est utilisé votre service, par
     exemple :
@@ -198,7 +198,7 @@ standards:
     [3]: https://www.usabilis.com/experience-map-carte-dexperience/
     [4]: https://www.lunaweb.fr/actualites/blog/demystifier-le-persona-ux-comprendre-et-concevoir-vos-archetypes-usagers/
   criteria:
-  - label: L'équipe intègre un processus de recherche utilisateur
+  - label: L'équipe intègre un processus de recherche utilisateur.
   resources:
   - |-
     [Cartographie de l'UX - blognotes.iergo.fr][1]
@@ -211,7 +211,7 @@ standards:
 
 
     [1]: https://stephaniewalter.design/fr/blog/introduction-aux-user-journey-maps-modeles-pdf-a-telecharger/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2025-12-04
 - id: le-service-prevoit-les-cas-d-exclusion-numerique
   title: Le service prévoit les cas d'exclusion numérique
   category: design
@@ -260,7 +260,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/aide-transverse-pole-numerique-inclusif
-  last_modified_on: 2025-11-04
+  last_modified_on: 2025-12-04
 - id: l-equipe-suit-la-methodologie-aarri
   title: L'équipe suit la méthodologie AARRI
   category: impact
@@ -339,7 +339,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/piloter-sa-croissance-et-evaluer-son-impact
-  last_modified_on: 2025-10-30
+  last_modified_on: 2025-12-08
 - id: la-page-stats-est-construite-selon-la-matrice-impact
   title: La page stats est construite selon la matrice impact
   category: impact
@@ -418,7 +418,7 @@ standards:
 
 
     [1]: https://hemingwayapp.com/
-  last_modified_on: 2025-11-04
+  last_modified_on: 2025-12-04
 - id: les-utilisateurs-peuvent-faire-des-retours-facilement
   title: Les utilisateurs peuvent faire des retours facilement
   category: qualité-du-support
@@ -454,11 +454,6 @@ standards:
 
     [1]: https://doc.incubateur.net/communaute/gerer-son-produit/pourquoi-le-deploiement-dun-service-public-en-ligne-est-il-important/integrer-le-bouton-je-donne-mon-avis
   - |-
-    [Support utilisateur - sillon.incubateur.net][1]
-
-
-    [1]: https://sillon.incubateur.net/docs/monitoring/for-business-needs/#support-utilisateur
-  - |-
     [L'outil GitHub Discussions - docs.github.com][1]
 
 
@@ -468,7 +463,7 @@ standards:
 
 
     [1]: https://astuto.io/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2025-12-08
 - id: l-equipe-a-implemente-l-observabilite-de-son-produit
   title: L'équipe a implémenté l'observabilité de son produit
   category: qualité-logicielle
@@ -609,16 +604,12 @@ standards:
 
     [1]: https://www.numerique.gouv.fr/numerique-etat/
   - |-
-    [Pôle open source et communs numériques - code.gouv.fr][1]
+    [Guide juridique du logiciel libre dans l’administration -
+    numerique.gouv.fr][1]
 
 
-    [1]: https://code.gouv.fr/fr/
-  - |-
-    [Communauté & open source - sillon.incubateur.net][1]
-
-
-    [1]: https://sillon.incubateur.net/docs/community-and-open-source/
-  last_modified_on: 2025-10-30
+    [1]: https://documentation.ouvert.numerique.gouv.fr/ressources/guide-juridique-du-logiciel-libre-dans-ladministration/
+  last_modified_on: 2025-12-04
 - id: le-code-est-deploye-frequemment-idealement-en-continu
   title: Le code est déployé fréquemment, idéalement en continu
   category: qualité-logicielle
@@ -856,8 +847,8 @@ standards:
 
     [1]: https://www.writethedocs.org/
   last_modified_on: 2025-10-30
-- id: l-equipe-a-entame-une-demarche-d-homologation-de-securite
-  title: L'équipe a entamé une démarche d'homologation de sécurité
+- id: l-equipe-a-etabli-un-plan-d-action-visant-l-homologation-de-son-service
+  title: L'équipe a établi un plan d'action visant l'homologation de son service
   category: sécurité
   description: |
     Votre produit faisant partie du numérique de l'État, vous êtes tenu de
@@ -865,28 +856,43 @@ standards:
     produit par l'Agence nationale de la sécurité des systèmes d’information
     (ANSSI).
 
-    Ce référentiel impose notamment notamment la conduite d'une homologation
-    de sécurité pour permettre d'identifier et de valider les risques cyber
-    liés à votre service : elle atteste que les mesures de sécurité et les
+    Ce référentiel impose notamment la conduite d'une homologation de
+    sécurité pour permettre d'identifier et de valider les risques cyber
+    liés à votre service : elle atteste que les mesures de sécurité et les
     efforts présents et futurs sont suffisants pour faire face aux risques
     cyber les plus courants.
 
-    Pour ce faire vous pouvez enregistrer et faire évoluer votre service dès
-    sa conception sur [MonServiceSécurisé][2], un service incubé à
+    Pour ce faire, vous pouvez enregistrer et faire évoluer votre service
+    dès sa conception sur [Mon Service Sécurisé][2], un service incubé à
     beta.gouv.fr qui simplifie cette étude et permet à votre équipe
-    d'intégrer la sécurité dès la génèse de votre produit.
+    d'intégrer la sécurité dès la genèse de votre produit et de constituer
+    un dossier d'homologation.
 
-    La procédure d'homologation est simplifiée pour les services agiles mais
-    ne la rend pas moins nécessaire, particulièrement en vu du succès que
-    Beta souhaite à tous ses services. Elle prend la forme d'un document
-    validé par votre administration.
+    La procédure d'homologation est une étape nécessaire, particulièrement
+    en vue du succès que nous souhaitons à tous nos services. Elle prend la
+    forme d'un document validé par votre administration.
+
+    La méthode beta.gouv.fr défend une approche agile, pragmatique et
+    proportionnée de la sécurité, approche à laquelle certaines
+    administrations sont parfois réticentes. Chaque administration dispose
+    de ses propres critères d'homologation dont vous devez prendre
+    connaissance.
+
+    La démarche d'homologation, si elle n'est pas anticipée, peut mener à
+    des situations de blocage administratif, voire à l'arrêt du service.
+    C'est pourquoi vous devez établir un plan d'action vous permettant de la
+    mener à bien.
 
 
 
     [1]: https://cyber.gouv.fr/le-referentiel-general-de-securite-rgs
     [2]: https://monservicesecurise.cyber.gouv.fr/
   criteria:
-  - label: L'équipe a entamé une démarche d'homologation de sécurité
+  - label: L'équipe a inscrit son produit sur Mon Service Sécurisé
+  - label: |-
+      L'équipe a pris connaissance des critères d'homologation propres à son
+      administration
+  - label: L'équipe a établi un plan d'action visant l'homologation de son service
   resources:
   - |-
     [Tout savoir sur l'homologation de sécurité -
@@ -899,67 +905,104 @@ standards:
 
 
     [1]: https://cyber.gouv.fr/sites/default/files/document/guide-homologation-securite-web-04-2025.pdf
-  last_modified_on: 2025-10-31
-- id: l-equipe-a-mis-en-place-un-outil-d-analyse-statique-du-code
-  title: L'équipe a mis en place un outil d'analyse statique du code
+  last_modified_on: 2025-12-04
+- id: l-equipe-est-sensibilisee-aux-regles-d-hygiene-informatique-et-de-securite
+  title: L'équipe est sensibilisée aux règles d'hygiène informatique et de sécurité
   category: sécurité
   description: |
-    L'analyse statique du code fournit une relecture de votre code et permet
-    de déceler toute sorte de problèmes : complexité des fonctions, failles
-    de sécurité, injections SQL, requêtes inefficientes, etc.
+    Les équipes de sécurité informatique de la communauté seules ne peuvent
+    garantir la sécurité de l'ensemble du périmètre beta.gouv.fr.
 
-    Bien que les linters effectuent une première analyse statique de votre
-    code, ils se concentrent généralement sur l'esthétique et le formatage
-    de votre source : un outil spécialisé permet d'approfondir l'analyse et
-    de corriger des erreurs plus graves que celles signalées par le linter.
+    Chaque membre de votre équipe doit donc adopter les bons réflexes
+    permettant de garantir la sécurité des données et des services qu'il est
+    créé, utilise et manipule au quotidien. Selon un consensus d'études,
+    [l'erreur humaine est la principale cause de 95 % des incidents de
+    sécurité][1].
 
-    Si votre code est hébergé sur GitHub vous pouvez profiter de
-    [CodeQL][1], un outil très puissant d'analyse de code configurable sur
-    chacune de vos interactions Git.
+    La sensibilisation aux règles d'hygiène informatique et de sécurité
+    dispensée par beta.gouv.fr permet aux membres de la communauté de
+    connaître les réflexes de base permettant de réduire la probabilité d'un
+    incident.
 
 
 
-    [1]: https://codeql.github.com/
+    [1]: https://thehackernews.com/2021/02/why-human-error-is-1-cyber-security.html
   criteria:
-  - label: Un outil d'analyse statique du code est en place
+  - label: |-
+      Tous les membres de l'équipe ont assisté à la sensibilisation sur les
+      règles d'hygiène informatique et de sécurité.
   resources:
   - |-
-    [Configurer CodeQL - github.com][1]
+    [Règles d'hygiène informatique et de sécurité - doc.incubateur.net][1]
 
 
-    [1]: https://docs.github.com/fr/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning
+    [1]: https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/securite/regles-dhygiene-informatique-et-de-securite
   - |-
-    [Référencement d'outil d'analyse statique de code - github.com][1]
+    [MOOC - La cybersécurité des projets numériques - mentor.gouv.fr][1]
 
 
-    [1]: https://github.com/Saluki/awesome-static-analysis
-  last_modified_on: 2025-10-31
-- id: l-equipe-organise-regulierement-des-ateliers-d-analyse-de-risque
-  title: L'équipe organise régulièrement des ateliers d'analyse de risque
+    [1]: https://mentor.gouv.fr/local/catalog/pages/training.php?trainingid=494
+  last_modified_on: 2025-12-04
+- id: l-equipe-identifie-et-maitrise-les-risques-cyber-de-son-service
+  title: L'équipe identifie et maîtrise les risques cyber de son service
   category: sécurité
-  description: |+
-    Votre produit est amené à évoluer souvent, avec votre compréhension du
-    problème, de vos utilisateurs et de vos objectifs : véritable coeur de
-    la méthode, cette agilité s'applique aussi à la sécurité de votre
-    produit.
+  description: |
+    L'exposition d'un système d'information aux risques est la raison
+    existentielle des actions de cybersécurité.
 
-    Pour anticiper les risques qui poursuivent votre produit, les ateliers
-    d'analyse de risque permettent à votre équipe de faire le point sur la
-    situation régulièrement et de rester consciente de ses enjeux de
-    sécurité tout au long de son existence.
+    La cybersécurité est une assurance couvrant les risques par l'emploi de
+    mesures de sécurité plus ou moins coûteuses.
 
-    Ces ateliers, recommandés par l'Agence nationale de la sécurité des
-    systèmes d’information (ANSSI), sont à faire en équipe complète, à
-    intervalles réguliers (à minima tous les 6 mois), pour vous assurez
-    collectivement que votre produit profite d'une croissance saine, sans
-    zones d'ombre.
+    Ces mesures sont sélectionnées en fonction des besoins de sécurité (à
+    titre d'exemple, une donnée personnelle de santé a des besoins de
+    sécurité différents d'une donnée purement technique), de la probabilité,
+    de l'impact et des conséquences d'un incident (vol, altération ou
+    suppression de données, indisponibilité du service...). L'identification
+    et la quantification de ces éléments (besoin, probabilité, impact et
+    conséquences) constituent une analyse de risques.
 
+    L'absence d'analyse de risques peut mener à l'emploi de mesures de
+    sécurité insuffisantes ou excessives.
+
+    ### Quand réaliser une analyse de risques
+
+    Dans un milieu agile, votre service, son code, son infrastructure et ses
+    fonctionnalités évoluent rapidement. Certaines évolutions (nouveau type
+    de donnée traitée, nouvelle interconnexion, nouvel hébergement...)
+    peuvent introduire de nouveaux risques qu'il est crucial d'identifier
+    pour prendre les mesures nécessaires à chacune de ces évolutions.
+
+    ### Comment réaliser une analyse de risques
+
+    #### En utilisant le guide de sécurité Agile de l'ANSSI
+
+    L'ANSSI a rédigé un [guide à destination des équipes agiles][1]. Elle y
+    propose une méthode d'analyse de risques, inspirée d'[EBIOS Risk
+    Manager][2], prenant en compte les risques de manière incrémentale à
+    travers une série d'ateliers. C'est la méthode qui est recommandée pour
+    la plupart des services numériques de l'État.
+
+    #### En utilisant la méthode EBIOS Risk Manager
+
+    La méthode [EBIOS Risk Manager][2] (Étude des Besoins et Identification
+    des Objectifs de Sécurité) est le standard de l'analyse de risques dans
+    l'administration française. Plus complète et rigoureuse, elle est aussi
+    plus lourde dans sa réalisation. Certaines administrations peuvent
+    exiger l'emploi de cette méthode dans le cadre de l'homologation de
+    leurs services.
+
+
+
+    [1]: https://cyber.gouv.fr/sites/default/files/2018/11/guide-securite-numerique-agile-anssi-pa-v1.pdf
+    [2]: https://cyber.gouv.fr/la-methode-ebios-risk-manager
   criteria:
-  - label: L'équipe a déjà fait un atelier d'analyse de risque
-  - label: L'équipe a prévu de refaire un atelier d'analyse de risque
+  - label: L'équipe a choisi une méthode d'analyse de risques
+  - label: |-
+      L'équipe réévalue les risques cyber à chaque évolution majeure du
+      service
   resources:
   - |-
-    [Réaliser une analyse de risque - monservicesecurise.cyber.gouv.fr][1]
+    [Réaliser une analyse de risques - monservicesecurise.cyber.gouv.fr][1]
 
 
     [1]: https://monservicesecurise.cyber.gouv.fr/articles/realiser-une-analyse-de-risques-de-la-securite-du-service
@@ -968,86 +1011,12 @@ standards:
 
 
     [1]: https://cyber.gouv.fr/sites/default/files/2018/11/guide-securite-numerique-agile-anssi-pa-v1.pdf
-  last_modified_on: 2025-10-31
-- id: les-echanges-entre-vos-utilisateurs-et-votre-produit-sont-securises
-  title: Les échanges entre vos utilisateurs et votre produit sont sécurisés
-  category: sécurité
-  description: |+
-    Pour assurez la sécurité de vos utilisateurs il est crucial de chiffrer
-    tous vos échanges avec eux à travers le protocole HTTPS, version
-    sécurisée de HTTP qui rajoute un niveau d'encryption avec la technologie
-    SSL/TLS ; elle permet de garantir la confidentialité des données
-    transmises et fournit une confiance accrue dans votre service.
-
-    La plupart des hébergeurs que nous recommandons (ex : Scalingo)
-    permettent d'activer l'HTTPS par un simple clic, et de rediriger les
-    requêtes HTTP en HTTPS.
-
-  criteria:
-  - label: |-
-      Votre produit utilise HTTPS par défaut pour échanger avec ses
-      utilisateurs
-  - label: Les requêtes HTTP sont automatiquement surclassées en HTTPS
-  resources:
   - |-
-    [Chiffrement SSL par défault - sillon.incubateur.net][1]
+    [La Méthode EBIOS Risk Manager - cyber.gouv.fr][1]
 
 
-    [1]: https://sillon.incubateur.net/docs/security/enable-ssl/
-  - |-
-    [Configurer le SSL sur Scalingo - scalingo.com][1]
-
-
-    [1]: https://doc.scalingo.com/platform/app/ssl
-  last_modified_on: 2025-10-31
-- id: un-outil-d-analyse-et-de-mise-a-jour-des-dependances-est-configure
-  title: Un outil d'analyse et de mise à jour des dépendances est configuré
-  category: sécurité
-  description: |
-    Votre produit n'est pas autonome : il dépend et profite de plusieurs
-    dizaines voir centaines de librairies qui vous permettent de vous
-    concentrer sur le développement de votre produit plutôt que de
-    reconstruire les mêmes briques de la grande pyramide du web.
-
-    Cette rapidité de développement a un prix : il faut surveiller en
-    permanence ces dépendances, qui sont comme votre produit sujettes à des
-    vulnérabilités introduites par inadvertance ou par malice. Le flux des
-    alertes levées dans le monde logiciel est continu, que ce soit [la liste
-    des alertes levées recensées par GitHub][1] ou [celles recensées par
-    l'ANSSI][2].
-
-    Pour assurer la sécurité de votre projet, nous recommandons l'usage
-    d'outils comme [Dependabot][3] qui permettent de surveiller et de
-    proposer automatiquement la mise à jour de ces dépendances dès que
-    nécessaire.
-
-    Enfin notez que le moteur de votre projet (ex : NodeJS, Python, Ruby)
-    compte aussi comme une dépendance. Vous devez vous maintenir à minima
-    sur des versions dont le support et l'évolution sont garanties par ses
-    éditeurs (versions LTS, long-term support) et sortir le plus rapidement
-    possible des versions qui ont atteint leur fin de vie (EOL, end of
-    life).
-
-
-
-    [1]: https://github.com/advisories
-    [2]: https://cert.ssi.gouv.fr/alerte/
-    [3]: https://github.com/dependabot
-  criteria:
-  - label: Un outil d'analyse et de mise à jour des dépendences est configuré
-  - label: Le moteur de langue de votre projet est à minima LTS
-  resources:
-  - |-
-    [Guide de démarrage Dependabot - github.com][1]
-
-
-    [1]: https://docs.github.com/fr/code-security/getting-started/dependabot-quickstart-guide
-  - |-
-    [Annuaire des versions LTS/EOL - endoflife.date][1]
-
-
-    [1]: https://endoflife.date/
-  last_modified_on: 2025-10-31
+    [1]: https://cyber.gouv.fr/la-methode-ebios-risk-manager
+  last_modified_on: 2025-12-04
 - id: le-produit-a-une-fiche-a-jour-sur-le-site-beta-gouv-fr
   title: Le produit a une fiche à jour sur le site beta.gouv.fr
   category: transparence
@@ -1205,8 +1174,8 @@ standards:
     [Grist commun des budgets - grist.numerique.gouv.fr][1]
 
 
-    [1]: https://grist.numerique.gouv.fr/o/docs/fTjFnK7Bhvuo/Depenses-numeriques/p/1
-  last_modified_on: 2025-10-13
+    [1]: [https://grist.numerique.gouv.fr/o/docs/fTjFnK7Bhvuo/Depenses-numeriques/p/1](https://grist.numerique.gouv.fr/o/isn/mAQJQawVbFUA/Depenses-numeriques?utm_id=share-doc)
+  last_modified_on: 2025-12-08
 - id: le-produit-suit-ses-bonnes-pratiques-sur-dashlord
   title: Le produit suit ses bonnes pratiques sur DashLord
   category: transparence
