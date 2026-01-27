@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   end
 
   mount Evaluations::API => "/api"
+
+  resources :stats, only: :index
 end

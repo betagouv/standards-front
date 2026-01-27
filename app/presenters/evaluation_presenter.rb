@@ -3,6 +3,10 @@
 class EvaluationPresenter
   attr_reader :evaluation
 
+  delegate :complete?,
+           :categories,
+           to: :evaluation
+
   def initialize(evaluation)
     @evaluation = evaluation
   end

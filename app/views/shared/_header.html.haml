@@ -1,9 +1,13 @@
 = dsfr_header logo_text: t("global.sponsor"), title: t("global.service_name"), tagline: t("global.service_description") do |header|
   = header.with_direct_link_simple title: "Accueil", path: root_path, **add_current_attribute(root_path)
   = header.with_direct_link_simple title: "Les standards", path: standards_path,  **add_current_attribute(standards_path)
-  = header.with_direct_link_simple title: "Évaluez vos services", path: startups_path,  **add_current_attribute(startups_path)
   - if current_user?
+    = header.with_direct_link_simple title: "Évaluez vos services", path: startups_path,  **add_current_attribute(startups_path)
     = header.with_tool_link title: "Vos services (#{current_user.fullname})", path: startups_path, html_attributes: { title: "Consultez vos services", class: "fr-icon-account-line" }
     = header.with_custom_tool_link do
       = button_to "Déconnexion", logout_path, { method: :delete, class: "fr-btn fr-icon-logout-box-r-line", data: { turbo: "false" } }
+  - else
+    = header.with_direct_link_simple title: "Évaluez vos services", path: login_path,  **add_current_attribute(login_path)
+
   = header.with_direct_link_simple title: "Questions fréquentes", path: faq_path,  **add_current_attribute(faq_path)
+  = header.with_direct_link_simple title: "Statistiques", path: stats_path,  **add_current_attribute(stats_path)
