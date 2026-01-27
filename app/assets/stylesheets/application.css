@@ -215,3 +215,8 @@ section {
 main h1:first-of-type {
   margin-top: 0;
 }
+
+.stats-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

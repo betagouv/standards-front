@@ -1,0 +1,24 @@
+- content_for(:page_title) { "Statistiques du service" }
+
+%h1 Statistiques du service
+
+.stats-section
+  %h2 Nombre total d'évaluations démarrées
+
+  %p.fr-display--xl= total_evaluations(@evaluations)
+
+.stats-section
+  %h2 Nombre total d'évaluations complétées
+
+  %p.fr-display--xl= total_completed_evaluations(@evaluations)
+
+.stats-section
+  %h2 Taux de complétion moyen des évaluations existantes
+
+  %p.fr-display--xl
+    = number_to_percentage(average_completion_rate(@evaluations), precision: 0)
+
+.stats-section
+  %h2 Complétion et conformité par catégorie
+
+  = column_chart [{name: "Taux moyen de conformité", data: average_completion_rate_per_category(@evaluations)}, {name: "Taux moyen de complétion", data: average_conformity_rate_per_category(@evaluations)}], stacked: true
