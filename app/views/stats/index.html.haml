@@ -1,21 +1,22 @@
 - content_for(:page_title) { "Statistiques du service" }
+- content_for(:column_overrides) { "lg: 12, md: 12" }
 
-%h1 Statistiques du service
+%h1 Statistiques
 
 - return if @evaluations.none?
 
 .stats-section
-  %h2 Nombre total d'évaluations démarrées
+  %h2 Évaluations démarrées
 
   %p.fr-display--xl= total_evaluations(@evaluations)
 
 .stats-section
-  %h2 Nombre total d'évaluations complétées
+  %h2 Évaluations complétées
 
   %p.fr-display--xl= total_completed_evaluations(@evaluations)
 
 .stats-section
-  %h2 Taux de complétion moyen des évaluations existantes
+  %h2 Taux de complétion moyen
 
   %p.fr-display--xl
     = number_to_percentage(average_completion_rate(@evaluations), precision: 0)
