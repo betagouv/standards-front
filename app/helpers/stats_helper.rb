@@ -34,4 +34,21 @@ module StatsHelper
       ]
     end.to_h
   end
+
+  def completion_and_conformity_per_category_charts(evaluations)
+    column_chart(
+      [
+        {
+          name: "Taux moyen de complétion",
+          data: average_completion_rate_per_category(evaluations)
+        },
+        {
+          name: "Taux moyen de conformité",
+          data: average_conformity_rate_per_category(@evaluations)
+        }
+      ],
+      precision: 2,
+      suffix: "%"
+    )
+  end
 end

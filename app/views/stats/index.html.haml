@@ -21,4 +21,4 @@
 .stats-section
   %h2 Complétion et conformité par catégorie
 
-  = column_chart [{name: "Taux moyen de conformité", data: average_completion_rate_per_category(@evaluations)}, {name: "Taux moyen de complétion", data: average_conformity_rate_per_category(@evaluations)}], stacked: true
+  = completion_and_conformity_per_category_charts(@evaluations)
