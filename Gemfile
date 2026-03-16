@@ -45,6 +45,7 @@ gem "thruster", require: false
 
 gem "haml-rails"
 gem "dsfr-form_builder"
+gem "espace_membre-ruby"
 gem "pg"
 gem "breadcrumbs_on_rails"
 gem "kramdown"
