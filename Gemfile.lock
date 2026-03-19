@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    action_text-trix (2.1.16)
+    action_text-trix (2.1.17)
       railties
     actioncable (8.1.2)
       actionpack (= 8.1.2)
@@ -179,6 +179,8 @@ GEM
     ed25519 (1.4.0)
     erb (6.0.2)
     erubi (1.13.1)
+    espace_membre-ruby (0.4.1)
+      rails (>= 8.1.2)
     et-orbi (1.4.0)
       tzinfo
     factory_bot (6.5.6)
@@ -269,7 +271,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.18.1)
+    json (2.19.1)
     json-jwt (1.17.0)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -559,7 +561,7 @@ GEM
     thruster (0.1.18-arm64-darwin)
     thruster (0.1.18-x86_64-linux)
     tilt (2.7.0)
-    timeout (0.6.0)
+    timeout (0.6.1)
     tsort (0.2.0)
     turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
@@ -609,6 +611,7 @@ DEPENDENCIES
   dsfr-assets
   dsfr-form_builder
   dsfr-view-components
+  espace_membre-ruby
   factory_bot_rails
   faker
   grape-swagger (~> 2.1)
