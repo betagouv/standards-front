@@ -129,7 +129,7 @@ GEM
     cucumber-html-formatter (22.3.0)
       cucumber-messages (> 23, < 33)
     cucumber-messages (32.2.0)
-    cucumber-rails (4.0.0)
+    cucumber-rails (4.0.1)
       capybara (>= 3.25, < 4)
       cucumber (>= 7, < 11)
       railties (>= 6.1, < 9)
@@ -398,7 +398,7 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (7.0.2)
+    public_suffix (7.0.5)
     puma (7.2.0)
       nio4r (~> 2.0)
     raabro (1.4.0)
