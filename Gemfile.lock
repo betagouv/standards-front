@@ -347,6 +347,7 @@ GEM
       faraday (~> 2)
       json-jwt (~> 1)
       omniauth
+    ostruct (0.6.3)
     parallel (2.0.0)
     parser (3.3.11.1)
       ast (~> 2.4.1)
@@ -591,6 +592,7 @@ DEPENDENCIES
   kramdown
   omniauth
   omniauth-proconnect
+  ostruct
   pg
   propshaft
   puma (>= 5.0)
