@@ -13,14 +13,14 @@ services:
       - espace-membre-db
       - primary-db
   primary-db:
-    image: postgres:16
+    image: postgres:17
     volumes:
       - "./tmp/primarydb:/var/lib/postgresql/data"
     environment:
       POSTGRES_PASSWORD: 'dummy'
       PGPORT: 5434
   espace-membre-db:
-    image: postgres:16
+    image: postgres:14
     volumes:
       - "./tmp/edb:/var/lib/postgresql/data"
     environment:
