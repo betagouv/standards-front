@@ -1,14 +1,28 @@
 class EvaluationsController < ApplicationController
   before_action :authenticate_user!, :set_startup
 
-  before_action :set_evaluation, only: %i[show update category question]
+  before_action :set_evaluation, only: %i[show update category question upgrade_preview upgrade]
   before_action :set_category, only: %i[category update question]
 
   before_action :set_startup_breadcrumb
-  before_action :set_evaluation_breadcrumb, only: %i[show category question]
+  before_action :set_evaluation_breadcrumb, only: %i[show category question upgrade_preview upgrade]
   before_action :set_category_breadcrumb, only: %i[category question]
 
   def show; end
+
+  def upgrade_preview
+    @upgrade = EvaluationUpgrader.new(@evaluation, Evaluation.latest_standards)
+
+    add_breadcrumb("Mise à niveau")
+  end
+
+  def upgrade
+    @upgrade = EvaluationUpgrader.new(@evaluation, Evaluation.latest_standards)
+
+    @upgrade.apply!
+
+    redirect_to startup_evaluation_path(@startup.ghid), info: t(".success")
+  end
 
   def update
     update_evaluation_with_params(@evaluation, evaluation_params)

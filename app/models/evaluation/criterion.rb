@@ -18,6 +18,10 @@ class Evaluation::Criterion
     answer.blank?
   end
 
+  def answered?
+    not blank?
+  end
+
   def complete?
     !blank?
   end

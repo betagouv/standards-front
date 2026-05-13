@@ -4,6 +4,27 @@ fr:
     service_name: "Les standards de beta.gouv.fr"
     service_description: "Pour aider les équipes à créer de meilleurs services publics"
   evaluations:
+    upgrade:
+      success:
+        title: L'évaluation a bien été mise à jour
+        text: |
+          Votre évaluation utilise désormais la dernière version des
+          standards.
+    changes:
+      added:
+        title: nouveau
+        description: |
+          Le standard est nouveau et doit être rempli depuis le début.
+      changed:
+        title: critères modifiés
+        description: |
+          Des critères du standard ont été modifiés et doivent être
+          renseignés à nouveau. Vos réponses sont conservées pour ceux
+          qui n'ont pas changé.
+      deleted:
+        title: supprimé
+        description: |
+          Le standard a été supprimé.
     categories:
       accessibilité: "Accessibilité"
       design: "Design"

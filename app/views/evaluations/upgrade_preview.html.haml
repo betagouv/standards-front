@@ -1,0 +1,31 @@
+- content_for(:page_title) { "Mise à niveau de l'évaluation" }
+
+%h1 Mise à niveau de l'évaluation
+
+%p.fr-text--lead
+  Les standards évoluent eux aussi. Maintenez votre produit à jour des
+  recommandations de beta.gouv.fr en inspectant la liste des
+  changements ci-dessous avant de basculer sur la nouvelle version.
+
+%p
+  L'évaluation pour
+  %em= @startup.name
+  porte sur la version
+  %strong= @evaluation.version
+  des standards.
+
+  = dsfr_link_to version_release_link(@upgrade.to_version), target: "_blank" do
+    Une nouvelle version
+    %strong= Evaluation.latest_standards["version"]
+    est disponible.
+%hr
+
+- t("evaluations.categories").each do |id, name|
+  - if @upgrade.changes.values.flatten.some? { |st| st.category.to_sym == id }
+    = render partial: 'category_changes', locals: { category: id }
+
+%hr
+
+= dsfr_callout(title: "#{number_to_percentage(@upgrade.saved_criteria_percentage, precision: 0)} de vos réponses sont conservées.")
+
+= button_to "Mettre à jour l'évaluation de #{@startup.name}", upgrade_startup_evaluation_path(@startup.ghid), class: 'fr-btn'

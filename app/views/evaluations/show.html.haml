@@ -2,6 +2,8 @@
 
 %h1 Évaluation du produit #{@startup.name}
 
+- if @evaluation.new_version_available?
+  = render 'upgrade_banner'
 %p
   L'évaluation est sauvegardée à chaque réponse. Vous pouvez y revenir
   à tout moment pour la mettre à jour.

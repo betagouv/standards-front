@@ -220,3 +220,14 @@ main h1:first-of-type {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+
+.changes li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.changes .fr-badge {
+  margin-left: 1rem;
+}

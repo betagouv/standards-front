@@ -1,0 +1,11 @@
+%h2.fr-h5= t("evaluations.categories.#{category}")
+- @upgrade.changes.each do |key, standards|
+  - changes = standards.filter { |st| st.category.to_sym == category }
+
+  - if changes.any?
+    .changes
+      %ul
+        - changes.each do |st|
+          %li
+            = st.title
+            = dsfr_badge(status: upgrade_badge_for(key), html_attributes: { class: 'fr-badge--sm' }) { t("evaluations.changes.#{key}.title") }

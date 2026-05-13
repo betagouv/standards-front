@@ -45,4 +45,15 @@ module EvaluationsHelper
   def version_release_link(version)
     File.join(STANDARDS_REPO, "releases/tag/", version).to_s
   end
+
+  def upgrade_badge_for(key)
+    case key
+    when :added
+      :new
+    when :deleted
+      :error
+    when :changed
+      :info
+    end
+  end
 end

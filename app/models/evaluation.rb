@@ -40,6 +40,14 @@ class Evaluation < ApplicationRecord
     EvaluationPresenter.new(self)
   end
 
+  def upgrade
+    @upgrade ||= EvaluationUpgrader.new(self, Evaluation.latest_standards)
+  end
+
+  def new_version_available?
+    self.version != Evaluation.latest_standards["version"]
+  end
+
   # "N/A" is the defaulted value for all non-versioned standards (pre
   # october 2025) – this version attribute is required not-null.
   def versioned?
