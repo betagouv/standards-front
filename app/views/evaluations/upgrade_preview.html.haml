@@ -10,9 +10,13 @@
 %p
   L'évaluation pour
   %em= @startup.name
-  porte sur la version
-  %strong= @evaluation.version
-  des standards.
+  porte sur
+  - if @evaluation.versioned?
+    la version
+    %strong= @evaluation.version
+    des standards.
+  - else
+    une ancienne version des standards.
 
   = dsfr_link_to version_release_link(@upgrade.to_version), target: "_blank" do
     Une nouvelle version
