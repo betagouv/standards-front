@@ -75,6 +75,12 @@ Quand("je choisis {string} pour chaque critère") do |choix|
   end
 end
 
+Quand("une nouvelle version {string} des standards est disponible") do |version|
+  upgraded = Evaluation.latest_standards.merge("version" => version)
+
+  allow(Evaluation).to receive(:latest_standards).and_return(upgraded)
+end
+
 Alors("la page contient {string} pour le standard {string}") do |state, name|
   within("ol.fr-task-list__items") do |ol|
     within("li", text: name) do |item|

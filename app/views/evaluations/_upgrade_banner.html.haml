@@ -1,0 +1,8 @@
+
+.fr-my-4w
+  = dsfr_alert(type: :info, title: "Nouvelle version des standards disponible") do
+    %p
+      La version
+      = Evaluation.latest_standards["version"]
+      des standards est disponible
+    = dsfr_link_to "Voir les changements proposés", upgrade_preview_startup_evaluation_path(@startup.ghid)

@@ -26,6 +26,22 @@ class Evaluation::Question
     QuestionPresenter.new(self)
   end
 
+  # this whole bit allows saying "a standard is equal to another
+  # standard if they have the same title/ID", c.f EvaluationUpgrader.
+  def hash
+    [ self.class, self.id ].hash
+  end
+
+  def eql?(other)
+    self == other
+  end
+
+  def ==(other)
+    false if id.nil?
+
+    id == other.id
+  end
+
   def inspect
    "<Evaluation::Question title: #{title}>"
   end
