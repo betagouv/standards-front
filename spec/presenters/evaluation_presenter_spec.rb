@@ -62,8 +62,8 @@ describe EvaluationPresenter do
         end
       end
 
-      it "returns nil" do
-        expect(stats["ingrédients"]).to eq nil
+      it "returns zero" do
+        expect(stats["ingrédients"]).to eq 0
       end
     end
   end
@@ -88,8 +88,8 @@ describe EvaluationPresenter do
         end
       end
 
-      it "returns nil" do
-        expect(stats["ingrédients"]).to eq nil
+      it "returns 0" do
+        expect(stats["ingrédients"]).to eq 0
       end
     end
   end

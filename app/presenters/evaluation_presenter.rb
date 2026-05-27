@@ -57,7 +57,7 @@ class EvaluationPresenter
 
       result =
         if standards.all?(&:blank?)
-          nil
+          0
         else
           standards
             .map { |standard| standard.presented.send("#{type}_level") }

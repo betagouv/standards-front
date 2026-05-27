@@ -36,7 +36,7 @@ module Evaluations
 
       desc "Return the summary of the startup's evaluation"
       get :summary do
-        startup_evaluation.completion_stats
+        startup_evaluation.presented.completion_stats
       end
     end
 
