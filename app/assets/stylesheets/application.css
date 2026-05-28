@@ -171,16 +171,6 @@ section {
   display: inline-block;
 }
 
-.beta-banner {
-  background-color: var(--background-action-low-brown-cafe-creme);
-  font-size: 0.9rem;
-}
-
-.beta-banner .fr-badge {
-  vertical-align: bottom;
-  margin-right: 0.5rem;
-}
-
 .question-section {
   margin-bottom: 1rem;
 }
