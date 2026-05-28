@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     session[:user] = EspaceMembre::User.identify_email!(email).uuid
 
-    redirect_to startups_path, info: t(".success", email: email)
+    redirect_to startups_path, info: t(".success", deep_interpolation: true, email: email)
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = t(".user_not_found", deep_interpolation: true, email: email)
 
