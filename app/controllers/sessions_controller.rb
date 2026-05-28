@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     session[:user] = EspaceMembre::User.identify_email!(email).uuid
 
-    redirect_to startups_path, info: "Connexion réussie pour #{email}"
+    redirect_to startups_path, info: t(".success", email: email)
   rescue ActiveRecord::RecordNotFound
     flash[:warning] = t(".user_not_found", deep_interpolation: true, email: email)
 
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
     if proconnect_setup?
       redirect_to "/auth/proconnect/logout"
     else
-      redirect_to root_path, info: "Déconnexion terminée."
+      redirect_to root_path, info: t(".success")
     end
   end
 

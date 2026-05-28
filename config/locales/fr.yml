@@ -57,7 +57,11 @@ fr:
       Décrivez ici toute incompréhension, erreur, coquille ou incertitude que vous avez rencontré avec le standard...
 
   sessions:
+    destroy:
+      success: Déconnexion terminée.
     create:
+      success:
+        title: Connexion réussie pour %{email}
       user_not_found:
         title: Impossible de trouver un compte avec l'email %{email}
         text: |

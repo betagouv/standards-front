@@ -11,6 +11,7 @@ Fonctionnalité: Page d'accueil
     Et que je participe au produit "Louvre"
     Et que je participe au produit "Rivoli"
     Quand je me connecte
+    Alors la page contient "Connexion réussie"
     Alors la page contient "Vos services"
     Et le titre de la page contient "Vos services"
 
