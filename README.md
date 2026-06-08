@@ -54,7 +54,11 @@ peut imaginer `n/a` et autres dans un futur proche.
 
 ### 4. Exposition de la données
 
-Les évaluations sont disponibles sur deux terminaisons d'API :
+Les évaluations sont disponibles sur trois terminaisons d'API :
+
+#### `/api/evaluations`
+
+Retourne toutes les évaluations, brutes.
 
 #### `/api/evaluation/?startup_id=<ghid>`
 
@@ -67,16 +71,35 @@ identifiant parmi ces fichiers sans l'extension
 #### `/api/evaluation/summary?startup_id=<ghid>`
 
 Retourne un sommaire de l'évaluation composé du pourcentage de
-complétion par catégorie. Ce nombre indique le pourcentage de critères
-dont la réponse est "oui" ou "non applicable".
+complétion par catégorie et du pourcentage de conformité par catégorie.
 
 ```json
 {
-  "accessibilité": 42.0,
-  "qualité-logicielle": 19.3
+  "completion": {
+    "accessibilité": 100.0,
+    "design": 50.0,
+    "impact": 0,
+    "qualité-du-support": 0,
+    "qualité-logicielle": 96.875,
+    "sécurité": 0,
+    "transparence": 0,
+    "vie-privée": 0,
+    "équipe": 66.66666666666667
+  },
+  "conformity": {
+    "accessibilité": 66.66666666666667,
+    "design": 16.666666666666664,
+    "impact": 0,
+    "qualité-du-support": 0,
+    "qualité-logicielle": 96.875,
+    "sécurité": 0,
+    "transparence": 0,
+    "vie-privée": 0,
+    "équipe": 66.66666666666667
+  }
 }
-```
 
+```
 #### `/api/swagger_doc`
 
 Une description Swagger est disonible sur cette terminaison.

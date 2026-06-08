@@ -5,6 +5,7 @@ class EvaluationPresenter
 
   delegate :complete?,
            :categories,
+           :startup,
            to: :evaluation
 
   def initialize(evaluation)
@@ -40,12 +41,10 @@ class EvaluationPresenter
     stats_for(:conformity)
   end
 
-  def to_index_api
+  def all_stats
     {
-      evaluation.startup.ghid => {
-        "completion" => stats_for(:completion),
-        "conformity" => stats_for(:conformity)
-      }
+      "completion" => stats_for(:completion),
+      "conformity" => stats_for(:conformity)
     }
   end
 

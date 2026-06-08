@@ -19,8 +19,8 @@ module Evaluations
           .includes(:startup)
           .all
           .map(&:presented)
-          .map(&:to_index_api)
-          .reduce({}, :merge)
+          .map { |evaluation| [ evaluation.startup.ghid, evaluation.all_stats ] }
+          .to_h
       end
     end
 
@@ -36,7 +36,7 @@ module Evaluations
 
       desc "Return the summary of the startup's evaluation"
       get :summary do
-        startup_evaluation.presented.to_index_api
+        startup_evaluation.presented.all_stats
       end
     end
 

@@ -94,19 +94,15 @@ describe EvaluationPresenter do
     end
   end
 
-  describe "to_index_api" do
-    subject(:result) { presenter.to_index_api }
-
-    it "includes the startup ID" do
-      expect(result.keys).to include startup.ghid
-    end
+  describe "all_stats" do
+    subject(:result) { presenter.all_stats }
 
     it "includes the completion stats" do
-      expect(result[startup.ghid]["completion"]).to eq presenter.completion_stats
+      expect(result["completion"]).to eq presenter.completion_stats
     end
 
     it "includes the conformity stats" do
-      expect(result[startup.ghid]["conformity"]).to eq presenter.conformity_stats
+      expect(result["conformity"]).to eq presenter.conformity_stats
     end
   end
 end
