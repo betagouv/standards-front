@@ -40,14 +40,15 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "ostruct"
-gem "haml-rails"
-gem "dsfr-form_builder"
-gem "espace_membre-ruby"
-gem "pg"
 gem "breadcrumbs_on_rails"
-gem "kramdown"
 gem "chartkick"
+gem "dsfr-assets"
+gem "dsfr-view-components"
+gem "espace_membre-ruby"
+gem "haml-rails"
+gem "kramdown"
+gem "ostruct"
+gem "pg"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -58,18 +59,12 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rspec-rails"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-end
-
-gem "dsfr-view-components"
-gem "dsfr-assets"
-
-group :development, :test do
-  gem "rspec-rails"
 end
 
 group :test do

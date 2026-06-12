@@ -166,11 +166,7 @@ GEM
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
     dsfr-assets (1.14.4)
-    dsfr-form_builder (0.0.14)
-      actionview (>= 6.1, < 9.0)
-      activemodel (>= 6.1, < 9.0)
-      activesupport (>= 6.1, < 9.0)
-    dsfr-view-components (5.0.0)
+    dsfr-view-components (5.0.1)
       dsfr-assets (>= 1.13.2, < 1.15)
       html-attributes-utils (~> 1)
       view_component (~> 4)
@@ -267,7 +263,7 @@ GEM
     jbuilder (2.15.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.19.8)
+    json (2.19.9)
     json-jwt (1.17.1)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -538,7 +534,7 @@ GEM
     unicode-emoji (4.2.0)
     uri (1.1.1)
     useragent (0.16.11)
-    view_component (4.11.0)
+    view_component (4.12.0)
       actionview (>= 7.1.0)
       activesupport (>= 7.1.0)
       concurrent-ruby (~> 1)
@@ -574,7 +570,6 @@ DEPENDENCIES
   database_cleaner
   debug
   dsfr-assets
-  dsfr-form_builder
   dsfr-view-components
   espace_membre-ruby
   factory_bot_rails
