@@ -70,6 +70,7 @@ end
 group :test do
   gem "capybara"
   gem "cucumber-rails", require: false
+  gem "betagouv-cucumber-steps", require: false
   gem "database_cleaner"
   gem "factory_bot_rails"
   gem "faker", require: false

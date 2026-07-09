@@ -80,6 +80,7 @@ GEM
     aes_key_wrap (1.1.0)
     ast (2.4.3)
     base64 (0.3.0)
+    betagouv-cucumber-steps (0.1.0)
     bigdecimal (4.1.2)
     bindata (2.5.1)
     bindex (0.8.1)
@@ -561,6 +562,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  betagouv-cucumber-steps
   bootsnap
   brakeman
   breadcrumbs_on_rails
