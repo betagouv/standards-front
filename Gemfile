@@ -45,6 +45,8 @@ gem "chartkick"
 gem "dsfr-assets"
 gem "dsfr-view-components"
 gem "espace_membre-ruby"
+gem "grape"
+gem "grape-swagger"
 gem "haml-rails"
 gem "kramdown"
 gem "ostruct"
@@ -85,5 +87,3 @@ group :test do
   gem "rubocop-rspec_rails"
   gem "rspec"
 end
-
-gem "grape-swagger", "~> 2.1"
