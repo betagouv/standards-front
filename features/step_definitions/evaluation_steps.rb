@@ -2,6 +2,13 @@
 
 require 'cucumber/rspec/doubles'
 
+Sachantque("l'incubateur {string} existe") do |title|
+  FactoryBot.create(
+    :incubator,
+    title: title
+  ) unless EspaceMembre::Incubator.exists?(title: title)
+end
+
 Sachantque("je suis {string} avec l'email {string}") do |name, email|
   @user = FactoryBot.create(
     :user,
@@ -20,14 +27,42 @@ Sachantque("je suis {string} avec l'email secondaire {string}") do |name, email|
   )
 end
 
+Sachantque("je fais partie de l'équipe {string} de l'incubateur {string}") do |team, title|
+  step(%(l'incubateur "#{title}" existe))
+
+  incubator = EspaceMembre::Incubator.find_by!(title: title)
+
+  @user.teams << FactoryBot.create(:team, name: team, incubator: incubator)
+
+  @user.save!
+end
+
 Given('je participe au produit {string}') do |name|
-  startup = FactoryBot.create(:startup, name: name)
+  startup = FactoryBot.create(:startup, :in_construction, name: name)
 
   @user.missions.last.startups << startup
 
   @user.reload
   @user.missions.reload
   @user.active_startups.reload
+end
+
+Sachantque(
+  'un produit {string} existe au sein de l\'incubateur {string}'
+) do |name, incubator|
+  step(%(l'incubateur "#{incubator}" existe))
+
+  incub = EspaceMembre::Incubator.find_by!(title: incubator)
+
+  FactoryBot.create(:startup, :in_construction, name: name, incubator: incub)
+end
+
+Sachantqu('un produit {string} en phase {string} existe au sein de l\'incubateur {string}') do |name, phase, incubator|
+  step(%(l'incubateur "#{incubator}" existe))
+
+  incub = EspaceMembre::Incubator.find_by!(title: incubator)
+
+  FactoryBot.create(:startup, "in_#{phase}".to_sym, name: name, incubator: incub)
 end
 
 Quand('je me connecte') do

@@ -10,6 +10,12 @@ class EvaluationsController < ApplicationController
 
   def show; end
 
+  # FIXME: this should probably be public
+  def summary
+    @startup = EspaceMembre::Startup.find_by(ghid: params["startup_ghid"])
+    @evaluation = @startup.evaluation
+  end
+
   def upgrade_preview
     @upgrade = EvaluationUpgrader.new(@evaluation, Evaluation.latest_standards)
 

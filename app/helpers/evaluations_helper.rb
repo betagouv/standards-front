@@ -56,4 +56,17 @@ module EvaluationsHelper
       :info
     end
   end
+
+  def badge_type_for_level(level)
+    case level
+    when 0..10
+      :error
+    when 10..50
+      :new
+    when 50..75
+      :info
+    when 75..100
+      :success
+    end
+  end
 end

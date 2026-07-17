@@ -1,0 +1,16 @@
+- content_for(:page_title) { "Tous les incubateurs" }
+
+- content_for(:column_overrides) { "lg: 12, md: 12" }
+
+.fr-col-md-8
+  %h1 Tous les incubateurs
+
+  :markdown
+    Sélectionnez l'un des incubateurs du réseau pour voir
+    l'avancement de ses services. Seuls les produits en
+    **construction**, **accélération**, **consolidation** et **opérés au
+    sein du réseau** sont affichés.
+
+%ul
+  - @incubators.each do |incubator|
+    %li= dsfr_link_to "#{incubator.ghid.upcase} - #{incubator.title} (#{incubator.startups.active.count})", incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"

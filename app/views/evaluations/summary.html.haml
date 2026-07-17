@@ -1,0 +1,12 @@
+- content_for(:column_overrides) { "lg: 8, md: 10" }
+
+%h1 Sommaire de l'évalution
+
+- @evaluation.questions.each do |standard|
+  %h4= standard.title
+  %ul
+    - standard.criteria.each do |criterion|
+      %li
+        = criterion.label
+        \:
+        .fr-badge= criterion.answer

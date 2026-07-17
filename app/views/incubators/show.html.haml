@@ -1,0 +1,29 @@
+- content_for(:column_overrides) { "lg: 12, md: 12" }
+- content_for(:page_title) { "Vos équipes" }
+
+= render Dsfr::TableComponent.new(caption: "Produits : #{@incubator.title}", small: true) do |table|
+  - table.with_thead do
+    %tr
+      %th{scope: "col"} Évaluation
+      %th{scope: "col"} Phase
+      - Evaluation.from_latest_standards.categories.each do |cat|
+        %th{scope: "col"}= t("evaluations.categories.#{cat}.short")
+
+  - table.with_tbody do
+    - @startups.each do |startup|
+      %tr
+        %td{title: startup.name, scope: "row", style: "max-width: 16rem; text-overflow: ellipsis; overflow: hidden"}
+          - if startup.evaluation.present?
+            = dsfr_link_to(startup.name, summary_startup_evaluation_path(startup.ghid), title: "Voir l'évaluation de #{startup.name}")
+          - else
+            = startup.name
+        %td= startup.latest_phase
+        - Evaluation.from_latest_standards.categories.each do |cat|
+          - if startup.evaluation.blank?
+            %td N/A
+          - else
+            - completion = startup.evaluation.presented.conformity_stats
+
+            %td
+              = dsfr_badge(status: badge_type_for_level((completion[cat] || 0).round(2)), html_attributes: { class: 'fr-badge--sm'}) do
+                = number_to_percentage(completion[cat], precision: 0)
