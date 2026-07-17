@@ -1,4 +1,4 @@
-%h2.fr-h5= t("evaluations.categories.#{category}")
+%h2.fr-h5= t("evaluations.categories.#{category}.label")
 - @upgrade.changes.each do |key, standards|
   - changes = standards.filter { |st| st.category.to_sym == category }
 

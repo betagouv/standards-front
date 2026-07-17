@@ -16,7 +16,7 @@
       %span.fr-task-list__item-name
         %span.fr-task-list__section-number= "#{index + 1}."
         = link_to category_startup_evaluation_path(@startup.ghid, category), class: "fr-link fr-link--md" do
-          = t("evaluations.categories.#{category}", default: category.humanize)
+          = t("evaluations.categories.#{category}.label", default: category.humanize)
           %span.fr-text--sm.fr-text--regular.fr-ml-1w
             = "(#{t('evaluations.standards', count: @evaluation.standards_for(category).count)})"
       %span.fr-task-list__status

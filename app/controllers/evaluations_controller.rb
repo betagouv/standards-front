@@ -78,7 +78,7 @@ class EvaluationsController < ApplicationController
 
   def set_category_breadcrumb
     add_breadcrumb(
-      t("evaluations.categories.#{@category}"),
+      t("evaluations.categories.#{@category}.label"),
       category_startup_evaluation_path(@startup.ghid, @category)
     )
   end
