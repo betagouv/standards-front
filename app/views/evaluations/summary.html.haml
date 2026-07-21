@@ -1,12 +1,17 @@
-- content_for(:column_overrides) { "lg: 8, md: 10" }
+- content_for(:column_overrides) { "lg: 10, md: 12" }
+- content_for(:page_title) { "Sommaire de l'évaluation de #{@startup.name}"}
+%h1
+  Sommaire de l'évaluation de
+  = @evaluation.startup.name
 
-%h1 Sommaire de l'évalution
-
-- @evaluation.questions.each do |standard|
-  %h4= standard.title
+- @evaluation.questions.group_by(&:category).each do |category, questions|
+  %h2= t("evaluations.categories.#{category}.label")
   %ul
-    - standard.criteria.each do |criterion|
-      %li
-        = criterion.label
-        \:
-        .fr-badge= criterion.answer
+    - questions.each do |question|
+      %li.fr-my-2w
+        %strong= question.title
+        %ul
+          - question.criteria.each do |criterion|
+            %li
+              = criterion.label.delete_suffix(".")
+              = badge_for_answer(criterion.answer)

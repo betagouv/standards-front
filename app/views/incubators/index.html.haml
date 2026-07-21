@@ -13,4 +13,4 @@
 
 %ul
   - @incubators.each do |incubator|
-    %li= dsfr_link_to "#{incubator.ghid.upcase} - #{incubator.title} (#{incubator.startups.active.count})", incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"
+    %li= dsfr_link_to "#{incubator.ghid.upcase} - #{incubator.title}", incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"

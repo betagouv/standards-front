@@ -69,4 +69,19 @@ module EvaluationsHelper
       :success
     end
   end
+
+  def badge_for_answer(answer)
+    label = Evaluation::Criterion::ANSWERS[answer] || "non renseigné"
+
+    type = case answer
+    when "yes"
+      :success
+    when "no"
+      :error
+    when "na", nil
+      nil
+    end
+
+    dsfr_badge(status: type, html_attributes: { class: "fr-badge--sm" }) { label }
+  end
 end

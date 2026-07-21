@@ -7,11 +7,11 @@ Fonctionnalité: Les produits des incubateurs peuvent être consultés
     Et qu'un produit "Rubber Soul" existe au sein de l'incubateur "Beatles"
     Et qu'un produit "Sticky Fingers" existe au sein de l'incubateur "Rolling Stones"
     Quand je me connecte
-    Et je clique sur "Les incubateurs"
+    Et je clique sur "Incubateurs"
 
   Scénario: Je peux choisir mon incubateur
     Et que je clique sur "Beatles"
-    Alors le tableau "Produits : Beatles" contient :
+    Alors le tableau "Beatles" contient :
       | Évaluation  |
       | Abbey Road  |
       | Rubber Soul |

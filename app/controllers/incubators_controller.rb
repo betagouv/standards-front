@@ -4,9 +4,9 @@ class IncubatorsController < ApplicationController
 
   def index
     @incubators = EspaceMembre::Incubator
-                    .includes(startups: :latest_phase)
-                    .sort_by { |i| i.ghid.downcase }
-                    .reject { |i| i.startups.active.none? }
+                    .includes(startups: :phases)
+                    .order(:ghid)
+                    .reject { |i| i.startups.active.none? } # FIXME: this triggers a bunch of queries
   end
 
   def show
