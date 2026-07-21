@@ -33,17 +33,6 @@ module TechEvaluation
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks models types])
 
-    # to_prepare runs on every development reload (but once in
-    # production and test) : this is where we can load our extensions
-    # to `espace_membre-ruby` after the gem's code is loaded by
-    # triggering the ActiveRecord::Base hook which it relies on to
-    # load its files.
-    Rails.application.config.to_prepare do
-      ActiveRecord::Base # force the gem's `ActiveSupport.on_load(:active_record)` hook
-
-      load Rails.root.join("lib/models/espace_membre/startup.rb")
-    end
-
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
