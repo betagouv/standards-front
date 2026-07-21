@@ -17,7 +17,7 @@
             = dsfr_link_to(startup.name, summary_startup_evaluation_path(startup.ghid), title: "Voir l'évaluation de #{startup.name}")
           - else
             = startup.name
-        %td= startup.latest_phase
+        %td= t("phases.#{startup.latest_phase}.badge")
         - Evaluation.from_latest_standards.categories.each do |cat|
           - if startup.evaluation.blank?
             %td N/A
