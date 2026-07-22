@@ -45,6 +45,8 @@ gem "chartkick"
 gem "dsfr-assets"
 gem "dsfr-view-components"
 gem "espace_membre-ruby"
+gem "grape"
+gem "grape-swagger"
 gem "haml-rails"
 gem "kramdown"
 gem "ostruct"
@@ -60,6 +62,8 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
   gem "rspec-rails"
+
+  gem "rack-mini-profiler"
 end
 
 group :development do
@@ -70,6 +74,7 @@ end
 group :test do
   gem "capybara"
   gem "cucumber-rails", require: false
+  gem "betagouv-cucumber-steps", require: false
   gem "database_cleaner"
   gem "factory_bot_rails"
   gem "faker", require: false
@@ -84,5 +89,3 @@ group :test do
   gem "rubocop-rspec_rails"
   gem "rspec"
 end
-
-gem "grape-swagger", "~> 2.1"

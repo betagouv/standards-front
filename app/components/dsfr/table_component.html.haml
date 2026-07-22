@@ -1,0 +1,12 @@
+.fr-table.fr-mt-0{class: class_names("fr-table--sm" => @small)}
+  .fr-table__wrapper
+    .fr-table__container
+      .fr-table__content
+        %table
+          %caption.fr-h1.fr-pb-3w
+            = @caption
+            - if description?
+              .fr-table__caption__desc= description
+
+          %thead= thead
+          %tbody= tbody

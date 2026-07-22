@@ -8,7 +8,7 @@
     = dsfr_link_to "Contribuez sur GitHub", "https://github.com/betagouv/standards", target: "_blank"
 
 - @standards.each do |category, standards|
-  %h2= t("evaluations.categories.#{category}", default: category.humanize)
+  %h2= t("evaluations.categories.#{category}.label")
 
   %p
     %ol

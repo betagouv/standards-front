@@ -1,0 +1,63 @@
+fr:
+  evaluations:
+    upgrade:
+      success:
+        title: L'évaluation a bien été mise à jour
+        text: |
+          Votre évaluation utilise désormais la dernière version des
+          standards.
+    changes:
+      added:
+        title: nouveau
+        description: |
+          Le standard est nouveau et doit être rempli depuis le début.
+      changed:
+        title: critères modifiés
+        description: |
+          Des critères du standard ont été modifiés et doivent être
+          renseignés à nouveau. Vos réponses sont conservées pour ceux
+          qui n'ont pas changé.
+      deleted:
+        title: supprimé
+        description: |
+          Le standard a été supprimé.
+    categories:
+      accessibilité:
+        label: Accessibilité
+        short: Access
+      design:
+        label: Design
+        short: Design
+      qualité-du-support:
+        label: Qualité du support
+        short: Support
+      qualité-logicielle:
+        label: Qualité logicielle
+        short: Q-Logicielle
+      impact:
+        label: Impact
+        short: Impact
+      sécurité:
+        label: Sécurité
+        short: Sec
+      transparence:
+        label: Transparence
+        short: Transp
+      vie-privée:
+        label: Vie privée
+        short: Vie privée
+      éco-conception:
+        label: Éco-conception
+        short: Éco-conception
+      équipe:
+        label: Équipe
+        short: Équipe
+
+    criteria:
+      zero: "Aucun critère"
+      one: "1 critère"
+      other: "%{count} critères"
+    standards:
+      zero: "Aucun standard"
+      one: "1 standard"
+      other: "%{count} standards"

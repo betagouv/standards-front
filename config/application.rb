@@ -31,12 +31,7 @@ module TechEvaluation
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
-
-    # Inform Zeitwerk about the types namespace
-    config.to_prepare do
-      Rails.autoloaders.main.ignore(Rails.root.join("lib/types"))
-    end
+    config.autoload_lib(ignore: %w[assets tasks models types])
 
     # Configuration for the application, engines, and railties goes here.
     #

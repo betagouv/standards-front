@@ -4,11 +4,22 @@ class EvaluationsController < ApplicationController
   before_action :set_evaluation, only: %i[show update category question upgrade_preview upgrade]
   before_action :set_category, only: %i[category update question]
 
-  before_action :set_startup_breadcrumb
+  before_action :set_startup_breadcrumb, except: :summary
   before_action :set_evaluation_breadcrumb, only: %i[show category question upgrade_preview upgrade]
   before_action :set_category_breadcrumb, only: %i[category question]
 
   def show; end
+
+  # FIXME: this should probably be public
+  def summary
+    @startup = EspaceMembre::Startup.find_by(ghid: params["startup_ghid"])
+
+    add_breadcrumb("Tous les incubateurs", incubators_path)
+    add_breadcrumb(@startup.incubator.title, incubator_path(@startup.incubator.ghid))
+    add_breadcrumb("Évaluation de #{@startup.name}")
+
+    @evaluation = @startup.evaluation
+  end
 
   def upgrade_preview
     @upgrade = EvaluationUpgrader.new(@evaluation, Evaluation.latest_standards)
@@ -78,7 +89,7 @@ class EvaluationsController < ApplicationController
 
   def set_category_breadcrumb
     add_breadcrumb(
-      t("evaluations.categories.#{@category}"),
+      t("evaluations.categories.#{@category}.label"),
       category_startup_evaluation_path(@startup.ghid, @category)
     )
   end

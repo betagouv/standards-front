@@ -17,10 +17,13 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  resources :incubators, param: :ghid, only: [ :index, :show ]
+
   resources :startups, param: :ghid, constraints: { ghid: /[^\/]+/ }, only: :index do
     resource :evaluation, only: %i[show update] do
       get "upgrade_preview"
       post "upgrade"
+      get "summary"
       get ":category", to: "evaluations#category", as: :category
       get ":category/:question", to: "evaluations#question", as: :category_question
     end
