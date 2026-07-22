@@ -5,7 +5,8 @@
         %table
           %caption.fr-h1.fr-pb-3w
             = @caption
-            .fr-table__caption__desc
+            - if description?
+              .fr-table__caption__desc= description
 
           %thead= thead
           %tbody= tbody
