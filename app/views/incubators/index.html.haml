@@ -3,14 +3,21 @@
 - content_for(:column_overrides) { "lg: 12, md: 12" }
 
 .fr-col-md-8
-  %h1 Tous les incubateurs
-
   :markdown
-    Sélectionnez l'un des incubateurs du réseau pour voir
-    l'avancement de ses services. Seuls les produits en
-    **construction**, **accélération**, **consolidation** et **opérés au
-    sein du réseau** sont affichés.
-
-%ul
-  - @incubators.each do |incubator|
-    %li= dsfr_link_to "#{incubator.ghid.upcase} - #{incubator.title}", incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"
+= render Dsfr::TableComponent.new(caption: "Tous les incubateurs") do |table|
+  - table.with_description do
+    .fr-col-md-7
+      :markdown
+        Sélectionnez l'un des incubateurs du réseau pour voir
+        l'avancement de ses services. Seuls les produits en
+        **construction**, **accélération**, **consolidation** et **opérés au
+        sein du réseau** sont affichés.
+  - table.with_thead do
+    %tr
+      %th{scope: "col"} Identifiant
+      %th{scope: "col"} Nom
+  - table.with_tbody do
+    - @incubators.each do |incubator|
+      %tr
+        %td{scope: "row"}= incubator.ghid.upcase
+        %td{scope: "row"}= dsfr_link_to incubator.title, incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"
