@@ -171,9 +171,9 @@ GEM
       dsfr-assets (>= 1.13.2, < 1.15)
       html-attributes-utils (~> 1)
       view_component (~> 4)
-    erb (6.0.5)
+    erb (6.0.6)
     erubi (1.13.1)
-    espace_membre-ruby (1.1.1)
+    espace_membre-ruby (1.1.2)
       rails (>= 8.1.2)
     et-orbi (1.4.0)
       tzinfo
