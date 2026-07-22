@@ -1,8 +1,11 @@
 - content_for(:column_overrides) { "lg: 10, md: 12" }
-- content_for(:page_title) { "Sommaire de l'évaluation de #{@startup.name}"}
+- content_for(:page_title) { "Évaluation de #{@startup.name}"}
+
 %h1
-  Sommaire de l'évaluation de
+  Évaluation de
   = @evaluation.startup.name
+
+%hr
 
 - @evaluation.questions.group_by(&:category).each do |category, questions|
   %h2= t("evaluations.categories.#{category}.label")

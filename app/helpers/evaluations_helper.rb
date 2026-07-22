@@ -78,10 +78,12 @@ module EvaluationsHelper
       :success
     when "no"
       :error
-    when "na", nil
+    when "na"
+      :info
+    when nil
       nil
     end
 
-    dsfr_badge(status: type, html_attributes: { class: "fr-badge--sm" }) { label }
+    dsfr_badge(status: type, html_attributes: { class: "fr-badge--no-icon fr-badge--sm" }) { label }
   end
 end
