@@ -3,10 +3,9 @@ class IncubatorsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @incubators = EspaceMembre::Incubator
-                    .includes(startups: :phases)
-                    .order(:ghid)
-                    .reject { |i| i.startups.active.none? } # FIXME: this triggers a bunch of queries
+    @startups = EspaceMembre::Startup.active.includes(:incubator, :evaluation)
+
+    @incubators = @startups.group_by(&:incubator).sort_by { |incub, _startups| incub.ghid.downcase }
   end
 
   def show

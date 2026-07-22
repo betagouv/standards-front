@@ -38,13 +38,20 @@ Sachantque("je fais partie de l'équipe {string} de l'incubateur {string}") do |
 end
 
 Given('je participe au produit {string}') do |name|
-  startup = FactoryBot.create(:startup, :in_construction, name: name)
+  startup = EspaceMembre::Startup.find_by(name: name) || FactoryBot.create(:startup, :in_construction, name: name)
 
   @user.missions.last.startups << startup
 
   @user.reload
   @user.missions.reload
   @user.active_startups.reload
+end
+
+Given('je démarre une évaluation pour {string}') do |name|
+  steps %(
+    Quand je clique sur "Vos services"
+    Et que je clique sur "#{name}"
+  )
 end
 
 Sachantque(

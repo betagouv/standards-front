@@ -16,8 +16,12 @@
     %tr
       %th{scope: "col"} Identifiant
       %th{scope: "col"} Nom
+      %th{scope: "col"} Produits actifs
+      %th{scope: "col"} Évaluations
   - table.with_tbody do
-    - @incubators.each do |incubator|
+    - @incubators.each do |incubator, startups|
       %tr
         %td{scope: "row"}= incubator.ghid.upcase
-        %td{scope: "row"}= dsfr_link_to incubator.title, incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"
+        %td.fr-cell--multiline{scope: "row"}= dsfr_link_to incubator.title, incubator_path(incubator.ghid), title: "Voir les produits de : #{incubator.title}"
+        %td.fr-cell--right{scope: "row"}= startups.count
+        %td.fr-cell--right{scope: "row"}= boldify_if_positive(startups.map(&:evaluation).compact.count)

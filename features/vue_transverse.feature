@@ -7,14 +7,23 @@ Fonctionnalité: Les produits des incubateurs peuvent être consultés
     Et qu'un produit "Rubber Soul" existe au sein de l'incubateur "Beatles"
     Et qu'un produit "Sticky Fingers" existe au sein de l'incubateur "Rolling Stones"
     Quand je me connecte
+    Et que je participe au produit "Abbey Road"
+    Et que je démarre une évaluation pour "Abbey Road"
     Et je clique sur "Incubateurs"
+
+  Scénario: Les produits actifs et le nombre d'évaluations sont affichés
+    Et que je clique sur "Incubateurs"
+    Alors le tableau "Tous les incubateurs" contient :
+      | Nom            | Produits actifs | Évaluations |
+      | Beatles        |               2 |           1 |
+      | Rolling Stones |               1 |           0 |
 
   Scénario: Je peux choisir mon incubateur
     Et que je clique sur "Beatles"
     Alors le tableau "Beatles" contient :
-      | Évaluation  |
-      | Abbey Road  |
-      | Rubber Soul |
+      | Produit     | Phase           |
+      | Abbey Road  | en construction |
+      | Rubber Soul | en construction |
 
   Scénario: Les incubateurs sans produits actifs ne sont pas affichés
     Sachant qu'un produit "One" en phase "investigation" existe au sein de l'incubateur "The Kinks"
@@ -28,3 +37,5 @@ Fonctionnalité: Les produits des incubateurs peuvent être consultés
   Scénario: Je peux facilement retourner en arrière grâce au fil d'Ariane
     Quand je clique sur "Beatles"
     Alors le fil d'Ariane affiche "Tous les incubateurs > Beatles"
+    Quand je clique sur "Abbey Road"
+    Alors le fil d'Ariane affiche "Tous les incubateurs > Beatles > Évaluation de Abbey Road"
