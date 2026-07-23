@@ -1,20 +1,28 @@
-- content_for(:column_overrides) { "lg: 10, md: 12" }
+- content_for(:column_overrides) { "lg: 12, md: 12" }
 - content_for(:page_title) { "Évaluation de #{@startup.name}"}
 
 %h1
   Évaluation de
-  = @evaluation.startup.name
+  = @startup.name
 
-%hr
+= render SummaryListComponent.new do |sl|
+  - sl.with_definitions([{ term: "Dernière mise à jour de l'évaluation", definition: "il y a " + time_ago_in_words(@evaluation.updated_at) },
+    { term: "Version des standards", definition: release_link(@evaluation.version) },
+    { term: "Email de contact", definition: mail_to(@startup.contact) },
+    { term: "Sponsor(s)", definition: startup_sponsor_acronym_list(@startup) },
+    ])
+
+%hr.fr-mt-4w
 
 - @evaluation.questions.group_by(&:category).each do |category, questions|
   %h2= t("evaluations.categories.#{category}.label")
-  %ul
-    - questions.each do |question|
-      %li.fr-my-2w
-        %strong= question.title
-        %ul
-          - question.criteria.each do |criterion|
-            %li
+  - questions.each do |question|
+    %h3.fr-h6= question.title
+    %ul
+      - question.criteria.each do |criterion|
+        %li.fr-mt-1w
+          .fr-grid-row
+            .fr-col-md-7.fr-col-sm-9.fr-col-xs-12
               = criterion.label.delete_suffix(".")
+            .fr-col-md-5.fr-col-sm-3.fr-col-xs-12
               = badge_for_answer(criterion.answer)
