@@ -14,4 +14,10 @@ module StartupsHelper
 
     dsfr_badge(status: type) { message }
   end
+
+  def startup_sponsor_acronym_list(startup)
+    startup.organizations.map do |org|
+      content_tag(:abbr, org.acronym, title: org.name)
+    end.join(", ").html_safe
+  end
 end

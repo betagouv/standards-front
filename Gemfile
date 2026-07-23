@@ -88,4 +88,5 @@ group :test do
   gem "rubocop-rspec"
   gem "rubocop-rspec_rails"
   gem "rspec"
+  gem "rspec-html-matchers"
 end
