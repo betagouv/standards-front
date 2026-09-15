@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class EvaluationUpgrader
+  include LanguageHelper
+
   attr_reader :evaluation, :new_standards_yml
 
   def initialize(evaluation, new_standards_yml)
@@ -38,7 +40,7 @@ class EvaluationUpgrader
         standard.criteria.each do |criteria|
           criteria.answer = previously
                               .criteria
-                              .find { |c| c.label == criteria.label }
+                              .find { |c| questionize(c.label) == questionize(criteria.label) }
                               &.answer
         end
       end
@@ -89,5 +91,6 @@ class EvaluationUpgrader
       .find { |q| q == question }
       .criteria
       .map(&:label)
+      .map { |label| questionize(label) }
   end
 end

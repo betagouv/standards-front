@@ -88,6 +88,35 @@ describe EvaluationUpgrader do
     end
   end
 
+  context "when only the punctuation has changed" do
+    # FIXME: we need to redefine these `let` blocks because when
+    # `upgrader` is called in the example it will trigger all of the
+    # memoized blocks, which makes a `before` hook useless because
+    # everything is already initialized.
+    let(:standards) do
+      { "standards" => FactoryBot.attributes_for_list(:question, 3), "version" => '42' }.tap do |st|
+        st["standards"].first[:criteria][0] = { label: "label" }
+      end
+    end
+
+    let(:new_standards) do
+      standards
+        .deep_dup
+        .merge!("version" => "46")
+        .tap { |st| st["standards"].first[:criteria][0] = { label: "label." } }
+    end
+
+    it "does not indicate the change" do
+      expect(upgrader.changes).to be_empty
+    end
+
+    it "does upgrade the standard" do
+      upgrader.apply!
+
+      expect(evaluation.questions.first.criteria.first.answer).to eq "yes"
+    end
+  end
+
   describe ".apply!" do
     it "upgrades the version" do
       expect { upgrader.apply! }

@@ -43,7 +43,7 @@ class Evaluation::Question
   end
 
   def inspect
-   "<Evaluation::Question title: #{title}>"
+   "<Evaluation::Question title: #{title}, criteria: #{criteria.map(&:label)}>"
   end
 
   # Override serializable_hash to properly handle criteria
