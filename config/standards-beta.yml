@@ -1,5 +1,5 @@
 ---
-version: '2.0'
+version: '2.1'
 standards:
 - id: l-equipe-produit-du-code-accessible
   title: L'équipe produit du code accessible
@@ -12,9 +12,9 @@ standards:
     Produire du code sémantique est donc essentiel. Pour cela, l'équipe doit
     s'assurer de faire le maximum, par exemple :
 
-    * Utiliser un design system accessible (par exemple, le DSFR)
-    * Avoir des compétences front-end en interne
-    * Vérifier régulièrement la sémantique du HTML produit
+    * utiliser un design system accessible (par exemple, le DSFR)
+    * avoir des compétences front-end en interne
+    * vérifier régulièrement la sémantique du HTML produit.
 
   criteria:
   - label: Le code produit est accessible.
@@ -25,7 +25,7 @@ standards:
 
     [1]: https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Accessibility/HTML
   - |-
-    [Making the Web Accessible (en) - W3C][1]
+    [Making the Web Accessible (en) - w3.org][1]
 
 
     [1]: https://www.w3.org/WAI/
@@ -34,7 +34,7 @@ standards:
 
 
     [1]: https://www.systeme-de-design.gouv.fr/
-  last_modified_on: 2026-01-07
+  last_modified_on: 2026-07-02
 - id: l-equipe-recette-regulierement-l-accessibilite-de-son-service
   title: L'équipe recette régulièrement l'accessibilité de son service
   category: accessibilité
@@ -59,8 +59,8 @@ standards:
     demande pas de compétences techniques spécifiques.
 
   criteria:
-  - label: L'équipe est formée aux gestes de recette manuelle (Easy Checks)
-  - label: L'équipe recette régulièrement son service
+  - label: L'équipe est formée aux gestes de recette manuelle (Easy Checks).
+  - label: L'équipe recette régulièrement son service.
   resources:
   - |-
     [10 choses faciles à vérifier pour un site plus accessible -
@@ -73,102 +73,88 @@ standards:
 
 
     [1]: https://www.w3.org/WAI/test-evaluate/easy-checks/
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-15
 - id: le-produit-respecte-ses-obligations-declaratives
   title: Le produit respecte ses obligations déclaratives
   category: accessibilité
   description: |
-    Le produit doit respecter ses obligations déclaratives :
+    Votre produit faisant partie du numérique d'État, il est soumis à des
+    obligations déclaratives qui permettent de mieux comprendre le travail
+    mis en œuvre sur l'accessibilité de votre produit. Ces obligations
+    incluent quatre documents ainsi que la mention d'accessibilité.
 
-    1.  Publication de la déclaration d'accessibilité
-    2.  Lien vers le schéma pluriannuel
-    3.  Publication d'un plan d'action
+    ### Page dédiée à l'accessibilité
 
-    ### Publication de la déclaration d'accessibilité
+    Une [page dédiée à l'accessibilité][1] doit être présente et accessible
+    depuis votre page d'accueil et chaque page publique de votre produit.
+    Cette page, de préférence à l'adresse `/accessibilite`, doit mentionner
+    les trois documents suivants.
 
-    Le produit doit :
+    ### Déclaration d'accessiblité
 
-    * afficher l’état de conformité du site sur la page d’accueil
-    * publier une déclaration de conformité
+    La [déclaration d'accessibilité est un document conforme au RGAA][2] qui
+    fait l'état des lieux de l'accessibilité sur votre produit. Un [modèle
+    de déclaration][3] est disponible sur le site du RGAA. La DINUM met
+    aussi à disposition [un générateur de déclaration d'accessibilité][4]
+    pour vous aider à produire ce document.
 
-    Ces obligations sont valables dès la mise en ligne du site, même si le
-    produit n'a pas encore été audité (on indiquera alors la mention
-    "Accessibilité : non conforme")
+    ### Schéma pluriannuel de mise en accessibilité
 
-    La déclaration de conformité d'accessibilité est un document présentant
-    un état des lieux de conformité d'un produit (taux de conformité,
-    signalement des contenus non accessibles, dispositifs d’assistance et de
-    contact...). Il doit respecter le [format légal][1].
+    Le [schéma pluriannuel de mise en accessibilité suit aussi les règles du
+    RGAA][5]. Il décrit la politique de votre organisation en matière
+    d'accessibilité, et vous pouvez donc référencer, par ordre de préférence
+    \:
 
-    Manquer aux obligations déclaratives est passible d'une amende de 20 000
-    €, pour chaque année de manquement (l'obligation étant en vigueur depuis
-    2021).
+    * celui de votre incubateur
+    * sinon celui de votre administration sponsor
+    * sinon [celui de beta.gouv.fr][6].
 
-    ### Lien vers le schéma pluriannuel
+    ### Plan d'action
 
-    Le produit doit référencer la politique d’accessibilité de son
-    organisation via un schéma pluri-annuel. Ce document contient entre
-    autres :
+    Le plan d'action est un document propre à votre produit qui explique vos
+    objectifs pour l'année en cours. Consultez par exemple [le plan d'action
+    de beta.gouv.fr pour 2026][7].
 
-    * des informations sur la personne référente accessibilité numérique
-    * les formations et sensibilisations à l'accessibilité prévues
-    * l'organisation interne prévue pour mettre en œuvre l'accessibilité
-    * etc
+    ### Mention du niveau de conformité
 
-    Le produit doit référencer un schéma, parmi :
+    Votre site doit mentionner sur sa page d'accueil et sur toutes ses pages
+    visibles une [mention du niveau de conformité au RGAA][8].
 
-    * le schéma pluriannuel de son incubateur (s'il existe)
-    * le schéma pluriannuel de son administration sponsor à retrouver sur la
-      page Accessibilité du sponsor (si elle existe)
-    * le schéma pluriannuel de beta.gouv.fr sinon
+    * * *
 
-    ### Publication d'un plan d'action
-
-    L'équipe propose ensuite un plan d'action pour l'année en cours. Il
-    s'agit d'une liste ou d'un tableau indiquant les grandes étapes de mise
-    en accessibilité. Par exemple :
-
-    * Refonte vers le DSFR et amélioration de l'accessibilité du front - S1
-      2025
-    * Formation en interne (atelier Easy Checks menés par beta.gouv.fr - S1
-      2025
-    * Préparation à l'audit - S2 2025
-    * Audit de conformité et correction - S2 2025
+    Manquer à ces obligations déclaratives est passible d'une amende de
+    20 000 € pour chaque année de manquement (l'obligation étant en vigueur
+    depuis 2021).
 
 
 
-    [1]: https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/
+    [1]: https://accessibilite.numerique.gouv.fr/obligations/mentions-et-pages-obligatoires/#page-accessibilite-et-liens-obligatoires
+    [2]: https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/
+    [3]: https://accessibilite.numerique.gouv.fr/ressources/modele-de-declaration/
+    [4]: https://betagouv.github.io/a11y-generateur-declaration
+    [5]: https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/
+    [6]: https://beta.gouv.fr/accessibilite/schema-pluriannuel
+    [7]: https://beta.gouv.fr/accessibilite/schema-pluriannuel#plan-2026
+    [8]: https://accessibilite.numerique.gouv.fr/obligations/mentions-et-pages-obligatoires/#mention-obligatoire-sur-la-page-daccueil
   criteria:
-  - label: |-
-      Le service indique une mention de conformité
-      (non/partiellement/totalement conforme) sur la page d'accueil.
+  - label: Une page dédiée à l'accessibilité est présente sur tout le site.
   - label: Une déclaration d'accessibilité valide est en ligne.
   - label: Un schéma pluriannuel à jour est lié.
   - label: Un plan d'action est documenté en ligne.
+  - label: Une mention de conformité est présente sur chaque page.
   resources:
+  - |-
+    [Référentiel général d'amélioration de l'accessibilité (RGAA) -
+    accessibilite.numerique.gouv.fr][1]
+
+
+    [1]: https://accessibilite.numerique.gouv.fr/
   - |-
     [Obligations légales d'accessibilite - doc.incubateur.net][1]
 
 
     [1]: https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/accessibilite-and-inclusion/obligations-legales#obligations-legales
-  - |-
-    [Obligations légales : Déclaration d'accessibilité -
-    numerique.gouv.fr][1]
-
-
-    [1]: https://accessibilite.numerique.gouv.fr/obligations/declaration-accessibilite/
-  - |-
-    [Générateur de déclaration d'accessibilité - betagouv.github.io][1]
-
-
-    [1]: https://betagouv.github.io/a11y-generateur-declaration/
-  - |-
-    [Obligations légales : Schéma pluriannuel de mise en accessibilité -
-    numerique.gouv.fr][1]
-
-
-    [1]: https://accessibilite.numerique.gouv.fr/obligations/schema-pluriannuel/
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-09
 - id: l-equipe-pratique-la-recherche-utilisateur
   title: L'équipe pratique la recherche utilisateur
   category: design
@@ -211,7 +197,7 @@ standards:
 
 
     [1]: https://stephaniewalter.design/fr/blog/introduction-aux-user-journey-maps-modeles-pdf-a-telecharger/
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-04-14
 - id: le-service-prevoit-les-cas-d-exclusion-numerique
   title: Le service prévoit les cas d'exclusion numérique
   category: design
@@ -244,11 +230,11 @@ standards:
 
     [1]: https://emmaus-connect.org/2023/11/etude-insee-illectronisme-en-france-une-tendance-encourageante/
   criteria:
-  - label: L'équipe a identifié qui risque d'être exclu du service numérique
+  - label: L'équipe a identifié qui risque d'être exclu du service numérique.
   - label: |-
       Au moins une alternative non-numérique fonctionne (téléphone, guichet,
-      partenaires locaux)
-  - label: Le service évite de demander plusieurs fois les mêmes informations
+      partenaires locaux).
+  - label: Le service évite de demander plusieurs fois les mêmes informations.
   resources:
   - |-
     [Qu'est-ce que l'inclusion - doc.incubateur.net][1]
@@ -260,7 +246,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/aide-transverse-pole-numerique-inclusif
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-15
 - id: l-equipe-suit-la-methodologie-aarri
   title: L'équipe suit la méthodologie AARRI
   category: impact
@@ -327,7 +313,7 @@ standards:
 
     [1]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/piloter-sa-croissance-et-evaluer-son-impact
   criteria:
-  - label: L'équipe suit une North Star Metric
+  - label: L'équipe suit une North Star Metric.
   resources:
   - |-
     [Piloter par la North Star Metric - doc.incubateur.net][1]
@@ -339,7 +325,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/piloter-sa-croissance-et-evaluer-son-impact
-  last_modified_on: 2025-12-08
+  last_modified_on: 2026-09-15
 - id: la-page-stats-est-construite-selon-la-matrice-impact
   title: La page stats est construite selon la matrice impact
   category: impact
@@ -364,8 +350,8 @@ standards:
     [1]: https://doc.incubateur.net/communaute/gerer-son-produit/guide-de-financement-des-startups-detat/4.-lenjeu-du-pilotage-par-limpact
     [2]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/piloter-sa-croissance-et-evaluer-son-impact
   criteria:
-  - label: les indicateurs présentés dans la page stats suivent la matrice impact
-  - label: les indicateurs sont mis à jour avant chaque comité
+  - label: Les indicateurs présentés dans la page stats suivent la matrice impact.
+  - label: Les indicateurs sont mis à jour avant chaque comité.
   resources:
   - |-
     [L'enjeu du pilotage par l'impact - doc.incubateur.net][1]
@@ -377,7 +363,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/solliciter-et-contribuer-a-la-communaute/je-sollicite-de-laide-transverse/piloter-sa-croissance-et-evaluer-son-impact
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: le-service-simplifie-ses-contenus-d-aide
   title: Le service simplifie ses contenus d'aide
   category: qualité-du-support
@@ -397,11 +383,11 @@ standards:
     utilisateurs.
 
   criteria:
-  - label: Les contenus d'aide sont rédigés en français simple (niveau collège)
+  - label: Les contenus d'aide sont rédigés en français simple (niveau collège).
   - label: |-
       Les contenus d'aide sont fréquemment révisés en fonction des demandes
-      support
-  - label: Une FAQ facilement accessible répond aux questions les plus fréquentes
+      support.
+  - label: Une FAQ facilement accessible répond aux questions les plus fréquentes.
   resources:
   - |-
     [Simplifier ses contenus - doc.incubateur.net][1]
@@ -418,7 +404,7 @@ standards:
 
 
     [1]: https://hemingwayapp.com/
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-15
 - id: les-utilisateurs-peuvent-faire-des-retours-facilement
   title: Les utilisateurs peuvent faire des retours facilement
   category: qualité-du-support
@@ -442,11 +428,11 @@ standards:
     traitement des réponses avec des délais clairs.
 
   criteria:
-  - label: Un moyen de contact est visible sur chaque page importante
+  - label: Un moyen de contact est visible sur chaque page importante.
   - label: |-
       L'équipe utilise une adresse e-mail à laquelle les utilisateurs peuvent
-      répondre
-  - label: L'équipe suit et analyse les retours pour améliorer le service
+      répondre.
+  - label: L'équipe suit et analyse les retours pour améliorer le service.
   resources:
   - |-
     [Intégrer le bouton "Je donne mon avis" - doc.incubateur.net][1]
@@ -463,7 +449,7 @@ standards:
 
 
     [1]: https://astuto.io/
-  last_modified_on: 2025-12-08
+  last_modified_on: 2026-09-15
 - id: l-equipe-a-implemente-l-observabilite-de-son-produit
   title: L'équipe a implémenté l'observabilité de son produit
   category: qualité-logicielle
@@ -503,12 +489,12 @@ standards:
 
     [1]: https://fr.wikipedia.org/wiki/Apdex
   criteria:
-  - label: Un outil de gestion d'erreurs est configuré
-  - label: Les journaux applicatifs sont consultables
-  - label: La performance de l'outil est surveillée
+  - label: Un outil de gestion d'erreurs est configuré.
+  - label: Les journaux applicatifs sont consultables.
+  - label: La performance de l'outil est surveillée.
   resources:
   - |-
-    [Guide Sillon - Monitoring][1]
+    [Monitoring - sillon.incubateur.net][1]
 
 
     [1]: https://sillon.incubateur.net/docs/monitoring/
@@ -517,7 +503,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/les-outils-de-la-communaute/autres-services/sentry
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: l-equipe-enregistre-et-documente-les-changements-du-code
   title: L'équipe enregistre et documente les changements du code
   category: qualité-logicielle
@@ -552,13 +538,13 @@ standards:
     valeur documentaire.
 
   criteria:
-  - label: Le code source utilise un gestionnaire de version type Git
+  - label: Le code source utilise un gestionnaire de version type Git.
   - label: |-
       Les messages de commit décrivent clairement les modifications et leurs
-      raisons
+      raisons.
   - label: |-
       Les commits intermédiaires sont regroupés avant publication pour
-      maintenir un historique lisible
+      maintenir un historique lisible.
   resources:
   - |-
     [Nommage des commits - sillon.incubateur.net][1]
@@ -571,11 +557,11 @@ standards:
 
     [1]: https://github.blog/developer-skills/github/write-better-commits-build-better-projects/
   - |-
-    [Maintaining version control in coding (en) - GOV.UK][1]
+    [Maintaining version control in coding (en) - gov.uk][1]
 
 
     [1]: https://www.gov.uk/service-manual/technology/maintaining-version-control-in-coding
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: l-open-source-et-les-communs-numeriques-sont-privilegies
   title: L'open-source et les communs numériques sont privilégiés
   category: qualité-logicielle
@@ -595,8 +581,8 @@ standards:
     de l'État élaborée par la DINUM.
 
   criteria:
-  - label: L'équipe produit du code open-source
-  - label: L'équipe privilégie des solutions ouvertes et souveraines pour le reste
+  - label: L'équipe produit du code open-source.
+  - label: L'équipe privilégie des solutions ouvertes et souveraines pour le reste.
   resources:
   - |-
     [Stratégie numérique de l'État - numerique.gouv.fr][1]
@@ -609,7 +595,7 @@ standards:
 
 
     [1]: https://documentation.ouvert.numerique.gouv.fr/ressources/guide-juridique-du-logiciel-libre-dans-ladministration/
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-15
 - id: le-code-est-deploye-frequemment-idealement-en-continu
   title: Le code est déployé fréquemment, idéalement en continu
   category: qualité-logicielle
@@ -628,16 +614,18 @@ standards:
     des tâches répétitives nécessaires à la bonne gestion des déploiements.
 
   criteria:
-  - label: Un pipeline CI/CD automatisé est configuré
-  - label: Les déploiements s'effectuent automatiquement après validation des tests
-  - label: L'équipe déploie au moins une fois par semaine
+  - label: Un pipeline CI/CD automatisé est configuré.
+  - label: |-
+      Les déploiements s'effectuent automatiquement après validation des
+      tests.
+  - label: L'équipe déploie au moins une fois par semaine.
   resources:
   - |-
     [L'intégration et le déploiement continu - sillon.incubateur.net][1]
 
 
     [1]: https://sillon.incubateur.net/docs/continuous-integration-and-continuous-deployment/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: le-code-est-instrumente-par-des-tests-unitaires-et-des-tests-e2e
   title: Le code est instrumenté par des tests unitaires et des tests E2E
   category: qualité-logicielle
@@ -665,10 +653,10 @@ standards:
     déploiement (CI/CD).
 
   criteria:
-  - label: Une suite de tests unitaires est en place
-  - label: Une suite de tests d'intégration est en place
-  - label: Les tests conditionnent l'intégration de nouveau code (CI)
-  - label: Les tests conditionnent le déploiement de nouveau code (CD)
+  - label: Une suite de tests unitaires est en place.
+  - label: Une suite de tests d'intégration est en place.
+  - label: Les tests conditionnent l'intégration de nouveau code (CI).
+  - label: Les tests conditionnent le déploiement de nouveau code (CD).
   resources:
   - |-
     [Pyramide de tests (en) - martinfowler.com][1]
@@ -685,7 +673,7 @@ standards:
 
 
     [1]: https://github.com/betagouv/aplypro/blob/51544b02c7e4b39c60de38a61dddccbcf9f982a9/features/saisie_de_coordonnees_bancaires.feature
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: le-code-source-est-uniforme
   title: Le code source est uniforme
   category: qualité-logicielle
@@ -732,7 +720,7 @@ standards:
 
 
     [1]: https://prettier.io/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-09
 - id: le-produit-s-appuie-sur-une-architecture-cloud
   title: Le produit s'appuie sur une architecture Cloud
   category: qualité-logicielle
@@ -770,16 +758,16 @@ standards:
   criteria:
   - label: |-
       L'équipe utilise des services d'hébergement cloud (IaaS, PaaS ou SaaS)
-      plutôt qu'une infrastructure physique dédiée
+      plutôt qu'une infrastructure physique dédiée.
   - label: |-
       L'architecture permet une adaptation des ressources selon les besoins du
-      service
+      service.
   - label: |-
       Les données et applications sont répliquées ou sauvegardées pour assurer
-      la continuité de service
+      la continuité de service.
   - label: |-
       L'hébergement respecte les exigences de souveraineté et de sécurité
-      applicables au service public
+      applicables au service public.
   resources:
   - |-
     [Stratégie nationale pour le Cloud (DINUM) - numerique.gouv.fr][1]
@@ -803,7 +791,7 @@ standards:
 
 
     [1]: https://www.numerique.gouv.fr/services/cloud/cloud-commercial/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: les-aspects-techniques-du-produit-sont-documentes
   title: Les aspects techniques du produit sont documentés
   category: qualité-logicielle
@@ -831,10 +819,10 @@ standards:
     équipes qui vont les consommer.
 
   criteria:
-  - label: Un README présente succintement l'objectif du service
-  - label: La pile technique et l'architecture du produit sont renseignées
-  - label: Les APIs sont documentées avec la spécification OpenAPI/Swagger
-  - label: Des instructions pour lancer le service en local sont disponibles
+  - label: Un README présente succintement l'objectif du service.
+  - label: La pile technique et l'architecture du produit sont renseignées.
+  - label: Les APIs sont documentées avec la spécification OpenAPI/Swagger.
+  - label: Des instructions pour lancer le service en local sont disponibles.
   resources:
   - |-
     [Documenter votre projet - sillon.incubateur.net][1]
@@ -846,7 +834,7 @@ standards:
 
 
     [1]: https://www.writethedocs.org/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: l-equipe-a-etabli-un-plan-d-action-visant-l-homologation-de-son-service
   title: L'équipe a établi un plan d'action visant l'homologation de son service
   category: sécurité
@@ -888,11 +876,11 @@ standards:
     [1]: https://cyber.gouv.fr/le-referentiel-general-de-securite-rgs
     [2]: https://monservicesecurise.cyber.gouv.fr/
   criteria:
-  - label: L'équipe a inscrit son produit sur Mon Service Sécurisé
+  - label: L'équipe a inscrit son produit sur Mon Service Sécurisé.
   - label: |-
       L'équipe a pris connaissance des critères d'homologation propres à son
-      administration
-  - label: L'équipe a établi un plan d'action visant l'homologation de son service
+      administration.
+  - label: L'équipe a établi un plan d'action visant l'homologation de son service.
   resources:
   - |-
     [Tout savoir sur l'homologation de sécurité -
@@ -905,7 +893,7 @@ standards:
 
 
     [1]: https://cyber.gouv.fr/sites/default/files/document/guide-homologation-securite-web-04-2025.pdf
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-15
 - id: l-equipe-est-sensibilisee-aux-regles-d-hygiene-informatique-et-de-securite
   title: L'équipe est sensibilisée aux règles d'hygiène informatique et de sécurité
   category: sécurité
@@ -942,7 +930,7 @@ standards:
 
 
     [1]: https://mentor.gouv.fr/local/catalog/pages/training.php?trainingid=494
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-06-01
 - id: l-equipe-identifie-et-maitrise-les-risques-cyber-de-son-service
   title: L'équipe identifie et maîtrise les risques cyber de son service
   category: sécurité
@@ -996,10 +984,10 @@ standards:
     [1]: https://cyber.gouv.fr/sites/default/files/2018/11/guide-securite-numerique-agile-anssi-pa-v1.pdf
     [2]: https://cyber.gouv.fr/la-methode-ebios-risk-manager
   criteria:
-  - label: L'équipe a choisi une méthode d'analyse de risques
+  - label: L'équipe a choisi une méthode d'analyse de risques.
   - label: |-
       L'équipe réévalue les risques cyber à chaque évolution majeure du
-      service
+      service.
   resources:
   - |-
     [Réaliser une analyse de risques - monservicesecurise.cyber.gouv.fr][1]
@@ -1016,7 +1004,7 @@ standards:
 
 
     [1]: https://cyber.gouv.fr/la-methode-ebios-risk-manager
-  last_modified_on: 2025-12-04
+  last_modified_on: 2026-09-15
 - id: le-produit-a-une-fiche-a-jour-sur-le-site-beta-gouv-fr
   title: Le produit a une fiche à jour sur le site beta.gouv.fr
   category: transparence
@@ -1076,21 +1064,21 @@ standards:
   criteria:
   - label: |-
       La fiche produit est publiée et présente sur [l'annuaire des
-      réalisations de beta.gouv.fr][1]
+      réalisations de beta.gouv.fr][1].
 
 
       [1]: https://beta.gouv.fr/startups/
-  - label: Le lien du produit est renseigné
-  - label: Le lien vers la page statistiques est renseigné
-  - label: Le lien vers la page budget est renseigné
-  - label: Le lien vers le code source est renseigné
-  - label: La description explique le problème, son contexte et ses usagers
-  - label: La description explique la solution et l'impact attendu
-  - label: Les objectifs fixés au dernier comité d'investissement sont renseignés
+  - label: Le lien du produit est renseigné.
+  - label: Le lien vers la page statistiques est renseigné.
+  - label: Le lien vers la page budget est renseigné.
+  - label: Le lien vers le code source est renseigné.
+  - label: La description explique le problème, son contexte et ses usagers.
+  - label: La description explique la solution et l'impact attendu.
+  - label: Les objectifs fixés au dernier comité d'investissement sont renseignés.
   - label: |-
       La description présente la stratégie de déploiement / les prochaines
-      étapes du produit
-  - label: Un email de contact est renseigné
+      étapes du produit.
+  - label: Un email de contact est renseigné.
   resources:
   - |-
     [Gérer sa fiche produit - doc.incubateur.net][1]
@@ -1102,7 +1090,7 @@ standards:
 
 
     [1]: https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: le-produit-communique-sur-son-budget
   title: Le produit communique sur son budget
   category: transparence
@@ -1156,14 +1144,14 @@ standards:
     [1]: https://www.ccomptes.fr/fr/publications/le-pilotage-de-la-transformation-numerique-de-letat-par-la-direction
     [2]: https://doc.incubateur.net/communaute/gerer-son-produit/les-standards/transparence/publier-son-budget
   criteria:
-  - label: La publication du budget est accessible via un lien public
+  - label: La publication du budget est accessible via un lien public.
   - label: |-
       La publication du budget est référencée dans la fiche produit de
-      l'Espace Membre
-  - label: La publication du budget est faite deux fois par an
+      l'Espace Membre.
+  - label: La publication du budget est faite deux fois par an.
   - label: |-
       La saisie des données est faite sur le Grist de référence et respecte le
-      référentiel proposé
+      référentiel proposé.
   resources:
   - |-
     [Publier son budget - doc.incubateur.net][1]
@@ -1174,8 +1162,8 @@ standards:
     [Grist commun des budgets - grist.numerique.gouv.fr][1]
 
 
-    [1]: [https://grist.numerique.gouv.fr/o/docs/fTjFnK7Bhvuo/Depenses-numeriques/p/1](https://grist.numerique.gouv.fr/o/isn/mAQJQawVbFUA/Depenses-numeriques?utm_id=share-doc)
-  last_modified_on: 2025-12-08
+    [1]: https://grist.numerique.gouv.fr/o/isn/mAQJQawVbFUA/Depenses-numeriques?utm_id=share-doc
+  last_modified_on: 2026-09-15
 - id: le-produit-suit-ses-bonnes-pratiques-sur-dashlord
   title: Le produit suit ses bonnes pratiques sur DashLord
   category: transparence
@@ -1196,14 +1184,14 @@ standards:
     mesures pour suivre les bonnes pratiques du numérique de l'État.
 
   criteria:
-  - label: Le produit est configuré sur le DashLord de son incubateur
+  - label: Le produit est configuré sur le DashLord de son incubateur.
   resources:
   - |-
     [Le DashLord de l'incubateur - incubateur.net][1]
 
 
     [1]: https://dashlord.incubateur.net/
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: l-equipe-initie-une-analyse-d-impact-relative-a-la-protection-des-donnees-si-necessaire
   title: L'équipe initie une analyse d'impact relative à la protection des données
     si nécessaire
@@ -1222,7 +1210,7 @@ standards:
 
 
     [1]: https://www.cnil.fr/fr/PIA-privacy-impact-assessment
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-09
 - id: les-donnees-de-production-ne-sont-utilisees-qu-en-production
   title: Les données de production ne sont utilisées qu'en production
   category: vie-privée
@@ -1241,15 +1229,15 @@ standards:
     que votre produit exploite.
 
   criteria:
-  - label: Les jeux de données test sont fictifs ou anonymisés
-  - label: Les URLs de production sont protégées par des variables d'environnement
+  - label: Les jeux de données test sont fictifs ou anonymisés.
+  - label: Les URLs de production sont protégées par des variables d'environnement.
   resources:
   - |-
     [Gérer une fuite de données - doc.incubateur.net][1]
 
 
     [1]: https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/tech/readme-1
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: tous-les-documents-legaux-sont-publies-et-accessibles
   title: Tous les documents légaux sont publiés et accessibles
   category: vie-privée
@@ -1289,11 +1277,11 @@ standards:
   criteria:
   - label: |-
       Les trois documents sont accessibles depuis le service (liens en pied de
-      page)
-  - label: Toutes les informations obligatoires sont présentes et exactes
-  - label: Un juriste a validé le contenu
-  - label: Les utilisateurs sont prévenus des modifications importantes
-  - label: Les coordonnées de contact fonctionnent
+      page).
+  - label: Toutes les informations obligatoires sont présentes et exactes.
+  - label: Un juriste a validé le contenu.
+  - label: Les utilisateurs sont prévenus des modifications importantes.
+  - label: Les coordonnées de contact fonctionnent.
   resources:
   - |-
     [Aide juridique - doc.incubateur.net][1]
@@ -1315,7 +1303,7 @@ standards:
 
 
     [1]: https://mes-aides.1jeune1solution.beta.gouv.fr/cgu
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: des-comites-d-investissement-sont-organises-regulierement
   title: Des comités d'investissement sont organisés régulièrement
   category: équipe
@@ -1336,14 +1324,14 @@ standards:
       orientations et les attentes en termes d'impact
 
   criteria:
-  - label: Un comité d'investissement a lieu au moins tous les 6 mois
+  - label: Un comité d'investissement a lieu au moins tous les 6 mois.
   resources:
   - |-
     [Préparer un comité d'investissement - doc.incubateur.net][1]
 
 
     [1]: https://doc.incubateur.net/communaute/gerer-son-produit/gestion-au-quotidien/budget/preparer-un-comite-dinvestissement
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: des-rituels-d-equipes-reguliers-sont-mis-en-place
   title: Des rituels d'équipes réguliers sont mis en place
   category: équipe
@@ -1374,12 +1362,12 @@ standards:
     aussi la pertinence et le format de ces rituels fréquemment.
 
   criteria:
-  - label: L'équipe organise régulièrement des rituels
-  - label: Les rituels sont formalisés et limités à un but précis
-  - label: Les décisions prises sont documentées
-  - label: La pertinence des rituels d'équipe est régulièrement revue
+  - label: L'équipe organise régulièrement des rituels.
+  - label: Les rituels sont formalisés et limités à un but précis.
+  - label: Les décisions prises sont documentées.
+  - label: La pertinence des rituels d'équipe est régulièrement revue.
   resources: []
-  last_modified_on: 2025-10-30
+  last_modified_on: 2026-09-15
 - id: le-produit-est-pilote-par-un-agent-public
   title: Le produit est piloté par un agent public
   category: équipe
@@ -1399,7 +1387,7 @@ standards:
   criteria:
   - label: |-
       Un(e) responsable produit, agent public, est identifié et travaille au
-      moins à mi-temps dans une équipe intégrée et autonome
+      moins à mi-temps dans une équipe intégrée et autonome.
   resources:
   - |-
     [L'approche - beta.gouv.fr][1]
@@ -1411,4 +1399,4 @@ standards:
 
 
     [1]: https://beta.gouv.fr/approche/intrapreneurs
-  last_modified_on: 2025-10-09
+  last_modified_on: 2026-09-15
