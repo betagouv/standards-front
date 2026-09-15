@@ -148,3 +148,7 @@ instantanée d'un standard :
    d'évaluation (celle que vous consultez)
 1. en rechargeant la page, les nouveaux standards sont utilisés, avec
    vos modifications.
+
+## Déploiement d'une nouvelle version des standards
+
+Une fois qu'[une nouvelle version des standards est déployée](https://github.com/betagouv/standards#d%C3%A9ploiement-dune-nouvelle-version), prendre le fichier YAML dans la release et remplacer le contenu de `config/standards-beta.yml` avec. Déployer les changements sur Scalingo.
