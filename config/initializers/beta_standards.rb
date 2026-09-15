@@ -22,7 +22,7 @@ module BetaStandards
         when "test"
           "spec/fixtures/files/dev-standards.yml"
         when "development"
-          "standards/standards-beta-v2.0.yml"
+          "standards/standards-beta-v2.1.yml"
         when "production"
           "config/standards-beta.yml"
         end
