@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "espace_membre/record"
+
 module EspaceMembre
   class Startup < Record
     has_one :evaluation, foreign_key: :startup_uuid, inverse_of: :startup
